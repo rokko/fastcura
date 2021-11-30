@@ -37,3 +37,13 @@
     transform: translateY(0px);
   }
 }
+
+  @font-face {
+    font-family: 'Charter';
+    src: url(./font/charter.otf) format('otf');
+  }
+
+  body{
+    font-family: 'Charter'
+  }
+
