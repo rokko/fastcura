@@ -1,5 +1,6 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import innovativo from '../media/innovativo.png'
 
 
 const ServizioInnovativo = () => {
@@ -11,9 +12,9 @@ const ServizioInnovativo = () => {
 
             </Grid>
             <Grid item>
-            <Typography fontSize={15} color="#6D6D6D">astcura è un servizio unico nel suo genere. Al centro di tutto vi è la tutela del professionista.</Typography>
+            <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>astcura è un servizio unico nel suo genere. Al centro di tutto vi è la tutela del professionista.</Typography>
             </Grid>
-            
+            <img src={innovativo} alt="innovativo" style={{width:'80%'}}/>
         </Grid>
     )
 

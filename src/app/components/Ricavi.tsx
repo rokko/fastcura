@@ -84,7 +84,7 @@ const Ricavi = () => {
         </g>
       </svg>
 
-      <button>Inizia Ora</button>
+      <button style={{width:120, height:35, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
     </Grid>
   );
 };

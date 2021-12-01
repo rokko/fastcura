@@ -7,7 +7,7 @@ const Abbonati = () => {
     return(
         <Grid container alignItems='center' alignContent="center" direction="column" sm={4} lg={10} marginTop={15}>
             <Grid item >
-                <Typography>Abbonati</Typography>
+            <Typography fontWeight="bold" fontSize={25}>Abbonati</Typography>
 
             </Grid>
             <Grid item>
