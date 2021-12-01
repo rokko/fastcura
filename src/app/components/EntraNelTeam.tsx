@@ -1,9 +1,10 @@
-import { Button, Typography, Grid } from "@mui/material";
+import {Typography, Grid } from "@mui/material";
 import React from "react";
 import entrateam from "../media/entrateam.png";
 
 const EntraNelTeam = () => {
   return (
+    
     <Grid
       container
       alignItems="center"

@@ -5,6 +5,9 @@ import React from 'react'
 const ProvaloGratis = () => {
 
     return(
+
+        <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
         <Grid container alignItems='center' alignContent="center" direction="column" sm={4} lg={10} marginTop={15}>
             <Grid item >
             <Typography fontWeight="bold" fontSize={25}>Provalo gratis!</Typography>
@@ -20,6 +23,7 @@ const ProvaloGratis = () => {
                 <button style={{width:210, height:35,backgroundColor:'#39B1D9',fontSize:'1rem', borderRadius:20,border:'none',fontWeight:'bold', color:'#ffffff', fontStyle:'Charter'}}>Inizia la prova gratuita</button>
             </Grid>
         </Grid>
+        </div>
     )
 
 }

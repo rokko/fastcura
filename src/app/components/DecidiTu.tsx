@@ -1,8 +1,10 @@
-import { Button, Grid, Typography } from "@mui/material";
+import {  Grid, Typography } from "@mui/material";
 import React from "react";
 import deciditu from "../media/decidi.png";
 const DecidiTu = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
     <Grid
       container
       marginTop={15}
@@ -13,7 +15,7 @@ const DecidiTu = () => {
       lg={10}
     >
       <Grid item>
-        <Typography fontWeight="bold" fontSize={25}>
+        <Typography fontWeight="bold" fontSize={25}  style={{display: 'flex', textAlign:'left'}}>
           Decidi tu quando!
         </Typography>
       </Grid>
@@ -30,6 +32,7 @@ const DecidiTu = () => {
         style={{ marginTop: 40, width: "100%", height: "auto" }}
       />
     </Grid>
+    </div>
   );
 };
 

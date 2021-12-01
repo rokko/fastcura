@@ -3,6 +3,8 @@ import React from "react";
 
 const ServizioMessagistica = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
     <Grid
       container
       alignItems="center"
@@ -191,6 +193,7 @@ const ServizioMessagistica = () => {
         </g>
       </svg>
     </Grid>
+    </div>
   );
 };
 

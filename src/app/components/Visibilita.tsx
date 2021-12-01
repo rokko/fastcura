@@ -3,6 +3,7 @@ import React from "react";
 
 const Visibilita = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
     <Grid
       container
       marginTop={15}
@@ -13,12 +14,14 @@ const Visibilita = () => {
       lg={10}
     >
       <Grid item>
-        <Typography fontWeight='bold' fontSize={25}>Visibilita</Typography>
+       
+        <Typography fontWeight='bold' fontSize={25} alignContent='left' >Visibilita</Typography>
         <Grid item>
-        <Typography fontSize={15} color="#6D6D6D">
+        <Typography fontSize={15} color="#6D6D6D"  >
           Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
           allargando la tua rete di clienti
         </Typography>
+       
       </Grid>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -258,6 +261,7 @@ const Visibilita = () => {
         </button>
       </Grid>
     </Grid>
+    </div>
   );
 };
 

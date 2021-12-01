@@ -1,8 +1,10 @@
-import { Button, Grid, Typography } from "@mui/material";
+import {  Grid, Typography } from "@mui/material";
 import React from "react";
 
 const Ricavi = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
     <Grid
       container
       alignItems="center"
@@ -86,6 +88,7 @@ const Ricavi = () => {
 
       <button style={{width:120, height:35, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
     </Grid>
+    </div>
   );
 };
 

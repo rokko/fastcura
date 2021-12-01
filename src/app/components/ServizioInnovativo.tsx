@@ -6,6 +6,8 @@ import innovativo from '../media/innovativo.png'
 const ServizioInnovativo = () => {
 
     return(
+        <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
         <Grid container alignItems='center' alignContent="center" direction="column" sm={4} lg={10} marginTop={15}>
             <Grid item >
             <Typography fontWeight="bold" fontSize={25}>Un servizio innovativo</Typography>
@@ -16,6 +18,7 @@ const ServizioInnovativo = () => {
             </Grid>
             <img src={innovativo} alt="innovativo" style={{width:'80%'}}/>
         </Grid>
+        </div>
     )
 
 }

@@ -1,8 +1,10 @@
-import { Button, Grid, Typography } from "@mui/material";
+import {  Grid, Typography } from "@mui/material";
 import React from "react";
 
 const FaiTuPrezzo = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
     <Grid
       container
       alignItems="center"
@@ -303,6 +305,7 @@ const FaiTuPrezzo = () => {
         </g>
       </svg>
     </Grid>
+    </div>
   );
 };
 

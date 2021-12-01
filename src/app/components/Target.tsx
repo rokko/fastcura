@@ -3,6 +3,8 @@ import React from "react";
 
 const Visibilita = () => {
   return (
+    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+
     <Grid
       container
       marginTop={15}
@@ -519,6 +521,7 @@ const Visibilita = () => {
         </g>
       </svg>
     </Grid>
+    </div>
   );
 };
 
