@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import logo from "../media/logo.png";
+import logo from "../../media/logo.png";
 import React from "react";
 
 const Header = () => {

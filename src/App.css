@@ -47,3 +47,13 @@
     font-family: 'Charter'
   }
 
+  .svg-stile{
+    mix-blend-mode: multiply;
+    isolation: isolate;
+
+   }
+
+   .svg-stile2{
+    mix-blend-mode: screen;
+    isolation: isolate;
+   }

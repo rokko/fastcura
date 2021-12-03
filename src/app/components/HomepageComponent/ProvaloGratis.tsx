@@ -8,7 +8,7 @@ const ProvaloGratis = () => {
 
         <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
 
-        <Grid container alignItems='center' alignContent="center" direction="column" sm={4} lg={10} marginTop={15}>
+        <Grid container alignItems='left' alignContent="left" direction="column" sm={4} lg={10} marginTop={15}>
             <Grid item >
             <Typography fontWeight="bold" fontSize={25}>Provalo gratis!</Typography>
 

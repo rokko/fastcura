@@ -7,8 +7,8 @@ const Ricavi = () => {
 
     <Grid
       container
-      alignItems="center"
-      alignContent="center"
+      alignItems="left"
+      alignContent="left"
       direction="column"
       sm={4}
       lg={10}
