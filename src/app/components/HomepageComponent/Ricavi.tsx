@@ -1,5 +1,6 @@
 import {  Grid, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Ricavi = () => {
   return (
@@ -85,8 +86,11 @@ const Ricavi = () => {
           />
         </g>
       </svg>
+      <Link to = '/signup-professionista'>
 
       <button style={{width:120, height:35, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
+      </Link>
+
     </Grid>
     </div>
   );

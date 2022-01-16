@@ -1,5 +1,6 @@
 import {Typography, Grid } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EntraNelTeam = () => {
   return (
@@ -81,8 +82,9 @@ const EntraNelTeam = () => {
     <path id="Tracciato_703" data-name="Tracciato 703" d="M1146-3297.938l-7.948,6.819s-4.171-5.638,0-8.944S1146-3297.938,1146-3297.938Z" transform="translate(-908 3468)" fill="#273237"/>
   </g>
 </svg>
-
+<Link to = '/signup-professionista'>
       <button
+      
         style={{
           backgroundColor: "#E93323",
           width: 220,
@@ -95,6 +97,7 @@ const EntraNelTeam = () => {
       >
         <Typography fontWeight="bold"> Inizia la prova gratuita</Typography>
       </button>
+      </Link>
     </Grid>
     </>
   );
