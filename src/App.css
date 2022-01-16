@@ -13,6 +13,29 @@
   }
 }
 
+p{
+  font-family: 'Charter'
+}
+.boldtext{
+  font-weight: bold;
+}
+.top-test{
+  font-size:23px;
+}
+.bluespan{
+  color: #39B1D9!important;
+}
+
+.titleAll{
+  font-size:23px;
+  font-weight: bold;
+}
+
+.topsearch-text{
+  color: white !important;
+  font-weight: bold;
+  font-size:21px;
+}
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -56,4 +79,9 @@
    .svg-stile2{
     mix-blend-mode: screen;
     isolation: isolate;
+   }
+
+   .paragrafidivisi{
+     display: flex;
+     flex-direction: row;
    }

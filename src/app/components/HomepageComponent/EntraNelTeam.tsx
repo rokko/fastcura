@@ -3,7 +3,7 @@ import React from "react";
 
 const EntraNelTeam = () => {
   return (
-    
+    <>
     <Grid
       container
       alignItems="center"
@@ -96,6 +96,7 @@ const EntraNelTeam = () => {
         <Typography fontWeight="bold"> Inizia la prova gratuita</Typography>
       </button>
     </Grid>
+    </>
   );
 };
 

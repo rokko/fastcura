@@ -25,7 +25,7 @@ const HomePage = () => {
         justifyContent="center"
        
         >
-            <Grid item sm={3}>
+        <Grid item sm={3}>
         <EntraNelTeam />
         <Visibilita />
         <Target />
