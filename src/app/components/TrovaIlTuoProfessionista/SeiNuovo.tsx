@@ -3,6 +3,9 @@ const SeiNuovo = () => {
     return(
         <>
         <p className="titleAll">Sei nuovo?</p>
+
+        <div style={{display:'flex', flexDirection:'row'}}>
+          <div style={{width:'50%'}}>
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="107.054" height="106.299" viewBox="0 0 107.054 106.299">
   <g id="Raggruppa_130" data-name="Raggruppa 130" transform="translate(-51.362 -2590.551)">
     <path id="Tracciato_108" data-name="Tracciato 108" d="M.235,16.339c3.3,2.147,9.291,5.109,13.174,3.795S44.372,12.6,46.984,12.366s6.318.21,8.5-2.374S51.816-.682,40.591.046-3.066,14.192.235,16.339Z" transform="translate(140.405 2686.927) rotate(180)" fill="#f4df40"/>
@@ -23,6 +26,10 @@ const SeiNuovo = () => {
     <path id="Tracciato_102" data-name="Tracciato 102" d="M8.734,0a32.828,32.828,0,0,1,4.423,22.559s-8.789,8.484-1.339,13.675c0,0,4.633,2.564,6.289-2.037,0,0,8.262,2.437,4.918,10.731,0,0,26.012-2.676,34.674,4.239,6.543,5.223,7.608,9.728,7.608,9.728a13.455,13.455,0,0,0-9.074.318s.939.876,4.791,7.1c0,0-2.786-1.72-10.046-1.466s-28.658,11.9-40.867.521S-.537,46.661,1.119,42.06,2.617,32.922,6.9,25.5,8.734,0,8.734,0Z" transform="translate(135.943 2666.974) rotate(180)" fill="#273237"/>
   </g>
 </svg>
+
+<button style={{width:120, height:15, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',marginTop:30, borderRadius:20, color:'#ffffff'}}><p>Ho bisogno di cure</p></button>
+</div>
+<div style={{width:'50%'}}>
 <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="107.054" height="115.05" viewBox="0 0 107.054 115.05">
   <g id="Raggruppa_131" data-name="Raggruppa 131" transform="translate(-219.984 -2589.847)">
     <g id="Raggruppa_23" data-name="Raggruppa 23" transform="translate(219.984 2589.847)">
@@ -61,6 +68,10 @@ const SeiNuovo = () => {
     </g>
   </g>
 </svg>
+
+<button style={{width:80, height:15, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}> Sono un professionista </button>
+</div>
+</div>
 
         </>
     )
