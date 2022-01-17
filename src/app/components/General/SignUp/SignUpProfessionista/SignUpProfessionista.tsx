@@ -1,26 +1,39 @@
 import React from "react";
-import { TextField } from "@mui/material";
-import Header from '../../../HomepageComponent/Header'
+import {
+  TextField,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@mui/material";import Header from '../../../HomepageComponent/Header'
 
 const SignUpProfessionista = () => {
   
     return (
       <>
       <Header />
-      <p>Compila i dati per iscriverti!</p>
+      <p className="registertitle">Compila i dati per iscriverti!</p>
       <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-      <TextField style={{width:310, marginTop:10}} id="outlined-size-small">Cognome</TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
-      <TextField style={{width:310,marginTop:10}} id="outlined-size-small"></TextField>
+      <TextField style={{width:310, marginTop:10}} id="outlined-size-small" label="Cognome"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Nome"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Indirizzo email"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Password"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Data di nascita "></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Sesso"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Codice postale"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small" label="Cellulare"></TextField>
+      <TextField style={{width:310,marginTop:10}} id="outlined-size-small " label="Specialità"></TextField>
+      <FormGroup >
+        <FormControlLabel
+          control={<Checkbox defaultChecked />}
+          label="Acconsento all'utilizzo dei dati personali"
+        />
+        <FormControlLabel
+          control={<Checkbox defaultChecked />}
+          label="Accetto termini e condizioni"
+        />{" "}
+      </FormGroup>
       </div>
-      <p>Acconsento all'utilizzo dei dati personali</p>
-      <p>Accetto termini e condizioni</p>
+      
       <button  style={{
             backgroundColor: "#39B1D9",
             width: 220,
