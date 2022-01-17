@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import React from "react";
 import EntraNelTeam from "../components/HomepageComponent/EntraNelTeam";
 import Visibilita from "../components/HomepageComponent/Visibilita";
@@ -14,16 +13,10 @@ import Header from "../components/HomepageComponent/Header";
 
 const HomePage = () => {
   return (
-    <>
-      <Header></Header>
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Grid item sm={3}>
+    <>  
+    <Header />
+          <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center', flexDirection:'column'}}>
+
           <EntraNelTeam />
           <Visibilita />
           <Target />
@@ -34,8 +27,7 @@ const HomePage = () => {
           <ServizioInnovativo />
           <ProvaloGratis />
           <Abbonati />
-        </Grid>
-      </Grid>
+      </div>
     </>
   );
 };

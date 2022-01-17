@@ -51,6 +51,20 @@ const BoxSearch = () => {
          renderInput={(params) => <TextField {...params} label="Milano, Napoli, Roma, ecc..." />}
        />
       </Box>
+
+      <button
+            style={{
+              width: '120px',
+              height: '50px',
+              backgroundColor: "#FF3617",
+              fontWeight: "bold",
+              border: "none",
+              marginTop: 20,
+              borderRadius: 20,
+              color: "#ffffff",
+              fontSize:'18px'
+            }}
+          >Vai</button>
     </>
   );
 };
