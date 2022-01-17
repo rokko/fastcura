@@ -4,25 +4,49 @@ import React from "react";
 const Login = () => {
   return (
     <>
-      <Box style={{
+      <Box
+        style={{
+            marginTop:'100px',
           width: "280px",
-          height: "200px",
+          height: "240px",
           backgroundColor: "#39B1D9",
           borderRadius: "20px",
-        }}>
+        }}
+      >
         <p className="topsearch-text">Accedi</p>
-        <TextField></TextField>
-        <TextField></TextField>
+        <TextField
+          size={"small"}
+          sx={{
+            width: "240px",
+            backgroundColor: "#ffffff",
+            outlineColor: "#ffffff",
+            borderRadius:"30px"
+          }}
+          label="Indirizzo email"
+        />
+        <TextField size={'small'}  sx={{
+            width: "240px",
+            backgroundColor: "#ffffff",
+            outlineColor: "#ffffff",
+            borderRadius:"30px",
+            marginTop:'40px',
+          }} label="Password" type={"password"} />
       </Box>
-      <button style={{
-        backgroundColor: "#39B1D9",
-        width: 220,
-        height: 37,
-        borderRadius: 20,
-        border: "none",
-        color: "white",
-        marginTop: 10,
-      }}>Entra</button>
+      <button
+        style={{
+          marginTop:'40px',
+          backgroundColor: "#39B1D9",
+          width: 220,
+          height: 37,
+          borderRadius: 20,
+          border: "none",
+          color: "white",
+          fontWeight:'bold',
+          
+        }}
+      >
+        Entra
+      </button>
       <p>Hai dimenticato la password?</p>
     </>
   );

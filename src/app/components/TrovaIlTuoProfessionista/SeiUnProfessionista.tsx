@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const SeiUnProfessionista = () => {
   return (
     <>
+    <div style={{marginTop:'100px', display:'flex', flexDirection:'column', alignItems:'center'}}>
       <p className="titleAll">Sei un Professionista?</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -205,20 +207,28 @@ const SeiUnProfessionista = () => {
           />
         </g>
       </svg>
+      <Link to="/signup-professionista">
       <button
        style={{
+        marginTop:'50px',
         backgroundColor: "#E93323",
         width: 220,
         height: 37,
         borderRadius: 20,
         border: "none",
         color: "white",
-        marginTop: 10,
+        display:'flex',
+        justifyContent:'center',
+        alignContent:'center',
+        alignItems:'center',
+        textDecoration:'none'
       }}
       >
         <p style={{ color: "#ffffff", fontWeight: "bold" }}>Inizia ora</p>
       </button>
+      </Link>
       <p>la prova gratuita di 30 giorni</p>
+      </div>
     </>
   );
 };

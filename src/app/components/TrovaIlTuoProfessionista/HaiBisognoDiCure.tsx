@@ -3,8 +3,8 @@ import React from "react";
 const TrovaIlTuoProfessionista = () => {
   return (
     <>
-      <div className="paragrafidivisi">
-        <div style={{width:'60%'}}>
+      <div className="paragrafidivisi" style={{marginTop:'100px', marginLeft:'20px', marginRight:'20px'}}>
+        <div style={{width:'60%', marginRight:'10px', textAlign:'left'}}>
           <p className="titleAll">Hai bisogno di cure?</p>
           <p>
             Con Fastcura troverai infermieri, Caregiver Fisioterapisti, pronti a

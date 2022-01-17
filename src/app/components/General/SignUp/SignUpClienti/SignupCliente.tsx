@@ -37,11 +37,12 @@ const SignUpClient = () => {
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Password"
+          type={'password'}
         ></TextField>
         <TextField
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
-          label="Data di nascita"
+         type={'date'}
         ></TextField>
         <TextField
           style={{ width: 310, marginTop: 10 }}
