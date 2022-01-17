@@ -1,5 +1,6 @@
 import { Box, TextField } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -32,6 +33,7 @@ const Login = () => {
             marginTop:'40px',
           }} label="Password" type={"password"} />
       </Box>
+      <Link to="/professionista" >
       <button
         style={{
           marginTop:'40px',
@@ -47,6 +49,7 @@ const Login = () => {
       >
         Entra
       </button>
+      </Link>
       <p>Hai dimenticato la password?</p>
     </>
   );

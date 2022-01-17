@@ -1,6 +1,7 @@
 import { Box } from "@mui/system";
 import React from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const BoxSearch = () => {
  
@@ -51,7 +52,7 @@ const BoxSearch = () => {
          renderInput={(params) => <TextField {...params} label="Milano, Napoli, Roma, ecc..." />}
        />
       </Box>
-
+      <Link to="/risultati">
       <button
             style={{
               width: '120px',
@@ -65,6 +66,7 @@ const BoxSearch = () => {
               fontSize:'18px'
             }}
           >Vai</button>
+          </Link>
     </>
   );
 };
