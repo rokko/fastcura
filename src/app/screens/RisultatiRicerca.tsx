@@ -6,6 +6,7 @@ const RisultatiRicerca = () => {
     return(
         <>
         <Header />
+        <h1>Infermiere, Segrate</h1>
        <BoxRisultato />
        <BoxRisultato />
        <BoxRisultato />
