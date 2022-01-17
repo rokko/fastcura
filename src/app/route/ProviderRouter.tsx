@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import SignUpClient from '../components/General/SignUp/SignUpClienti/SignUpClienti';
+import SignUpClient from '../components/General/SignUp/SignUpClienti/SignupCliente';
 import SignUpProfessionista from '../components/General/SignUp/SignUpProfessionista/SignUpProfessionista';
 import HomePage from '../screens/HomePage';
 import TrovaIlTuoProfessionista from '../screens/TrovaIlTuoProfessionista';
