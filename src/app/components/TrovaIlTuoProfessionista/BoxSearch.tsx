@@ -38,7 +38,7 @@ const BoxSearch = () => {
          options={options}
          size="small"
          sx={{ width: '240px', border:'none', outline:'false'}}
-         style={{backgroundColor:'#ffffff', border:'none', borderRadius:'30px'}}
+         style={{backgroundColor:'#ffffff', border:'none'}}
          renderInput={(params) => <TextField {...params} label="Infermiere..." />}
        />
         <p className="topsearch-text">Dove ti trovi?</p>
@@ -48,7 +48,7 @@ const BoxSearch = () => {
          options={city}
          size="small"
          sx={{ width: '240px' }}
-         style={{backgroundColor:'#ffffff', borderRadius:'30px'}}
+         style={{backgroundColor:'#ffffff'}}
          renderInput={(params) => <TextField {...params} label="Milano..." />}
        />
       </Box>

@@ -118,8 +118,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
           disablePortal
           id="lista-professioni"
           options={prof}
-          size="small"
-          sx={{ width: 310, marginTop: 5 }}
+          sx={{ width: 310, marginTop:1.5 }}
           style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
           renderInput={(params) => (
             <TextField {...params} label="Es Infermiere..." />
@@ -133,8 +132,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="green-pass"
               options={primo}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="GreenPass" />
@@ -145,8 +143,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="referenze"
               options={reference}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Referenze" />
@@ -157,8 +154,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="anni-italia"
               options={anniItalia}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Anni in Italia" />
@@ -169,8 +165,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="esperienza"
               options={anniItalia}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Esperienza" />
@@ -181,8 +176,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="lavoro-terminato"
               options={lavoro}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Motivazione termine lavoro" />
@@ -193,8 +187,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="conoscenza-italiano"
               options={conoita}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5}}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Conoscenza italiano" />
@@ -205,8 +198,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="titolo-studio"
               options={tit}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Titolo Studio" />
@@ -216,14 +208,13 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
             </>
         )}
 
-        {professione !== "Badante" && (
+        {(professione !== "Badante" && !!professione) && (
           <>
             <Autocomplete
               disablePortal
               id="dichiarazione"
               options={primo}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="In possesso di diploma di Laurea" />
@@ -234,8 +225,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="dichiarazione-assicurazione"
               options={primo}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Sono assicurato?" />
@@ -246,8 +236,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
               disablePortal
               id="lista-professioni"
               options={primo}
-              size="small"
-              sx={{ width: 310, marginTop: 5 }}
+              sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
                 <TextField {...params} label="Precedente Penale" />
@@ -265,7 +254,7 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
           </>
         )}
 
-        <FormGroup>
+        <FormGroup >
           <FormControlLabel
             control={<Checkbox defaultChecked />}
             label="Acconsento all'utilizzo dei dati personali"
