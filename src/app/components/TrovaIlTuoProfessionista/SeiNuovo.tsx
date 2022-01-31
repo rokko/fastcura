@@ -7,8 +7,8 @@ const SeiNuovo = () => {
         Sei nuovo?
       </p>
 
-      <div style={{ display: "flex", flexDirection: "row" , justifyContent:'space-around', alignContent:'center', alignItems:'center'}}>
-        <div style={{  display:'flex' , alignContent:'center', flexDirection:'column'}}>
+      <div style={{  display: "flex", flexDirection: "row" ,padding:40, justifyContent:'center', alignContent:'center', alignItems:'center'}}>
+        <div style={{  height:'300px',display:'flex' ,margin:20,alignContent:'center', alignItems:'center', flexDirection:'column'}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -125,21 +125,25 @@ const SeiNuovo = () => {
           <Link to="/signup-cliente">
           <button
             style={{
-              width: '120px',
+              display:'flex',
+              alignContent:'center',
+              alignItems:'center',
+              justifyContent:'center',
+              width: '130px',
               height: 30,
               backgroundColor: "#FF3617",
               fontWeight: "bold",
               border: "none",
-              marginTop: 20,
+              marginTop: 19,
               borderRadius: 20,
               color: "#ffffff",
             }}
           >
-            <p style={{fontSize:'10px'}}>Ho bisogno di cure</p>
+            <p style={{fontSize:'10px', color:'white'}}>Ho bisogno di cure</p>
           </button>
           </Link>
         </div>
-        <div style={{  display:'flex' , alignContent:'center', flexDirection:'column'}}>
+        <div style={{  height:'300px', display:'flex' ,margin:20, alignContent:'center', alignItems:'center', flexDirection:'column'}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -357,17 +361,21 @@ const SeiNuovo = () => {
           </svg>
             <Link to="/signup-professionista">
           <button
-            style={{
-              width: '120px',
+            style={{ 
+              display:'flex',
+            alignContent:'center',
+            alignItems:'center',
+            justifyContent:'center',
+            width: '130px',
               height: 30,
               backgroundColor: "#FF3617",
               fontWeight: "bold",
               border: "none",
-              marginTop: 20,
+              marginTop: 10,
               borderRadius: 20,
               color: "#ffffff",
             }}
-          ><p style={{fontSize:'10px'}}>
+          ><p style={{fontSize:'10px', color:'white'}}>
            
             Sono un professionista
             </p>
