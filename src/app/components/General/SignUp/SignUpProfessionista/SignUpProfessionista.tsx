@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TextField,
   FormGroup,
   FormControlLabel,
   Checkbox,
+  Autocomplete,
 } from "@mui/material";
 import Header from "../../../HomepageComponent/Header";
 
 const SignUpProfessionista = () => {
+  const [cognome, setCognome] = useState<String | null>();
+  const [nome, setNome] = useState<String>();
+  const [email, setEmail] = useState<String>();
+  const [password, setPassword] = useState<String>();
+  const [data, setData] = useState<String>();
+  const [sesso, setSesso] = useState<String>();
+  const [cap, setCap] = useState<String>();
+  const [cellulare, setCellulare] = useState<String>();
+  const [professione, setProfessione] = useState<String | null>();
+  const [greenpass, setGreenpass] = useState<String | null> ();
+  const [referenze, setReferenze] = useState<String | null> ()  
+  const [anni, setAnni] = useState<String | null>()
+  const [anniEsperienza, setAnniEsperienza] = useState<String | null>()
+  const [terminelavoro, setTerminelavoro] = useState<String|null>()
+  const [livelloItaliano, setLivelloItaliano] = useState <String | null>()
+  const [titoloStudio, setTitoloStudio] = useState <String|null>()
+  const [dichiarazione,setDichiarazione] = useState <String | null>()
+  const [numeroiscrizione, setNumeroiscrizione] = useState <String|null>()
+  const [assicurazione, setAssicurazione] = useState<String|null>()
+  const [precedente, setPrecedente] = useState<String | null>()
+console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpass, referenze, anni, anniEsperienza, terminelavoro,livelloItaliano, titoloStudio,dichiarazione, numeroiscrizione,assicurazione, precedente)
+  const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
+  const primo = ["SI", "NO"];
+  const reference = ["Una", "Due","Piu di due"]
+  const anniItalia = ["0-3 Anni ", "3-5" , "piu di 5"]
+  const lavoro = ['Morte Paziente','Dimissioni','Licenziamento','Nessuna' ]
+  const conoita = ['Ottimo', 'Buono', 'Sufficiente', 'Insufficiente', 'Scarso']
+  const tit = ['Laurea','Scuole Superiori','Diploma (O.S.S., A.S.A.)']
   return (
     <>
       <Header />
@@ -17,54 +46,225 @@ const SignUpProfessionista = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          marginBottom: 30,
         }}
       >
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setCognome(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Cognome"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setNome(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Nome"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setEmail(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Indirizzo email"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setPassword(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           type={"password"}
           label="Password"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setData(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
-          type={'date'}
+          type={"date"}
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setSesso(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Sesso"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setCap(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Codice postale"
         ></TextField>
         <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setCellulare(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Cellulare"
         ></TextField>
-        <TextField
+        <Autocomplete
+          disablePortal
+          id="lista-professioni"
+          options={prof}
+          size="small"
+          sx={{ width: 310, marginTop: 5 }}
+          style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+          renderInput={(params) => (
+            <TextField {...params} label="Es Infermiere..." />
+          )}
+          onChange={(x, value) => setProfessione(value)}
+        />
+
+        {professione === "Badante" && (
+          <>
+            <Autocomplete
+              disablePortal
+              id="green-pass"
+              options={primo}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="GreenPass" />
+              )}
+              onChange={(x, value) => setGreenpass(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="referenze"
+              options={reference}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Referenze" />
+              )}
+              onChange={(x, value) => setReferenze(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="anni-italia"
+              options={anniItalia}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Anni in Italia" />
+              )}
+              onChange={(x, value) => setAnni(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="esperienza"
+              options={anniItalia}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Esperienza" />
+              )}
+              onChange={(x, value) => setAnniEsperienza(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="lavoro-terminato"
+              options={lavoro}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Motivazione termine lavoro" />
+              )}
+              onChange={(x, value) => setTerminelavoro(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="conoscenza-italiano"
+              options={conoita}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Conoscenza italiano" />
+              )}
+              onChange={(x, value) => setLivelloItaliano(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="titolo-studio"
+              options={tit}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Titolo Studio" />
+              )}
+              onChange={(x, value) => setTitoloStudio(value)}
+              />
+            </>
+        )}
+
+        {professione !== "Badante" && (
+          <>
+            <Autocomplete
+              disablePortal
+              id="dichiarazione"
+              options={primo}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="In possesso di diploma di Laurea" />
+              )}
+              onChange={(x, value) => setDichiarazione(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="dichiarazione-assicurazione"
+              options={primo}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Sono assicurato?" />
+              )}
+              onChange={(x, value) => setAssicurazione(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="lista-professioni"
+              options={primo}
+              size="small"
+              sx={{ width: 310, marginTop: 5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Precedente Penale" />
+              )}
+              onChange={(x, value) => setPrecedente(value)}
+            />
+            <TextField
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setNumeroiscrizione(x.target.value)
+          }
           style={{ width: 310, marginTop: 10 }}
-          id="outlined-size-small "
-          label="Specialità"
+          id="outlined-size-small"
+          label="Numero Iscrizione "
         ></TextField>
+          </>
+        )}
+
         <FormGroup>
           <FormControlLabel
             control={<Checkbox defaultChecked />}
@@ -86,6 +286,7 @@ const SignUpProfessionista = () => {
           border: "none",
           color: "white",
           marginTop: 10,
+          marginBottom: 20,
         }}
       >
         Iscriviti

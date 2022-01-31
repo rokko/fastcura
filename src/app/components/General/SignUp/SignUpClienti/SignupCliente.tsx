@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+
 import {
   TextField,
   FormGroup,
@@ -7,6 +8,19 @@ import {
 } from "@mui/material";
 import Header from "../../../HomepageComponent/Header";
 const SignUpClient = () => {
+
+  const [cognome  , setCognome] = useState <String>()
+  const [nome, setNome] = useState<String>()
+  const [email, setEmail] = useState<String>()
+  const [password,setPassword] = useState<String>()
+  const [ data, setData] = useState<String>()
+  const [sesso, setSesso] = useState<String>()
+  const [cap, setCap] = useState<String>()
+  const [cellulare, setCellulare] = useState<String>()
+
+
+  console.log(cognome, nome, email, password, data, sesso, cap, cellulare)
+
   return (
     <>
       <Header />
@@ -19,42 +33,57 @@ const SignUpClient = () => {
         }}
       >
         <TextField
+        onChange={(x:React.ChangeEvent<HTMLInputElement>) => setCognome(x.target.value)}
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Cognome"
         ></TextField>
         <TextField
+                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setNome(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Nome"
         ></TextField>
         <TextField
+                        onChange={(x:React.ChangeEvent<HTMLInputElement>) => setEmail(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Indirizzo email"
         ></TextField>
         <TextField
+                                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setPassword(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Password"
           type={'password'}
         ></TextField>
         <TextField
+                                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setData(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
          type={'date'}
         ></TextField>
         <TextField
+                                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setSesso(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Sesso"
         ></TextField>
         <TextField
+                                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setCap(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Codice postale"
         ></TextField>
         <TextField
+                                onChange={(x:React.ChangeEvent<HTMLInputElement>) => setCellulare(x.target.value)}
+
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
           label="Cellulare"

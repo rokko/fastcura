@@ -7,7 +7,7 @@ const BoxSearch = () => {
  
   
 
-  const options = ['Infermiere', 'Badante', 'Fisioterapista','Cardiologo'];
+  const options = ['Infermiere', 'Badante', 'Fisioterapista','Oss'];
   const city = ['Bari', 'Napoli', 'Salerno', 'Roma', 'Milano', 'Bologna']
   return (
     <>
@@ -39,7 +39,7 @@ const BoxSearch = () => {
          size="small"
          sx={{ width: '240px', border:'none', outline:'false'}}
          style={{backgroundColor:'#ffffff', border:'none', borderRadius:'30px'}}
-         renderInput={(params) => <TextField {...params} label="Infermiere, badante, fisio..." />}
+         renderInput={(params) => <TextField {...params} label="Infermiere..." />}
        />
         <p className="topsearch-text">Dove ti trovi?</p>
         <Autocomplete
@@ -49,7 +49,7 @@ const BoxSearch = () => {
          size="small"
          sx={{ width: '240px' }}
          style={{backgroundColor:'#ffffff', borderRadius:'30px'}}
-         renderInput={(params) => <TextField {...params} label="Milano, Napoli, Roma, ecc..." />}
+         renderInput={(params) => <TextField {...params} label="Milano..." />}
        />
       </Box>
       <Link to="/risultati">
