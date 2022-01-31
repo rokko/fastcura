@@ -17,11 +17,11 @@ const Login = () => {
         <p className="topsearch-text">Accedi</p>
         <TextField
           size={"small"}
+          hiddenLabel
           sx={{
             width: "240px",
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
-            borderRadius:"30px"
           }}
           label="Indirizzo email"
         />
@@ -29,7 +29,6 @@ const Login = () => {
             width: "240px",
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
-            borderRadius:"30px",
             marginTop:'40px',
           }} label="Password" type={"password"} />
       </Box>
