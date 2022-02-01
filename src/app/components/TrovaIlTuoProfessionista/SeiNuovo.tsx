@@ -122,7 +122,7 @@ const SeiNuovo = () => {
               />
             </g>
           </svg>
-          <Link to="/signup-cliente">
+          <Link style={{textDecoration:'none'}} to="/signup-cliente">
           <button
             style={{
               display:'flex',
@@ -359,7 +359,7 @@ const SeiNuovo = () => {
               </g>
             </g>
           </svg>
-            <Link to="/signup-professionista">
+            <Link style={{textDecoration:'none'}} to="/signup-professionista">
           <button
             style={{ 
               display:'flex',

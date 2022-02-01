@@ -11,7 +11,7 @@ const Header = () => {
           marginTop: 10,
           alignContent: "center",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           height: 90,
         }}
       >

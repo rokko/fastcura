@@ -207,7 +207,7 @@ const SeiUnProfessionista = () => {
           />
         </g>
       </svg>
-      <Link to="/signup-professionista">
+      <Link style={{textDecoration:'none'}} to="/signup-professionista">
       <button
        style={{
         marginTop:'50px',
@@ -224,7 +224,7 @@ const SeiUnProfessionista = () => {
         textDecoration:'none'
       }}
       >
-        <p style={{ color: "#ffffff", fontWeight: "bold" }}>Inizia ora</p>
+        <p style={{ color: "#ffffff", fontWeight: "bold", textDecoration:'none' }}>Inizia ora</p>
       </button>
       </Link>
       <p>la prova gratuita di 30 giorni</p>
