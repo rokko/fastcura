@@ -4,7 +4,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 
 const AccordionPrestazioni = () => {
-  const [expanded, setExpanded] = React.useState<String|false>("panel1");
+  const [expanded, setExpanded] = React.useState<String|false>(false);
   const handleChange =(panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
     setExpanded(newExpanded ? panel : false);
   };
