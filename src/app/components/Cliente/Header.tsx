@@ -1,9 +1,11 @@
 import { Box } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
+
       <Box
         style={{
           width: "100%",
@@ -17,6 +19,7 @@ const Header = () => {
           
         }}
       >
+        <Link to="/">
         <svg
         style={{marginLeft:'20px'}}
           id="Raggruppa_16"
@@ -75,6 +78,8 @@ const Header = () => {
             fill="#fff"
           />
         </svg>
+        </Link>
+
         <div style={{marginRight:'20px'}}>
           <svg style={{marginRight:'10px'}}
             id="Icon_ionic-md-chatbubbles"
