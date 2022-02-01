@@ -37,9 +37,13 @@ const BoxSearch = () => {
          id="lista-servizi"
          options={options}
          size="small"
-         sx={{ width: '240px', border:'none', outline:'false'}}
+         sx={{ width: '240px', border:'none', outline:'false', borderRadius:'30px',
+        '& .MuiOutlinedInput-root':{
+          borderColor:'#ffffff',
+          borderRadius:'30px'
+        },}}
          style={{backgroundColor:'#ffffff', border:'none'}}
-         renderInput={(params) => <TextField {...params} label="Infermiere..." />}
+         renderInput={(params) => <TextField {...params} placeholder="Infermiere..." />}
        />
         <p className="topsearch-text">Dove ti trovi?</p>
         <Autocomplete
@@ -47,9 +51,12 @@ const BoxSearch = () => {
          id="lista-servizi"
          options={city}
          size="small"
-         sx={{ width: '240px' }}
+         sx={{ width: '240px',border:'none', outline:'false', borderRadius:'30px','& .MuiOutlinedInput-root':{
+          borderColor:'#ffffff',
+          borderRadius:'30px'
+        }, }}
          style={{backgroundColor:'#ffffff'}}
-         renderInput={(params) => <TextField {...params} label="Milano..." />}
+         renderInput={(params) => <TextField {...params} placeholder="Milano..." />}
        />
       </Box>
       <Link to="/risultati">

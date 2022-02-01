@@ -18,7 +18,7 @@ const SignUpClient = () => {
   const [cap, setCap] = useState<String>()
   const [cellulare, setCellulare] = useState<String>()
 
-
+  
   console.log(cognome, nome, email, password, data, sesso, cap, cellulare)
 
   return (

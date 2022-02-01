@@ -1,4 +1,5 @@
 import React from 'react'
+import CronologiaPrestazioni from '../components/Professionista/CronologiaPrestazioni'
 import Header from '../components/Professionista/Header'
 
 const Professionista = () => {
@@ -15,6 +16,7 @@ const Professionista = () => {
         <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:'#39B1D9', height:'40px', borderRadius:'30px',border:'none', color:'white', fontWeight:'bold', fontSize:'17px', }} ><p style={{color:'white'}}>Aggiorna Curriculum</p></button>
         <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:'#39B1D9', height:'40px', borderRadius:'30px',border:'none', color:'white', fontWeight:'bold', fontSize:'17px', }} ><p style={{color:'white'}}>Piano Abbonamento</p></button>
         </div>
+        <CronologiaPrestazioni/>
         </div>
         </>
     )

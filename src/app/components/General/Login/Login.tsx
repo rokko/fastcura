@@ -22,15 +22,28 @@ const Login = () => {
             width: "240px",
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
+            borderRadius:'30px',
+            '& .MuiOutlinedInput-root':{
+              borderColor:'#ffffff',
+              borderRadius:'30px',
+            }
           }}
-          label="Indirizzo email"
+          placeholder="Indirizzo email"
         />
-        <TextField size={'small'}  sx={{
+        <TextField size={'small'}  
+        sx={{
             width: "240px",
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
+            borderRadius:'30px',
+            '& .MuiOutlinedInput-root':{
+              borderColor:'#ffffff',
+              borderRadius:'30px'
+            },
             marginTop:'40px',
-          }} label="Password" type={"password"} />
+          }}            
+           type={"password"} 
+           placeholder="Password"/>
       </Box>
       <Link to="/professionista" >
       <button
