@@ -4,6 +4,7 @@ const AggiornaCurriculum = () => {
 
     return(
         <>
+        <p>Aggiorna curriculm</p>
         </>
     )
 }

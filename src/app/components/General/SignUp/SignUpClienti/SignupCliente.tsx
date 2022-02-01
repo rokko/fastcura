@@ -17,8 +17,14 @@ const SignUpClient = () => {
   const [sesso, setSesso] = useState<String>()
   const [cap, setCap] = useState<String>()
   const [cellulare, setCellulare] = useState<String>()
+  const [handleCheck, setHandleCheck] = useState<boolean>(true)
+  const [handleCheck2, setHandleCheck2] = useState<boolean>(true)
 
-  
+
+  const sendRegister = () => {
+    console.log('ok')
+  }
+  sendRegister()
   console.log(cognome, nome, email, password, data, sesso, cap, cellulare)
 
   return (
@@ -90,11 +96,12 @@ const SignUpClient = () => {
         ></TextField>
          <FormGroup >
         <FormControlLabel
-          control={<Checkbox defaultChecked />}
+          control={<Checkbox checked={handleCheck2} onChange={(x)=>setHandleCheck2(!handleCheck2)} />}
           label="Acconsento all'utilizzo dei dati personali"
         />
         <FormControlLabel
-          control={<Checkbox defaultChecked />}
+          control={<Checkbox  checked={handleCheck} onChange={(x)=>setHandleCheck(!handleCheck)}/>}
+
           label="Accetto termini e condizioni"
         />{" "}
       </FormGroup>
@@ -102,6 +109,7 @@ const SignUpClient = () => {
      
 
       <button
+      disabled={(!!cognome && !!nome && !!email && !!password && !!data && !!sesso && !!cap && !!cellulare && !!handleCheck && !!handleCheck2 ) ? false : true }
         style={{
           backgroundColor: "#39B1D9",
           width: 220,
@@ -111,6 +119,7 @@ const SignUpClient = () => {
           color: "white",
           marginTop: 10,
         }}
+        onClick={()=> console.log('registrato')}
       >
         Iscriviti
       </button>
