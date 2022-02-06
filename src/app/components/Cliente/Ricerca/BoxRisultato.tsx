@@ -6,6 +6,7 @@ const BoxRisultato = () => {
     <>
       <div
         style={{
+          marginTop:'30px',
           display: "flex",
           flexDirection: "row",
           alignContent: "center",

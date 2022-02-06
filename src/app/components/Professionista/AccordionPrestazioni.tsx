@@ -23,15 +23,14 @@ const AccordionPrestazioni = () => {
             aria-controls="panel1d-content"
             id="panel1d-header"
           >
-            <p>Collapsible Group Item #1</p>
+            <p>Marco Marino </p>
           </MuiAccordionSummary>
           <MuiAccordionDetails>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
+              Effettuato in data 26/20/2021 <br/>
+              Presso Via Roma, 5 - Napoli <br/>
+              Pagamento: +50€ <br/>
+              Valutazione cliente : ★★★★★<br/>
             </p>
           </MuiAccordionDetails>
         </MuiAccordion>

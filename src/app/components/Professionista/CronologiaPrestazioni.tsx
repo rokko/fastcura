@@ -9,6 +9,11 @@ const CronologiaPrestazioni = ()=> {
         <Box style={{height:30, width:'100%'}}>
             
             <AccordionPrestazioni/>
+            <AccordionPrestazioni/>
+            <AccordionPrestazioni/>
+            <AccordionPrestazioni/>
+            <AccordionPrestazioni/>
+
         </Box>
         </>
     )

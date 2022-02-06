@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import Header from "../Cliente/Header";
 
@@ -5,7 +6,7 @@ const ProfiloProfessionista = () => {
   return (
     <>
       <Header />
-
+ <Box style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <div
         style={{
           display: "flex",
@@ -113,10 +114,17 @@ const ProfiloProfessionista = () => {
         </div>
      
       </div>
-      <p>Professione</p>
-      <p>Eta</p>
-      <p>Luogo</p>
-      <p>Curriculum</p>
+      <Box style={{display:'flex', flexDirection:'column', textAlign:'left', padding:'30px'}}>
+      <p>Professione : Infermiere<br/>
+      Eta: 33<br/>
+      Luogo: Bari<br/>
+      Curriculum</p>
+      <Box style={{backgroundColor:'#F4F4F4', width:'300px', height:'400px', borderRadius:'30px'}}>
+        
+
+      </Box>
+      </Box>
+      </Box>
     </>
   );
 };
