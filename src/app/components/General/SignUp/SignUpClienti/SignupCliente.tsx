@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from 'axios'
 
 import {
   TextField,
@@ -20,11 +21,41 @@ const SignUpClient = () => {
   const [handleCheck, setHandleCheck] = useState<boolean>(true)
   const [handleCheck2, setHandleCheck2] = useState<boolean>(true)
 
+  const nuovoCliente = {
+    cognome : cognome,
+    nome : nome,
+    email : email,
+    password : password,
+    data : data,
+    sesso : sesso,
+    cap : cap,
+    cellulare : cellulare 
+  }
+
 
   const sendRegister = () => {
+    const datinuovoCliente = JSON.stringify(nuovoCliente)
+    console.log(datinuovoCliente)
     console.log('ok')
+    
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/cliente/signup',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : datinuovoCliente})
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+
   }
-  sendRegister()
   console.log(cognome, nome, email, password, data, sesso, cap, cellulare)
 
   return (
@@ -119,7 +150,7 @@ const SignUpClient = () => {
           color: "white",
           marginTop: 10,
         }}
-        onClick={()=> console.log('registrato')}
+        onClick={()=> sendRegister()}
       >
         Iscriviti
       </button>
