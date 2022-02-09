@@ -1,4 +1,5 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive';
 import Header from '../components/TrovaIlTuoProfessionista/Header'
 import BoxSearch from '../components/TrovaIlTuoProfessionista/BoxSearch'
 import Lavagna from '../components/TrovaIlTuoProfessionista/Lavagna'
@@ -10,13 +11,19 @@ import SeiUnProfessionista from '../components/TrovaIlTuoProfessionista/SeiUnPro
 import Login from '../components/General/Login/Login'
 import SeiNuovo from '../components/TrovaIlTuoProfessionista/SeiNuovo'
 const TrovaIlTuoProfessionista = () => {
-
+ const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+ if (!isMobile) return(
+     <>
+     <Header/>
+     </>
+ )
+ else
 return(
     <>
     <Header/>
-    <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center', flexDirection:'column'}}>
-
+    <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%'}}>
     <BoxSearch />
+   
     <Lavagna />
     <HaiBisognoDiCure />
     <ProblemaRisolto/>

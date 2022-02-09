@@ -1,8 +1,29 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import { Link,  useLocation } from "react-router-dom";
 import React from "react";
 import Header from "../Cliente/Header";
 
+
+ interface IDettagliProfessionista{
+   nome : string,
+   cognome : string,
+   citta : string ,
+   professione: string,
+   eta: number,
+
+}
 const ProfiloProfessionista = () => {
+  const location = useLocation()
+
+  let ValoriParametri = location.state as any
+  const professio : IDettagliProfessionista={
+    nome: ValoriParametri.nome,
+    cognome: ValoriParametri.cognome,
+    citta : ValoriParametri.citta,
+    professione: ValoriParametri.professione,
+    eta : ValoriParametri.eta
+  }
+
   return (
     <>
       <Header />
@@ -28,7 +49,7 @@ const ProfiloProfessionista = () => {
           <p></p>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <p style={{ fontSize: "14px", alignSelf: "flex-start" }}>Pasquale</p>
+          <p style={{ fontSize: "14px", alignSelf: "flex-start" }}>{professio.nome}</p>
           <div style={{ display: "flex", flexDirection: "row" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,13 +132,13 @@ const ProfiloProfessionista = () => {
               />
             </svg>
           </div>
+          <Link to="/chat" state={{ValoriParametri}} ><Button  style={{backgroundColor:'#39B1D9', width:'110px', height:'30px', marginTop:'20px', textTransform:'none', borderRadius:'30px', textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>Contatta</p></Button></Link>
         </div>
      
       </div>
       <Box style={{display:'flex', flexDirection:'column', textAlign:'left', padding:'30px'}}>
-      <p>Professione : Infermiere<br/>
-      Eta: 33<br/>
-      Luogo: Bari<br/>
+      <p>Professione : {professio.professione}<br/>
+      Luogo: {professio.citta}<br/>
       Curriculum</p>
       <Box style={{backgroundColor:'#F4F4F4', width:'300px', height:'400px', borderRadius:'30px'}}>
         

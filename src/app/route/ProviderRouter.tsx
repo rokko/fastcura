@@ -21,7 +21,7 @@ const ProviderRouter = () => {
           <Route path="/landing-professionista" element = { <HomePage />} />
           <Route path="/signup-professionista" element = { <SignUpProfessionista />} />
           <Route path="/signup-cliente" element= {<SignUpClient />}/>
-          <Route path="/professionista" element= {<Professionista />}/>
+          <Route path="/professionista"  element= {<Professionista />}/>
           <Route path="/risultati" element={<RisultatiRicerca />}/>
           <Route path="/incostruzione" element={<InCostruzione />}/>
           <Route path="/chat" element={<ChatProfessionista/>}/>

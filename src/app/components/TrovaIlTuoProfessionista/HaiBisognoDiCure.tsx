@@ -2,8 +2,9 @@ import React from "react";
 
 const TrovaIlTuoProfessionista = () => {
   return (
-    <>
-      <div className="paragrafidivisi" style={{marginTop:'100px', marginLeft:'20px', marginRight:'20px'}}>
+  
+    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'center', alignContent:'center', alignItems:'center', height:'300px', marginTop:'20px'}}>
+      <div className="paragrafidivisi" style={{marginLeft:'20px', marginRight:'20px'}}>
         <div style={{width:'60%', marginRight:'10px', textAlign:'left'}}>
           <p className="titleAll">Hai bisogno di cure?</p>
           <p>
@@ -676,7 +677,7 @@ const TrovaIlTuoProfessionista = () => {
           />
         </svg>
       </div>
-    </>
+      </div>
   );
 };
 

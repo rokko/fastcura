@@ -1,21 +1,28 @@
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
-
 const BoxSearch = () => {
  
   
 
   const options = ['Infermiere', 'Badante', 'Fisioterapista','Oss'];
   const city = ['Bari', 'Napoli', 'Salerno', 'Roma', 'Milano', 'Bologna']
+
+  const [professione, setProfessione]= useState<String | null>('')
+  const [citta, setCitta] = useState<String|null>('')
+
+
+  console.log(professione)
+  console.log(citta)
+
+  
   return (
     <>
-      <div className="top-box">
-        <p className="top-test boldtext">
-          Trova subito il <br />{" "}
-          <span className="bluespan">professionista</span> <br /> di cui hai
-          bisogno!
+      <div>
+        <p className="top-test boldtext" style={{color:'#000000', textAlign:'left'}}>
+          L'<span className="bluespan">assistenza </span><br />{" "}
+          domiciliare a<br/>portata di <span className="bluespan">click</span> 
         </p>
       </div>
       <Box
@@ -43,12 +50,15 @@ const BoxSearch = () => {
           borderRadius:'30px'
         },}}
          style={{backgroundColor:'#ffffff', border:'none'}}
-         renderInput={(params) => <TextField {...params} placeholder="Infermiere..." />}
+
+        
+         renderInput={(params) => <TextField   {...params} placeholder="Infermiere..." />}
+         onChange={(x, value)=> setProfessione(value)}
        />
         <p className="topsearch-text">Dove ti trovi?</p>
         <Autocomplete
          disablePortal
-         id="lista-servizi"
+         id="lista-citta"
          options={city}
          size="small"
          sx={{ width: '240px',border:'none', outline:'false', borderRadius:'30px','& .MuiOutlinedInput-root':{
@@ -57,9 +67,12 @@ const BoxSearch = () => {
         }, }}
          style={{backgroundColor:'#ffffff'}}
          renderInput={(params) => <TextField {...params} placeholder="Milano..." />}
+         onChange={(x,value)=> setCitta(value)}
        />
       </Box>
-      <Link to="/risultati">
+      <Link to='/risultati'
+      state={{professione, citta}}
+         >
       <button
             style={{
               width: '120px',

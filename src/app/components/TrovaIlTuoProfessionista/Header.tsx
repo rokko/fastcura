@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "@mui/material";
 import ButtonIscriviti from "./ButtonIscriviti";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
           justifyContent: "space-between",
           height: 90,
         }}
-      >
+      ><Link to="/landing-professionista">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="123.439"
@@ -132,6 +133,7 @@ const Header = () => {
             />
           </g>
         </svg>
+        </Link>
 
         <ButtonIscriviti />
         <div>

@@ -3,7 +3,8 @@ import React from "react";
 const ChattaDirettamente = () => {
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row",marginTop:'100px', marginLeft:'20px', marginRight:'20px' }}>
+    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'center', alignContent:'center', alignItems:'center', height:'300px', marginTop:'20px'}}>
+      <div style={{ display: "flex", flexDirection: "row", marginLeft:'20px', marginRight:'20px' }}>
         <div style={{ width: "80%", marginLeft:'10px', textAlign:'left'}}>
           <p className="titleAll">Chatta direttamente con il professionista</p>
           <p>
@@ -226,6 +227,7 @@ const ChattaDirettamente = () => {
             />
           </g>
         </svg>
+      </div>
       </div>
     </>
   );

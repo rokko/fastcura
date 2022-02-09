@@ -6,6 +6,7 @@ import {
   Checkbox,
   Autocomplete,
 } from "@mui/material";
+import axios from 'axios'
 import Header from "../../../HomepageComponent/Header";
 
 const SignUpProfessionista = () => {
@@ -15,7 +16,7 @@ const SignUpProfessionista = () => {
   const [password, setPassword] = useState<String>();
   const [data, setData] = useState<String>();
   const [sesso, setSesso] = useState<String>();
-  const [cap, setCap] = useState<String>();
+  const [citta, setCitta] = useState<String>();
   const [cellulare, setCellulare] = useState<String>();
   const [professione, setProfessione] = useState<String | null>();
   const [greenpass, setGreenpass] = useState<String | null> ();
@@ -29,7 +30,7 @@ const SignUpProfessionista = () => {
   const [numeroiscrizione, setNumeroiscrizione] = useState <String|null>()
   const [assicurazione, setAssicurazione] = useState<String|null>()
   const [precedente, setPrecedente] = useState<String | null>()
-console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpass, referenze, anni, anniEsperienza, terminelavoro,livelloItaliano, titoloStudio,dichiarazione, numeroiscrizione,assicurazione, precedente)
+console.log(cognome, nome,email, password, data, sesso, citta, cellulare, greenpass, referenze, anni, anniEsperienza, terminelavoro,livelloItaliano, titoloStudio,dichiarazione, numeroiscrizione,assicurazione, precedente)
   const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due","Piu di due"]
@@ -37,6 +38,44 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
   const lavoro = ['Morte Paziente','Dimissioni','Licenziamento','Nessuna' ]
   const conoita = ['Ottimo', 'Buono', 'Sufficiente', 'Insufficiente', 'Scarso']
   const tit = ['Laurea','Scuole Superiori','Diploma (O.S.S., A.S.A.)']
+
+
+  const nuovoProfessionista = {
+    cognome: cognome,
+    email : email,
+    nome : nome,
+    password : password,
+    data : data ,
+    sesso : sesso,
+    citta : citta,
+    cellulare : cellulare,
+    professione: professione,
+    greenpass : greenpass,
+    referenze : referenze,
+    anni : anni,
+    anniEsperienza: anniEsperienza,
+    terminelavoro : terminelavoro,
+    livelloItaliano: livelloItaliano,
+    titoloStudio : titoloStudio,
+    dichiarazione:dichiarazione,
+    numeroiscrizione: numeroiscrizione,
+    assicurazione: assicurazione,
+    precedente : precedente,
+
+  }
+  
+  const sendRegister = () => {
+    axios.post('http://localhost:3001/professionista/signup',nuovoProfessionista)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
+
+
   return (
     <>
       <Header />
@@ -100,11 +139,11 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
         ></TextField>
         <TextField
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-            setCap(x.target.value)
+            setCitta(x.target.value)
           }
           style={{ width: 310, marginTop: 10 }}
           id="outlined-size-small"
-          label="Codice postale"
+          label="Citta"
         ></TextField>
         <TextField
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -277,6 +316,8 @@ console.log(cognome, nome,email, password, data, sesso, cap, cellulare, greenpas
           marginTop: 10,
           marginBottom: 20,
         }}
+
+        onClick= { () => sendRegister()}
       >
         Iscriviti
       </button>

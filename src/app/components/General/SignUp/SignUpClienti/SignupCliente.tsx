@@ -39,13 +39,7 @@ const SignUpClient = () => {
     console.log('ok')
     
 
-    axios({
-      method: 'post',
-      url: 'http://localhost:3000/cliente/signup',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : datinuovoCliente})
+    axios.post('http://localhost:3001/cliente/signup',nuovoCliente)
 .then(function (response) {
   console.log(JSON.stringify(response.data));
 })

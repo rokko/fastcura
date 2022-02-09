@@ -1,7 +1,6 @@
 import { Box } from '@mui/system'
 import React from 'react'
 import AccordionPrestazioni from './AccordionPrestazioni'
-
 const CronologiaPrestazioni = ()=> {
 
     return(
