@@ -15,6 +15,20 @@ const TrovaIlTuoProfessionista = () => {
  if (!isMobile) return(
      <>
      <Header/>
+         <div style={{display:"flex", flexDirection:"column", }}>
+             <div>
+                 <BoxSearch></BoxSearch>
+             </div>
+             <HaiBisognoDiCure/>
+             <ProblemaRisolto/>
+             <ChattaDirettamente/>
+             <SeiUnProfessionista />
+             <div style={{display:"flex", flexDirection:'row', justifyContent:'space-around'}}>
+                 <Login/>
+                 <SeiNuovo/>
+             </div>
+
+         </div>
      </>
  )
  else
