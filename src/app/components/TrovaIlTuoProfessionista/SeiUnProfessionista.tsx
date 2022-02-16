@@ -7,7 +7,7 @@ const SeiUnProfessionista = () => {
       <>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-around'}}>
         <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-          <p className="titleAll">Sei un Professionista?</p>
+          <p className="titleAll" style={{fontSize:'32px'}}>Sei un Professionista?</p>
           <svg
               xmlns="http://www.w3.org/2000/svg"
               width="292.412"
@@ -211,7 +211,7 @@ const SeiUnProfessionista = () => {
             </g>
           </svg>
         </div>
-        <div>
+        <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
           <Link style={{textDecoration:'none'}} to="/signup-professionista">
             <button
                 style={{
@@ -232,7 +232,7 @@ const SeiUnProfessionista = () => {
               <p style={{ color: "#ffffff", fontWeight: "bold", textDecoration:'none' }}>Inizia ora</p>
             </button>
           </Link>
-          <p>la prova gratuita di 30 giorni</p>
+          <p style={{fontSize:'32px'}}>la prova gratuita di 30 giorni</p>
         </div>
         </div>
       </>

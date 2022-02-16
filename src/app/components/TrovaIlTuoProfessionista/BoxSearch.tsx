@@ -23,8 +23,8 @@ const BoxSearch = () => {
 
     if (!isMobile) return(
         <>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:"space-evenly", alignContent:'center', alignItems:'center'}}>
-            <div style={{display:'flex', flexDirection:'row', alignContent:'center', alignItems:'center'}}>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around", }}>
                 <Lavagna />
                 <p className="top-test boldtext" style={{color:'#000000', textAlign:'left', fontSize:'48px'}}>
                     L'<span className="bluespan">assistenza </span><br />{" "}

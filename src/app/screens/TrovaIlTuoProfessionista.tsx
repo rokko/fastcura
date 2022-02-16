@@ -15,19 +15,35 @@ const TrovaIlTuoProfessionista = () => {
  if (!isMobile) return(
      <>
      <Header/>
-         <div style={{display:"flex", flexDirection:"column", }}>
-             <div>
-                 <BoxSearch></BoxSearch>
+         <div style={{backgroundColor:'#F9F9F9'}}>
+         <div style={{margin:'auto',display:"flex",backgroundColor:'#ffffff', flexDirection:"column",justifyContent:'center', alignContent:'center',alignItems:'center', width:'80%' }}>
+             <div style={{marginTop:'50px', width:'100%'}}>
+                 <BoxSearch/>
              </div>
+             <div style={{marginTop:'50px', width:'100%'}}>
+
              <HaiBisognoDiCure/>
+             </div>
+             <div style={{marginTop:'50px', width:'100%'}}>
+
              <ProblemaRisolto/>
+             </div>
+             <div style={{marginTop:'50px', width:'100%'}}>
+
              <ChattaDirettamente/>
+             </div>
+             <div style={{marginTop:'50px', width:'100%'}}>
              <SeiUnProfessionista />
+             </div>
+            <div style={{width:'100%',marginTop:'100px', border: '1px solid #39B1D9', display:'inline-block'}}/>
+             <div style={{marginTop:'50px', width:'100%'}}>
              <div style={{display:"flex", flexDirection:'row', justifyContent:'space-around'}}>
                  <Login/>
                  <SeiNuovo/>
              </div>
+             </div>
 
+         </div>
          </div>
      </>
  )

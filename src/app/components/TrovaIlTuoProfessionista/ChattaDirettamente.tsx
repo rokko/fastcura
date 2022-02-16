@@ -1,13 +1,16 @@
 import React from "react";
+import {useMediaQuery} from "react-responsive";
 
 const ChattaDirettamente = () => {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+
   return (
     <>
-    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'center', alignContent:'center', alignItems:'center', height:'300px', marginTop:'20px'}}>
+    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'space-around', alignContent:'center', alignItems:'center', height:'400px'}}>
       <div style={{ display: "flex", flexDirection: "row", marginLeft:'20px', marginRight:'20px' }}>
         <div style={{ width: "80%", marginLeft:'10px', textAlign:'left'}}>
-          <p className="titleAll">Chatta direttamente con il professionista</p>
-          <p>
+          <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}}>Chatta direttamente con il professionista</p>
+          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
             In pochi passaggi potrai contattare l'infermiere,il fisioterapista,
             il caregiver ed esporre il tuo problema.
           </p>

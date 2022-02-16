@@ -1,13 +1,16 @@
 import React from "react";
+import {useMediaQuery} from "react-responsive";
 
 const TrovaIlTuoProfessionista = () => {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+
   return (
   
-    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'center', alignContent:'center', alignItems:'center', height:'300px', marginTop:'20px'}}>
-      <div className="paragrafidivisi" style={{marginLeft:'20px', marginRight:'20px'}}>
+    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column',  alignContent:'center', alignItems:'center', height:'400px',justifyContent:'space-around', marginTop:'20px'}}>
+      <div className="paragrafidivisi" style={{marginLeft:'20px', marginRight:'20px', display:'flex', justifyContent:'space-around'}}>
         <div style={{width:'60%', marginRight:'10px', textAlign:'left'}}>
-          <p className="titleAll">Hai bisogno di cure?</p>
-          <p>
+          <p className="titleAll" style={{fontSize: (isMobile)?'25px':'48px'}}>Hai bisogno di cure?</p>
+          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
             Con Fastcura troverai infermieri, Caregiver Fisioterapisti, pronti a
             darti una mano
           </p>

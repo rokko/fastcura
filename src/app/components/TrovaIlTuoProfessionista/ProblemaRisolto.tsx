@@ -1,12 +1,15 @@
 import React from "react";
+import {useMediaQuery} from "react-responsive";
 
 const ProblemaRisolto = () => {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row-reverse", marginTop:'100px', marginLeft:'20px', marginRight:'20px' }}>
+      <div style={{ display: "flex", flexDirection: "row-reverse", height:'300px', justifyContent:'space-around' }}>
         <div style={{ width: "60%", textAlign:'left', marginLeft:'10px' }}>
-          <p className="titleAll" >Il tuo problema risolto con un click!</p>
-          <p>L'assistenza domiciliare non è mai stata cosi veloce</p>
+          <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}} >Il tuo problema risolto con un click!</p>
+          <p style={{fontSize:(isMobile)?'14px':'24px'}}>L'assistenza domiciliare non è mai stata cosi veloce</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
