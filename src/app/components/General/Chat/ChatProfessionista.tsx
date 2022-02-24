@@ -5,7 +5,7 @@ import {Box, TextField} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const SERVER = "http://localhost:3001";
+const SERVER = "http://54.145.165.9:3001";
 
 const ChatProfessionista = () => {
     const socket = socketClient(SERVER);

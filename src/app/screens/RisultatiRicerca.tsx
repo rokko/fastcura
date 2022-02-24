@@ -26,7 +26,7 @@ const parametri = location.state as IPropsRicerca
 
 useEffect(()=>{
 
-    axios.post('http://localhost:3001/professionista/ricerca',parametri)
+    axios.post('http://54.145.165.9:3001/professionista/ricerca',parametri)
     .then(async function (response) {
             setListaProfessionisti(response.data.professionisti)
       })

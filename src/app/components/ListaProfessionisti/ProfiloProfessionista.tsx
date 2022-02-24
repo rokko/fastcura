@@ -28,7 +28,7 @@ const ProfiloProfessionista = () => {
           idprofessionista : ValoriParametri._id
       }
 
-      axios.post('http://localhost:3001/cliente/infocurriculum',valore)
+      axios.post('http://54.145.165.9:3001/cliente/infocurriculum',valore)
           .then((res)=> setRisposta(res.data))
     }
 

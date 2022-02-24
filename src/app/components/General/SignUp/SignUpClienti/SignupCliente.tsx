@@ -38,7 +38,7 @@ const SignUpClient = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
     console.log(datinuovoCliente)
     console.log('ok')
-    axios.post('http://localhost:3001/cliente/signup',nuovoCliente)
+    axios.post('http://54.145.165.9:3001/cliente/signup',nuovoCliente)
 .then(function (response) {
   console.log(JSON.stringify(response.data));
 })

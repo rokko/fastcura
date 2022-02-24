@@ -67,7 +67,7 @@ const SignUpProfessionista = () => {
   }
   
   const sendRegister = () => {
-    axios.post('http://localhost:3001/professionista/signup',nuovoProfessionista)
+    axios.post('http://54.145.165.9:3001/professionista/signup',nuovoProfessionista)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
     })
