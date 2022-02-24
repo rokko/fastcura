@@ -9,8 +9,6 @@ const Abbonati = () => {
             <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
             <Typography fontWeight="bold" fontSize={25} >Abbonati</Typography>
-
-
                 <Typography>Scegli in piano di abbonamento più adatto a te!</Typography>
     </div>
     </div>

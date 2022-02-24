@@ -1,14 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import moment from 'moment'
+import axios from "axios";
 
-const AccordionPrestazioni = () => {
+const AccordionPrestazioni = (prestazione:any) => {
+  const [nome, setNome]= useState('')
+  const [cognome,setCognome]= useState('')
   const [expanded, setExpanded] = React.useState<String|false>(false);
   const handleChange =(panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
     setExpanded(newExpanded ? panel : false);
   };
-
+  // @ts-ignore
+  useEffect(()=> {
+    trovacliente()
+  },[])
+  const trovacliente = () => {
+    const ricerca ={
+      idcliente : prestazione.prestazione.id_cliente
+    }
+    axios.post('http://localhost:3001/professionista/nomecliente',ricerca)
+        .then((response:any)=> {
+        setNome(response.data.nome)
+        setCognome(response.data.cognome)
+        }
+        )
+  }
   return (
     <>
       <div>
@@ -23,14 +41,13 @@ const AccordionPrestazioni = () => {
             aria-controls="panel1d-content"
             id="panel1d-header"
           >
-            <p>Marco Marino </p>
+            <p>{nome} {cognome}</p>
           </MuiAccordionSummary>
           <MuiAccordionDetails>
             <p>
-              Effettuato in data 26/20/2021 <br/>
-              Presso Via Roma, 5 - Napoli <br/>
-              Pagamento: +50€ <br/>
-              Valutazione cliente : ★★★★★<br/>
+              Effettuato in data {moment(prestazione.prestazione.data).format('MM/DD/YYYY')} <br/>
+              Pagamento: {prestazione.prestazione.totale} € <br/>
+
             </p>
           </MuiAccordionDetails>
         </MuiAccordion>

@@ -30,7 +30,6 @@ const SignUpProfessionista = () => {
   const [numeroiscrizione, setNumeroiscrizione] = useState <String|null>()
   const [assicurazione, setAssicurazione] = useState<String|null>()
   const [precedente, setPrecedente] = useState<String | null>()
-console.log(cognome, nome,email, password, data, sesso, citta, cellulare, greenpass, referenze, anni, anniEsperienza, terminelavoro,livelloItaliano, titoloStudio,dichiarazione, numeroiscrizione,assicurazione, precedente)
   const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due","Piu di due"]

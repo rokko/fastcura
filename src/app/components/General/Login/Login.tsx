@@ -1,10 +1,42 @@
 import {Box, TextField} from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
+import React , {useState} from "react";
 import {useMediaQuery} from "react-responsive";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+interface IToken {
+    accessToken : string
+
+}
+
+const Login = (props:any) => {
+    let navigate = useNavigate();
+
+    const loginUser = ()=>{
+
+  console.log(userlogin)
+        axios.post('http://localhost:3001/login',userlogin)
+            .then(function (response) {
+               const token : IToken = response.data;
+               if (!!token.accessToken) {
+                   localStorage.setItem('tokenaccess', token.accessToken);
+                   navigate('/professionista')
+               }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }
+
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+    const [email, setEmail] = useState('')
+    const [passw, setPassw] = useState('')
+    const userlogin = {
+        email : email,
+        password: passw,
+    }
+    console.log(userlogin)
     if(!isMobile) return(
         <>
             <div style={{display:'flex', flexDirection:'column'}}>
@@ -31,6 +63,9 @@ const Login = () => {
                                 borderRadius:'30px',
                             }
                         }}
+                        onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                            setEmail(x.target.value)
+                        }
                         placeholder="Indirizzo email"
                     />
                     <TextField size={'small'}
@@ -46,10 +81,13 @@ const Login = () => {
                                    marginTop:'40px',
                                }}
                                type={"password"}
-                               placeholder="Password"/>
+                               placeholder="Password"
+                               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                                   setPassw(x.target.value)
+                               }/>
                 </Box>
                 <div>
-                    <Link to="/professionista" >
+
                         <button
                             style={{
                                 marginTop:'40px',
@@ -62,10 +100,11 @@ const Login = () => {
                                 fontWeight:'bold',
 
                             }}
+                            onClick={()=>loginUser()}
                         >
                             Entra
                         </button>
-                    </Link>
+
                 </div>
                 <div>
                     <p>Hai dimenticato la password?</p>
@@ -100,6 +139,9 @@ const Login = () => {
             }
           }}
           placeholder="Indirizzo email"
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+              setEmail(x.target.value)
+          }
         />
         <TextField size={'small'}  
         sx={{
@@ -114,9 +156,12 @@ const Login = () => {
             marginTop:'40px',
           }}            
            type={"password"} 
-           placeholder="Password"/>
+           placeholder="Password"
+                   onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                       setPassw(x.target.value)
+                   }/>
       </Box>
-      <Link to="/professionista" >
+
       <button
         style={{
           marginTop:'40px',
@@ -129,10 +174,10 @@ const Login = () => {
           fontWeight:'bold',
 
         }}
+        onClick={ ()=>loginUser()}
       >
         Entra
       </button>
-      </Link>
       <p>Hai dimenticato la password?</p>
     </>
   );

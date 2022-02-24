@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -17,6 +18,7 @@ const Header = () => {
           
         }}
       >
+          <Link to='/'>
         <svg
         style={{marginLeft:'20px'}}
           id="Raggruppa_16"
@@ -75,8 +77,10 @@ const Header = () => {
             fill="#fff"
           />
         </svg>
+          </Link>
         <div style={{marginRight:'20px'}}>
-          <svg style={{marginRight:'10px'}}
+            <Link to='/chatprofessionista'>
+            <svg style={{marginRight:'10px'}}
             id="Icon_ionic-md-chatbubbles"
             data-name="Icon ionic-md-chatbubbles"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +102,10 @@ const Header = () => {
               transform="translate(-3.567 -3.375)"
               fill="#fff"
             />
+
           </svg>
+            </Link>
+            <Link to='/professionista'>
           <svg
             id="person"
             xmlns="http://www.w3.org/2000/svg"
@@ -120,6 +127,7 @@ const Header = () => {
               fill="#fff"
             />
           </svg>
+            </Link>
         </div>
       </Box>
     </>
