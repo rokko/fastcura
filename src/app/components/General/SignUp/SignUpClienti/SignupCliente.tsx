@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from 'axios'
-
+import {useNavigate} from "react-router-dom";
 import {
   TextField,
   FormGroup,
@@ -10,6 +10,7 @@ import {
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import {useMediaQuery} from "react-responsive";
 const SignUpClient = () => {
+  const navigate = useNavigate()
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
   const [cognome  , setCognome] = useState <String>()
   const [nome, setNome] = useState<String>()
@@ -40,7 +41,7 @@ const SignUpClient = () => {
     console.log('ok')
     axios.post('http://54.145.165.9:3001/cliente/signup',nuovoCliente)
 .then(function (response) {
-  console.log(JSON.stringify(response.data));
+  navigate('/');
 })
 .catch(function (error) {
   console.log(error);

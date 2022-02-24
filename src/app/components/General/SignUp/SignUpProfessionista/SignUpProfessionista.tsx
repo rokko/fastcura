@@ -9,9 +9,11 @@ import {
 import axios from 'axios'
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import {useMediaQuery} from "react-responsive";
+import {useNavigate} from "react-router-dom";
 
 
 const SignUpProfessionista = () => {
+  const navigate = useNavigate()
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
   const [cognome, setCognome] = useState<String | null>();
   const [nome, setNome] = useState<String>();
@@ -69,7 +71,7 @@ const SignUpProfessionista = () => {
   const sendRegister = () => {
     axios.post('http://54.145.165.9:3001/professionista/signup',nuovoProfessionista)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
+      navigate('/');
     })
     .catch(function (error) {
       console.log(error);
