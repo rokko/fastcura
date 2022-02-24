@@ -35,7 +35,7 @@ useEffect(()=>{
       });
     
 
-})
+},[parametri])
 
     return(
         <>

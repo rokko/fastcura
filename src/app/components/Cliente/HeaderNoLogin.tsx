@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Box} from '@mui/material'
 import {Link} from "react-router-dom";
+import BoxLogin from "../General/Login/BoxLogin";
 const HeaderNoLogin = () => {
+
+    const [pop, setPop] = useState(false)
+
     return(
         <>
             <Box
@@ -77,12 +81,17 @@ const HeaderNoLogin = () => {
                         />
                     </svg>
                 </Link>
-                <div style={{marginRight:'10px'}}>
+                <div style={{marginRight:'10px'}} onClick={()=> setPop(true)}>
                 <svg id="person" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
                     <path id="Tracciato_130" data-name="Tracciato 130" d="M0,0H34V34H0Z" fill="none"/>
                     <path id="Tracciato_131" data-name="Tracciato 131" d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z" transform="translate(1.667 1.667)" fill="#fff"/>
                 </svg>
                 </div>
+                { (pop)&& <div style={{position:'fixed', left:'15%',top:'10%'}}>
+                   <BoxLogin chiudi={setPop}/>
+                </div>
+                    }
+
 
             </Box>
         </>

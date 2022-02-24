@@ -121,7 +121,7 @@ const BoxRisultato = (props : any) => {
             <Link to="/profilo-professionista" state={professionista}>
               <button style={{marginLeft:'10px',width:'80px', height:'30px',backgroundColor:'#E93323', border:'none', borderRadius:'30px', fontSize:'12px', fontWeight:'bold', color:'white'}}>Profilo</button>
             </Link>
-            <Link to="/chat" state={professionista}>
+            <Link to="/chat" state={{professionista: professionista}}>
               <button style={{marginLeft:'10px' ,width:'80px', height:'30px',backgroundColor:'#39B1D9', border:'none', borderRadius:'30px', fontSize:'12px', fontWeight:'bold', color:'white'}}>Contatta</button>
             </Link>
           </div>

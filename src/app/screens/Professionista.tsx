@@ -47,7 +47,7 @@ useEffect(()=>{
     requestinfo()
 
 
-},[])
+},[token])
     const [scelta, setScelta] = React.useState('')
 
     return(
@@ -58,9 +58,9 @@ useEffect(()=>{
          </div>
             {(!!utente)&& <p style={{fontSize:'20px'}}>{utente!.nome} {utente!.cognome}</p>}
         <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor: (scelta==='Prestazioni')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px', borderColor:'#39B1D9', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Prestazioni')} ><p style={{color:(scelta==='Prestazioni')?'#39B1D9':'white'}}>Cronologia Prestazioni</p></button>
-        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:(scelta==='Curriculum')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Curriculum')}><p style={{color:(scelta==='Curriculum')?'#39B1D9':'white'}}>Aggiorna Curriculum</p></button>
-        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:(scelta==='Abbonamenti')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Abbonamenti')}><p style={{color:(scelta==='Abbonamenti')?'#39B1D9':'white'}}>Piano Abbonamento</p></button>
+        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor: (scelta==='Prestazioni')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px', border:(scelta==='Prestazioni')?'1px solid #39B1D9' :'none', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Prestazioni')} ><p style={{color:(scelta==='Prestazioni')?'#39B1D9':'white'}}>Cronologia Prestazioni</p></button>
+        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:(scelta==='Curriculum')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px',border:(scelta==='Prestazioni')?'1px solid #39B1D9' :'none', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Curriculum')}><p style={{color:(scelta==='Curriculum')?'#39B1D9':'white'}}>Aggiorna Curriculum</p></button>
+        <button style={{display:'flex', alignItems:'center', justifyContent:'center' ,marginTop:'10px',textAlign:'center',width:'255px', backgroundColor:(scelta==='Abbonamenti')?'#ffffff' :'#39B1D9', height:'40px', borderRadius:'30px',border:(scelta==='Prestazioni')?'1px solid #39B1D9' :'none', color:'white', fontWeight:'bold', fontSize:'17px', }} onClick={()=>setScelta('Abbonamenti')}><p style={{color:(scelta==='Abbonamenti')?'#39B1D9':'white'}}>Piano Abbonamento</p></button>
         </div>
         {(scelta==='Prestazioni') &&<CronologiaPrestazioni />}
         {(scelta==='Curriculum') && <AggiornaCurriculum />}

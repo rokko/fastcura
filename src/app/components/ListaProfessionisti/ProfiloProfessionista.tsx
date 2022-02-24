@@ -1,8 +1,9 @@
-import { Box, Button } from "@mui/material";
+import {Box, Button, TextField} from "@mui/material";
 import { Link,  useLocation } from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 //import Header from "../Cliente/Header";
 import HeaderNoLogin from '../Cliente/HeaderNoLogin'
+import axios from "axios";
 
 
  interface IDettagliProfessionista{
@@ -13,8 +14,27 @@ import HeaderNoLogin from '../Cliente/HeaderNoLogin'
    eta: number,
 
 }
+
+interface IRisposta{
+     ris: number
+}
 const ProfiloProfessionista = () => {
   const location = useLocation()
+    const [risposta, setRisposta]= useState<IRisposta>()
+
+
+    const recuperaCurriculum = () => {
+      const valore={
+          idprofessionista : ValoriParametri._id
+      }
+
+      axios.post('http://localhost:3001/cliente/infocurriculum',valore)
+          .then((res)=> setRisposta(res.data))
+    }
+
+    useEffect(()=>{
+        recuperaCurriculum()
+    },[])
 
   let ValoriParametri = location.state as any
   const professio : IDettagliProfessionista={
@@ -25,6 +45,7 @@ const ProfiloProfessionista = () => {
     eta : ValoriParametri.eta
   }
 
+  console.log(ValoriParametri)
   return (
     <>
       <HeaderNoLogin />
@@ -133,7 +154,7 @@ const ProfiloProfessionista = () => {
               />
             </svg>
           </div>
-          <Link to="/chat" state={{ValoriParametri}} ><Button  style={{backgroundColor:'#39B1D9', width:'110px', height:'30px', marginTop:'20px', textTransform:'none', borderRadius:'30px', textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>Contatta</p></Button></Link>
+          <Link to="/chat" state={{professionista: ValoriParametri}} ><Button  style={{backgroundColor:'#39B1D9', width:'110px', height:'30px', marginTop:'20px', textTransform:'none', borderRadius:'30px', textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>Contatta</p></Button></Link>
         </div>
      
       </div>
@@ -141,10 +162,19 @@ const ProfiloProfessionista = () => {
       <p>Professione : {professio.professione}<br/>
       Luogo: {professio.citta}<br/>
       Curriculum</p>
-      <Box style={{backgroundColor:'#F4F4F4', width:'300px', height:'400px', borderRadius:'30px'}}>
-        
+          {(risposta?.ris===2) &&         <><Box style={{border:'1px solid #39B1D9',backgroundColor:'#F4F4F4', width:'300px',padding:'15px', height:'400px', borderRadius:'30px', display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
+              <p>L'utente non ha ancora caricato un curriculum</p></Box></>
+          }
+          {(risposta?.ris===1)&&<>
+          <Box style={{border:'1px solid #39B1D9',backgroundColor:'#F4F4F4', width:'300px',padding:'15px', height:'400px', borderRadius:'30px', display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
+              <TextField sx={{width:'90%', marginTop:'10px'}} id="standard-basic" label="Titolo di studio" variant="standard"     disabled={true}></TextField>
+              <TextField sx={{width:'90%', marginTop:'10px'}} id="standard-basic" label="Master/Specializzazioni" variant="standard" disabled={true}  ></TextField>
+              <TextField sx={{width:'90%', marginTop:'10px'}} id="standard-basic" label="Numero ordine/albo" variant="standard" disabled={true}></TextField>
+              <TextField sx={{width:'90%', marginTop:'10px'}} id="standard-basic" label="Esperienze" variant="standard" disabled={true}></TextField>
+              <TextField multiline rows={5} sx={{width:'90%'}} id="standard-basic" label="Altro" variant="standard" disabled={true}  ></TextField>
 
-      </Box>
+          </Box>
+          </>}
       </Box>
       </Box>
     </>
