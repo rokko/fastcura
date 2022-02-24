@@ -32,7 +32,7 @@ const requestinfo = async () => {
                 headers: {Authorization: `Bearer ${token}`}
             }
 
-            axios.get('http://54.145.165.9:3001/professionista/info', config)
+            axios.get('https://guarded-thicket-90200.herokuapp.com/professionista/info', config)
                 .then((response) => {
                     setUtente(response.data)
                 })

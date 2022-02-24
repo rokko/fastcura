@@ -39,7 +39,7 @@ const SignUpClient = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
     console.log(datinuovoCliente)
     console.log('ok')
-    axios.post('http://54.145.165.9:3001/cliente/signup',nuovoCliente)
+    axios.post('https://guarded-thicket-90200.herokuapp.com/cliente/signup',nuovoCliente)
 .then(function (response) {
   navigate('/');
 })

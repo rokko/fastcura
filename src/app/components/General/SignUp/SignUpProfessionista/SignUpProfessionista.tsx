@@ -69,7 +69,7 @@ const SignUpProfessionista = () => {
   }
   
   const sendRegister = () => {
-    axios.post('http://54.145.165.9:3001/professionista/signup',nuovoProfessionista)
+    axios.post('https://guarded-thicket-90200.herokuapp.com/professionista/signup',nuovoProfessionista)
     .then(function (response) {
       navigate('/');
     })
