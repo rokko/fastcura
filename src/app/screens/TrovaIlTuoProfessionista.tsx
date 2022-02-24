@@ -52,7 +52,8 @@ return(
     <>
     <Header/>
     <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%'}}>
-    <BoxSearch />
+
+        <BoxSearch />
     <Lavagna />
     <HaiBisognoDiCure />
     <ProblemaRisolto/>

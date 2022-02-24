@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const SERVER = "http://localhost:3001";
 
 const ChatProfessionista = () => {
+    const socket = socketClient(SERVER);
     const navigate = useNavigate()
     const [token,setToken]= useState('')
     const [messaggio,setMessaggio] = useState('')
@@ -31,10 +32,8 @@ const ChatProfessionista = () => {
         id : id,
         message : message,
     }*/
-    const socket = socketClient (SERVER);
-    socket.on('connection', () => {
 
-    });
+    socket.on('ciao', ()=> console.log('ciao'))
     return(
        
         <>

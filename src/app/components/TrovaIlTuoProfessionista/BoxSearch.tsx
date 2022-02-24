@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
 import Lavagna from "./Lavagna";
 const BoxSearch = () => {
-
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
 
 
