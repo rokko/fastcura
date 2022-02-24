@@ -1,19 +1,13 @@
-import {Typography, Grid } from "@mui/material";
+import {Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const EntraNelTeam = () => {
   return (
     <>
-    <Grid
-      container
-      alignItems="center"
-      alignContent="center"
-      direction="column"
-      sm={4}
-      lg={10}
-    >
-      <Typography fontWeight="bold" fontSize={25}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+      <Typography fontWeight="bold" fontSize={25} color={'#000000'} fontFamily={'Charter'}>
         Entra nel Team
       </Typography>
       <svg xmlns="http://www.w3.org/2000/svg" width="177.178" height="162.574" viewBox="0 0 177.178 162.574">
@@ -95,10 +89,11 @@ const EntraNelTeam = () => {
           marginTop: 10,
         }}
       >
-        <Typography fontWeight="bold"> Inizia la prova gratuita</Typography>
+        <Typography fontWeight="bold" color={'#ffffff'}> Inizia la prova gratuita</Typography>
       </button>
       </Link>
-    </Grid>
+        </div>
+      </div>
     </>
   );
 };

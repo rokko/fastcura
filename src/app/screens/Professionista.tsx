@@ -12,7 +12,7 @@ const Professionista = () => {
         <>
         <Header />
         <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-        <div style={{backgroundColor:'#ffffff', borderRadius:'50%', width:'100px', height:'100px', marginTop:'-50px', borderColor:'#39B1D9', borderStyle:'solid',borderWidth:'1px'}}>
+        <div style={{backgroundColor:'#ffffff', borderRadius:'50%', width:'100px', height:'100px', marginTop:'-50px',border:"1px solid #39B1D9", borderStyle:'solid',borderWidth:'1px'}}>
          </div>
         <p style={{fontSize:'20px'}}>Rocco Rocco</p>
         <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>

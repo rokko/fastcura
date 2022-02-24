@@ -1,31 +1,21 @@
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 
 const ServizioMessagistica = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Grid
-      container
-      alignItems="left"
-      alignContent="left"
-      direction="column"
-      sm={4}
-      lg={10}
-      marginTop={15}
-    >
-      <Grid item>
         <Typography fontWeight="bold" fontSize={25} >
           Servizio di messaggistica diretto con il cliente
         </Typography>
-      </Grid>
-      <Grid item>
+
         <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
           La persona trova i professionisti più vicini a lui e ne valuta le
           competenze e la qualità dei servizi erogati attraverso le recensioni
           lasciate da altri utenti
         </Typography>
-      </Grid>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="112.104"
@@ -192,8 +182,9 @@ const ServizioMessagistica = () => {
           />
         </g>
       </svg>
-    </Grid>
-    </div>
+        </div>
+      </div>
+
   );
 };
 

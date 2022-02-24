@@ -1,28 +1,20 @@
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 
 const Visibilita = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
-    <Grid
-      container
-      marginTop={15}
-      alignItems="center"
-      alignContent="center"
-      direction="column"
-      sm={4}
-      lg={10}
-    >
-      <Grid item>
-       
-        <Typography fontWeight='bold' fontSize={25} alignContent='left' >Visibilita</Typography>
-        <Grid item>
-        <Typography fontSize={15} color="#6D6D6D"  >
+    <>
+  <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'110%', maxWidth:'100%'}}>
+    <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+
+    <Typography fontWeight='bold' fontSize={25} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
+        <div>
+        <p style={{fontSize:15, color:"#6D6D6D" , textAlign:'left', fontFamily:'Charter'}}>
           Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
           allargando la tua rete di clienti
-        </Typography>
+        </p>
        
-      </Grid>
+      </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="276.75"
@@ -242,10 +234,10 @@ const Visibilita = () => {
             />
           </g>
         </svg>
-      </Grid>
+
      
 
-      <Grid item>
+
         <button
           style={{
             borderRadius: 20,
@@ -257,11 +249,11 @@ const Visibilita = () => {
             marginTop:10,
           }}
         >
-          <Typography fontWeight="bold">Scopri di più</Typography>
+          <Typography fontWeight="bold" color={'#ffffff'}>Scopri di più</Typography>
         </button>
-      </Grid>
-    </Grid>
     </div>
+    </div>
+      </>
   );
 };
 

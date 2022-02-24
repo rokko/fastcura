@@ -15,7 +15,7 @@ const Header = () => {
           justifyContent: "space-between",
           height: 50,
         }}
-      ><Link to="/landing-professionista">
+      ><Link to="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="123.439"

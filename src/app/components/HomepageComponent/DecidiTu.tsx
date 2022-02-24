@@ -1,29 +1,22 @@
-import {  Grid, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import React from "react";
 const DecidiTu = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Grid
-      container
-      marginTop={15}
-      alignItems="left"
-      alignContent="left"
-      direction="column"
-      sm={4}
-      lg={10}
-    >
-      <Grid item>
+
+
+
         <Typography fontWeight="bold" fontSize={25}  style={{display: 'flex', textAlign:'left'}}>
           Decidi tu quando!
         </Typography>
-      </Grid>
-      <Grid item>
+
         <Typography fontSize={15} marginBottom={10} color="#6D6D6D">
           Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
           ti trova i clienti
         </Typography>
-      </Grid>
+
 
       <svg xmlns="http://www.w3.org/2000/svg" width="237.273" height="129.723" viewBox="0 0 237.273 129.723">
   <g id="Raggruppa_94" data-name="Raggruppa 94" transform="translate(-129.642 -359.071)">
@@ -165,8 +158,9 @@ const DecidiTu = () => {
   </g>
 </svg>
 
-    </Grid>
-    </div>
+        </div>
+      </div>
+
   );
 };
 

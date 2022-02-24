@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation} from 'react-router-dom'
-import Header from '../components/Cliente/Header'
+//import Header from '../components/Cliente/Header'
+import HeaderNoLogin from '../components/Cliente/HeaderNoLogin'
 import BoxRisultato from '../components/Cliente/Ricerca/BoxRisultato'
 import axios from 'axios'
 
@@ -38,8 +39,9 @@ useEffect(()=>{
 
     return(
         <>
-        <Header />
+        <HeaderNoLogin />
         <h1>{parametri.professione}, {parametri.citta}</h1>
+            {(listaProfessionisti.length<1)&& <p style={{fontSize:'28px', fontWeight:'bold'}}>Al momento non sono disponibili professionisti nella tua zona</p>}
         {(!!listaProfessionisti) && listaProfessionisti.map((prof)=> {
         return(
             <BoxRisultato professionista={prof}/>

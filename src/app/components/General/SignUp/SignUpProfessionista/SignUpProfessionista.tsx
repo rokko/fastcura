@@ -7,7 +7,7 @@ import {
   Autocomplete,
 } from "@mui/material";
 import axios from 'axios'
-import Header from "../../../HomepageComponent/Header";
+import Header from "../../../TrovaIlTuoProfessionista/Header";
 
 const SignUpProfessionista = () => {
   const [cognome, setCognome] = useState<String | null>();
@@ -160,7 +160,7 @@ console.log(cognome, nome,email, password, data, sesso, citta, cellulare, greenp
           sx={{ width: 310, marginTop:1.5 }}
           style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
           renderInput={(params) => (
-            <TextField {...params} label="Es Infermiere..." />
+            <TextField {...params} label="Professione" />
           )}
           onChange={(x, value) => setProfessione(value)}
         />

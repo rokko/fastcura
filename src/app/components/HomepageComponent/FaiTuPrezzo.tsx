@@ -1,30 +1,21 @@
-import {  Grid, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import React from "react";
 
 const FaiTuPrezzo = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Grid
-      container
-      alignItems="left"
-      alignContent="left"
-      direction="column"
-      sm={4}
-      lg={10}
-      marginTop={15}
-    >
-      <Grid item>
         <Typography fontWeight="bold" fontSize={25}>
           Fai tu il prezzo
         </Typography>
-      </Grid>
 
-      <Grid item>
+
+
         <Typography fontSize={15} color="#6D6D6D" marginBottom={8}>
           Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
         </Typography>
-      </Grid>
+
       <svg xmlns="http://www.w3.org/2000/svg" width="228.746" height="183.138" viewBox="0 0 228.746 183.138">
   <g id="Raggruppa_99" data-name="Raggruppa 99" transform="translate(0 -63)">
     <path id="Tracciato_621" data-name="Tracciato 621" d="M739.836,717.9l-8.7-8.562-8.535-8.4a1.544,1.544,0,0,1-.36-1.491c.439-1.566,3.094-3.122,4.645-4.429l.156-.133a4.872,4.872,0,0,1,6.846.581l10.435,12.369h0l3.094,3.669a4.871,4.871,0,0,1-.581,6.845l-.156.133A4.873,4.873,0,0,1,739.836,717.9Z" transform="translate(-546.243 -477.082)" fill="#f4c0a0"/>
@@ -66,10 +57,9 @@ const FaiTuPrezzo = () => {
     <path id="Tracciato_637" data-name="Tracciato 637" d="M15.1,140.958c1.09,4-15.1-6.334-15.1-6.334V63l58.225,48.724S11.45,127.559,15.1,140.958Z" fill="#39b1d9"/>
   </g>
 </svg>
+        </div>
+      </div>
 
-    </Grid>
-    
-    </div>
   );
 };
 

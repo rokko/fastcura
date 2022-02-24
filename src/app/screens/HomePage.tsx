@@ -8,14 +8,14 @@ import ServizioMessagistica from "../components/HomepageComponent/ServizioMessag
 import Ricavi from "../components/HomepageComponent/Ricavi";
 import ServizioInnovativo from "../components/HomepageComponent/ServizioInnovativo";
 import ProvaloGratis from "../components/HomepageComponent/ProvaloGratis";
-import Abbonati from "../components/HomepageComponent/Abbonati";
-import Header from "../components/HomepageComponent/Header";
+import Header from "../components/TrovaIlTuoProfessionista/Header";
 
 const HomePage = () => {
   return (
     <>  
     <Header />
-          <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center', flexDirection:'column'}}>
+      <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
+        <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'90%'}}>
 
           <EntraNelTeam />
           <Visibilita />
@@ -26,7 +26,7 @@ const HomePage = () => {
           <Ricavi />
           <ServizioInnovativo />
           <ProvaloGratis />
-          <Abbonati />
+      </div>
       </div>
     </>
   );

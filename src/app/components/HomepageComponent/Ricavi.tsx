@@ -1,31 +1,22 @@
-import {  Grid, Typography } from "@mui/material";
+import {   Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Ricavi = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Grid
-      container
-      alignItems="left"
-      alignContent="left"
-      direction="column"
-      sm={4}
-      lg={10}
-      marginTop={15}
-    >
-      <Grid item>
         <Typography fontWeight="bold" fontSize={25}>
           Ricavi
         </Typography>
-      </Grid>
-      <Grid item>
+
+
         <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
           Accordato con il cliente il prezzo, lui potrà pagare nella più
           completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
         </Typography>
-      </Grid>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="121.179"
@@ -91,7 +82,7 @@ const Ricavi = () => {
       <button style={{width:120, height:35, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
       </Link>
 
-    </Grid>
+    </div>
     </div>
   );
 };

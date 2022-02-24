@@ -1,24 +1,15 @@
-import {  Grid, Typography } from "@mui/material";
+import {   Typography } from "@mui/material";
 import React from "react";
 
 const Visibilita = () => {
   return (
-    <div style={{display: 'flex', alignItems: 'left' , alignContent:'left', textAlign:'left', marginLeft:'1rem'}}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Grid
-      container
-      marginTop={15}
-      alignItems="center"
-      alignContent="center"
-      direction="column"
-      sm={4}
-      lg={10}
-    >
-      <Grid item>
         <Typography fontWeight="bold" fontSize={25} marginBottom={10}>
           Per Infermieri, Caregiver e Fisioterapisti
         </Typography>
-      </Grid>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="185.379"
@@ -520,8 +511,8 @@ const Visibilita = () => {
           </g>
         </g>
       </svg>
-    </Grid>
-    </div>
+        </div>
+      </div>
   );
 };
 

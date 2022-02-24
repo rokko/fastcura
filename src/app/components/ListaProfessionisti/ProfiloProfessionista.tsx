@@ -1,7 +1,8 @@
 import { Box, Button } from "@mui/material";
 import { Link,  useLocation } from "react-router-dom";
 import React from "react";
-import Header from "../Cliente/Header";
+//import Header from "../Cliente/Header";
+import HeaderNoLogin from '../Cliente/HeaderNoLogin'
 
 
  interface IDettagliProfessionista{
@@ -26,7 +27,7 @@ const ProfiloProfessionista = () => {
 
   return (
     <>
-      <Header />
+      <HeaderNoLogin />
  <Box style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <div
         style={{

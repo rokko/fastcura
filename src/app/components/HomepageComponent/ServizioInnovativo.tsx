@@ -1,37 +1,20 @@
-import { Grid, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import React from "react";
 
 const ServizioInnovativo = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "left",
-        alignContent: "left",
-        textAlign: "left",
-        marginLeft: "1rem",
-      }}
-    >
-      <Grid
-        container
-        alignItems="left"
-        alignContent="left"
-        direction="column"
-        sm={4}
-        lg={10}
-        marginTop={15}
-      >
-        <Grid item>
-          <Typography fontWeight="bold" fontSize={25}>
+      <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+
+        <Typography fontWeight="bold" fontSize={25}>
             Un servizio innovativo
           </Typography>
-        </Grid>
-        <Grid item>
+
           <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
             Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
             la tutela del professionista.
           </Typography>
-        </Grid>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="386.954"
@@ -502,7 +485,7 @@ const ServizioInnovativo = () => {
             />
           </g>
         </svg>
-      </Grid>
+      </div>
     </div>
   );
 };

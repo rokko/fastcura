@@ -7,22 +7,21 @@ import { Box } from "@mui/system";
 
 const AbbonamentoCarousel = () => {
   return (
-    <>
-    <Box style={{display:'flex', alignContent:'center', alignItems:'center', justifyContent:'center'}}>
+    <><div style={{display:'flex', alignContent:'center', width:'100%', alignItems:'center'}}>
+    <Box style={{display:'flex', alignContent:'center', alignItems:'center', justifyContent:'center',width:'90%'}}>
      <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      slidesPerView={1}
+      spaceBetween={20}
+
     >
-      <SwiperSlide><CardAbbonamento /></SwiperSlide>
+      <SwiperSlide style={{display:'block', marginLeft:'20%', marginRight:'auto'}}><CardAbbonamento /></SwiperSlide>
       <SwiperSlide><CardAbbonamento /></SwiperSlide>
       <SwiperSlide><CardAbbonamento /></SwiperSlide>
 
      
     </Swiper>
     </Box>
-  
+    </div>
     </>
   );
 };

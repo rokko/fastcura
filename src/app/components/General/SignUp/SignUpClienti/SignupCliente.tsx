@@ -7,7 +7,7 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import Header from "../../../HomepageComponent/Header";
+import Header from "../../../TrovaIlTuoProfessionista/Header";
 const SignUpClient = () => {
 
   const [cognome  , setCognome] = useState <String>()
