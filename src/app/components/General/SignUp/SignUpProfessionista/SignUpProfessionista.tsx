@@ -20,7 +20,7 @@ const SignUpProfessionista = () => {
   const [email, setEmail] = useState<String>();
   const [password, setPassword] = useState<String>();
   const [data, setData] = useState<String>();
-  const [sesso, setSesso] = useState<String>();
+  const [sesso, setSesso] = useState<String|null>();
   const [citta, setCitta] = useState<String>();
   const [cellulare, setCellulare] = useState<String>();
   const [professione, setProfessione] = useState<String | null>();
@@ -42,6 +42,7 @@ const SignUpProfessionista = () => {
   const lavoro = ['Morte Paziente','Dimissioni','Licenziamento','Nessuna' ]
   const conoita = ['Ottimo', 'Buono', 'Sufficiente', 'Insufficiente', 'Scarso']
   const tit = ['Laurea','Scuole Superiori','Diploma (O.S.S., A.S.A.)']
+  const sess = ['Uomo','Donna']
 
 
   const nuovoProfessionista = {
@@ -134,14 +135,17 @@ const SignUpProfessionista = () => {
           id="outlined-size-small"
           type={"date"}
         ></TextField>
-        <TextField
-          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-            setSesso(x.target.value)
-          }
-          style={{ width: 310, marginTop: 10 }}
-          id="outlined-size-small"
-          label="Sesso"
-        ></TextField>
+        <Autocomplete
+            disablePortal
+            id="lista-professioni"
+            options={sess}
+            sx={{ width: 310, marginTop:1.5 }}
+            style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+            renderInput={(params) => (
+                <TextField {...params} label="Sesso" />
+            )}
+            onChange={(x, value) => setSesso(value)}
+        />
         <TextField
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setCitta(x.target.value)
@@ -261,7 +265,7 @@ const SignUpProfessionista = () => {
               sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
-                <TextField {...params} label="In possesso di diploma di Laurea" />
+                <TextField {...params} label="Laurea" />
               )}
               onChange={(x, value) => setDichiarazione(value)}
             />
@@ -272,7 +276,7 @@ const SignUpProfessionista = () => {
               sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
-                <TextField {...params} label="Sono assicurato?" />
+                <TextField {...params} label="Sei assicurato?" />
               )}
               onChange={(x, value) => setAssicurazione(value)}
             />
@@ -283,7 +287,7 @@ const SignUpProfessionista = () => {
               sx={{ width: 310, marginTop:1.5 }}
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => (
-                <TextField {...params} label="Precedente Penale" />
+                <TextField {...params} label="Precedenti Penali" />
               )}
               onChange={(x, value) => setPrecedente(value)}
             />

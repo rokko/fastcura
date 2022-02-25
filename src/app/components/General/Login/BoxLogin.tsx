@@ -103,7 +103,7 @@ const BoxLogin = (props:any) => {
                     >
                         Entra
                     </button>
-                    <Link to='/signup-cliente'><p style={{color:'#ffffff', textDecoration:'none'}}>oppure registrati</p></Link>
+                    <Link to='/signup-cliente' style={{textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>oppure registrati</p></Link>
                 </Box>
 
 

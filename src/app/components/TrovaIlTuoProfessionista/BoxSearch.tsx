@@ -17,17 +17,15 @@ const BoxSearch = () => {
   const [citta, setCitta] = useState<String|null>('')
 
 
-  console.log(professione)
-  console.log(citta)
 
     if (!isMobile) return(
         <>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around", }}>
                 <Lavagna />
-                <p className="top-test boldtext" style={{color:'#000000', textAlign:'left', fontSize:'48px'}}>
+                <p className="top-test boldtext" style={{color:'#000000', textAlign:'left', fontSize:'48px',marginRight:'70px'}}>
                     L'<span className="bluespan">assistenza </span><br />{" "}
-                    domiciliare a<br/>portata di <span className="bluespan">click</span>
+                    domiciliare a<br/>portata di <span className="bluespan">click</span>!
                 </p>
             </div>
                 <div>

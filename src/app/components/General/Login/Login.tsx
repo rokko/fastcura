@@ -119,17 +119,25 @@ const Login = (props:any) => {
         style={{
             marginTop:'100px',
           width: "280px",
-          height: "240px",
+          height: "150px",
           backgroundColor: "#39B1D9",
           borderRadius: "20px",
+            display:'flex',
+            flexDirection:'column',
+            alignContent:'center',
+            alignItems:'center',
+            justifyContent:'center'
+
         }}
       >
-        <p className="topsearch-text">Accedi</p>
+          <div style={{display:'flex', marginTop:'-30px' ,flexDirection:'column', alignContent:'center', alignItems:'center'}}>
+        <p style={{color:'#ffffff', fontSize:'17px'}}>Accedi</p>
         <TextField
           size={"small"}
           hiddenLabel
           sx={{
-            width: "240px",
+            width: "213px",
+              height:"35px",
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
             borderRadius:'30px',
@@ -145,33 +153,37 @@ const Login = (props:any) => {
         />
         <TextField size={'small'}  
         sx={{
-            width: "240px",
+            width: "213px",
+            height: "35px",
+            border:'none',
             backgroundColor: "#ffffff",
             outlineColor: "#ffffff",
             borderRadius:'30px',
             '& .MuiOutlinedInput-root':{
-              borderColor:'#ffffff',
+              borderColor:'none',
               borderRadius:'30px'
             },
-            marginTop:'40px',
+            marginTop:'20px',
           }}            
            type={"password"} 
            placeholder="Password"
                    onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                        setPassw(x.target.value)
                    }/>
+          </div>
       </Box>
 
       <button
         style={{
-          marginTop:'40px',
+          marginTop:'10px',
           backgroundColor: "#39B1D9",
-          width: 220,
+          width: 85,
           height: 37,
           borderRadius: 20,
           border: "none",
           color: "white",
           fontWeight:'bold',
+            fontSize:14,
 
         }}
         onClick={ ()=>loginUser()}
