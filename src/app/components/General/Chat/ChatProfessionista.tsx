@@ -4,17 +4,19 @@ import socketClient  from "socket.io-client";
 import {Box, TextField} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import ModalLogin from '../ModalLogin';
 
 const SERVER = "http://54.145.165.9:3001";
 
 const ChatProfessionista = () => {
     const socket = socketClient(SERVER);
+    const [pop, setPop] = useState(false)
     const navigate = useNavigate()
     const [token,setToken]= useState('')
     const [messaggio,setMessaggio] = useState('')
     const takeToken = async () => {
         const tokenTest = await localStorage.getItem('tokenaccess');
-        (!!tokenTest)  ?setToken(tokenTest) : navigate('/')
+        (!!tokenTest)  ?setToken(tokenTest) : setPop(true)
     }
  useEffect(()=>{
      takeToken()
@@ -55,6 +57,7 @@ const ChatProfessionista = () => {
                     <button style={{marginLeft:'10px' ,width:'80px', height:'60px',backgroundColor:'#39B1D9', border:'none', borderRadius:'30px', fontSize:'12px', fontWeight:'bold', color:'white'}}  onClick={()=>{inviaMessaggio()}}>Invia</button>
                  </div>
             </div>
+            <ModalLogin open={pop}/>
             </>
 
     )

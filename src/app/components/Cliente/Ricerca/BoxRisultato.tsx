@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BoxRisultato = (props : any) => {
-  console.log(props)
   const professionista = props.professionista
   return (
     <>
