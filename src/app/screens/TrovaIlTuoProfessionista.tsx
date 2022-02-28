@@ -17,7 +17,7 @@ const TrovaIlTuoProfessionista = () => {
  if (!isMobile) return(
      <>
      <Header/>
-         <div style={{backgroundColor:'#F9F9F9'}}>
+         <div style={{backgroundColor:'#F9F9F9', marginTop:'100px'}}>
          <div style={{margin:'auto',display:"flex",backgroundColor:'#ffffff', flexDirection:"column",justifyContent:'center', alignContent:'center',alignItems:'center', width:'80%' }}>
              <Fade direction={'right'}>
              <div style={{marginTop:'50px', width:'100%'}}>
@@ -67,7 +67,7 @@ const TrovaIlTuoProfessionista = () => {
 return(
     <>
     <Header/>
-    <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%'}}>
+    <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%', marginTop:'100px'}}>
         <Fade direction={'right'}>
         <BoxSearch />
         </Fade>

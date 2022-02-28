@@ -155,7 +155,8 @@ const Header = () => {
           style={{
             color: "rgb(57, 177, 217)",
             backgroundColor: "rgb(57, 177, 217)",
-            height: 2
+            height: 2,
+            border:'none'
           }}
       />
     </div>
