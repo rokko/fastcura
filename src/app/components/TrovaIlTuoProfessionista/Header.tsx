@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import ButtonIscriviti from "./ButtonIscriviti";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin"
+import ModalLogin from "../General/ModalLogin";
 
 const Header = () => {
     const [pip,setPip]=useState(false)
@@ -146,7 +147,7 @@ const Header = () => {
 
           </svg>
     </div>
-    {(pip) &&<div style={{position:'fixed', left:'15%',top:'10%'}}> <BoxLogin chiudi={ setPip} /></div>}
+    <ModalLogin open={pip} />
       </div>
 
         </div>
