@@ -18,7 +18,7 @@ const ProvaloGratis = () => {
 
             <p style={{fontSize:(isMobile)?'14px':'24px'}}>Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.</p>
 
-            <p style={{fontSize:(isMobile)?'14px':'24px'}}>Fastcura ha l'obiettivo di darti visibilità sul tuo territorio, allargando la tua rete di clienti</pc>
+            <p style={{fontSize:(isMobile)?'14px':'24px'}}>Fastcura ha l'obiettivo di darti visibilità sul tuo territorio, allargando la tua rete di clienti</p>
 
             <Link to = '/signup-professionista'>
 
