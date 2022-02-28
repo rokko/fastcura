@@ -11,15 +11,14 @@ const Ricavi = () => {
       <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
         <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-        <Typography fontWeight="bold" fontSize={25}>
+        <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25}>
           Ricavi
         </Typography>
 
 
-        <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
-          Accordato con il cliente il prezzo, lui potrà pagare nella più
+        <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Accordato con il cliente il prezzo, lui potrà pagare nella più
           completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
-        </Typography>
+        </p>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -93,12 +92,12 @@ const Ricavi = () => {
                 <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'#ffffff', padding:'30px'}}>
                     <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-                        <Typography fontWeight="bold" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'}>
+                        <Typography fontWeight="900" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'}>
                             Ricavi
                         </Typography>
 
 
-                        <Typography fontSize={'24px'} fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
+                        <Typography fontSize={'24px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
                             Accordato con il cliente il prezzo, lui potrà pagare nella più
                             completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
                         </Typography>
@@ -165,7 +164,7 @@ const Ricavi = () => {
                         </svg>
                         <Link to = '/signup-professionista'>
 
-                            <button style={{width:120, height:35, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'1rem',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
+                            <button style={{width:220, height:50, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'30px',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
                         </Link>
 
                     </div>

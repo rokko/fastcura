@@ -79,7 +79,7 @@ const BoxSearch = () => {
                     >
                         <button
                             style={{
-                                width: '120px',
+                                width: '220px',
                                 height: '50px',
                                 backgroundColor: "#FF3617",
                                 fontWeight: "bold",
@@ -87,7 +87,7 @@ const BoxSearch = () => {
                                 marginTop: 20,
                                 borderRadius: 20,
                                 color: "#ffffff",
-                                fontSize:'18px'
+                                fontSize:'30px'
                             }}
                         >Vai</button>
                     </Link>
@@ -102,7 +102,7 @@ const BoxSearch = () => {
       <div>
         <p className="top-test boldtext" style={{color:'#000000', textAlign:'left'}}>
           L'<span className="bluespan">assistenza </span><br />{" "}
-          domiciliare a<br/>portata di <span className="bluespan">click</span> 
+          domiciliare a<br/>portata di <span className="bluespan">click</span> !
         </p>
       </div>
       <Box

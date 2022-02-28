@@ -27,11 +27,11 @@ const DecidiTu = () => {
         }}>
 
           <div style={{display:'flex', flexDirection:'column', alignContent:'center',marginLeft:'20px', alignItems:'center'}}>
-          <Typography fontWeight="bold" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'} style={{display: 'flex', textAlign: 'left'}}>
+          <Typography fontWeight="900" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'} style={{display: 'flex', textAlign: 'left'}}>
             Decidi tu quando!
           </Typography>
 
-          <Typography fontSize={'24px'} fontFamily={'Charter'} textAlign={'left'} marginBottom={10} color="#6D6D6D">
+          <Typography fontSize={'24px'} fontFamily={'Charter'} fontWeight="bold"  textAlign={'left'} marginBottom={10} color="#6D6D6D">
             Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
             ti trova i clienti
           </Typography>
@@ -387,14 +387,13 @@ const DecidiTu = () => {
           }}>
 
 
-            <Typography fontWeight="bold" fontSize={25} style={{display: 'flex', textAlign: 'left'}}>
+            <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25} style={{display: 'flex', textAlign: 'left'}}>
               Decidi tu quando!
             </Typography>
-
-            <Typography fontSize={15} marginBottom={10} color="#6D6D6D">
+            <p style={{fontSize:(isMobile)?'14px':'24px'}}>
               Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
               ti trova i clienti
-            </Typography>
+            </p>
 
 
             <svg xmlns="http://www.w3.org/2000/svg" width="237.273" height="129.723" viewBox="0 0 237.273 129.723">

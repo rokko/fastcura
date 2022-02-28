@@ -7,7 +7,7 @@ const SeiNuovo = () => {
 if (!isMobile) return(
     <>
       <div style={{display:'flex', flexDirection:'column'}}>
-        <p className="titleAll" style={{ marginTop: "100px" }}>
+        <p className="titleAll" style={{ marginTop: "100px", fontSize:'48px' }}>
           Sei nuovo?
         </p>
         <div style={{  display: "flex", flexDirection: "row" ,padding:40, justifyContent:'center', alignContent:'center', alignItems:'center'}}>
@@ -132,8 +132,8 @@ if (!isMobile) return(
                     alignContent:'center',
                     alignItems:'center',
                     justifyContent:'center',
-                    width: '130px',
-                    height: 30,
+                    width: '220px',
+                    height: 50,
                     backgroundColor: "#FF3617",
                     fontWeight: "bold",
                     border: "none",
@@ -142,7 +142,7 @@ if (!isMobile) return(
                     color: "#ffffff",
                   }}
               >
-                <p style={{fontSize:'10px', color:'white'}}>Ho bisogno di cure</p>
+                <p style={{fontSize:'20px', color:'white'}}>Ho bisogno di cure</p>
               </button>
             </Link>
           </div>
@@ -369,8 +369,8 @@ if (!isMobile) return(
                     alignContent:'center',
                     alignItems:'center',
                     justifyContent:'center',
-                    width: '130px',
-                    height: 30,
+                    width: '220px',
+                    height: 50,
                     backgroundColor: "#FF3617",
                     fontWeight: "bold",
                     border: "none",
@@ -378,7 +378,7 @@ if (!isMobile) return(
                     borderRadius: 20,
                     color: "#ffffff",
                   }}
-              ><p style={{fontSize:'10px', color:'white'}}>
+              ><p style={{fontSize:'20px', color:'white'}}>
 
                 Sono un professionista
               </p>

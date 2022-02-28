@@ -11,7 +11,7 @@ const Visibilita = () => {
       <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%'}}>
         <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-        <Typography fontWeight="bold" fontSize={25} marginBottom={10}>
+        <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25} marginBottom={10}>
           Per Infermieri, Caregiver e Fisioterapisti
         </Typography>
 
@@ -524,7 +524,7 @@ const Visibilita = () => {
               <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'#ffffff', padding:'30px'}}>
                 <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-                  <Typography fontWeight="bold" color={'#000000'} fontFamily={'Charter'} fontSize={'48px'} marginBottom={10}>
+                  <Typography fontWeight="900" color={'#000000'} fontFamily={'Charter'} fontSize={'48px'} marginBottom={10}>
                     Per Infermieri, Caregiver e Fisioterapisti
                   </Typography>
 

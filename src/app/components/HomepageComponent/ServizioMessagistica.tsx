@@ -10,15 +10,15 @@ const ServizioMessagistica = () => {
       <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%',height:'500px', backgroundColor:'rgb(242, 252, 255)'}}>
         <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-        <Typography fontWeight="bold" fontSize={25} >
+        <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25} >
           Servizio di messaggistica diretto con il cliente
         </Typography>
 
-        <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
+        <p style={{fontSize:(isMobile)?'14px':'24px'}}>
           La persona trova i professionisti più vicini a lui e ne valuta le
           competenze e la qualità dei servizi erogati attraverso le recensioni
           lasciate da altri utenti
-        </Typography>
+        </p>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -194,11 +194,11 @@ const ServizioMessagistica = () => {
             <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 <div style={{display:'flex',flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-              <Typography fontWeight="bold" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
+              <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
                 Servizio di messaggistica diretto con il cliente
               </Typography>
 
-              <Typography fontSize={'24px'} fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
+              <Typography fontSize={'24px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
                 La persona trova i professionisti più vicini a lui e ne valuta le
                 competenze e la qualità dei servizi erogati attraverso le recensioni
                 lasciate da altri utenti

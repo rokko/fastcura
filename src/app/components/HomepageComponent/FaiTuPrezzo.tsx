@@ -24,14 +24,14 @@ const FaiTuPrezzo = () => {
       alignItems: 'center'
     }}>
 
-      <Typography fontWeight="bold" fontSize={25}>
+      <Typography fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25}>
         Fai tu il prezzo
       </Typography>
 
 
-      <Typography fontSize={15} color="#6D6D6D" marginBottom={8}>
+      <p style={{fontSize:(isMobile)?'14px':'24px'}}>
         Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
-      </Typography>
+      </p>
 
       <svg xmlns="http://www.w3.org/2000/svg" width="228.746" height="183.138" viewBox="0 0 228.746 183.138">
         <g id="Raggruppa_99" data-name="Raggruppa 99" transform="translate(0 -63)">
@@ -143,12 +143,12 @@ const FaiTuPrezzo = () => {
         alignItems: 'center'
       }}>
 <div style={{display:'flex', flexDirection:'column', alignItems:'center', alignContent:'center'}}>
-        <Typography fontWeight="bold" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
+        <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
           Fai tu il prezzo
         </Typography>
 
 
-        <Typography fontSize={'24px'} color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
+        <Typography fontSize={'24px'} fontWeight="bold" color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
           Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
         </Typography>
 </div>

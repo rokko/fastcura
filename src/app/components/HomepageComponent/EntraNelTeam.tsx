@@ -24,9 +24,9 @@ const EntraNelTeam = () => {
               alignContent: 'center',
               alignItems: 'center'
             }}>
-              <Typography fontWeight="bold" fontSize={25} color={'#000000'} fontFamily={'Charter'}>
-                Entra nel Team
-              </Typography>
+              <p className="top-test boldtext" style={{color:'#000000', textAlign:'left'}}>
+         Iscriviti a <span className="bluespan">fastcura</span>
+        </p>
               <svg xmlns="http://www.w3.org/2000/svg" width="177.178" height="162.574" viewBox="0 0 177.178 162.574">
                 <g id="Raggruppa_125" data-name="Raggruppa 125" transform="translate(-99.28 -141.403)">
                   <g id="Raggruppa_124" data-name="Raggruppa 124">
@@ -240,9 +240,9 @@ const EntraNelTeam = () => {
               alignContent: 'center',
               alignItems: 'center'
             }}>
-              <Typography fontWeight="bold" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'}>
-                Entra nel Team
-              </Typography>
+             <p className="top-test boldtext" style={{color:'#000000', fontSize:'48px',textAlign:'left'}}>
+         Iscriviti a <span className="bluespan">fastcura </span><br />{" "}
+        </p>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center', justifyContent:'space-evenly'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="177.178" height="162.574" viewBox="0 0 177.178 162.574">
                 <g id="Raggruppa_125" data-name="Raggruppa 125" transform="translate(-99.28 -141.403)">
@@ -426,14 +426,14 @@ const EntraNelTeam = () => {
                     style={{
                       backgroundColor: "#E93323",
                       width: 220,
-                      height: 37,
+                      height: 50,
                       borderRadius: 20,
                       border: "none",
                       color: "white",
                       marginTop: 10,
                     }}
                 >
-                  <Typography fontWeight="bold" color={'#ffffff'}> Inizia la prova gratuita</Typography>
+                  <Typography fontWeight="bold" color={'#ffffff'} fontSize={'30px'}> Inizia la prova gratuita</Typography>
                 </button>
               </Link>
               </div>

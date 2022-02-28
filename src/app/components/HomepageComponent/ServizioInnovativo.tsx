@@ -11,14 +11,13 @@ const ServizioInnovativo = () => {
       <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)'}}>
         <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-        <Typography fontWeight="bold" fontSize={25}>
+        <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25}>
             Un servizio innovativo
           </Typography>
 
-          <Typography fontSize={15} color="#6D6D6D" marginBottom={10}>
+          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
             Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
-            la tutela del professionista.
-          </Typography>
+            la tutela del professionista.</p>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -497,11 +496,11 @@ const ServizioInnovativo = () => {
           <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%',backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
             <div style={{display:'flex', flexDirection:'column' ,alignContent:'center', alignItems:'center'}}>
-              <Typography fontWeight="bold" color={'#000000'} fontSize={'48px'}fontFamily={'Charter'}>
+              <Typography fontWeight="900" color={'#000000'} fontSize={'48px'}fontFamily={'Charter'}>
                 Un servizio innovativo
               </Typography>
 
-              <Typography textAlign={'left'} fontSize={'24px'} color="#6D6D6D" marginBottom={10} fontFamily={'Charter'}>
+              <Typography fontWeight="bold"  textAlign={'left'} fontSize={'24px'} color="#6D6D6D" marginBottom={10} fontFamily={'Charter'}>
                 Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
                 la tutela del professionista.
               </Typography>

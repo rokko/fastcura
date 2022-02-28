@@ -11,10 +11,9 @@ const Visibilita = () => {
   <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'110%', maxWidth:'100%',backgroundColor:'rgb(242, 252, 255)',padding:'20px'}}>
     <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Typography fontWeight='bold' fontSize={25}  color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
+    <Typography  fontSize={'25px'}  fontWeight={'900'} color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
         <div>
-        <p style={{fontSize:15, color:"#6D6D6D" , textAlign:'left', fontFamily:'Charter'}}>
-          Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
+        <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
           allargando la tua rete di clienti
         </p>
        
@@ -262,7 +261,7 @@ const Visibilita = () => {
           <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-              <Typography fontWeight='bold' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
+              <Typography fontWeight='900' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
                 <p style={{fontSize:24, color:"#6D6D6D" , textAlign:'left', fontFamily:'Charter'}}>
                   Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
                   allargando la tua rete di clienti
@@ -491,17 +490,18 @@ const Visibilita = () => {
               </svg>
 
               <button
+              onClick={()=>window.scrollTo(0,document.body.scrollHeight)}
                   style={{
                     borderRadius: 20,
                     backgroundColor: "#39B1D9",
                     border: "none",
-                    width: 190,
-                    height: 37,
+                    width: 220,
+                    height: 50,
                     color: "#ffffff",
                     marginTop:10,
                   }}
               >
-                <Typography fontWeight="bold" color={'#ffffff'}>Scopri di più</Typography>
+                <Typography fontWeight="bold" color={'#ffffff'} fontSize={'30px'}>Scopri di più</Typography>
               </button>
     </div>
             </div>

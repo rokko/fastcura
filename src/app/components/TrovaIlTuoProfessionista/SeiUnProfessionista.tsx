@@ -218,7 +218,7 @@ const SeiUnProfessionista = () => {
                   marginTop:'50px',
                   backgroundColor: "#E93323",
                   width: 220,
-                  height: 37,
+                  height: 50,
                   borderRadius: 20,
                   border: "none",
                   color: "white",
@@ -229,7 +229,7 @@ const SeiUnProfessionista = () => {
                   textDecoration:'none'
                 }}
             >
-              <p style={{ color: "#ffffff", fontWeight: "bold", textDecoration:'none' }}>Inizia ora</p>
+              <p style={{ color: "#ffffff", fontSize:'30px' ,fontWeight: "bold", textDecoration:'none' }}>Inizia ora</p>
             </button>
           </Link>
           <p style={{fontSize:'32px'}}>la prova gratuita di 30 giorni</p>

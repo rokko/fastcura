@@ -37,6 +37,13 @@ p{
 .top-test{
   font-size:23px;
 }
+
+@media only screen and (max-width: 900px) {
+  .top-test{
+    font-size:40px;
+  }
+}
+
 .bluespan{
   color: #39B1D9!important;
 }
