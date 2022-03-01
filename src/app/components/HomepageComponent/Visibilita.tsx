@@ -11,7 +11,7 @@ const Visibilita = () => {
   <div style={{display:'flex', marginTop:'50px',flexDirection:'row', justifyContent:"space-around", width:'110%', maxWidth:'100%',backgroundColor:'rgb(242, 252, 255)',padding:'20px'}}>
     <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 
-    <Typography  fontSize={'25px'}  fontWeight={'900'} color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
+    <Typography  fontSize={'25px'}  fontWeight={'900'} color={'#000000'} fontFamily={'Charter'} >Visibilità</Typography>
         <div>
         <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
           allargando la tua rete di clienti
@@ -261,7 +261,7 @@ const Visibilita = () => {
           <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-              <Typography fontWeight='900' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilita</Typography>
+              <Typography fontWeight='900' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilità</Typography>
                 <p style={{fontSize:24, color:"#6D6D6D" , textAlign:'left', fontFamily:'Charter'}}>
                   Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
                   allargando la tua rete di clienti
