@@ -13,8 +13,8 @@ const ProblemaRisolto = () => {
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="171.502"
-          height="173.888"
+          width="300.502"
+          height="300.888"
           viewBox="0 0 171.502 173.888"
         >
           <g

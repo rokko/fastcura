@@ -15,8 +15,8 @@ if (!isMobile) return(
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                width="107.054"
-                height="106.299"
+                width="150.054"
+                height="150.299"
                 viewBox="0 0 107.054 106.299"
             >
               <g
@@ -150,8 +150,8 @@ if (!isMobile) return(
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                width="107.054"
-                height="115.05"
+                width="150.054"
+                height="150.05"
                 viewBox="0 0 107.054 115.05"
             >
               <g

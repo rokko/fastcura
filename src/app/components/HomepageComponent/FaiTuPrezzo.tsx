@@ -1,6 +1,7 @@
 import {  Typography } from "@mui/material";
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const FaiTuPrezzo = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -143,6 +144,7 @@ const FaiTuPrezzo = () => {
         alignItems: 'center'
       }}>
 <div style={{display:'flex', flexDirection:'column', alignItems:'center', alignContent:'center'}}>
+    <Fade direction={'up'}>
         <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
           Fai tu il prezzo
         </Typography>
@@ -151,8 +153,9 @@ const FaiTuPrezzo = () => {
         <Typography fontSize={'24px'} fontWeight="bold" color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
           Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
         </Typography>
+    </Fade>
 </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="228.746" height="183.138" viewBox="0 0 228.746 183.138">
+        <svg xmlns="http://www.w3.org/2000/svg" width="300.746" height="300.138" viewBox="0 0 228.746 183.138">
           <g id="Raggruppa_99" data-name="Raggruppa 99" transform="translate(0 -63)">
             <path id="Tracciato_621" data-name="Tracciato 621"
                   d="M739.836,717.9l-8.7-8.562-8.535-8.4a1.544,1.544,0,0,1-.36-1.491c.439-1.566,3.094-3.122,4.645-4.429l.156-.133a4.872,4.872,0,0,1,6.846.581l10.435,12.369h0l3.094,3.669a4.871,4.871,0,0,1-.581,6.845l-.156.133A4.873,4.873,0,0,1,739.836,717.9Z"

@@ -2,6 +2,7 @@ import {   Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const Ricavi = () => {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -90,22 +91,25 @@ const Ricavi = () => {
             </> }
             {(!isMobile)&&<>
                 <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'#ffffff', padding:'30px'}}>
-                    <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
-<div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
-                        <Typography fontWeight="900" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'}>
+                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+<div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center', width:'60%'}}>
+    <Fade direction={'up'}>
+                        <Typography fontWeight="900" fontSize={'48px'} textAlign={'left'} color={'#000000'} fontFamily={'Charter'}>
                             Ricavi
                         </Typography>
 
 
-                        <Typography fontSize={'24px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
+                        <Typography fontSize={'24px'} fontWeight="bold" textAlign={'left'}  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
                             Accordato con il cliente il prezzo, lui potrà pagare nella più
                             completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
                         </Typography>
+    </Fade>
 </div>
+                        <div style={{display:'flex', flexDirection:'column'}}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="121.179"
-                            height="156.289"
+                            width="300.179"
+                            height="300.289"
                             viewBox="0 0 121.179 156.289"
                         >
                             <g
@@ -166,6 +170,7 @@ const Ricavi = () => {
 
                             <button style={{width:220, height:50, backgroundColor:'#FF3617', fontWeight:'bold', border:'none',fontSize:'30px',marginTop:30, borderRadius:20, color:'#ffffff'}}>Inizia Ora</button>
                         </Link>
+                        </div>
 
                     </div>
                 </div>

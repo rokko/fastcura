@@ -2,13 +2,15 @@ import {Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const EntraNelTeam = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
 
   return (
     <>
-      {(!!isMobile) &&
+      {
+        (!!isMobile) &&
           <div style={{
             display: 'flex',
             marginTop: '50px',
@@ -236,15 +238,17 @@ const EntraNelTeam = () => {
             <div style={{
               display: 'flex',
               flexDirection: 'row',
-              justifyContent: "space-around",
+              justifyContent: "space-evenly",
               alignContent: 'center',
               alignItems: 'center'
             }}>
-             <p className="top-test boldtext" style={{color:'#000000', fontSize:'48px',textAlign:'left'}}>
-         Iscriviti a <span className="bluespan">Fastcura </span><br />{" "}
-        </p>
+              <Fade direction={'right'}>
+             <p className="top-test boldtext" style={{color:'#000000', fontSize:'48px',textAlign:'left', marginRight:'50px'}}>
+                 Iscriviti a <span className="bluespan">Fastcura </span><br />{" "}
+             </p>
+              </Fade>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center', justifyContent:'space-evenly'}}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="177.178" height="162.574" viewBox="0 0 177.178 162.574">
+              <svg xmlns="http://www.w3.org/2000/svg" width="250.178" height="250.574" viewBox="0 0 177.178 162.574">
                 <g id="Raggruppa_125" data-name="Raggruppa 125" transform="translate(-99.28 -141.403)">
                   <g id="Raggruppa_124" data-name="Raggruppa 124">
                     <g id="Raggruppa_69" data-name="Raggruppa 69" transform="translate(-2632.901 -602.597)">
@@ -437,7 +441,7 @@ const EntraNelTeam = () => {
                 </button>
               </Link>
               </div>
-            </div>
+              </div>
           </div>
       }
     </>

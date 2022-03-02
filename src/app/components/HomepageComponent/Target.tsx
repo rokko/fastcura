@@ -1,6 +1,7 @@
 import {   Typography } from "@mui/material";
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const Visibilita = () => {
 
@@ -522,16 +523,18 @@ const Visibilita = () => {
         }
         {(!isMobile && <>
               <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'#ffffff', padding:'30px'}}>
-                <div style={{display:'flex', flexDirection:'column', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
-
-                  <Typography fontWeight="900" color={'#000000'} fontFamily={'Charter'} fontSize={'48px'} marginBottom={10}>
+                <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+                  <Fade direction={'up'}>
+                  <p style={{fontWeight:"900", color:'#000000',textAlign:'left',fontFamily:'Charter',fontSize:'48px', marginBottom:10}} >
                     Per Infermieri, Caregiver e Fisioterapisti
-                  </Typography>
+                  </p>
+
+                  </Fade>
 
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="185.379"
-                      height="186.381"
+                      width="300.379"
+                      height="300.381"
                       viewBox="0 0 185.379 186.381"
                   >
                     <defs>

@@ -1,6 +1,7 @@
 import {  Typography } from "@mui/material";
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const DecidiTu = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -21,24 +22,25 @@ const DecidiTu = () => {
         <div style={{
           display: 'flex',
           flexDirection: 'row-reverse',
-          justifyContent: "space-evenly",
           alignContent: 'center',
           alignItems: 'center',
+          width:'100%',
+
         }}>
 
-          <div style={{display:'flex', flexDirection:'column', alignContent:'center',marginLeft:'20px', alignItems:'center'}}>
-          <Typography fontWeight="900" fontSize={'48px'} color={'#000000'} fontFamily={'Charter'} style={{display: 'flex', textAlign: 'left'}}>
+          <div style={{display:'flex', width:'60%', flexDirection:'column',justifyContent:'center', alignContent:'center',marginLeft:'20px', alignItems:'center', textAlign:'left'}}>
+            <Fade direction={'up'}>
+          <p style={{display: 'flex', textAlign: 'left',fontWeight:"900", fontSize:'48px', color:'#000000',fontFamily:'Charter'}}>
             Decidi tu quando!
-          </Typography>
-
-          <Typography fontSize={'24px'} fontFamily={'Charter'} fontWeight="bold"  textAlign={'left'} marginBottom={10} color="#6D6D6D">
+          </p>
+          <p style={{ fontSize:'24px', fontFamily:'Charter', fontWeight:"bold",  textAlign:'left',marginBottom:10, color:"#6D6D6D"}}>
             Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
             ti trova i clienti
-          </Typography>
-          </div>
+          </p>
+            </Fade>
+            </div>
 
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="237.273" height="129.723" viewBox="0 0 237.273 129.723">
+          <svg xmlns="http://www.w3.org/2000/svg" width="300.273" height="300.723" viewBox="0 0 237.273 129.723">
             <g id="Raggruppa_94" data-name="Raggruppa 94" transform="translate(-129.642 -359.071)">
               <path id="Tracciato_528" data-name="Tracciato 528"
                     d="M292.273,767.155s44.524.942,72.123,4.337c3.779.465,7.228,4.047-20.7,5.7-31.483,1.859-189.407.267-203.792,0-15.263-.283-13.147-4.739,3.995-6.8S237.991,763.909,292.273,767.155Z"

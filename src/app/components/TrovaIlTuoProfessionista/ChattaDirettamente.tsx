@@ -17,8 +17,8 @@ const ChattaDirettamente = () => {
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="125.516"
-          height="217.525"
+          width="300.516"
+          height="300.525"
           viewBox="0 0 125.516 217.525"
         >
           <g

@@ -271,8 +271,8 @@ const Visibilita = () => {
 <div style={{display:'flex', flexDirection:'column', alignContent:'center',alignItems:'center'}}>
               <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="276.75"
-                  height="296.939"
+                  width="300.75"
+                  height="300.939"
                   viewBox="0 0 276.75 296.939"
               >
                 <g
