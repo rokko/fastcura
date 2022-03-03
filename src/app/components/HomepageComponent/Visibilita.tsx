@@ -260,7 +260,7 @@ const Visibilita = () => {
       }
       {(!isMobile)&&
           <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
+            <div style={{display:'flex', flexDirection:'row-reverse', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
                 <Fade direction={'up'}>
               <Typography fontWeight='900' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilità</Typography>
