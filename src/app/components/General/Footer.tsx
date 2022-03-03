@@ -1,6 +1,8 @@
 import React from 'react'
+import {useMediaQuery} from "react-responsive";
 
 const Footer = () => {
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
 
 
     return(
@@ -14,7 +16,7 @@ const Footer = () => {
                     border:'none'
                 }}
             />
-<div style={{display:'flex',flexDirection:'row', justifyContent:'space-evenly'}}>
+<div style={{display:'flex',flexDirection:isMobile? 'column' : 'row', justifyContent:'space-evenly'}}>
                <p> <a href={"mailto:rocco.caricola89@gmail.com"} style={{textDecoration:'none'}}>Rocco Caricola</a> - Fastcura 2022</p>
                 <p>Termini e Condizioni</p>
                 <p>Cookies</p>
