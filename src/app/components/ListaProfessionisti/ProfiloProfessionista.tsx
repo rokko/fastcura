@@ -154,7 +154,7 @@ const ProfiloProfessionista = () => {
               />
             </svg>
           </div>
-          <Link to="/chat" state={{professionista: ValoriParametri}} ><Button  style={{backgroundColor:'#39B1D9', width:'110px', height:'30px', marginTop:'20px', textTransform:'none', borderRadius:'30px', textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>Contatta</p></Button></Link>
+          <Link to="/chat" state={{professionista: ValoriParametri}} style={{ textDecoration:"none"}} ><Button  style={{backgroundColor:'#39B1D9', width:'110px', height:'30px', marginTop:'20px', textTransform:'none', borderRadius:'30px', textDecoration:'none'}}><p style={{color:'#ffffff', textDecoration:'none'}}>Contatta</p></Button></Link>
         </div>
      
       </div>

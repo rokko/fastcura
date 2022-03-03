@@ -11,6 +11,7 @@ import SeiUnProfessionista from "../components/TrovaIlTuoProfessionista/SeiUnPro
 import Login from "../components/General/Login/Login";
 import SeiNuovo from "../components/TrovaIlTuoProfessionista/SeiNuovo";
 import { Fade } from "react-awesome-reveal";
+import Footer from "../components/General/Footer";
 
 const TrovaIlTuoProfessionista = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -76,6 +77,7 @@ const TrovaIlTuoProfessionista = () => {
               </div>
           </div>
         </div>
+          <Footer />
       </>
     );
   else
@@ -114,6 +116,7 @@ const TrovaIlTuoProfessionista = () => {
 
           <SeiNuovo />
         </div>
+          <Footer/>
       </>
     );
 };

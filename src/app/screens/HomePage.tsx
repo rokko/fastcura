@@ -11,6 +11,7 @@ import ProvaloGratis from "../components/HomepageComponent/ProvaloGratis";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
 import {useMediaQuery} from "react-responsive";
 import { Fade } from "react-awesome-reveal";
+import Footer from '../components/General/Footer'
 
 const HomePage = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -50,7 +51,9 @@ const HomePage = () => {
         </div>
       </div>
       }
-      {(!isMobile)&&        <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center', backgroundColor:'rgb(249, 249, 249)'}}>
+      {(!isMobile)&&
+          <>
+            <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center', backgroundColor:'rgb(249, 249, 249)'}}>
         <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%'}}>
 
 
@@ -80,8 +83,12 @@ const HomePage = () => {
 
         </div>
       </div>
+
       </div>
+
+            </>
       }
+      <Footer />
     </>
   );
 };

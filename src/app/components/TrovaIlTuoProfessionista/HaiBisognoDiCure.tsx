@@ -1,5 +1,6 @@
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const TrovaIlTuoProfessionista = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -9,11 +10,13 @@ const TrovaIlTuoProfessionista = () => {
     <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column',  alignContent:'center', alignItems:'center', height:'400px',justifyContent:'space-around', marginTop:'20px'}}>
       <div className="paragrafidivisi" style={{marginLeft:'20px', marginRight:'20px', display:'flex', justifyContent:'space-around'}}>
         <div style={{width:'60%', marginRight:'10px', textAlign:'left'}}>
+          <Fade direction={'up'}>
           <p className="titleAll" style={{fontSize: (isMobile)?'25px':'48px'}}>Hai bisogno di cure?</p>
           <p style={{fontSize:(isMobile)?'14px':'24px'}}>
             Con Fastcura troverai infermieri, Caregiver Fisioterapisti, pronti a
             darti una mano
           </p>
+          </Fade>
         </div>
         <svg
           id="Componente_1_1"

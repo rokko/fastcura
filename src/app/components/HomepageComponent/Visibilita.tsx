@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import {useMediaQuery} from "react-responsive";
+import {Fade} from "react-awesome-reveal";
 
 const Visibilita = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -261,11 +262,13 @@ const Visibilita = () => {
           <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'row', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>
+                <Fade direction={'up'}>
               <Typography fontWeight='900' fontSize={'48px'} alignContent='left' color={'#000000'} fontFamily={'Charter'} >Visibilità</Typography>
                 <p style={{fontSize:24, color:"#6D6D6D" , textAlign:'left', fontFamily:'Charter'}}>
                   Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
                   allargando la tua rete di clienti
                 </p>
+                </Fade>
               </div>
 
 <div style={{display:'flex', flexDirection:'column', alignContent:'center',alignItems:'center'}}>

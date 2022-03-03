@@ -4,6 +4,7 @@ import { useLocation} from 'react-router-dom'
 import HeaderNoLogin from '../components/Cliente/HeaderNoLogin'
 import BoxRisultato from '../components/Cliente/Ricerca/BoxRisultato'
 import axios from 'axios'
+import Footer from "../components/General/Footer";
 
 
 
@@ -46,7 +47,7 @@ useEffect(()=>{
         return(
             <BoxRisultato professionista={prof}/>
         )})}
-
+<Footer/>
         </>
     )
 }
