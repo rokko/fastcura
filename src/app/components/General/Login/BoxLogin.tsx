@@ -55,8 +55,6 @@ const BoxLogin = (props:any) => {
                     <p className="topsearch-text">Accedi</p>
                     <TextField
                         variant={'standard'}
-
-
                         hiddenLabel
                         sx={{
                             width: "240px",

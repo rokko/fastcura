@@ -14,9 +14,11 @@ const Visibilita = () => {
 
     <Typography  fontSize={'25px'}  fontWeight={'900'} color={'#000000'} fontFamily={'Charter'} >Visibilità</Typography>
         <div>
+          <Fade direction={'up'}>
         <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
           allargando la tua rete di clienti
         </p>
+          </Fade>
        
       </div>
         <svg

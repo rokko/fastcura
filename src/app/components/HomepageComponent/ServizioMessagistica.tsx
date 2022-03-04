@@ -15,11 +15,13 @@ const ServizioMessagistica = () => {
           Servizio di messaggistica diretto con il cliente
         </Typography>
 
+        <Fade direction={'up'}>
         <p style={{fontSize:(isMobile)?'14px':'24px'}}>
           La persona trova i professionisti più vicini a lui e ne valuta le
           competenze e la qualità dei servizi erogati attraverso le recensioni
           lasciate da altri utenti
         </p>
+        </Fade>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"

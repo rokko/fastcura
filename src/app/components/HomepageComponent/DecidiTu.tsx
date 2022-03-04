@@ -393,10 +393,12 @@ const DecidiTu = () => {
             <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25} style={{display: 'flex', textAlign: 'left'}}>
               Decidi tu quando!
             </Typography>
+            <Fade direction={'up'}>
             <p style={{fontSize:(isMobile)?'14px':'24px'}}>
               Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
               ti trova i clienti
             </p>
+            </Fade>
 
 
             <svg xmlns="http://www.w3.org/2000/svg" width="237.273" height="129.723" viewBox="0 0 237.273 129.723">

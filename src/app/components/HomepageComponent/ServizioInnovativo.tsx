@@ -15,10 +15,11 @@ const ServizioInnovativo = () => {
         <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'} fontSize={25}>
             Un servizio innovativo
           </Typography>
-
+        <Fade direction={'up'}>
           <p style={{fontSize:(isMobile)?'14px':'24px'}}>
             Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
             la tutela del professionista.</p>
+        </Fade>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"

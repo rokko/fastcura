@@ -29,10 +29,11 @@ const FaiTuPrezzo = () => {
         Fai tu il prezzo
       </Typography>
 
-
+    <Fade direction={'up'}>
       <p style={{fontSize:(isMobile)?'14px':'24px'}}>
         Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
       </p>
+    </Fade>
 <div style={{position:'relative', left:'-20%'}}>
       <svg xmlns="http://www.w3.org/2000/svg" width="228.746" height="183.138" viewBox="0 0 228.746 183.138">
         <g id="Raggruppa_99" data-name="Raggruppa 99" transform="translate(0 -63)">

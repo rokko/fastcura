@@ -16,10 +16,11 @@ const Ricavi = () => {
           Ricavi
         </Typography>
 
-
+        <Fade direction={'up'}>
         <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Accordato con il cliente il prezzo, lui potrà pagare nella più
           completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
         </p>
+        </Fade>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
