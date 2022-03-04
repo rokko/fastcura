@@ -8,7 +8,7 @@ import ModalLogin from "../General/ModalLogin";
 const Header = () => {
     const [pip,setPip]=useState(false)
   return (
-    <div className="header" >
+    <div style={{position:'fixed', top: 0,  maxWidth:'100%' ,background:'white'}} >
       <Container
         style={{
           display: "flex",

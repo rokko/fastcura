@@ -8,8 +8,8 @@ const ChattaDirettamente = () => {
   return (
     <>
     <div style={{backgroundColor:'#F2FCFF', width:'100%', display:'flex', flexDirection:'column', justifyContent:'space-around', alignContent:'center', alignItems:'center', height:'400px'}}>
-      <div style={{ display: "flex", flexDirection: "row", marginLeft:'20px',justifyContent:'space-around',marginRight:'20px' }}>
-        <div style={{ width: "60%", textAlign:'left'}}>
+      <div style={{ display: "flex", flexDirection: "row", marginLeft:'20px',justifyContent:'space-around',marginRight:'20px', padding:'30px' }}>
+        <div style={{ width: "60%", textAlign:'left', marginLeft:'25px'}}>
 
           <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}}>Chatta direttamente con il professionista</p>
           <Fade direction={'up'}>
@@ -21,8 +21,8 @@ const ChattaDirettamente = () => {
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="300.516"
-          height="300.525"
+          width={isMobile ? '180':"300.425"}
+          height={isMobile ? '180':"300.425"}
           viewBox="0 0 125.516 217.525"
         >
           <g

@@ -24,8 +24,8 @@ const TrovaIlTuoProfessionista = () => {
           data-name="Componente 1 – 1"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          width="300.425"
-          height="300.385"
+          width={isMobile ? '180':"300.425"}
+          height={isMobile ? '180':"300.425"}
           viewBox="0 0 155.425 159.385"
         >
           <defs>

@@ -7,7 +7,7 @@ const ProblemaRisolto = () => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row-reverse", height:'300px', justifyContent:'space-around' }}>
+      <div style={{ display: "flex", flexDirection: "row-reverse", height:'300px', padding:'30px', justifyContent:'space-around', alignContent:'center', alignItems:'center' }}>
         <div style={{ width: "60%", textAlign:'left', marginLeft:'10px' }}>
 
           <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}} >Il tuo problema risolto con un click!</p>
@@ -17,8 +17,8 @@ const ProblemaRisolto = () => {
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="300.502"
-          height="300.888"
+          width={isMobile ? '180':"300.425"}
+          height={isMobile ? '180':"300.425"}
           viewBox="0 0 171.502 173.888"
         >
           <g
