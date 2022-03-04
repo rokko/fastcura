@@ -194,7 +194,7 @@ const ServizioMessagistica = () => {
         {(!isMobile) && <>
             <div style={{display:'flex',flexDirection:'row',  width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
                 <div style={{display:'flex', flexDirection:'row-reverse', justifyContent:'space-between'}}>
-                      <div style={{display:'flex',flexDirection:'column', alignContent:'center', alignItems:'center'}}>
+                      <div style={{display:'flex',flexDirection:'column', width:'60%',alignContent:'center', alignItems:'center'}}>
 
                          <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'} textAlign={'left'}>
                                      Servizio di messaggistica diretto con il cliente
