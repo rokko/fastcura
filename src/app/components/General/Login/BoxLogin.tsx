@@ -1,7 +1,7 @@
 import {Box, TextField} from "@mui/material";
 import React , {useState} from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 interface IToken {
     accessToken : string
@@ -9,7 +9,7 @@ interface IToken {
 }
 
 const BoxLogin = (props:any) => {
-    console.log(props)
+    const navigate = useNavigate()
 
     const loginUser = ()=>{
 
@@ -19,6 +19,7 @@ const BoxLogin = (props:any) => {
                 if (!!token.accessToken) {
                     localStorage.setItem('tokenaccess', token.accessToken);
                     props.chiudi(false)
+                    navigate('/')
                 }
             })
             .catch(function (error) {
@@ -53,16 +54,21 @@ const BoxLogin = (props:any) => {
                 >
                     <p className="topsearch-text">Accedi</p>
                     <TextField
-                        size={"small"}
+                        variant={'standard'}
+
+
                         hiddenLabel
                         sx={{
                             width: "240px",
                             backgroundColor: "#ffffff",
-                            outlineColor: "#ffffff",
                             borderRadius:'30px',
+                            outline:'none',
+                            padding:'6px 10px !important',
                             '& .MuiOutlinedInput-root':{
                                 borderColor:'#ffffff',
                                 borderRadius:'30px',
+                                outline:'none',
+                                padding:'6px 10px!important'
                             }
                         }}
                         placeholder="Indirizzo email"

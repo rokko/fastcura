@@ -91,7 +91,7 @@ const HeaderNoLogin = () => {
                 </div>
                 
                    
-                <ModalLogin open={pop} />
+                <ModalLogin open={pop} chiudi={setPop} />
 
 
             </Box>

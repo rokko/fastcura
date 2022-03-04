@@ -151,7 +151,7 @@ const Header = () => {
 
           </svg>
     </div>
-    <ModalLogin open={pip} />
+    <ModalLogin open={pip} chiudi={setPip} />
       </div>
 
         </div>

@@ -4,13 +4,14 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {Box, TextField} from "@mui/material";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 interface IToken {
     accessToken : string
 
 }
 
 const ModalLogin = (props: any) => {
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [passw, setPassw] = useState('')
@@ -26,6 +27,7 @@ const ModalLogin = (props: any) => {
                 if (!!token.accessToken) {
                     localStorage.setItem('tokenaccess', token.accessToken);
                     props.chiudi(false)
+                    navigate('/')
                 }
             })
             .catch(function (error) {
@@ -51,15 +53,17 @@ const ModalLogin = (props: any) => {
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
                         marginTop:'100px',
-                        width: "300px",
-                        height: "450px",
+                        width: "320px",
+                        height: "470px",
                         backgroundColor: "#39B1D9",
                         borderRadius: "20px",
                         display:'flex',
                         flexDirection:'column',
                         justifyContent:'center',
                         alignContent:'center',
-                        alignItems:'center'
+                        alignItems:'center',
+                        border:'none!important',
+                        outline: 'none',
                     }}
                 >
                     <p className="topsearch-text">Accedi</p>
