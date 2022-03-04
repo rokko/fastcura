@@ -40,9 +40,8 @@ const HomePage = () => {
 
 
         <div style={{width: '80%'}}>
-          <Fade direction={'down'}>
           <EntraNelTeam />
-          </Fade>
+
          
           <Visibilita />
           <Target />
