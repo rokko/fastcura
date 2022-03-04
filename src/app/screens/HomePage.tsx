@@ -23,10 +23,8 @@ const HomePage = () => {
         <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%', marginTop:'100px'}}>
 
 
-          <Fade direction={'down'}>
           <EntraNelTeam />
-          </Fade>
-         
+
 
           <Visibilita />
         

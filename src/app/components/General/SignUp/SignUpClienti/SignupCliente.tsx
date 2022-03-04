@@ -140,9 +140,12 @@ const SignUpClient = () => {
         border: "none",
         color: "white",
         marginTop: 10,
+          fontSize:'30px',
+          fontWeight:'700'
       }}
         onClick={()=> sendRegister()}
         >
+
         Iscriviti
         </button>
 
@@ -373,6 +376,8 @@ const SignUpClient = () => {
               color: "white",
               marginTop: 10,
               marginBottom:30,
+              fontSize:'30px',
+              fontWeight:'700'
             }}
             onClick={()=> sendRegister()}
         >

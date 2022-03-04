@@ -242,11 +242,11 @@ const EntraNelTeam = () => {
               alignContent: 'center',
               alignItems: 'center'
             }}>
-              <Fade direction={'right'}>
+
              <p className="top-test boldtext" style={{color:'#000000', fontSize:'48px',textAlign:'left', marginRight:'50px'}}>
                  Iscriviti a <span className="bluespan">Fastcura </span><br />{" "}
              </p>
-              </Fade>
+
               <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center', justifyContent:'space-evenly'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="250.178" height="250.574" viewBox="0 0 177.178 162.574">
                 <g id="Raggruppa_125" data-name="Raggruppa 125" transform="translate(-99.28 -141.403)">
