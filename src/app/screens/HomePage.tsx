@@ -21,31 +21,15 @@ const HomePage = () => {
     <Header />
       {(!!isMobile)&&      <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
         <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%', marginTop:'100px'}}>
-
-
           <EntraNelTeam />
-
-
           <Visibilita />
-        
-
           <Target />
-         
           <DecidiTu />
-         
           <FaiTuPrezzo />
-         
-
           <ServizioMessagistica />
-         
-
           <Ricavi />
-         
           <ServizioInnovativo />
-         
           <ProvaloGratis />
-         
-
         </div>
       </div>
       }

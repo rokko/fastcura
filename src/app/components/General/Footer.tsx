@@ -17,7 +17,7 @@ const Footer = () => {
                 }}
             />
 <div style={{display:'flex',flexDirection:isMobile? 'column' : 'row', justifyContent:'space-evenly'}}>
-               <p> <a href={"mailto:rocco.caricola89@gmail.com"} style={{textDecoration:'none'}}>Rocco Caricola</a> - Fastcura 2022</p>
+                <p> FastCura Copyrigth 2022</p>
                 <p>Termini e Condizioni</p>
                 <p>Cookies</p>
                 <p>Privacy</p>
