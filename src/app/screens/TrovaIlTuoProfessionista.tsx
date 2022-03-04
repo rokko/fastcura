@@ -32,12 +32,11 @@ const TrovaIlTuoProfessionista = () => {
               width: "80%",
             }}
           >
-            <Fade direction={"right"}>
+
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <BoxSearch />
               </div>
-            </Fade>
-           
+
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <HaiBisognoDiCure />
               </div>
