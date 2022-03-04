@@ -4,11 +4,15 @@ import ButtonIscriviti from "./ButtonIscriviti";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin"
 import ModalLogin from "../General/ModalLogin";
+import {useMediaQuery} from "react-responsive";
 
 const Header = () => {
+
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+
     const [pip,setPip]=useState(false)
   return (
-    <div style={{position:'fixed', top: 0,  maxWidth:'100%' ,background:'white'}} >
+    <div style= { isMobile ?{position:'fixed', top: 0, maxWidth:'100%' ,background:'white', zIndex:'1000001'}:{position:'fixed',width:'100%', zIndex:'1000001', top: 0,background:'white'}} >
       <Container
         style={{
           display: "flex",

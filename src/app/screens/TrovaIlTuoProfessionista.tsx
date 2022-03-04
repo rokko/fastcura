@@ -18,6 +18,7 @@ const TrovaIlTuoProfessionista = () => {
   if (!isMobile)
     return (
       <>
+          <div style={{width:'100%'}}>
         <Header />
         <div style={{ backgroundColor: "#F9F9F9", marginTop: "100px" }}>
           <div
@@ -77,6 +78,8 @@ const TrovaIlTuoProfessionista = () => {
           </div>
         </div>
           <Footer />
+          </div>
+
       </>
     );
   else
