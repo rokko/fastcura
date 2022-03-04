@@ -83,6 +83,7 @@ const TrovaIlTuoProfessionista = () => {
   else
     return (
       <>
+          <div style={{width:'100%'}}>
         <Header />
         <div
           style={{
@@ -117,6 +118,7 @@ const TrovaIlTuoProfessionista = () => {
           <SeiNuovo />
         </div>
           <Footer/>
+          </div>
       </>
     );
 };

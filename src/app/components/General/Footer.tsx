@@ -7,7 +7,7 @@ const Footer = () => {
 
     return(
         <>
-            <div style={{display:'flex',borderTop:'2px solid rgb(57, 177, 217)', flexDirection:'column', height:'50px', position:'absolute',width:'100%'}}>
+            <div style={{display:'flex',marginTop:'50px',borderTop:'2px solid rgb(57, 177, 217)', flexDirection:'column', height:'50px', position:'absolute',width:'100%'}}>
 
 <div style={{display:'flex',flexDirection:isMobile? 'column' : 'row', justifyContent:'space-evenly', backgroundColor:'rgb(57, 177, 217)', color:'#ffffff'}}>
                 <p style={{color:'#ffffff'}}> FastCura Copyrigth 2022</p>
