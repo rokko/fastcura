@@ -29,10 +29,11 @@ const DecidiTu = () => {
         }}>
 
           <div style={{display:'flex', width:'60%', flexDirection:'column',justifyContent:'center', alignContent:'center',marginLeft:'20px', alignItems:'center', textAlign:'left'}}>
-            <Fade direction={'up'}>
+
           <p style={{display: 'flex', textAlign: 'left',fontWeight:"900", fontSize:'48px', color:'#000000',fontFamily:'Charter'}}>
             Decidi tu quando!
           </p>
+            <Fade direction={'up'}>
           <p style={{ fontSize:'24px', fontFamily:'Charter', fontWeight:"bold",  textAlign:'left',marginBottom:10, color:"#6D6D6D"}}>
             Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
             ti trova i clienti

@@ -195,11 +195,11 @@ const ServizioMessagistica = () => {
             <div style={{display:'flex',flexDirection:'row', justifyContent:"space-around", width:'100%', maxWidth:'100%', backgroundColor:'rgb(242, 252, 255)', padding:'30px'}}>
             <div style={{display:'flex', flexDirection:'row-reverse', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
 <div style={{display:'flex',flexDirection:'column', alignContent:'center', alignItems:'center', width:'60%'}}>
-    <Fade direction={'up'}>
+
               <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'} textAlign={'left'}>
                 Servizio di messaggistica diretto con il cliente
               </Typography>
-
+    <Fade direction={'up'}>
               <Typography fontSize={'24px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" textAlign={'left'} marginBottom={10}>
                 La persona trova i professionisti più vicini a lui e ne valuta le
                 competenze e la qualità dei servizi erogati attraverso le recensioni

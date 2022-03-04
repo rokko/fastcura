@@ -144,11 +144,11 @@ const FaiTuPrezzo = () => {
         alignItems: 'center'
       }}>
 <div style={{display:'flex', flexDirection:'column', alignItems:'center', alignContent:'center'}}>
-    <Fade direction={'up'}>
+
         <Typography fontWeight="900" fontSize={'48px'} fontFamily={'Charter'} color={'#000000'}>
           Fai tu il prezzo
         </Typography>
-
+    <Fade direction={'up'}>
 
         <Typography fontSize={'24px'} fontWeight="bold" color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
           Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}

@@ -498,11 +498,11 @@ const ServizioInnovativo = () => {
             <div style={{display:'flex', flexDirection:'row-reverse', justifyContent:"space-around",alignContent:'center', alignItems:'center' }}>
             <div style={{display:'flex', flexDirection:'column' ,width:'60%',alignContent:'center', alignItems:'center'}}>
 
-             <Fade direction={'up'}>
+
               <Typography fontWeight="900" textAlign={'left'} color={'#000000'} fontSize={'48px'}fontFamily={'Charter'}>
                 Un servizio innovativo
               </Typography>
-
+                <Fade direction={'up'}>
               <Typography fontWeight="bold"  textAlign={'left'} fontSize={'24px'} color="#6D6D6D" marginBottom={10} fontFamily={'Charter'}>
                 Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
                 la tutela del professionista.

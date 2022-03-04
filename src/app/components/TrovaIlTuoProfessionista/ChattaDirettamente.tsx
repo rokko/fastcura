@@ -7,8 +7,8 @@ const ChattaDirettamente = () => {
 
   return (
     <>
-    <div style={{backgroundColor:'#F2FCFF', width:'auto', display:'flex', flexDirection:'column', justifyContent:'space-around', alignContent:'center', alignItems:'center', height:'400px'}}>
-      <div style={{ display: "flex", flexDirection: "row", marginLeft:'20px', marginRight:'20px' }}>
+    <div style={{backgroundColor:'#F2FCFF', width:'100%', display:'flex', flexDirection:'column', justifyContent:'space-around', alignContent:'center', alignItems:'center', height:'400px'}}>
+      <div style={{ display: "flex", flexDirection: "row",width:'60%', marginLeft:'20px', marginRight:'20px' }}>
         <div style={{ width: "80%", marginLeft:'10px', textAlign:'left'}}>
           <Fade direction={'up'}>
           <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}}>Chatta direttamente con il professionista</p>
