@@ -26,6 +26,14 @@
 .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input{
   padding:6px 14px!important;
 }
+
+.input#mui-13{
+  padding:6px 14px!important;
+}
+
+.input#mui-12{
+  padding: 6px 14px!important;
+}
 .header{
 position: fixed;
   top: 0;
