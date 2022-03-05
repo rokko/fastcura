@@ -66,7 +66,9 @@ const ModalLogin = (props: any) => {
                         outline: 'none',
                     }}
                 >
-                    <p className="topsearch-text">Accedi</p>
+            <div onClick={()=>{props.chiudi(false)}} style={{position:'absolute',right:'0%', top:'-5%', width:'50px',height:'50px' ,borderRadius:'50px', display:'flex',backgroundColor:'rgb(233, 51, 35)', justifyContent:'center', alignContent:'center', alignItems:'center'}}>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVRIie3UsQ6CQAzGceLqJo+jBNCHcPH9E51QcP472OE8Fe56PVjoREL6/VqiLYq1lixgO3sWUAFX4GiAHiTrNDkdcONdA1AnoLVkIJnjm8uUD2l4ajaXjN7JaGMaVbgaTcGTUQ1uho4EfuHmaAgeMpg5nh118Mb5bw7ec5MFdXB3S/WmmxzDmRefZ3CeT73Ij+vHIWm9d/Y4sP+HZsNDUHM8BjXDNWgy7qFDDKrGgRLopKEHqljUyXLP6x0opxrOgicfBNm8Ay6hDbtUNEfWWqp6Ae770o+mwnJ+AAAAAElFTkSuQmCC" /></div>
+            <p className="topsearch-text">Accedi</p>
                     <TextField
                         size={"small"}
                         hiddenLabel
