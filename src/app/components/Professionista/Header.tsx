@@ -114,7 +114,7 @@ const Header = () => {
               />
             </svg>
           </Link>
-          <div onClick={()=> setOpen(true)}>
+          <div onClick={()=> setOpen(!open)}>
             <svg
               id="person"
               xmlns="http://www.w3.org/2000/svg"
