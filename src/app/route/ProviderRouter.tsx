@@ -9,6 +9,7 @@ import RisultatiRicerca from '../screens/RisultatiRicerca';
 import InCostruzione from '../components/General/InCostruzione';
 import ProfiloProfessionista from '../components/ListaProfessionisti/ProfiloProfessionista';
 import ChatProfessionista from '../components/General/Chat/ChatProfessionista';
+import ChatProfessionisti from '../components/Professionista/ChatProfessionisti';
 
 
 const ProviderRouter = () => {
@@ -26,7 +27,8 @@ const ProviderRouter = () => {
           <Route path="/incostruzione" element={<InCostruzione />}/>
           <Route path="/chat" element={<ChatProfessionista/>}/>
           <Route path="/profilo-professionista" element={<ProfiloProfessionista/>}/>
-        </Routes>
+          <Route path='/chatprofessionista' element={<ChatProfessionisti/>}/>
+        </Routes> 
         </Router>
         </>
     )

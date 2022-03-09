@@ -5,31 +5,48 @@ import {Box, TextField} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ModalLogin from '../ModalLogin';
+import axios from 'axios';
 
-const SERVER = "http://54.145.165.9:3001";
+
+const SERVER = "http://localhost:8080";
 
 const ChatProfessionista = () => {
+    const location = useLocation()
+    const valoriProfessionista = location.state as any
     const socket = socketClient(SERVER);
+    const idprofessionista=(valoriProfessionista.professionista._id)
     const [pop, setPop] = useState(false)
     const navigate = useNavigate()
     const [token,setToken]= useState('')
     const [messaggio,setMessaggio] = useState('')
     const takeToken = async () => {
         const tokenTest = await localStorage.getItem('tokenaccess');
-        (!!tokenTest)  ?setToken(tokenTest) : setPop(true)
+        (!!tokenTest)  ? setToken(tokenTest) : setPop(true)
     }
+
  useEffect(()=>{
      takeToken()
+ },[token])
 
- })
+ useEffect(()=>{
+     if(token !== ''){
+        const nuovo = {
+            id_professionista:idprofessionista
+        }
+        const config = {
+            headers: {Authorization: `Bearer ${token}`}
+        }
+       
+        axios.post('http://localhost:8080/cliente/nuovo-contatto',nuovo,config)
+            .then((x)=> console.log(x))
+     }
+ },[token])
 
     const inviaMessaggio = () => {
         console.log('ciao')
     }
-    const location = useLocation()
-    const valoriProfessionista = location.state as any
+   
     console.log(valoriProfessionista)
-    const idprofessionista=(valoriProfessionista._id)
    /* const messaggio ={
         id : id,
         message : message,
