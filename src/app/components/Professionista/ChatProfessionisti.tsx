@@ -55,6 +55,8 @@ const ChatProfessionisti = () => {
       
     }
   }
+
+  console.log(contatti)
     const requestInfo = async () => {
         if (token!=='') {
             console.log('prova')
@@ -98,13 +100,7 @@ const ChatProfessionisti = () => {
             }}>
                     {contatti.map((contatto)=>{
                       return(
-                        <>
                        <BoxChat contatto={contatto}/>
-                       <BoxChat  contatto={contatto}/>
-                       <BoxChat  contatto={contatto}/>
-                       <BoxChat  contatto={contatto}/>
-                       <BoxChat  contatto={contatto}/>
-                       </>
                       )
                     })}
             </div>

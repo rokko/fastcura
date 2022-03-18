@@ -34,7 +34,7 @@ const Professionista = () => {
 
       axios
         .get(
-          "https://guarded-thicket-90200.herokuapp.com/professionista/info",
+          "http://localhost:8080/professionista/info",
           config
         )
         .then((response) => {

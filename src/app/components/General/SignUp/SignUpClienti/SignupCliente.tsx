@@ -39,7 +39,7 @@ const SignUpClient = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
     console.log(datinuovoCliente)
     console.log('ok')
-    axios.post('https://guarded-thicket-90200.herokuapp.com/cliente/signup',nuovoCliente)
+    axios.post('http://localhost:8080/cliente/signup',nuovoCliente)
 .then(function (response) {
   navigate('/');
 })

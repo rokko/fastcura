@@ -27,7 +27,7 @@ const CronologiaPrestazioni = ()=> {
         const config = {
             headers: {Authorization:`Bearer ${token}` }
         }
-        axios.get('https://guarded-thicket-90200.herokuapp.com/professionista/lista-appuntamenti',config)
+        axios.get('http://localhost:8080/professionista/lista-appuntamenti',config)
             .then(function (response) {
                 setPrestazioni(response.data);
             })

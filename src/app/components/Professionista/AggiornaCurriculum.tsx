@@ -25,7 +25,7 @@ const AggiornaCurriculum = () => {
         const config = {
             headers: {Authorization: `Bearer ${token}`}
         }
-        axios.get('https://guarded-thicket-90200.herokuapp.com/professionista/ottieni-curriculum',config)
+        axios.get('http://localhost:8080/professionista/ottieni-curriculum',config)
             .then((res)=> setCurriculum(res.data))
             .then(()=>{
                 setTitoloStudio(curriculum?.titolodistudio)
@@ -61,7 +61,7 @@ const AggiornaCurriculum = () => {
         const config = {
             headers: {Authorization: `Bearer ${token}`}
         }
-        axios.post('https://guarded-thicket-90200.herokuapp.com/professionista/modificacurriculum',curriculumaggiornato,config)
+        axios.post('http://localhost:8080/professionista/modificacurriculum',curriculumaggiornato,config)
             .then((res)=> console.log(res))
         ottieniCurriculum()
     }
