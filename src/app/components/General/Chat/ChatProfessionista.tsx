@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import HeaderChat from '../Chat/HeaderChat';
-import socketClient  from "socket.io-client";
 import {Box, TextField} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +12,6 @@ const SERVER = "http://localhost:8080";
 const ChatProfessionista = () => {
     const location = useLocation()
     const valoriProfessionista = location.state as any
-    const socket = socketClient(SERVER);
     const idprofessionista=(valoriProfessionista.professionista._id)
     const [pop, setPop] = useState(false)
     const navigate = useNavigate()
@@ -52,7 +50,6 @@ const ChatProfessionista = () => {
         message : message,
     }*/
 
-    socket.on('ciao', ()=> console.log('ciao'))
     return(
        
         <>

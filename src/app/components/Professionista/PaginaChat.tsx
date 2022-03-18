@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Box, TextField } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import HeaderChat from "../General/Chat/HeaderChat";
 
 
 interface IChat {
@@ -15,9 +16,11 @@ const PaginaChat = () => {
   const [messaggio, setMessaggio] = useState("");
   const [chat, setChat] = useState<IChat[]>();
   const location = useLocation();
+  const [lastmessage, setLastmessage] = useState(0)
   const conversazione = location.state as any;
   const id = conversazione.contatto._id;
   const idinvio = conversazione.contatto.id_professionista
+  const myRef = React.createRef()
   
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -79,16 +82,30 @@ const PaginaChat = () => {
     recuperaChat();
   }, [token]);
 
-  
+    const vaiallafine = () => {
+      var objDiv = document.getElementById("boxchat");
+      if(objDiv!==null) objDiv.scrollTop = objDiv.scrollHeight+1000;
+    }
 
-  console.log(chat);
-  return (
+    return (
     <>
       <div style={{ height: "100%" }}>
-        <Box style={{ height: "600px" }}>
+        <HeaderChat/>
+        <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30,  }}>
           {!!chat &&
-            chat.map((x) => {
-                console.log(isMine(x.sender))
+            chat.map((x, k) => {
+              console.log(k)
+              if (k==chat.length-1) {
+                console.log('ok utlimo')
+                if( k !== lastmessage){
+                   console.log('sono diverso')
+                    vaiallafine()
+                  setLastmessage(k)
+                 
+
+                }
+              }
+              
               return (
                 <>
                   <div
@@ -117,6 +134,7 @@ const PaginaChat = () => {
             flexDirection: "row",
             alignContent: "center",
             position: "fixed",
+            height:'10%',
             bottom: "0%",
             left: "0%",
             right: "0%",
