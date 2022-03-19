@@ -44,7 +44,6 @@ const ChatProfessionisti = () => {
 
 
     const requestContatti = async () => {
-      console.log(token)
       if(token !== ''){
         const config = {
             headers: {Authorization: `Bearer ${token}`}
@@ -56,10 +55,8 @@ const ChatProfessionisti = () => {
     }
   }
 
-  console.log(contatti)
     const requestInfo = async () => {
         if (token!=='') {
-            console.log('prova')
           const config = {
             headers: { Authorization: `Bearer ${token}` },
           };
@@ -70,7 +67,6 @@ const ChatProfessionisti = () => {
               config
             )
             .then((response:any) => {
-                console.log(response.data)
               setUtente(response.data);
             })
             .catch((e:any) => console.error(e));
@@ -84,7 +80,6 @@ const ChatProfessionisti = () => {
     },[token])
    
 
-    console.log(utente)
 
     return(
         <>

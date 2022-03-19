@@ -52,9 +52,7 @@ const PaginaChat = () => {
 
       axios
       .post("http://localhost:8080/chat/send-message", mess, config)
-    
-      .then((x) => console.log(x.data));
-
+  
       recuperaChat()
 
   };
@@ -94,11 +92,8 @@ const PaginaChat = () => {
         <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30,  }}>
           {!!chat &&
             chat.map((x, k) => {
-              console.log(k)
               if (k==chat.length-1) {
-                console.log('ok utlimo')
                 if( k !== lastmessage){
-                   console.log('sono diverso')
                     vaiallafine()
                   setLastmessage(k)
                  

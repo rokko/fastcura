@@ -46,7 +46,6 @@ const ProfiloProfessionista = () => {
     eta: ValoriParametri.eta,
   };
 
-  console.log(ValoriParametri);
   return (
     <>
       <HeaderNoLogin />

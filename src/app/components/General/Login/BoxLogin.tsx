@@ -34,7 +34,6 @@ const BoxLogin = (props:any) => {
         email : email,
         password: passw,
     }
-    console.log(userlogin)
 
         return (
             <>

@@ -69,7 +69,6 @@ const AggiornaCurriculum = () => {
     if(!load) return null
    else return(
         <>
-            {console.log(curriculum)}
         <p>Aggiorna curriculum</p>
             <div>
         <Box style={{border:'1px solid #39B1D9',backgroundColor:'#F4F4F4', width:'300px',padding:'15px', height:'400px', borderRadius:'30px', display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center'}}>

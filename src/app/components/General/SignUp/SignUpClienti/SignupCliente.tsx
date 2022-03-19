@@ -37,8 +37,6 @@ const SignUpClient = () => {
 
   const sendRegister = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
-    console.log(datinuovoCliente)
-    console.log('ok')
     axios.post('http://localhost:8080/cliente/signup',nuovoCliente)
 .then(function (response) {
   navigate('/');

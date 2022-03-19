@@ -14,7 +14,6 @@ const Login = (props:any) => {
 
     const loginUser = ()=>{
 
-  console.log(userlogin)
         axios.post('http://localhost:8080/login',userlogin)
             .then(function (response) {
                const token : IToken = response.data;
@@ -36,7 +35,6 @@ const Login = (props:any) => {
         email : email,
         password: passw,
     }
-    console.log(userlogin)
     if(!isMobile) return(
         <>
             <div style={{display:'flex', flexDirection:'column'}}>

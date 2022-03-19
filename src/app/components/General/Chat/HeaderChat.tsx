@@ -1,7 +1,6 @@
 import React from 'react'
 import {Box} from '@mui/material'
 const HeaderChat = (nomeProfessionista : any, cognomeProfessionista:any) => {
-console.log(nomeProfessionista)
     return (
         <>
             <Box
