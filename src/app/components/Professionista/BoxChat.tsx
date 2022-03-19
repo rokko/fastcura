@@ -21,7 +21,7 @@ const BoxChat = (props:any) => {
             id_cliente : props.contatto.id_cliente
         }
     
-        axios.post('http://localhost:8080/professionista/info-cliente',clienteinfo)
+        axios.post('http://https://guarded-thicket-90200.herokuapp.com/professionista/info-cliente',clienteinfo)
         .then((x)=> setInfocliente(x.data))
 
     }
