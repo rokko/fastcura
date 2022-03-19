@@ -54,7 +54,7 @@ const ChatProfessionista = () => {
       };
 
       axios
-        .post("http://https://guarded-thicket-90200.herokuapp.com/cliente/nuovo-contatto", nuovo, config)
+        .post("http://guarded-thicket-90200.herokuapp.com/cliente/nuovo-contatto", nuovo, config)
         .then((x) => {
           setConversazione(x.data._id);
           setIdinvio(x.data.id_cliente);
@@ -84,7 +84,7 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("http://https://guarded-thicket-90200.herokuapp.com/chat/get-message", cont, config)
+      .post("http://guarded-thicket-90200.herokuapp.com/chat/get-message", cont, config)
       .then((x) =>setChat(x.data));
 
   };
@@ -101,7 +101,7 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("http://https://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
+      .post("http://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
   };
 
 

@@ -20,7 +20,7 @@ const AccordionPrestazioni = (prestazione:any) => {
     const ricerca ={
       idcliente : prestazione.prestazione.id_cliente
     }
-    axios.post('http://https://guarded-thicket-90200.herokuapp.com/professionista/nomecliente',ricerca)
+    axios.post('http://guarded-thicket-90200.herokuapp.com/professionista/nomecliente',ricerca)
         .then((response:any)=> {
         setNome(response.data.nome)
         setCognome(response.data.cognome)

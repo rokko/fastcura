@@ -35,7 +35,7 @@ const PaginaChat = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     axios
-      .post("http://https://guarded-thicket-90200.herokuapp.com/chat/get-message", cont, config)
+      .post("http://guarded-thicket-90200.herokuapp.com/chat/get-message", cont, config)
     
       .then((x) => setChat(x.data));
   };
@@ -51,7 +51,7 @@ const PaginaChat = () => {
       };
 
       axios
-      .post("http://https://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
+      .post("http://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
   
       recuperaChat()
 

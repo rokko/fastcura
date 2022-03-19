@@ -27,7 +27,7 @@ const parametri = location.state as IPropsRicerca
 
 useEffect(()=>{
 
-    axios.post('http://https://guarded-thicket-90200.herokuapp.com/professionista/ricerca',parametri)
+    axios.post('http://guarded-thicket-90200.herokuapp.com/professionista/ricerca',parametri)
     .then(async function (response) {
             setListaProfessionisti(response.data.professionisti)
       })

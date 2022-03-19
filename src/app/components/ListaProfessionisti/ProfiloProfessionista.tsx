@@ -27,7 +27,7 @@ const ProfiloProfessionista = () => {
 
     axios
       .post(
-        "http://https://guarded-thicket-90200.herokuapp.com/cliente/infocurriculum",
+        "http://guarded-thicket-90200.herokuapp.com/cliente/infocurriculum",
         valore
       )
       .then((res) => setRisposta(res.data));
