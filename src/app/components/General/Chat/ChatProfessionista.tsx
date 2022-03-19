@@ -10,6 +10,8 @@ import axios from 'axios';
 const SERVER = "http://localhost:8080";
 
 const ChatProfessionista = () => {
+    const [chat, setChat] = useState<any>()
+   const  [conversazione, setConversazione] = useState<any>()
     const location = useLocation()
     const valoriProfessionista = location.state as any
     const idprofessionista=(valoriProfessionista.professionista._id)
@@ -17,6 +19,8 @@ const ChatProfessionista = () => {
     const navigate = useNavigate()
     const [token,setToken]= useState('')
     const [messaggio,setMessaggio] = useState('')
+
+
     const takeToken = async () => {
         const tokenTest = await localStorage.getItem('tokenaccess');
         (!!tokenTest)  ? setToken(tokenTest) : setPop(true)
@@ -36,19 +40,42 @@ const ChatProfessionista = () => {
         }
        
         axios.post('http://localhost:8080/cliente/nuovo-contatto',nuovo,config)
-            .then((x)=> console.log(x))
+            .then((x)=> setConversazione(x.data._id))
      }
  },[token])
 
+ const recuperaChat = async () => {
+    const cont = {
+      contatti_id: conversazione,
+    };
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    axios
+      .post("http://localhost:8080/chat/get-message", cont, config)
+    
+      .then((x) => console.log(x.data));
+  };
+
     const inviaMessaggio = () => {
-        console.log('ciao')
+        const mess = {
+          message : messaggio,
+          contatti_id: conversazione,
+      }
+      const config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      axios
+      .post("http://localhost:8080/chat/send-message", mess, config)
+    
+      .then((x) => console.log(x.data));
+
+      recuperaChat()
     }
    
-    console.log(valoriProfessionista)
-   /* const messaggio ={
-        id : id,
-        message : message,
-    }*/
+  
 
     return(
        
