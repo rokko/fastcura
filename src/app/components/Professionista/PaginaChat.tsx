@@ -52,6 +52,8 @@ const PaginaChat = () => {
 
       axios
       .post("http://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
+
+      setMessaggio('')
   
       recuperaChat()
 
@@ -89,7 +91,7 @@ const PaginaChat = () => {
     <>
       <div style={{ height: "100%" }}>
         <HeaderChat/>
-        <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30,  }}>
+        <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30 }}>
           {!!chat &&
             chat.map((x, k) => {
               if (k==chat.length-1) {
@@ -105,14 +107,21 @@ const PaginaChat = () => {
                 <>
                   <div
                     style={{
+                      marginTop:'5px',
+                      width:'max-content',
+                      maxWidth:'200px',
                         borderRadius:'30px',
                         padding:'5px',
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
-                        : "#f8f8f8",
+                        : "#999999",
                       textAlign: isMine(x.sender)
-                        ? "right"
-                        : "left",
+                        ? "left"
+                        : "right",
+                        marginLeft: isMine(x.sender)
+                        ? "5px"
+                        : "85%",
+                        
                       
                     }}
                   >
@@ -148,6 +157,7 @@ const PaginaChat = () => {
                 borderRadius: "30px",
               },
             }}
+            value={messaggio}
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMessaggio(x.target.value)
             }
@@ -166,7 +176,9 @@ const PaginaChat = () => {
               color: "white",
             }}
             onClick={() => {
+
               sendMessage();
+
             }}
           >
             Invia

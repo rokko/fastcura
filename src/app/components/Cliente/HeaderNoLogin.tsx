@@ -4,9 +4,13 @@ import {Link} from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from '../General/ModalLogin';
 import ProfiloProfessionista from '../ListaProfessionisti/ProfiloProfessionista';
+import Confir from '../General/Confir';
 const HeaderNoLogin = () => {
 
     const [pop, setPop] = useState(false)
+    const [ok,setOk] = useState(false)
+
+    console.log(ok)
 
     return(
         <>
@@ -91,10 +95,11 @@ const HeaderNoLogin = () => {
                 </div>
                 
                    
-                <ModalLogin open={pop} chiudi={setPop} />
+                <ModalLogin setok={setOk} open={pop} chiudi={setPop} verifica={setOk}/>
 
 
             </Box>
+            <Confir open={ok} message={'Login Effettuato'}/>
         </>
     )
 }

@@ -62,7 +62,10 @@ const ChatProfessionista = () => {
     }
   }, [token]);
 
+ const creaOfferta = () => {
 
+  
+ }
 
   useEffect(()=>{
       aggiorna()
@@ -100,6 +103,8 @@ const ChatProfessionista = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
+    setMessaggio('')
+
     axios
       .post("http://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
   };
@@ -132,6 +137,7 @@ const ChatProfessionista = () => {
                 <>
                   <div
                     style={{
+                        width:'100px',
                         borderRadius:'30px',
                         padding:'5px',
                       backgroundColor: isMine(x.sender)
@@ -174,6 +180,7 @@ const ChatProfessionista = () => {
                 borderRadius: "30px",
               },
             }}
+            value={messaggio}
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMessaggio(x.target.value)
             }
@@ -196,6 +203,24 @@ const ChatProfessionista = () => {
             }}
           >
             Invia
+          </button>
+          <button
+            style={{
+              marginLeft: "10px",
+              width: "80px",
+              height: "60px",
+              backgroundColor: "#39B1D9",
+              border: "none",
+              borderRadius: "30px",
+              fontSize: "12px",
+              fontWeight: "bold",
+              color: "white",
+            }}
+            onClick={() => {
+              creaOfferta();
+            }}
+          >
+            Invia Offerta
           </button>
         </div>
       </div>

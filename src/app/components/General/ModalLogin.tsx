@@ -1,6 +1,4 @@
 import React , {useState} from "react";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {Box, TextField} from "@mui/material";
 import axios from "axios";
@@ -12,9 +10,10 @@ interface IToken {
 
 const ModalLogin = (props: any) => {
     const navigate = useNavigate()
-
+console.log(props)
     const [email, setEmail] = useState('')
     const [passw, setPassw] = useState('')
+    const [ok,setOk] = useState(false)
     const userlogin = {
         email : email,
         password: passw,
@@ -24,10 +23,15 @@ const ModalLogin = (props: any) => {
         axios.post('http://guarded-thicket-90200.herokuapp.com/login',userlogin)
             .then(function (response) {
                 const token : IToken = response.data;
+                
                 if (!!token.accessToken) {
+
+                    props.verifica(true)
+
                     localStorage.setItem('tokenaccess', token.accessToken);
                     props.chiudi(false)
-                    navigate('/')
+                    props.setok(true)
+                
                 }
             })
             .catch(function (error) {
