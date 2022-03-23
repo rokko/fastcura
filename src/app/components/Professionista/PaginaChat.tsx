@@ -19,6 +19,7 @@ const PaginaChat = () => {
   const [lastmessage, setLastmessage] = useState(0)
   const conversazione = location.state as any;
   const id = conversazione.contatto._id;
+  const [off, setOff] = useState(false)
   const idinvio = conversazione.contatto.id_professionista
   const myRef = React.createRef()
   
@@ -41,7 +42,7 @@ const PaginaChat = () => {
   };
 
   const creaOfferta =() => {
-
+    setOff(!off)
   }
 
   const sendMessage = async() => {
@@ -135,6 +136,17 @@ const PaginaChat = () => {
               );
             })}
         </Box>
+        {(off)&& 
+        <>
+        <div style={{position:'static', marginBottom:'30px'}}>
+        <p>Nome prestazione</p>
+        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
+        <p>Prezzo</p>
+        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
+        <p>Giorno prestazione</p>
+        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
+        </div>
+        </>}
 
         <div
           style={{
@@ -207,7 +219,7 @@ const PaginaChat = () => {
           </button>
         </div>
       </div>
-      ì{" "}
+      {" "}
     </>
   );
 };
