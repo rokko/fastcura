@@ -40,6 +40,10 @@ const PaginaChat = () => {
       .then((x) => setChat(x.data));
   };
 
+  const creaOfferta =() => {
+
+  }
+
   const sendMessage = async() => {
      
       const mess = {
@@ -182,6 +186,24 @@ const PaginaChat = () => {
             }}
           >
             Invia
+          </button>
+          <button
+            style={{
+              marginLeft: "10px",
+              width: "80px",
+              height: "60px",
+              backgroundColor: "#39B1D9",
+              border: "none",
+              borderRadius: "30px",
+              fontSize: "12px",
+              fontWeight: "bold",
+              color: "white",
+            }}
+            onClick={() => {
+              creaOfferta();
+            }}
+          >
+            Crea Offerta
           </button>
         </div>
       </div>

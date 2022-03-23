@@ -64,7 +64,7 @@ const ChatProfessionista = () => {
 
  const creaOfferta = () => {
 
-  
+
  }
 
   useEffect(()=>{
@@ -204,24 +204,7 @@ const ChatProfessionista = () => {
           >
             Invia
           </button>
-          <button
-            style={{
-              marginLeft: "10px",
-              width: "80px",
-              height: "60px",
-              backgroundColor: "#39B1D9",
-              border: "none",
-              borderRadius: "30px",
-              fontSize: "12px",
-              fontWeight: "bold",
-              color: "white",
-            }}
-            onClick={() => {
-              creaOfferta();
-            }}
-          >
-            Invia Offerta
-          </button>
+          
         </div>
       </div>
       <ModalLogin open={pop} />
