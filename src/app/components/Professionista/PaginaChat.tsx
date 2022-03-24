@@ -36,7 +36,7 @@ const PaginaChat = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     axios
-      .post("http://guarded-thicket-90200.herokuapp.com/chat/get-message", cont, config)
+      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont, config)
     
       .then((x) => setChat(x.data));
   };
@@ -56,7 +56,7 @@ const PaginaChat = () => {
       };
 
       axios
-      .post("http://guarded-thicket-90200.herokuapp.com/chat/send-message", mess, config)
+      .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
 
       setMessaggio('')
   
@@ -138,14 +138,14 @@ const PaginaChat = () => {
         </Box>
         {(off)&& 
         <>
-        <div style={{position:'static', marginBottom:'30px'}}>
+        <Box style={{border:'1px solid #5DBFE0',width:'60%',marginBottom:'30px', borderRadius:'10%'}}>
         <p>Nome prestazione</p>
         <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
         <p>Prezzo</p>
         <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
         <p>Giorno prestazione</p>
         <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
-        </div>
+        </Box>
         </>}
 
         <div

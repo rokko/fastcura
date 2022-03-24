@@ -48,7 +48,7 @@ const ChatProfessionisti = () => {
         const config = {
             headers: {Authorization: `Bearer ${token}`}
         }
-        axios.post('http://guarded-thicket-90200.herokuapp.com/professionista/ottieni-contatti',{},config)
+        axios.post('https://fastcuradev.herokuapp.com/professionista/ottieni-contatti',{},config)
             .then((x)=> setContatti(x.data))
     
       
@@ -63,7 +63,7 @@ const ChatProfessionisti = () => {
     
           axios
             .get(
-              "http://guarded-thicket-90200.herokuapp.com/professionista/info",
+              "https://fastcuradev.herokuapp.com/professionista/info",
               config
             )
             .then((response:any) => {

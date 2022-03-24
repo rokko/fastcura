@@ -70,7 +70,7 @@ const SignUpProfessionista = () => {
   }
   
   const sendRegister = () => {
-    axios.post('http://guarded-thicket-90200.herokuapp.com/professionista/signup',nuovoProfessionista)
+    axios.post('https://fastcuradev.herokuapp.com/professionista/signup',nuovoProfessionista)
     .then(function (response) {
       navigate('/');
     })

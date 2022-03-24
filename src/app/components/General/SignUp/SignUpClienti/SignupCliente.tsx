@@ -37,7 +37,7 @@ const SignUpClient = () => {
 
   const sendRegister = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
-    axios.post('http://guarded-thicket-90200.herokuapp.com/cliente/signup',nuovoCliente)
+    axios.post('https://fastcuradev.herokuapp.com/cliente/signup',nuovoCliente)
 .then(function (response) {
   navigate('/');
 })
