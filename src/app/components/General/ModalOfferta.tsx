@@ -22,7 +22,7 @@ const ModalOfferta = (props: any) => {
      
     const mess = {
         message : 'Offerta Inviata',
-        contatti_id: props.id_conversazione,
+        contatti_id: props.idconversazione,
     }
     const config = {
       headers: { Authorization: `Bearer ${props.token}` },
@@ -30,6 +30,7 @@ const ModalOfferta = (props: any) => {
 
     axios
     .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
+    .then((x)=> console.log(x))
 
 
 
@@ -51,6 +52,7 @@ const ModalOfferta = (props: any) => {
     axios
     .post("https://fastcuradev.herokuapp.com/professionista/crea-appuntamento", invi)
     .then((x) => {console.log(x)});
+    sendMessage()
 
 props.chiudi(false)
 
