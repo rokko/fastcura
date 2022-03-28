@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ModalLogin from "../ModalLogin";
 import axios from "axios";
+import ModalRicevutaOfferta from "../ModalRicevutaOfferta";
 
 interface IChat {
   sender: string;
@@ -23,6 +24,8 @@ const ChatProfessionista = () => {
   const [token, setToken] = useState("");
   const [messaggio, setMessaggio] = useState("");
   const [lastmessage, setLastmessage] = useState(0);
+  const [offertaricevuta, setOffertaricevuta] = useState(false);
+  const [offerta, setOfferta] = useState<any>()
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -75,6 +78,16 @@ const ChatProfessionista = () => {
   }
 
   const recuperaChat = async () => {
+    const inf = {
+      id_conversazione: conversazione,
+    };
+    axios
+      .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
+      .then((x) => {if (x.data != null && x.data.conferma==false) {
+        setOfferta( x.data)
+        setOffertaricevuta(true)
+      }})
+
     const cont = {
       contatti_id: conversazione,
     };
@@ -199,6 +212,7 @@ const ChatProfessionista = () => {
         </div>
       </div>
       <ModalLogin open={pop} />
+      <ModalRicevutaOfferta open={offertaricevuta} />
     </>
   );
 };
