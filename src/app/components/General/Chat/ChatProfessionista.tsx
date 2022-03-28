@@ -58,7 +58,7 @@ const ChatProfessionista = () => {
     };
     axios
       .post(
-        "http://localhost:8080/cliente/nuovo-contatto",
+        "https://fastcuradev.herokuapp.com/cliente/nuovo-contatto",
         nuovo,
         config
       )
@@ -66,6 +66,7 @@ const ChatProfessionista = () => {
           io = x.data._id
           setProva(io)
           setIdinvio(x.data.id_cliente)
+          aggiorna()
         
       });
   };
@@ -83,10 +84,10 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("http://localhost:8080/cliente/info-appuntamento", inf)
+      .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
 
       .then((x) => {
-        
+        console.log(x)
         if (x.data != null && x.data.conferma == 0) {
           setOfferta(x.data);
           setOffertaricevuta(true);
@@ -100,7 +101,7 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("http://localhost:8080/chat/get-message", cont)
+      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont)
       .then((x) => setChat(x.data));
   };
 
@@ -119,7 +120,7 @@ const ChatProfessionista = () => {
 
 
     axios.post(
-      "http://localhost:8080/chat/send-message",
+      "https://fastcuradev.herokuapp.com/chat/send-message",
       mess,
       config
     );
@@ -147,7 +148,7 @@ const ChatProfessionista = () => {
         >
           {!!chat &&
             chat.map((x:any, k:any) => {
-              console.log(x)
+              console.log
               if (k == chat.length - 1) {
                 if (k !== lastmessage) {
                   vaiallafine();
