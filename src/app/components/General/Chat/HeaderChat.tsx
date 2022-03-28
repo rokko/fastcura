@@ -22,7 +22,7 @@ const navigate = useNavigate()
 
                 }}
             ><div>
-                <Box style={{marginTop:30,borderRadius:100,border:'10px solid rgb(57, 177, 217)' ,width:'65px',height:'65px', backgroundColor:'#ffffff'}}></Box>
+                <Box style={{position:'absolute', top:'1px' ,borderRadius:100,border:'10px solid rgb(57, 177, 217)' ,width:'65px',height:'65px', backgroundColor:'#ffffff'}}></Box>
                 <p style={{color:'#ffffff', fontSize:'21px'}}>{nomeProfessionista.nomeProfessionista}</p>
                 <p style={{color:'#ffffff'}}>{cognomeProfessionista.cognomeProfessionista}</p>
                 </div>

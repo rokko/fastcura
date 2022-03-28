@@ -6,6 +6,8 @@ import moment from 'moment'
 import axios from "axios";
 
 const AccordionPrestazioni = (prestazione:any) => {
+
+  console.log(prestazione)
   const [nome, setNome]= useState('')
   const [cognome,setCognome]= useState('')
   const [expanded, setExpanded] = React.useState<String|false>(false);
@@ -22,6 +24,7 @@ const AccordionPrestazioni = (prestazione:any) => {
     }
     axios.post('https://fastcuradev.herokuapp.com/professionista/nomecliente',ricerca)
         .then((response:any)=> {
+          console.log(response)
         setNome(response.data.nome)
         setCognome(response.data.cognome)
         }
@@ -44,8 +47,9 @@ const AccordionPrestazioni = (prestazione:any) => {
             <p>{nome} {cognome}</p>
           </MuiAccordionSummary>
           <MuiAccordionDetails>
-            <p>
-              Effettuato in data {moment(prestazione.prestazione.data).format('MM/DD/YYYY')} <br/>
+            <p style={{display:'flex', flexDirection:'column'}}>
+              Nome : {nome} {cognome}
+              Data : {prestazione.prestazione.data} <br/>
               Pagamento: {prestazione.prestazione.totale} € <br/>
 
             </p>
