@@ -160,19 +160,29 @@ const ChatProfessionista = () => {
                 <>
                   <div
                     style={{
-                      width: "100px",
-                      borderRadius: "30px",
-                      padding: "5px",
+                      marginTop:'5px',
+                      width:'max-content',
+                      maxWidth:'200px',
+                        borderRadius:'30px',
+                        padding:'5px',
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
-                        : "#f8f8f8",
-                      textAlign: isMine(x.sender) ? "right" : "left",
+                        : "#D1E8F0",
+                      textAlign: isMine(x.sender)
+                        ? "left"
+                        : "right",
+                        marginLeft: isMine(x.sender)
+                        ? "5px"
+                        : "85%",
+                        
+                      
                     }}
                   >
-                    <p style={{ color: isMine(x.sender) ? "white" : "black" }}>
-                      {x.message}
-                    </p>
+                    <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
+                   
                   </div>
+                  
+                   
                 </>
               );
             })}

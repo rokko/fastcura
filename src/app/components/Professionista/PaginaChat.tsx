@@ -81,7 +81,6 @@ const PaginaChat = () => {
   },[token])
   
   function aggiorna() {
-    
       recuperaChat()
 
     setTimeout(aggiorna, 1000);
@@ -131,7 +130,7 @@ const PaginaChat = () => {
                         padding:'5px',
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
-                        : "#999999",
+                        : "#D1E8F0",
                       textAlign: isMine(x.sender)
                         ? "left"
                         : "right",

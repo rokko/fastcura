@@ -47,12 +47,16 @@ const AccordionPrestazioni = (prestazione:any) => {
             <p>{nome} {cognome}</p>
           </MuiAccordionSummary>
           <MuiAccordionDetails>
-            <p style={{display:'flex', flexDirection:'column'}}>
-              Nome : {nome} {cognome}
-              Data : {prestazione.prestazione.data} <br/>
-              Pagamento: {prestazione.prestazione.totale} € <br/>
+            <div style={{display:'flex', flexDirection:'column'}}>
+             <p> Nome : {nome} {cognome}</p>
+             <p>  Data : {prestazione.prestazione.data}</p>
+             <p>Pagamento: {prestazione.prestazione.totale} € </p>
+             <p>Conferma : {(prestazione.prestazione.conferma==1) && 'Confermato' }
+             {(prestazione.prestazione.conferma==2)&& 'Rifiutato'}
+             {(prestazione.prestazione.conferma==0)&& 'In attesa'}
+             </p>
 
-            </p>
+            </div>
           </MuiAccordionDetails>
         </MuiAccordion>
       </div>
