@@ -44,7 +44,7 @@ const ModalOfferta = (props: any) => {
       id_professionista : props.idprofessionista,
       metodo_pagamento : 'contanti',
       totale:prezzo,
-      conferma :2,
+      conferma :0,
       id_conversazione : props.idconversazione,
     }
   

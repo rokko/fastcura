@@ -7,6 +7,7 @@ import ModalLogin from "../ModalLogin";
 import axios from "axios";
 import ModalRicevutaOfferta from "../ModalRicevutaOfferta";
 
+
 interface IChat {
   sender: string;
   message: string;
@@ -15,8 +16,7 @@ interface IChat {
 }
 const ChatProfessionista = () => {
   const [idinvio, setIdinvio] = useState("");
-  const [chat, setChat] = useState<IChat[]>();
-  const [conversazione, setConversazione] = useState<any>();
+  const [chat, setChat] = useState<IChat[]>()
   const location = useLocation();
   const valoriProfessionista = location.state as any;
   const idprofessionista = valoriProfessionista.professionista._id;
@@ -25,7 +25,10 @@ const ChatProfessionista = () => {
   const [messaggio, setMessaggio] = useState("");
   const [lastmessage, setLastmessage] = useState(0);
   const [offertaricevuta, setOffertaricevuta] = useState(false);
-  const [offerta, setOfferta] = useState<any>()
+  const [offerta, setOfferta] = useState<any>();
+  const [newconversazione, setNewconversazione] = useState<any>();
+  const [tot, setTot] = useState<any>({})
+  var  io : any
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -45,70 +48,65 @@ const ChatProfessionista = () => {
     }
   };
 
-  useEffect(() => {
-    takeToken();
-    if (token !== "") {
-      const nuovo = {
-        id_professionista: idprofessionista,
-      };
-      const config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-
-      axios
-        .post(
-          "https://fastcuradev.herokuapp.com/cliente/nuovo-contatto",
-          nuovo,
-          config
-        )
-        .then((x) => {
-          setConversazione(x.data._id);
-          setIdinvio(x.data.id_cliente);
-        });
-    }
-  }, [token]);
-
-  useEffect(() => {
-    aggiorna();
-  }, []);
-
-  function aggiorna() {
-    recuperaChat();
-    setTimeout(aggiorna, 1000);
-  }
-
-  const recuperaChat = async () => {
-    const inf = {
-      id_conversazione: conversazione,
+  const recuperaConversazione = async () => {
+    const nuovo = {
+      id_professionista: idprofessionista,
     };
-    axios
-      .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
-
-      .then((x) => {
-       if (x.data != null && x.data.conferma==2) {
-        setOfferta( x.data)
-        setOffertaricevuta(true)
-      }})
-
-    const cont = {
-      contatti_id: conversazione,
-    };
-
-    console.log(conversazione)
-
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
+    axios
+      .post(
+        "http://localhost:8080/cliente/nuovo-contatto",
+        nuovo,
+        config
+      )
+      .then((x:any) => {
+          io = x.data._id
+          aggiorna()
+        
+      });
+  };
+
+  const aggiorna = () => {
+      recuperaChat();
+      recuperaAppuntamento();
+      setTimeout(aggiorna, 1000);
+    }
+
+
+  const recuperaAppuntamento = async () => {
+    const inf = {
+      id_conversazione: io,
+    };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont, config)
-      .then((x) => console.log(x))
+      .post("http://localhost:8080/cliente/info-appuntamento", inf)
+
+      .then((x) => {
+        
+        if (x.data != null && x.data.conferma == 0) {
+          setOfferta(x.data);
+          setOffertaricevuta(true);
+        }
+      });
+  };
+
+  const recuperaChat = () => {
+    const cont = {
+      contatti_id: io,
+    };
+    console.log(io)
+
+    axios
+      .post("http://localhost:8080/chat/get-message", cont)
+      .then((x) => setChat(x.data));
   };
 
   const inviaMessaggio = () => {
     const mess = {
       message: messaggio,
-      contatti_id: conversazione,
+      contatti_id: io,
     };
 
     const config = {
@@ -118,11 +116,18 @@ const ChatProfessionista = () => {
     setMessaggio("");
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://localhost:8080/chat/send-message",
       mess,
       config
     );
   };
+
+  useEffect(() => {
+  
+    takeToken();
+    
+    recuperaConversazione();
+   }, [token]);
 
   return (
     <>
@@ -216,7 +221,11 @@ const ChatProfessionista = () => {
         </div>
       </div>
       <ModalLogin open={pop} verifica={setPop} />
-      <ModalRicevutaOfferta open={offertaricevuta} chiudi={setOffertaricevuta} offerta={offerta}/>
+      <ModalRicevutaOfferta
+        open={offertaricevuta}
+        chiudi={setOffertaricevuta}
+        offerta={offerta}
+      />
     </>
   );
 };

@@ -8,7 +8,6 @@ interface IToken {
 }
 
 const ModalLogin = (props: any) => {
-    console.log(props)
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
@@ -24,7 +23,6 @@ const ModalLogin = (props: any) => {
         const token: IToken = response.data;
 
         if (!!token.accessToken) {
-          props.verifica(true);
 
           localStorage.setItem("tokenaccess", token.accessToken);
           props.chiudi(false);

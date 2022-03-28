@@ -81,6 +81,7 @@ const PaginaChat = () => {
   },[token])
   
   function aggiorna() {
+    
       recuperaChat()
 
     setTimeout(aggiorna, 1000);
