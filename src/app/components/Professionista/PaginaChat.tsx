@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, TextField } from "@mui/material";
+import ModalOfferta from '../../components/General/ModalOfferta'
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import HeaderChat from "../General/Chat/HeaderChat";
@@ -20,7 +21,12 @@ const PaginaChat = () => {
   const conversazione = location.state as any;
   const id = conversazione.contatto._id;
   const [off, setOff] = useState(false)
+  const [nomePrestazione, setNomePrestazione] = useState('')
+  const [prezzo, setPrezzo] = useState('')
+  const [giorno,setGiorno] = useState('') 
+  const [apri, setApri] = useState(false)
   const idinvio = conversazione.contatto.id_professionista
+
   const myRef = React.createRef()
   
   const takeToken = async () => {
@@ -43,8 +49,16 @@ const PaginaChat = () => {
 
   const creaOfferta =() => {
     setOff(!off)
+    setApri(!apri)
   }
 
+
+  const inviaOfferta = () => {
+    const off = {
+      message : messaggio,
+      contatti_id: id,
+  }
+  }
   const sendMessage = async() => {
      
       const mess = {
@@ -131,22 +145,15 @@ const PaginaChat = () => {
                     }}
                   >
                     <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
+                   
                   </div>
                 </>
               );
             })}
+      
+       
         </Box>
-        {(off)&& 
-        <>
-        <Box style={{border:'1px solid #5DBFE0',width:'60%',marginBottom:'30px', borderRadius:'10%'}}>
-        <p>Nome prestazione</p>
-        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
-        <p>Prezzo</p>
-        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
-        <p>Giorno prestazione</p>
-        <TextField id="standard-basic"  variant="standard">Nome Prestazione</TextField>
-        </Box>
-        </>}
+       
 
         <div
           style={{
@@ -212,13 +219,16 @@ const PaginaChat = () => {
               color: "white",
             }}
             onClick={() => {
-              creaOfferta();
+              creaOfferta()
             }}
           >
-            Crea Offerta
+            {(!off) ? 'Crea Offerta'
+            :'Invia Offerta' }
+           
           </button>
         </div>
       </div>
+      <ModalOfferta open={apri} chiudi={setApri} />
       {" "}
     </>
   );
