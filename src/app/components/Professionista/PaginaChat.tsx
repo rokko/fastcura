@@ -21,9 +21,6 @@ const PaginaChat = () => {
   const conversazione = location.state as any;
   const id = conversazione.contatto._id;
   const [off, setOff] = useState(false)
-  const [nomePrestazione, setNomePrestazione] = useState('')
-  const [prezzo, setPrezzo] = useState('')
-  const [giorno,setGiorno] = useState('') 
   const [apri, setApri] = useState(false)
   const idinvio = conversazione.contatto.id_professionista
 
@@ -228,7 +225,7 @@ const PaginaChat = () => {
           </button>
         </div>
       </div>
-      <ModalOfferta open={apri} chiudi={setApri} />
+      <ModalOfferta token={token} open={apri} chiudi={setApri} idconversazione={id} idcliente={conversazione.contatto.id_cliente} idprofessionista={conversazione.contatto.id_professionista} />
       {" "}
     </>
   );

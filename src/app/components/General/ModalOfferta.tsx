@@ -1,25 +1,62 @@
-import React , {useState} from "react";
+import React , {useEffect, useState} from "react";
 import Modal from "@mui/material/Modal";
 import {Box, TextField} from "@mui/material";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
+import { usePreviousProps } from "@mui/utils";
+import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from "constants";
 interface IToken {
     accessToken : string
 }
 
 const ModalOfferta = (props: any) => {
+ useEffect(()=>{
+
+ }) 
 
   const [nomePrestazione, setNomePrestazione] = useState('')
   const [giorno, setGiorno] = useState('')
-  const [przzo, setPrezzo] = useState('')
+  const [prezzo, setPrezzo] = useState('')
   
- 
+  const sendMessage = async() => {
+     
+    const mess = {
+        message : 'Offerta Inviata',
+        contatti_id: props.id_conversazione,
+    }
+    const config = {
+      headers: { Authorization: `Bearer ${props.token}` },
+    };
+
+    axios
+    .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
+
+
+
+};
   const invioOfferta = () =>{
+
+    const invi = {
+      nome: nomePrestazione,
+      data: giorno,
+      id_cliente : props.idcliente,
+      id_professionista : props.idprofessionista,
+      metodo_pagamento : 'contanti',
+      totale:prezzo,
+      conferma :false,
+      id_conversazione : props.idconversazione,
+    }
+  
+
+    axios
+    .post("https://fastcuradev.herokuapp.com/professionista/crea-appuntamento", invi)
+    .then((x) => {console.log(x)});
+
+props.chiudi(false)
 
   }
 
   const annullaOfferta = () => {
-
     props.chiudi(false)
   }
   return (
@@ -68,6 +105,8 @@ const ModalOfferta = (props: any) => {
                             marginRight:'10px'
 
                         }}
+
+                        onClick={()=> invioOfferta()}
                        
                     >Invia</button>
           <button

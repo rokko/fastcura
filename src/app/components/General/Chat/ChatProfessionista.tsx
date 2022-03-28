@@ -29,7 +29,6 @@ const ChatProfessionista = () => {
     !!tokenTest ? setToken(tokenTest) : setPop(true);
   };
 
-
   const vaiallafine = () => {
     var objDiv = document.getElementById("boxchat");
     if (objDiv !== null) objDiv.scrollTop = objDiv.scrollHeight + 1000;
@@ -54,7 +53,11 @@ const ChatProfessionista = () => {
       };
 
       axios
-        .post("https://fastcuradev.herokuapp.com/cliente/nuovo-contatto", nuovo, config)
+        .post(
+          "https://fastcuradev.herokuapp.com/cliente/nuovo-contatto",
+          nuovo,
+          config
+        )
         .then((x) => {
           setConversazione(x.data._id);
           setIdinvio(x.data.id_cliente);
@@ -62,14 +65,9 @@ const ChatProfessionista = () => {
     }
   }, [token]);
 
- const creaOfferta = () => {
-
-
- }
-
-  useEffect(()=>{
-      aggiorna()
-  },[])
+  useEffect(() => {
+    aggiorna();
+  }, []);
 
   function aggiorna() {
     recuperaChat();
@@ -77,7 +75,6 @@ const ChatProfessionista = () => {
   }
 
   const recuperaChat = async () => {
-
     const cont = {
       contatti_id: conversazione,
     };
@@ -88,12 +85,10 @@ const ChatProfessionista = () => {
 
     axios
       .post("https://fastcuradev.herokuapp.com/chat/get-message", cont, config)
-      .then((x) =>setChat(x.data));
-
+      .then((x) => setChat(x.data));
   };
 
   const inviaMessaggio = () => {
-
     const mess = {
       message: messaggio,
       contatti_id: conversazione,
@@ -103,13 +98,14 @@ const ChatProfessionista = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    setMessaggio('')
+    setMessaggio("");
 
-    axios
-      .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
+    axios.post(
+      "https://fastcuradev.herokuapp.com/chat/send-message",
+      mess,
+      config
+    );
   };
-
-
 
   return (
     <>
@@ -122,34 +118,31 @@ const ChatProfessionista = () => {
           id="boxchat"
           style={{ height: "500px", overflowY: "scroll", marginTop: 30 }}
         >
-         {!!chat &&
+          {!!chat &&
             chat.map((x, k) => {
-              if (k==chat.length-1) {
-                if( k !== lastmessage){
-                    vaiallafine()
-                  setLastmessage(k)
-                 
-
+              if (k == chat.length - 1) {
+                if (k !== lastmessage) {
+                  vaiallafine();
+                  setLastmessage(k);
                 }
               }
-              
+
               return (
                 <>
                   <div
                     style={{
-                        width:'100px',
-                        borderRadius:'30px',
-                        padding:'5px',
+                      width: "100px",
+                      borderRadius: "30px",
+                      padding: "5px",
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
                         : "#f8f8f8",
-                      textAlign: isMine(x.sender)
-                        ? "right"
-                        : "left",
-                      
+                      textAlign: isMine(x.sender) ? "right" : "left",
                     }}
                   >
-                    <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
+                    <p style={{ color: isMine(x.sender) ? "white" : "black" }}>
+                      {x.message}
+                    </p>
                   </div>
                 </>
               );
@@ -166,7 +159,6 @@ const ChatProfessionista = () => {
             right: "0%",
           }}
         >
-
           <TextField
             label={"Scrivi un messaggio.."}
             sx={{
@@ -204,7 +196,6 @@ const ChatProfessionista = () => {
           >
             Invia
           </button>
-          
         </div>
       </div>
       <ModalLogin open={pop} />
