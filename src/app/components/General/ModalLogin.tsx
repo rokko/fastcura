@@ -8,6 +8,7 @@ interface IToken {
 }
 
 const ModalLogin = (props: any) => {
+    console.log(props)
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");

@@ -1,12 +1,32 @@
 import React from 'react'
 import Modal from "@mui/material/Modal";
 import {Box, TextField} from "@mui/material";
+import axios from 'axios';
 
 const ModalRicevutaOfferta = (props:any) => {
+const accettaofferta = () => {
+    const ris = {
+        idappuntamento : props.offerta._id
+    }
+    axios.post('https://fastcuradev.herokuapp.com/cliente/accettaofferta',ris)
+    .then((response) =>   console.log(response))
+    props.chiudi(false)
+}
+const rifiutaofferta = () => {
+    const ris = {
+        idappuntamento : props.offerta._id
+    }
+    axios.post('https://fastcuradev.herokuapp.com/cliente/rifiutaofferta',ris)
+    .then((response) =>   console.log(response))
+    props.chiudi(false)
 
-    return (
+
+}
+if (props.offerta== undefined) return null
+   else return (
 
         <> 
+
         <Modal
          open={props.open}
       aria-labelledby="modal-modal-title"
@@ -32,10 +52,12 @@ const ModalRicevutaOfferta = (props:any) => {
       }}>
             <Box style={{width:'90%',marginBottom:'30px', borderRadius:'10%', padding:'10px', marginTop:'30px', display:'flex', flexDirection:'column', alignContent:'left'}}>
             <p style={{textAlign:'left', color:'#39B1D9'}}>Nome prestazione</p>
-            <p></p>
+            {/*<p>{(!!props.offerta.nome) ? props.offerta.nome : 'no'}</p>*/}
+            <p>Nome</p>
             <p style={{textAlign:'left',color:'#39B1D9'}}>Prezzo</p>
-            <p></p>
+            <p>{props.offerta.totale}</p>
             <p style={{textAlign:'left', color:'#39B1D9'}}>Giorno prestazione</p>
+            <p>{props.offerta.data}</p>
         
                     </Box>
             <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
@@ -52,7 +74,7 @@ const ModalRicevutaOfferta = (props:any) => {
     
                             }}
     
-                            onClick={()=> console.log('accetta')}
+                            onClick={()=> accettaofferta()}
                            
                         >Accetta</button>
               <button
@@ -67,7 +89,7 @@ const ModalRicevutaOfferta = (props:any) => {
     
                             }}
     
-                            onClick ={()=> console.log('rifiuta')}
+                            onClick ={()=>rifiutaofferta()}
                             
                         >Rifiuta</button>
             </div>

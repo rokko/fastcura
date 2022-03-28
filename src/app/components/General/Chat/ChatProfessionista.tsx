@@ -83,7 +83,9 @@ const ChatProfessionista = () => {
     };
     axios
       .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
-      .then((x) => {if (x.data != null && x.data.conferma==false) {
+
+      .then((x) => {
+       if (x.data != null && x.data.conferma==2) {
         setOfferta( x.data)
         setOffertaricevuta(true)
       }})
@@ -92,13 +94,15 @@ const ChatProfessionista = () => {
       contatti_id: conversazione,
     };
 
+    console.log(conversazione)
+
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
 
     axios
       .post("https://fastcuradev.herokuapp.com/chat/get-message", cont, config)
-      .then((x) => setChat(x.data));
+      .then((x) => console.log(x))
   };
 
   const inviaMessaggio = () => {
@@ -211,8 +215,8 @@ const ChatProfessionista = () => {
           </button>
         </div>
       </div>
-      <ModalLogin open={pop} />
-      <ModalRicevutaOfferta open={offertaricevuta} />
+      <ModalLogin open={pop} verifica={setPop} />
+      <ModalRicevutaOfferta open={offertaricevuta} chiudi={setOffertaricevuta} offerta={offerta}/>
     </>
   );
 };
