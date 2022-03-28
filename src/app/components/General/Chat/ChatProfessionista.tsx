@@ -16,7 +16,7 @@ interface IChat {
 }
 const ChatProfessionista = () => {
   const [idinvio, setIdinvio] = useState("");
-  const [chat, setChat] = useState<IChat[]>()
+  const [chat, setChat] = useState<any[]>()
   const location = useLocation();
   const valoriProfessionista = location.state as any;
   const idprofessionista = valoriProfessionista.professionista._id;
@@ -28,6 +28,7 @@ const ChatProfessionista = () => {
   const [offerta, setOfferta] = useState<any>();
   const [newconversazione, setNewconversazione] = useState<any>();
   const [tot, setTot] = useState<any>({})
+  const [prova,setProva] = useState('')
   var  io : any
 
   const takeToken = async () => {
@@ -63,7 +64,8 @@ const ChatProfessionista = () => {
       )
       .then((x:any) => {
           io = x.data._id
-          aggiorna()
+          setProva(io)
+          setIdinvio(x.data.id_cliente)
         
       });
   };
@@ -96,7 +98,6 @@ const ChatProfessionista = () => {
     const cont = {
       contatti_id: io,
     };
-    console.log(io)
 
     axios
       .post("http://localhost:8080/chat/get-message", cont)
@@ -104,22 +105,26 @@ const ChatProfessionista = () => {
   };
 
   const inviaMessaggio = () => {
+
     const mess = {
       message: messaggio,
-      contatti_id: io,
+      contatti_id: prova,
     };
+
+    console.log(mess)
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    setMessaggio("");
 
     axios.post(
-      "https://localhost:8080/chat/send-message",
+      "http://localhost:8080/chat/send-message",
       mess,
       config
     );
+    setMessaggio("");
+
   };
 
   useEffect(() => {
@@ -141,7 +146,8 @@ const ChatProfessionista = () => {
           style={{ height: "500px", overflowY: "scroll", marginTop: 30 }}
         >
           {!!chat &&
-            chat.map((x, k) => {
+            chat.map((x:any, k:any) => {
+              console.log(x)
               if (k == chat.length - 1) {
                 if (k !== lastmessage) {
                   vaiallafine();
