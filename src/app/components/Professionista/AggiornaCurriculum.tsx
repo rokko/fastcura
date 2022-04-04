@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import { Box } from '@mui/system'
-import { TextField } from '@mui/material'
+import { Alert, Snackbar, TextField } from '@mui/material'
 import axios from "axios";
+import { truncate } from 'fs';
 
 interface ICurriculum {
     titolodistudio : string,
@@ -21,6 +22,7 @@ const AggiornaCurriculum = () => {
     const [token,setToken] = useState('');
     const [curriculum,setCurriculum]= useState<ICurriculum>()
     const [load,setLoad] = useState(false)
+    const [ok, setOk] = useState(false)
     const ottieniCurriculum = () => {
         const config = {
             headers: {Authorization: `Bearer ${token}`}
@@ -64,6 +66,7 @@ const AggiornaCurriculum = () => {
         axios.post('https://fastcuradev.herokuapp.com/professionista/modificacurriculum',curriculumaggiornato,config)
             .then((res)=> console.log(res))
         ottieniCurriculum()
+        setOk(true)
     }
 
     if(!load) return null
@@ -79,6 +82,11 @@ const AggiornaCurriculum = () => {
             <TextField multiline rows={5} sx={{width:'90%'}} id="standard-basic" label="Altro" variant="standard" onChange={(x:React.ChangeEvent<HTMLInputElement>) => setAltro(x.target.value)} defaultValue={curriculum?.altro}></TextField>
 
         </Box>
+        <Snackbar open={ok} autoHideDuration={6000} >
+  <Alert severity="success" onClose={()=> setOk(false)} sx={{ width: '100%' }}>
+   Curriculum Aggiornato
+  </Alert>
+</Snackbar>
                 <button
                     style={{
                         marginTop:'40px',

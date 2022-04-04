@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import HeaderChat from "../Chat/HeaderChat";
-import { Box, TextField } from "@mui/material";
+import { Alert, Box, TextField } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ModalLogin from "../ModalLogin";
 import axios from "axios";
 import ModalRicevutaOfferta from "../ModalRicevutaOfferta";
 import { NONAME } from "dns";
+import { Snackbar } from "@mui/material";
 
 
 interface IChat {
@@ -30,6 +31,9 @@ const ChatProfessionista = () => {
   const [newconversazione, setNewconversazione] = useState<any>();
   const [tot, setTot] = useState<any>({})
   const [prova,setProva] = useState('')
+
+  const [oklog, setOklog] = useState(false)
+
   var  io : any
 
   const takeToken = async () => {
@@ -182,7 +186,7 @@ const ChatProfessionista = () => {
                         
                     }}
                   >
-                    <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
+                    <p style={{color:isMine(x.sender)?'white':'black', paddingLeft:'8px', paddingRight:'8px'}}>{x.message}</p>
                    
                   </div>
                   
@@ -241,7 +245,12 @@ const ChatProfessionista = () => {
           </button>
         </div>
       </div>
-      <ModalLogin open={pop} verifica={setPop} />
+      <ModalLogin open={pop} verifica={setPop} setsnack={setOklog} />
+      <Snackbar open={oklog} autoHideDuration={6000} >
+  <Alert  severity="success" sx={{ width: '100%' }}>
+    Login Effettuato
+  </Alert>
+</Snackbar>
       <ModalRicevutaOfferta
         open={offertaricevuta}
         chiudi={setOffertaricevuta}

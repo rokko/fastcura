@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Container } from "@mui/material";
+import { Alert, Container, Snackbar } from "@mui/material";
 import ButtonIscriviti from "./ButtonIscriviti";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin"
@@ -11,6 +11,7 @@ const Header = () => {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
 
     const [pip,setPip]=useState(false)
+    const [oklog,setOklog] = useState(false)
   return (
     <div style= { isMobile ?{position:'fixed', top: 0, maxWidth:'100%' ,background:'white', zIndex:'1000001'}:{position:'fixed',width:'100%', zIndex:'1000001', top: 0,background:'white'}} >
       <Container
@@ -151,7 +152,12 @@ const Header = () => {
 
           </svg>
     </div>
-    <ModalLogin open={pip} chiudi={setPip} />
+    <ModalLogin open={pip} chiudi={setPip} setsnack={setOklog} />
+    <Snackbar open={oklog} autoHideDuration={6000} >
+  <Alert  severity="success" sx={{ width: '100%' }}>
+    Login Effettuato
+  </Alert>
+</Snackbar>
       </div>
 
         </div>

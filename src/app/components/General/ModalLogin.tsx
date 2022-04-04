@@ -25,6 +25,7 @@ const ModalLogin = (props: any) => {
         if (!!token.accessToken) {
 
           localStorage.setItem("tokenaccess", token.accessToken);
+          props.setsnack(true);
           props.chiudi(false);
           props.setok(true);
         }
