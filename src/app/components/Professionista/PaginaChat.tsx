@@ -128,7 +128,7 @@ const PaginaChat = () => {
                       alignContent:'center',
                       width:'max-content',
                       maxWidth:'200px',
-                        borderRadius:'30px',
+                        borderRadius:'20px',
                         paddingLeft:'3px',
                         paddingRight:'3px',
                       backgroundColor: isMine(x.sender)
@@ -140,7 +140,7 @@ const PaginaChat = () => {
                         
                     }}
                   >
-                    <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
+                    <p style={{color:isMine(x.sender)?'white':'black', paddingLeft:'8px', paddingRight:'8px'}}>{x.message}</p>
                    
                   </div>
                 </>
