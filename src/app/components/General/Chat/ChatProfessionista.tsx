@@ -133,6 +133,47 @@ const ChatProfessionista = () => {
 
   };
 
+  const sendko = () => {
+    const mess = {
+      message: 'Offerta Rifiutata',
+      contatti_id: prova,
+    };
+
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+
+    axios.post(
+      "https://fastcuradev.herokuapp.com/chat/send-message",
+      mess,
+      config
+    );
+
+
+  }
+
+  const sendok = () => {
+    const mess = {
+      message: 'Offerta Accettata',
+      contatti_id: prova,
+    };
+
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+
+    axios.post(
+      "https://fastcuradev.herokuapp.com/chat/send-message",
+      mess,
+      config
+    );
+
+  }
+
   useEffect(() => {
   
     takeToken();
@@ -252,6 +293,8 @@ const ChatProfessionista = () => {
   </Alert>
 </Snackbar>
       <ModalRicevutaOfferta
+        accetta = {sendok}
+        rifiuta = {sendko}
         open={offertaricevuta}
         chiudi={setOffertaricevuta}
         offerta={offerta}

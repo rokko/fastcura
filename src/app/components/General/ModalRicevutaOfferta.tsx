@@ -10,6 +10,7 @@ const accettaofferta = () => {
     }
     axios.post('https://fastcuradev.herokuapp.com/cliente/accettaofferta',ris)
     .then((response) =>   console.log(response))
+    props.accetta()
     props.chiudi(false)
 }
 const rifiutaofferta = () => {
@@ -18,7 +19,9 @@ const rifiutaofferta = () => {
     }
     axios.post('https://fastcuradev.herokuapp.com/cliente/rifiutaofferta',ris)
     .then((response) =>   console.log(response))
+    props.rifiuta()
     props.chiudi(false)
+
 
 
 }
