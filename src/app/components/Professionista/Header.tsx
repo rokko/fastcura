@@ -19,7 +19,7 @@ const Header = () => {
           justifyContent: "space-between",
         }}
       >
-        <Link to="/">
+        <Link to="/professionista">
           <svg
             style={{ marginLeft: "20px" }}
             id="Raggruppa_16"
