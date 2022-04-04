@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ModalLogin from "../ModalLogin";
 import axios from "axios";
 import ModalRicevutaOfferta from "../ModalRicevutaOfferta";
+import { NONAME } from "dns";
 
 
 interface IChat {
@@ -169,8 +170,8 @@ const ChatProfessionista = () => {
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
                       textAlign: isMine(x.sender)
-                        ? "left"
-                        : "right",
+                        ? "right"
+                        : "left",
                         marginLeft: isMine(x.sender)
                         ? "5px"
                         : "85%",
@@ -199,7 +200,7 @@ const ChatProfessionista = () => {
           }}
         >
           <TextField
-            label={"Scrivi un messaggio.."}
+          placeholder="Messaggio"
             sx={{
               height: "60px",
               width: "80%",

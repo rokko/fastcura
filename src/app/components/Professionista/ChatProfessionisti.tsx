@@ -93,7 +93,7 @@ const ChatProfessionisti = () => {
                 height:'100%',
                 backgroundColor:'#f8f8f8'
             }}>
-                    {contatti.map((contatto)=>{
+                    {contatti.reverse().map((contatto)=>{
                       return(
                        <BoxChat contatto={contatto}/>
                       )

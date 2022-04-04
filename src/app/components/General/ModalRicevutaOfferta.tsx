@@ -39,7 +39,7 @@ if (props.offerta== undefined) return null
         transform: 'translate(-50%, -50%)',
         marginTop:'100px',
         width: "320px",
-        height: "400px",
+        height: "430px",
         backgroundColor: "#ffffff",
         borderRadius: "20px",
         display:'flex',
@@ -51,9 +51,8 @@ if (props.offerta== undefined) return null
         border:'1px solid #5DBFE0'
       }}>
             <Box style={{width:'90%',marginBottom:'30px', borderRadius:'10%', padding:'10px', marginTop:'30px', display:'flex', flexDirection:'column', alignContent:'left'}}>
-            <p style={{textAlign:'left', color:'#39B1D9'}}>Nome prestazione</p>
-            {/*<p>{(!!props.offerta.nome) ? props.offerta.nome : 'no'}</p>*/}
-            <p>Nome</p>
+            <p style={{textAlign:'left', color:'#39B1D9'}}>Tipo di prestazione</p>
+            <p>{props.offerta.nome}</p>
             <p style={{textAlign:'left',color:'#39B1D9'}}>Prezzo</p>
             <p>{props.offerta.totale}</p>
             <p style={{textAlign:'left', color:'#39B1D9'}}>Giorno prestazione</p>

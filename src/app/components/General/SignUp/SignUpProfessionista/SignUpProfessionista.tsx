@@ -136,16 +136,16 @@ const SignUpProfessionista = () => {
           type={"date"}
         ></TextField>
         <Autocomplete
-            disablePortal
-            id="lista-professioni"
-            options={sess}
-            sx={{ width: 310, marginTop:1.5 }}
-            style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
-            renderInput={(params) => (
+              disablePortal
+              id="lista-sesso"
+              options={sess}
+              sx={{ width: 310, marginTop:1.5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
                 <TextField {...params} label="Sesso" />
-            )}
-            onChange={(x, value) => setSesso(value)}
-        />
+              )}
+              onChange={(x, value) => setSesso(value)}
+            />
         <TextField
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setCitta(x.target.value)
@@ -613,14 +613,17 @@ const SignUpProfessionista = () => {
               id="outlined-size-small"
               type={"date"}
           ></TextField>
-          <TextField
-              onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-                  setSesso(x.target.value)
-              }
-              style={{ width: 310, marginTop: 10 }}
-              id="outlined-size-small"
-              label="Sesso"
-          ></TextField>
+         <Autocomplete
+              disablePortal
+              id="lista-sesso"
+              options={sess}
+              sx={{ width: 310, marginTop:1.5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Sesso" />
+              )}
+              onChange={(x, value) => setSesso(value)}
+            />
           <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCitta(x.target.value)

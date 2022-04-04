@@ -132,8 +132,8 @@ const PaginaChat = () => {
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
                       textAlign: isMine(x.sender)
-                        ? "left"
-                        : "right",
+                        ? "right"
+                        : "left",
                         marginLeft: isMine(x.sender)
                         ? "5px"
                         : "85%",
@@ -165,8 +165,8 @@ const PaginaChat = () => {
           }}
         >
           <TextField
-            label={"Scrivi un messaggio.."}
-            sx={{
+placeholder="Messaggio"
+  sx={{
               height: "60px",
               width: "80%",
               border: "none",
@@ -177,6 +177,7 @@ const PaginaChat = () => {
                 borderRadius: "30px",
               },
             }}
+            
             value={messaggio}
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMessaggio(x.target.value)
