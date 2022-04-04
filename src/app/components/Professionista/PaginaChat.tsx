@@ -107,7 +107,7 @@ const PaginaChat = () => {
     <>
       <div style={{ height: "100%" }}>
         <HeaderChat/>
-        <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30 }}>
+        <Box id="boxchat" style={{ height: "500px",overflowY:'scroll', marginTop:30, width:'100%' , display:'flex', flexDirection:'column'}}>
           {!!chat &&
             chat.map((x, k) => {
               if (k==chat.length-1) {
@@ -123,22 +123,21 @@ const PaginaChat = () => {
                 <>
                   <div
                     style={{
-                      marginTop:'5px',
+                      marginTop:'3px',
+                      display:'flex',
+                      alignContent:'center',
                       width:'max-content',
                       maxWidth:'200px',
                         borderRadius:'30px',
-                        padding:'5px',
+                        paddingLeft:'5px',
+                        paddingRight:'5px',
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
-                      textAlign: isMine(x.sender)
-                        ? "right"
-                        : "left",
-                        marginLeft: isMine(x.sender)
-                        ? "5px"
-                        : "85%",
+                      alignSelf: isMine(x.sender)
+                        ? "flex-start"
+                        : "flex-end",
                         
-                      
                     }}
                   >
                     <p style={{color:isMine(x.sender)?'white':'black'}}>{x.message}</p>
