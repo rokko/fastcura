@@ -129,8 +129,8 @@ const PaginaChat = () => {
                       width:'max-content',
                       maxWidth:'200px',
                         borderRadius:'30px',
-                        paddingLeft:'5px',
-                        paddingRight:'5px',
+                        paddingLeft:'3px',
+                        paddingRight:'3px',
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
