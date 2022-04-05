@@ -217,10 +217,10 @@ const ChatProfessionista = () => {
                       backgroundColor: isMine(x.sender)
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
-                      alignSelf: isMine(x.sender)
-                        ? "flex-start"
-                        : "flex-end",
-
+                        alignSelf: isMine(x.sender)
+                        ? "flex-end"
+                        : "flex-start",
+                        
                         textAlign:isMine(x.sender)
                         ? "left"
                         :"right"

@@ -135,8 +135,8 @@ const PaginaChat = () => {
                         ? "rgb(57, 177, 217)"
                         : "#D1E8F0",
                       alignSelf: isMine(x.sender)
-                        ? "flex-start"
-                        : "flex-end",
+                        ? "flex-end"
+                        : "flex-start",
                         
                     }}
                   >
