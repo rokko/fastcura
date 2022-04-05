@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { Alert, Box, Button, IconButton, Snackbar } from "@mui/material";
+import { Alert, Box, Button, IconButton, makeStyles, Snackbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
 import ProfiloProfessionista from "../ListaProfessionisti/ProfiloProfessionista";
 import Confir from "../General/Confir";
+
+
 const HeaderNoLogin = () => {
   const [pop, setPop] = useState(false);
   const [ok, setOk] = useState(false);
   const [oklog, setOklog] = useState(false);
- 
+
+
 
 
   return (
@@ -117,9 +120,9 @@ const HeaderNoLogin = () => {
           verifica={setOk}
           setsnack={setOklog}
         />
-        <Snackbar open={oklog} onClose={()=>setOklog(false)} autoHideDuration={2000} >
-          <Alert severity="success" sx={{ width: "100%" }}>
-            Login Effettuato
+        <Snackbar  open={oklog} onClose={()=>setOklog(false)} autoHideDuration={2000} >
+        <Alert   severity="success" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+         Login Effettuato
           </Alert>
         </Snackbar>
       </Box>
@@ -129,3 +132,4 @@ const HeaderNoLogin = () => {
 };
 
 export default HeaderNoLogin
+

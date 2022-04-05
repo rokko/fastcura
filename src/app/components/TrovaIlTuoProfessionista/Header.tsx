@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Alert, Container, Snackbar } from "@mui/material";
+import { Alert, Container, makeStyles, Snackbar } from "@mui/material";
 import ButtonIscriviti from "./ButtonIscriviti";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin"
@@ -7,6 +7,7 @@ import ModalLogin from "../General/ModalLogin";
 import {useMediaQuery} from "react-responsive";
 
 const Header = () => {
+
 
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
 
@@ -154,7 +155,7 @@ const Header = () => {
     </div>
     <ModalLogin open={pip} chiudi={setPip} setsnack={setOklog} />
     <Snackbar open={oklog} autoHideDuration={6000} onClose={()=>setOklog(false)} >
-  <Alert  severity="success" sx={{ width: '100%' }}>
+    <Alert   severity="success" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
     Login Effettuato
   </Alert>
 </Snackbar>
