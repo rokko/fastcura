@@ -220,7 +220,7 @@ const ChatProfessionista = () => {
                         alignSelf: isMine(x.sender)
                         ? "flex-end"
                         : "flex-start",
-                        
+
                         textAlign:isMine(x.sender)
                         ? "left"
                         :"right"
@@ -286,7 +286,7 @@ const ChatProfessionista = () => {
           </button>
         </div>
       </div>
-      <ModalLogin open={pop} verifica={setPop} setsnack={setOklog} />
+      <ModalLogin open={pop} verifica={setPop} setsnack={setOklog} chiudi={setPop} />
       <Snackbar open={oklog} autoHideDuration={6000} >
   <Alert  severity="success" sx={{ width: '100%' }}>
     Login Effettuato
