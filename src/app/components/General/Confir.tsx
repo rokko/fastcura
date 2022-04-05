@@ -9,6 +9,7 @@ return(
 
 <Snackbar
   open={open}
+  onClose={()=>{props.setOpen(false)}}
   autoHideDuration={5000}
   message={props.message}
 />

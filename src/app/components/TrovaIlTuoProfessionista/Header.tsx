@@ -153,7 +153,7 @@ const Header = () => {
           </svg>
     </div>
     <ModalLogin open={pip} chiudi={setPip} setsnack={setOklog} />
-    <Snackbar open={oklog} autoHideDuration={6000} >
+    <Snackbar open={oklog} autoHideDuration={6000} onClose={()=>setOklog(false)} >
   <Alert  severity="success" sx={{ width: '100%' }}>
     Login Effettuato
   </Alert>

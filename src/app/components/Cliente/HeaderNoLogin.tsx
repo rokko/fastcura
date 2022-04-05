@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Box, Snackbar } from "@mui/material";
+import { Alert, Box, Button, IconButton, Snackbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
@@ -9,8 +9,8 @@ const HeaderNoLogin = () => {
   const [pop, setPop] = useState(false);
   const [ok, setOk] = useState(false);
   const [oklog, setOklog] = useState(false);
+ 
 
-  console.log(ok);
 
   return (
     <>
@@ -117,15 +117,15 @@ const HeaderNoLogin = () => {
           verifica={setOk}
           setsnack={setOklog}
         />
-        <Snackbar open={oklog} autoHideDuration={6000}>
+        <Snackbar open={oklog} onClose={()=>setOklog(false)} autoHideDuration={2000} >
           <Alert severity="success" sx={{ width: "100%" }}>
             Login Effettuato
           </Alert>
         </Snackbar>
       </Box>
-      <Confir open={ok} message={"Login Effettuato"} />
+      <Confir open={ok} message={"Login Effettuato"} setOpen={setOk}/>
     </>
   );
 };
 
-export default HeaderNoLogin;
+export default HeaderNoLogin

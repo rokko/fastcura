@@ -82,7 +82,7 @@ const AggiornaCurriculum = () => {
             <TextField multiline rows={5} sx={{width:'90%'}} id="standard-basic" label="Altro" variant="standard" onChange={(x:React.ChangeEvent<HTMLInputElement>) => setAltro(x.target.value)} defaultValue={curriculum?.altro}></TextField>
 
         </Box>
-        <Snackbar open={ok} autoHideDuration={6000} >
+        <Snackbar open={ok} autoHideDuration={6000} onClose={()=>setOk(false)} >
   <Alert severity="success" onClose={()=> setOk(false)} sx={{ width: '100%' }}>
    Curriculum Aggiornato
   </Alert>

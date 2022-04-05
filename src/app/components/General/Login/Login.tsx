@@ -19,6 +19,7 @@ const Login = (props:any) => {
                const token : IToken = response.data;
                if (!!token.accessToken) {
                    localStorage.setItem('tokenaccess', token.accessToken);
+                   
                    navigate('/professionista')
                }
             })

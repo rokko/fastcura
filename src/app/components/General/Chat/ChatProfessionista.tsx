@@ -287,7 +287,7 @@ const ChatProfessionista = () => {
         </div>
       </div>
       <ModalLogin open={pop} verifica={setPop} setsnack={setOklog} chiudi={setPop} />
-      <Snackbar open={oklog} autoHideDuration={6000} >
+      <Snackbar open={oklog} autoHideDuration={6000} onClose={()=>setOklog(false)} >
   <Alert  severity="success" sx={{ width: '100%' }}>
     Login Effettuato
   </Alert>
