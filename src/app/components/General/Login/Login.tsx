@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IToken {
     accessToken : string
+    message: number
 
 }
 
@@ -16,11 +17,15 @@ const Login = (props:any) => {
 
         axios.post('https://fastcuradev.herokuapp.com/login',userlogin)
             .then(function (response) {
+              console.log(response)
                const token : IToken = response.data;
                if (!!token.accessToken) {
                    localStorage.setItem('tokenaccess', token.accessToken);
-                   
+                   if (token.message === 0 ){
+                    navigate('/')
+                   }else{
                    navigate('/professionista')
+                   }
                }
             })
             .catch(function (error) {
