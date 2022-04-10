@@ -25,7 +25,7 @@ const Footer = () => {
             color: "#ffffff",
           }}
         >
-          <p style={{ color: "#ffffff" }}>FastCura Copyrigth 2022</p>
+          <p style={{ color: "#ffffff" }}>FastCura Copyright 2022</p>
           <a style={{ textDecoration: "none" }} href="/terminicondizioni.pdf">
             <p style={{ color: "#ffffff" }}>Termini e Condizioni</p>
           </a>

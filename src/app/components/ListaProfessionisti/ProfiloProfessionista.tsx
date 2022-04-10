@@ -26,10 +26,7 @@ const ProfiloProfessionista = () => {
     };
 
     axios
-      .post(
-        "https://fastcuradev.herokuapp.com/cliente/infocurriculum",
-        valore
-      )
+      .post("https://fastcuradev.herokuapp.com/cliente/infocurriculum", valore)
       .then((res) => setRisposta(res.data));
   };
 

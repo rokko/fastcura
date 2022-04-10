@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 interface IToken {
   accessToken: string;
+  message: number;
 }
 
 const ModalLogin = (props: any) => {
@@ -23,11 +24,19 @@ const ModalLogin = (props: any) => {
         const token: IToken = response.data;
 
         if (!!token.accessToken) {
-
           localStorage.setItem("tokenaccess", token.accessToken);
-          props.setsnack(true);
-          props.chiudi(false);
-          props.setok(true);
+
+          if (token.message === 0) {
+            props.setsnack(true);
+            props.chiudi(false);
+            console.log("Cliente");
+            navigate("/cliente");
+          } else {
+            props.setsnack(true);
+            props.chiudi(false);
+            console.log("PROFESSIONISTA");
+            navigate("/professionista");
+          }
         }
       })
       .catch(function (error) {
