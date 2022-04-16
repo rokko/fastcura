@@ -3,7 +3,7 @@ import { Box, TextField } from "@mui/material";
 import ModalOfferta from "../../components/General/ModalOfferta";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import HeaderChat from "../General/Chat/HeaderChat";
+import HeaderChat from "./HeaderChat";
 
 import mappeImmagine from "../../media/location.gif";
 

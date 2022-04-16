@@ -5,8 +5,9 @@ interface IUtente {
   nome: string;
   cognome: string;
   sesso: string;
-  cap: string;
-  numero: string;
+  codicepostale: string;
+  number: string;
+  email: string;
 }
 
 const AggiornaProfilo = () => {
@@ -60,8 +61,8 @@ const AggiornaProfilo = () => {
         setNome(profilo?.nome);
         setCognome(profilo?.cognome);
         setSesso(profilo?.sesso);
-        setCap(profilo?.cap);
-        setNumero(profilo?.numero);
+        setCap(profilo?.codicepostale);
+        setNumero(profilo?.number);
       })
       .then(() => {
         setLoad(true);
@@ -95,6 +96,16 @@ const AggiornaProfilo = () => {
             marginTop: "30px",
           }}
         >
+            <TextField
+                sx={{ width: "90%", marginTop: "10px" }}
+                id="standard-basic"
+                label="Email"
+                variant="standard"
+                inputProps={
+                    {readOnly: true,}
+                }
+                defaultValue={profilo?.email}
+            ></TextField>
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
@@ -118,32 +129,23 @@ const AggiornaProfilo = () => {
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
-            label="Sesso"
-            variant="standard"
-            onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-              setSesso(x.target.value)
-            }
-            defaultValue={profilo?.sesso}
-          ></TextField>
-          <TextField
-            sx={{ width: "90%", marginTop: "10px" }}
-            id="standard-basic"
             label="CAP"
             variant="standard"
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setCap(x.target.value)
             }
-            defaultValue={profilo?.cap}
+            defaultValue={profilo?.codicepostale}
           ></TextField>
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
             label="Numero"
             variant="standard"
+            type = {'number'}
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setNumero(x.target.value)
             }
-            defaultValue={profilo?.numero}
+            defaultValue={profilo?.number}
           ></TextField>
         </Box>
         <button

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AccordionPrestazioni from "../../Professionista/AccordionPrestazioni";
 
+
 interface Iprestazione {
   data: Date;
   id_cliente: string;
@@ -42,9 +43,14 @@ const ListaAppuntamenti = () => {
       });
   };
 
+
+
   return (
     <>
       <Box style={{ height: 30, width: "100%" }}>
+        {  // @ts-ignore
+          (prestazioni?.length === 0) && <p>Nessun appuntamento fissato</p>
+        }
         {prestazioni?.map((prestazione: any) => {
           return <AccordionPrestazioni prestazione={prestazione} />;
         })}

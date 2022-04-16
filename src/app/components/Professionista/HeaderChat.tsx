@@ -43,7 +43,7 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
           </p>
         </div>
         </div>
-        <Link to="/cliente">
+        <Link to="/professionista">
           <svg
           style={{marginRight:'30px'}}
             id="Raggruppa_16"
