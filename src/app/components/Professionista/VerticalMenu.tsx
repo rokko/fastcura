@@ -11,16 +11,14 @@ const VerticalMenu = (props: any) => {
     <>
       <div className="provino">
         <Menu
-        
           open={props.open}
           MenuListProps={{
             "aria-labelledby": "basic-button",
           }}
           sx={{
-            
             position: "absolute",
-            top: isMobile ? "-41%" : "-38%",
-            left: isMobile ? "50%" : "88%",
+            top: isMobile ? "-55%" : "-60%",
+            left: isMobile ? "50%" : "85%",
           }}
         >
           <MenuItem>
