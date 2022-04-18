@@ -151,8 +151,8 @@ if (!isMobile) return(
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="150.054"
-                height="150.05"
-                viewBox="0 0 107.054 115.05"
+                height="150.299"
+                viewBox="0 0 107.054 106.299"
             >
               <g
                   id="Raggruppa_131"
@@ -374,7 +374,7 @@ if (!isMobile) return(
                     backgroundColor: "#FF3617",
                     fontWeight: "bold",
                     border: "none",
-                    marginTop: 10,
+                    marginTop: 19,
                     borderRadius: 20,
                     color: "#ffffff",
                   }}
