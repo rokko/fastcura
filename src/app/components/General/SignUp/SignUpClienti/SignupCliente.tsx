@@ -10,6 +10,12 @@ import {
 } from "@mui/material";
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import {useMediaQuery} from "react-responsive";
+
+
+interface IToken {
+  accessToken : string
+
+}
 const SignUpClient = () => {
   const navigate = useNavigate()
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
@@ -37,12 +43,26 @@ const SignUpClient = () => {
     cellulare : cellulare 
   }
 
+  const loginUser = (userlogin : any)=>{
 
+    axios.post('https://fastcuradev.herokuapp.com/login',userlogin)
+        .then(function (response) {
+          const token : IToken = response.data;
+          if (!!token.accessToken) {
+            localStorage.setItem('tokenaccess', token.accessToken);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+  }
   const sendRegister = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente)
     axios.post('https://fastcuradev.herokuapp.com/cliente/signup',nuovoCliente)
 .then(function (response) {
-  navigate('/');
+ loginUser({email: response.data.email , password : response.data.password})
+  navigate(-1)
 })
 .catch(function (error) {
   console.log(error);
