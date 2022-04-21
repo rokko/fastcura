@@ -32,7 +32,7 @@ const ChatProfessionista = () => {
   const [newconversazione, setNewconversazione] = useState<any>();
   const [tot, setTot] = useState<any>({});
   const [prova, setProva] = useState("");
-  const [pos, setPos] = useState(false);
+  const [pos, setPos] = useState(true);
 
   const [oklog, setOklog] = useState(false);
 
@@ -210,7 +210,6 @@ const ChatProfessionista = () => {
         >
           {!!chat &&
             chat.map((x: any, k: any) => {
-              console.log;
               if (k == chat.length - 1) {
                 if (k !== lastmessage) {
                   vaiallafine();
@@ -240,21 +239,24 @@ const ChatProfessionista = () => {
                       }}
                     >
                       <a
-                        style={{ textDecoration: "none" }}
+                        style={{ textDecoration: "none", display:'flex', flexDirection:'row', alignContent:'center', justifyContent:'center' , alignItems:'center'}}
                         href={x.message.substr(4)}
                       >
                         <p
                           style={{
-                            color: isMine(x.sender) ? "white" : "black",
+                            color:  "white" ,
                             paddingLeft: "8px",
                             paddingRight: "8px",
-                            fontSize: "20px",
+                            fontSize: "18px",
                             display: "flex",
+                              alignContent:'center',
                           }}
                         >
                           Qui la posizione
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAEJklEQVRogd2ab2jVVRjHP5MlurzTzI0EXwR255/wz0TpTbCWRCZKTOwP+sq3QpIvJP8F0+WLYvSuIkqoF2IUmiiD0BEjFsbKKYmIpmFIoCXNtjmna7u+eJ7Tyeu953d+v3vORn7hcmH7/r7ne37nnOc55zkXHhJUBdarBdYAzcAS4Elghv7vJnAFOAN8C3QAA4HbrxjzgP3AEFDw/NwCPgXyE+D3AdQA7cAIYm4M6AF2AU1IBx/Vzzz9227gR+UWgLvAe8CUcfb+L/LAWTUzChwA5qZ4/ingILZDJ4HZgT0mohH4Qw1cAJZVoLUcuKhaV4HFFbvzRB7biePAYwE0ZwInsJ2JPjI12Ol0HKgOqP0I0ImdZlHXTDt2OoUYiWLMBH7RNvZE0Ack6owgC7uSNZGEFUgAGASeiNHAfuRNHYghXoQvtK0PQwvXIglsDL8QWw+0AaeRNzsI9AJ7gTqP5/PYUZmWwW9ZbEDeUI8Hdz3QT/mM/jewzkPnJ+W/lsFvWXyiorsSeOuxCe5rJJObzP4ccASbQFsStN5W7seZXZdAj4o2OTj12JHY5uC9pZybwCwHr1l5P6RymoA/VbTBwWnDjkQSjpIcYhuUc93ToxfuqGjOwTlD8qgZmLfd6+DklDPs6dELt1XUlW0HlOMTZYzJfgenRjlDPgYn+ZCQSAP2kFQKBU8tsAc61zNm59DnI+jbESPmWpyX9Xu5h57hXHJwTL4J2hHT4EIH55h+v+mht7XomVJ4Wr8veuh5Yx8yDd5xcOqQKVhAQmw57FBOH/C4g/eu8lpTOU3AqyramcBbhyS7AhJim5HFPw14HhkBkxBfTtDqVm4SLxXqtfFhJJq40IIku3JblD4PczOQnfYIMD2z6zLoVSOrPbizkGR3CgnL/cjeqRX3dDJ4RdvqzuQ0ASZzfxZDvAiHSF5rmTEfu3tNml6VYDqSgMeQAl8UnEI6szFWA8Ab2kZXxDbYjC0OxEA18Ku2sSFSG4CEURORVkTQf121f0eqKlHxvjb2VQRtM3V3RtB+ALOxi3FRQN0XsAcu1+Y0KD4g/Kh0EbmeVQpzsFWVZwPotSCduEGcwp8TrdhTnu8uuhQmY4vYmwP4So2pyA1UAdhUgc421ThH2FpyKph61zWkiJcWddhw/mJAX6lRBXyvRtozPP+5Pus6YI0bGpHrs3+AZ1I8twp7l5jmpisq9iKmzuN3r5EDftNntkT0lRqTgZ9JPg4bfIQ9b1QS8aJgKTLFRpE6bzmsQvLPMLBgHHxlwh7kTV+h9DajHimBFvCrtkwYqoHvEKOHuf+XFZOAb/R/HYT/1UVwzMEWvf97DWGOyteIdKUWA2uRdTAKvIT8PmUUCdErJ9BXJpi92F9ICagAbJ9QRxlRBXyJrWcVr5n/FXLIjdNJAl9qPrS4B84dJyPLsb4IAAAAAElFTkSuQmCC" />
                         </p>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACtElEQVRYhe2WS0hUcRTGv9tDLB9J9DKyx6KGMpMyKJDatCooaOvarFUREe3bVEulJ0WRRruCsggiiB4bCWknmFCWi9JNakpYTb8W9xsZ5c69M860qgOHO/zPd77v/P/zv/cc6b8VaEAzcAXoA77Z+4DLQPPfFF4FPCTZHgArSy2eAgYt8BU4CzQBFfYmr40aMwhsKpV4DdBv4ufA8hjsCuCFsf1ATSkKuGjCXmBRHvhyoMc57cWKrwamgJ9AqoC8zcAv59YWU8Ax7+ReROwAMGTfHxG/79y2YgroMklrRGwo6+Z/ioi3OtYZpzEvoYbM8X3Iv+xpG5zFMacCAj8rImJtkobsUce8eBZHpC1IKCBztFskPZxRWRA8kbQ2Jrfez49xAkkn8MrPQwm4KMvkvIpFxRlQDUz6MtUnZ0znbXXOBFA15wJMdttkXQXk3HHOraLETZYCfgBpYEce+EZjf5SyH1zyjl4COe8NMA94bWxHScRNvAwYNvHxGNwJYz4DS0tWgMkPm3wSaIiIN2Rd2Lm8NTmFa4Ey/75pgXdktVrClj3g2HWvLQRWFSN8kLD/p4FzXisH3lioG5hv7/ZaD1Bu7AXCjvi8oBMBqpg5en0HHgOVjtdl3YerwDX//gKsyTqRp4TtOGOPyOebAFx3wihwCqiOwOwlfM0yNgXsicDVAKeBMeNu5FPAuMFNCbgW/z1poCUBu9OcY7NjUc1oWFKVpJSk3lykQRDcBUYl4cYUZ5lpajgBJwFHXe1vws/wtsSk3FyNQKe5AI7MxkT2auCkpPOSyrw0IOmZwhPpVzgDjNslqdpep3C3OyXtk7TR8SlJZ4IgyH9IBdYDHcAIc7cRoB1Yl0sndlpxIfMl7ZK0W9J2SRsUDiKVkpYYNiZpQuEA817SW0k9knqCIEjnvet/0v4A9/F83j3jPUUAAAAASUVORK5CYII=" />
+
+
                       </a>
                     </div>
                   </>
