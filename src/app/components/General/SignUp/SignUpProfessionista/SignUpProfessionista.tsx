@@ -73,7 +73,7 @@ const SignUpProfessionista = () => {
   const sendRegister = () => {
     axios.post('https://fastcuradev.herokuapp.com/professionista/signup',nuovoProfessionista)
     .then(function (response) {
-      navigate('/');
+      navigate('/registrazione');
     })
     .catch(function (error) {
       console.log(error);
