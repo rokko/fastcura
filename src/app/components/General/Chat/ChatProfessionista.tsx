@@ -32,7 +32,7 @@ const ChatProfessionista = () => {
   const [newconversazione, setNewconversazione] = useState<any>();
   const [tot, setTot] = useState<any>({});
   const [prova, setProva] = useState("");
-  const [pos, setPos] = useState(true);
+  const [pos, setPos] = useState(false);
 
   const [oklog, setOklog] = useState(false);
 
@@ -200,7 +200,7 @@ const ChatProfessionista = () => {
         <Box
           id="boxchat"
           style={{
-            height: "500px",
+            height: "70%",
             overflowY: "scroll",
             marginTop: 30,
             width: "100%",
@@ -216,7 +216,6 @@ const ChatProfessionista = () => {
                   setLastmessage(k);
                 }
               }
-              console.log(x.message.substr(0, 4));
               if (x.message.substr(0, 4) == "link") {
                 return (
                   <>
