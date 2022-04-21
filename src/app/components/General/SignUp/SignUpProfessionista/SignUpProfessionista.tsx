@@ -21,7 +21,7 @@ const SignUpProfessionista = () => {
   const [password, setPassword] = useState<String>();
   const [data, setData] = useState<String>();
   const [sesso, setSesso] = useState<String|null>();
-  const [citta, setCitta] = useState<String>();
+  const [citta, setCitta] = useState<String|null>();
   const [cellulare, setCellulare] = useState<String>();
   const [professione, setProfessione] = useState<String | null>();
   const [greenpass, setGreenpass] = useState<String | null> ();
@@ -43,6 +43,7 @@ const SignUpProfessionista = () => {
   const conoita = ['Ottimo', 'Buono', 'Sufficiente', 'Insufficiente', 'Scarso']
   const tit = ['Laurea','Scuole Superiori','Diploma (O.S.S., A.S.A.)']
   const sess = ['Uomo','Donna']
+  const citt = ['Bari', 'Napoli', 'Salerno', 'Roma', 'Milano', 'Bologna']
 
 
   const nuovoProfessionista = {
@@ -146,14 +147,17 @@ const SignUpProfessionista = () => {
               )}
               onChange={(x, value) => setSesso(value)}
             />
-        <TextField
-          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-            setCitta(x.target.value)
-          }
-          style={{ width: 310, marginTop: 10 }}
-          id="outlined-size-small"
-          label="Citta"
-        ></TextField>
+        <Autocomplete
+            disablePortal
+            id="lista-citta"
+            options={citt}
+            sx={{ width: 310, marginTop:1.5 }}
+            style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+            renderInput={(params) => (
+                <TextField {...params} label="Città" />
+            )}
+            onChange={(x, value) => setCitta(value)}
+        />
         <TextField
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setCellulare(x.target.value)
@@ -624,14 +628,17 @@ const SignUpProfessionista = () => {
               )}
               onChange={(x, value) => setSesso(value)}
             />
-          <TextField
-              onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-                  setCitta(x.target.value)
-              }
-              style={{ width: 310, marginTop: 10 }}
-              id="outlined-size-small"
-              label="Citta"
-          ></TextField>
+          <Autocomplete
+              disablePortal
+              id="lista-citta"
+              options={citt}
+              sx={{ width: 310, marginTop:1.5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                  <TextField {...params} label="Città" />
+              )}
+              onChange={(x, value) => setCitta(value)}
+          />
           <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCellulare(x.target.value)
