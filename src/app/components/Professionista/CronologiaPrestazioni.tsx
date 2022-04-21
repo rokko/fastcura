@@ -40,6 +40,8 @@ const CronologiaPrestazioni = ()=> {
     return(
         <>
         <Box style={{height:30, width:'100%'}}>
+            {(prestazioni?.length === 0) && <p>Nessun appuntamento fissato</p>}
+
             {prestazioni?.map((prestazione:any)=>{
                     return(
                 <AccordionPrestazioni prestazione={prestazione}/>

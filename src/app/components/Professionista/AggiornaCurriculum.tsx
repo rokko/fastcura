@@ -24,11 +24,13 @@ const AggiornaCurriculum = () => {
     const [load,setLoad] = useState(false)
     const [ok, setOk] = useState(false)
     const ottieniCurriculum = () => {
+        console.log('ciao')
         const config = {
             headers: {Authorization: `Bearer ${token}`}
         }
         axios.get('https://fastcuradev.herokuapp.com/professionista/ottieni-curriculum',config)
-            .then((res)=> setCurriculum(res.data))
+            .then((res)=>{
+        setCurriculum(res.data)})
             .then(()=>{
                 setTitoloStudio(curriculum?.titolodistudio)
                 setMaster(curriculum?.master)
