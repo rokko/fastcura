@@ -6,14 +6,13 @@ const Footer = () => {
 
   return (
     <>
-
       <div
         style={{
           display: "flex",
+          marginTop: "50px",
           flexDirection: "column",
           height: "50px",
-          position: "fixed",
-            bottom:'0',
+          position: "absolute",
           width: "100%",
         }}
       >

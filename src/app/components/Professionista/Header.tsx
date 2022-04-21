@@ -1,11 +1,60 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import VerticalMenu from "./VerticalMenu";
-
+import axios from "axios";
+interface IUtente {
+    nome: string;
+    cognome: string;
+    greenpass: string;
+    codicepostale: string;
+    datadinascita: Date;
+    email: string;
+    password: string;
+    referenze: string;
+    sesso: string;
+    __v: number;
+    _id: string;
+}
 const Header = () => {
   const [open, setOpen]= useState(false)
-  return (
+    const [token,setToken] = useState('')
+    const [ utente, setUtente] = useState<IUtente>()
+
+
+    const takeToken = async () => {
+        const tokenTest = await localStorage.getItem("tokenaccess");
+        if (!!tokenTest) setToken(tokenTest);
+    };
+
+
+
+    const requestinfo = async () => {
+        if (!!token) {
+            const config = {
+                headers: { Authorization: `Bearer ${token}` },
+            };
+
+            axios
+                .get(
+                    "https://fastcuradev.herokuapp.com/professionista/info",
+                    config
+                )
+                .then((response) => {
+                    console.log('coaiicjdaicoaj')
+                    setUtente(response.data);
+                })
+                .catch((e) => console.error(e));
+        }
+    };
+
+    useEffect(() => {
+        takeToken();
+        requestinfo();
+    }, [token]);
+
+
+    return (
     <>
       <Box
         style={{
@@ -88,6 +137,12 @@ const Header = () => {
             alignItems: "center",
           }}
         >
+
+            {!!utente && (
+                <p style={{ fontSize: "20px", color:'white', marginRight:'5px' }}>
+                    {utente!.nome.charAt(0).toUpperCase()}. {utente!.cognome.charAt(0).toUpperCase()}.
+                </p>
+            )}
           <Link to="/chatprofessionista">
             <svg
               style={{ marginRight: "10px" }}

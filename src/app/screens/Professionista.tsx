@@ -38,6 +38,7 @@ const Professionista = () => {
           config
         )
         .then((response) => {
+            console.log(response.data)
           setUtente(response.data);
         })
         .catch((e) => console.error(e));

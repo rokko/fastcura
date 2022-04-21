@@ -1,9 +1,57 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
+interface IUtente {
+    nome: string;
+    cognome: string;
+    greenpass: string;
+    codicepostale: string;
+    datadinascita: Date;
+    email: string;
+    password: string;
+    referenze: string;
+    sesso: string;
+    __v: number;
+    _id: string;
+}
 const Header = () => {
-  return (
+    const [token,setToken] = useState('')
+    const [ utente, setUtente] = useState<IUtente>()
+
+    const takeToken = async () => {
+        const tokenTest = await localStorage.getItem("tokenaccess");
+        if (!!tokenTest) setToken(tokenTest);
+    };
+
+
+
+    const requestinfo = async () => {
+        if (!!token) {
+            const config = {
+                headers: { Authorization: `Bearer ${token}` },
+            };
+
+            axios
+                .post(
+                    "https://fastcuradev.herokuapp.com/cliente/infocliente",
+                    "",
+                    config
+                )
+                .then((response) => {
+                    setUtente(response.data);
+                })
+                .catch((e) => console.error(e));
+        }
+    };
+
+    useEffect(() => {
+        takeToken();
+        requestinfo();
+    }, [token]);
+
+
+    return (
     <>
 
       <Box
@@ -81,7 +129,9 @@ const Header = () => {
         </Link>
 
         <div style={{marginRight:'20px'}}>
-          <svg style={{marginRight:'10px'}}
+            <p style={{color:'white', fontSize:'20px',marginRight:'5px'}}>{utente?.nome.charAt(0)}. {utente?.cognome.charAt(0)}.</p>
+
+            <svg style={{marginRight:'10px'}}
             id="Icon_ionic-md-chatbubbles"
             data-name="Icon ionic-md-chatbubbles"
             xmlns="http://www.w3.org/2000/svg"
