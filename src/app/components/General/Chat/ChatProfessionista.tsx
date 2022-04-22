@@ -33,6 +33,7 @@ const ChatProfessionista = () => {
   const [tot, setTot] = useState<any>({});
   const [prova, setProva] = useState("");
   const [pos, setPos] = useState(false);
+  const [kolog, setKolog] = useState(false)
 
   const [oklog, setOklog] = useState(false);
 
@@ -349,6 +350,7 @@ const ChatProfessionista = () => {
         open={pop}
         verifica={setPop}
         setsnack={setOklog}
+        setsnack2={setKolog}
         chiudi={setPop}
       />
       <Snackbar
@@ -367,6 +369,11 @@ const ChatProfessionista = () => {
           Login Effettuato
         </Alert>
       </Snackbar>
+        <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
+            <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+                Errore Login
+            </Alert>
+        </Snackbar>
       <ModalRicevutaOfferta
         accetta={sendok}
         rifiuta={sendko}

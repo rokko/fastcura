@@ -21,22 +21,26 @@ const ModalLogin = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
       .then(function (response) {
+         if (response?.data.accessToken === null) props?.setsnack2(true)
         const token: IToken = response.data;
+
 
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
 
+          console.log(token.message)
           if (token.message === 0) {
             props.setsnack(true);
             props.chiudi(false);
             console.log("Cliente");
             navigate(0);
-          } else {
+          } else if(token.message===1) {
             props.setsnack(true);
             props.chiudi(false);
             console.log("PROFESSIONISTA");
             navigate("/professionista");
           }
+
         }
       })
       .catch(function (error) {

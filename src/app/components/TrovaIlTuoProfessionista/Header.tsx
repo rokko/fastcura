@@ -13,6 +13,7 @@ const Header = () => {
 
     const [pip,setPip]=useState(false)
     const [oklog,setOklog] = useState(false)
+    const [kolog, setKolog] = useState(false)
   return (
     <div style= { isMobile ?{position:'fixed', top: 0, maxWidth:'100%' ,background:'white', zIndex:'1000001'}:{position:'fixed',width:'100%', zIndex:'1000001', top: 0,background:'white'}} >
       <Container
@@ -153,12 +154,17 @@ const Header = () => {
 
           </svg>
     </div>
-    <ModalLogin open={pip} chiudi={setPip} setsnack={setOklog} />
+    <ModalLogin open={pip} chiudi={setPip} setsnack={setOklog} setsnack2={setKolog}/>
     <Snackbar open={oklog} autoHideDuration={6000} onClose={()=>setOklog(false)} >
     <Alert   severity="success" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
     Login Effettuato
   </Alert>
 </Snackbar>
+    <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
+        <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+           Errore Login
+        </Alert>
+    </Snackbar>
       </div>
 
         </div>

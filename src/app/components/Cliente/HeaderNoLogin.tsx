@@ -25,6 +25,7 @@ const HeaderNoLogin = () => {
   const [pop, setPop] = useState(false);
   const [ok, setOk] = useState(false);
   const [oklog, setOklog] = useState(false);
+  const [kolog, setKolog] = useState(false)
     const [token,setToken] = useState('')
     const [ utente, setUtente] = useState<IUtente>()
 
@@ -171,12 +172,18 @@ const HeaderNoLogin = () => {
           chiudi={setPop}
           verifica={setOk}
           setsnack={setOklog}
+          setsnack2={setKolog}
         />
         <Snackbar  open={oklog} onClose={()=>setOklog(false)} autoHideDuration={2000} >
         <Alert    severity="success" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
          Login Effettuato
           </Alert>
         </Snackbar>
+          <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
+              <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+                  Errore Login
+              </Alert>
+          </Snackbar>
       </Box>
       <Confir open={ok} message={"Login Effettuato"} setOpen={setOk}/>
     </>

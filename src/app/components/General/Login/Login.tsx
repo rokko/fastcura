@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import {Alert, Box, Snackbar, TextField} from "@mui/material";
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import axios from "axios";
@@ -16,13 +16,15 @@ const Login = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
       .then(function (response) {
-        console.log(response);
+          if (response?.data.accessToken === null) setKolog(true)
         const token: IToken = response.data;
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
           if (token.message === 0) {
+              setOklog(true)
             navigate("/cliente");
-          } else {
+          } else if (token.message===1) {
+              setOklog(true)
             navigate("/professionista");
           }
         }
@@ -35,6 +37,8 @@ const Login = (props: any) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
+  const [oklog, setOklog]=useState(false)
+    const [kolog, setKolog] = useState(false)
   const userlogin = {
     email: email,
     password: passw,
@@ -112,6 +116,27 @@ const Login = (props: any) => {
             <p>Hai dimenticato la password?</p>
           </div>
         </div>
+          <Snackbar
+              open={oklog}
+              autoHideDuration={6000}
+              onClose={() => setOklog(false)}
+          >
+              <Alert
+                  severity="success"
+                  sx={{
+                      width: "100%",
+                      backgroundColor: "rgb(57, 177, 217)",
+                      color: "white",
+                  }}
+              >
+                  Login Effettuato
+              </Alert>
+          </Snackbar>
+          <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
+              <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+                  Errore Login
+              </Alert>
+          </Snackbar>
       </>
     );
   else
@@ -201,6 +226,27 @@ const Login = (props: any) => {
           Entra
         </button>
         <p>Hai dimenticato la password?</p>
+          <Snackbar
+              open={oklog}
+              autoHideDuration={6000}
+              onClose={() => setOklog(false)}
+          >
+              <Alert
+                  severity="success"
+                  sx={{
+                      width: "100%",
+                      backgroundColor: "rgb(57, 177, 217)",
+                      color: "white",
+                  }}
+              >
+                  Login Effettuato
+              </Alert>
+          </Snackbar>
+          <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
+              <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
+                  Errore Login
+              </Alert>
+          </Snackbar>
       </>
     );
 };
