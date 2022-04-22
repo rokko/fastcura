@@ -30,7 +30,7 @@ const ModalLogin = (props: any) => {
             props.setsnack(true);
             props.chiudi(false);
             console.log("Cliente");
-            navigate("/cliente");
+            navigate(0);
           } else {
             props.setsnack(true);
             props.chiudi(false);
