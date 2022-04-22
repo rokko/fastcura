@@ -12,7 +12,7 @@ const ModalOfferta = (props: any) => {
 
   const [nomePrestazione, setNomePrestazione] = useState("");
   const [giorno, setGiorno] = useState("");
-  const [prezzo, setPrezzo] = useState("");
+  const [prezzo, setPrezzo] = useState("€");
 
   const sendMessage = async () => {
     const mess = {
@@ -109,6 +109,7 @@ const ModalOfferta = (props: any) => {
             </TextField>
             <p style={{ textAlign: "left", color: "#39B1D9" }}>Prezzo</p>
             <TextField
+                value={prezzo}
               id="standard-basic"
               variant="standard"
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
