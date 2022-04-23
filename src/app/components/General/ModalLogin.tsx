@@ -34,7 +34,7 @@ const ModalLogin = (props: any) => {
             props.chiudi(false);
             console.log("Cliente");
             navigate(0);
-          } else if(token.message===1) {
+          } else  {
             props.setsnack(true);
             props.chiudi(false);
             console.log("PROFESSIONISTA");
