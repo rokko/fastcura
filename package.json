@@ -17,6 +17,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/reveal": "^4.2.0",
     "axios": "^0.25.0",
+    "firebase": "^9.6.11",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-awesome-reveal": "^3.8.1",
