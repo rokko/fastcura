@@ -1,5 +1,9 @@
 import React from "react";
+import {useMediaQuery} from "react-responsive";
+
 const FeedBack = () => {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+
   return (
     <>
     
@@ -14,7 +18,7 @@ const FeedBack = () => {
           </svg>
 
           <p className="titleAll">FeedBack</p>
-          <p>Potrai recensire e vedere le recensioni degli altri</p>
+          <p style={{fontSize:(isMobile)?'16px':'26px'}}>Potrai recensire e vedere le recensioni degli altri</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"

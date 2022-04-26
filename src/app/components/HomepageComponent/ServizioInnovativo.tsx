@@ -16,7 +16,7 @@ const ServizioInnovativo = () => {
             Un servizio innovativo
           </Typography>
         <Fade direction={'up'}>
-          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+          <p style={{fontSize:(isMobile)?'16px':'26px'}}>
             Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
             la tutela del professionista.</p>
         </Fade>
@@ -504,7 +504,7 @@ const ServizioInnovativo = () => {
                 Un servizio innovativo
               </Typography>
                 <Fade direction={'up'}>
-              <Typography fontWeight="bold"  textAlign={'left'} fontSize={'24px'} color="#6D6D6D" marginBottom={10} fontFamily={'Charter'}>
+              <Typography fontWeight="bold"  textAlign={'left'} fontSize={'26px'} color="#6D6D6D" marginBottom={10} fontFamily={'Charter'}>
                 Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
                 la tutela del professionista.
               </Typography>

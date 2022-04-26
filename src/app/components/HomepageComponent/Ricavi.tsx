@@ -17,7 +17,7 @@ const Ricavi = () => {
         </Typography>
 
         <Fade direction={'up'}>
-        <p style={{fontSize:(isMobile)?'14px':'24px'}}>          Accordato con il cliente il prezzo, lui potrà pagare nella più
+        <p style={{fontSize:(isMobile)?'16px':'26px'}}>          Accordato con il cliente il prezzo, lui potrà pagare nella più
           completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
         </p>
         </Fade>
@@ -100,7 +100,7 @@ const Ricavi = () => {
                         </Typography>
     <Fade direction={'up'}>
 
-                        <Typography fontSize={'24px'} fontWeight="bold" textAlign={'left'}  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
+                        <Typography fontSize={'26px'} fontWeight="bold" textAlign={'left'}  fontFamily={'Charter'} color="#6D6D6D" marginBottom={10}>
                             Accordato con il cliente il prezzo, lui potrà pagare nella più
                             completa sicurezza sul sito o in contanti a prestazione ultimata{" "}
                         </Typography>

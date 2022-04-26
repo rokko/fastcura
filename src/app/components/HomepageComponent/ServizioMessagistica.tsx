@@ -16,7 +16,7 @@ const ServizioMessagistica = () => {
         </Typography>
 
         <Fade direction={'up'}>
-        <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+        <p style={{fontSize:(isMobile)?'16px':'26px'}}>
           La persona trova i professionisti più vicini a lui e ne valuta le
           competenze e la qualità dei servizi erogati attraverso le recensioni
           lasciate da altri utenti
@@ -202,7 +202,7 @@ const ServizioMessagistica = () => {
                                      Servizio di messaggistica diretto con il cliente
                          </Typography>
                         <Fade direction={'up'}>
-                                  <Typography fontSize={'24px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" textAlign={'left'} marginBottom={10}>
+                                  <Typography fontSize={'26px'} fontWeight="bold"  fontFamily={'Charter'} color="#6D6D6D" textAlign={'left'} marginBottom={10}>
                                     La persona trova i professionisti più vicini a lui e ne valuta le
                                     competenze e la qualità dei servizi erogati attraverso le recensioni
                                     lasciate da altri utenti

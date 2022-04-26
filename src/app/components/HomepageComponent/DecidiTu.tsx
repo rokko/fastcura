@@ -34,7 +34,7 @@ const DecidiTu = () => {
             Decidi tu quando!
           </p>
             <Fade direction={'up'}>
-          <p style={{ fontSize:'24px', fontFamily:'Charter', fontWeight:"bold",  textAlign:'left',marginBottom:10, color:"#6D6D6D"}}>
+          <p style={{ fontSize:'26px', fontFamily:'Charter', fontWeight:"bold",  textAlign:'left',marginBottom:10, color:"#6D6D6D"}}>
             Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
             ti trova i clienti
           </p>
@@ -394,7 +394,7 @@ const DecidiTu = () => {
               Decidi tu quando!
             </Typography>
             <Fade direction={'up'}>
-            <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+            <p style={{fontSize:(isMobile)?'16px':'26px'}}>
               Decidi tu quando e come lavorare. Tu ci metti le competenze, Fastcura
               ti trova i clienti
             </p>

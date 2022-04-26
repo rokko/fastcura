@@ -12,7 +12,7 @@ const ProblemaRisolto = () => {
 
           <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}} >Il tuo problema risolto con un click!</p>
           <Fade direction={'up'}>
-          <p style={{fontSize:(isMobile)?'14px':'24px'}}>L'assistenza domiciliare non è mai stata cosi veloce</p>
+          <p style={{fontSize:(isMobile)?'16px':'26px'}}>L'assistenza domiciliare non è mai stata cosi veloce</p>
           </Fade>
         </div>
         <svg

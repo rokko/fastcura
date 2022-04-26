@@ -13,7 +13,7 @@ const TrovaIlTuoProfessionista = () => {
 
           <p className="titleAll" style={{fontSize: (isMobile)?'25px':'48px'}}>Hai bisogno di cure?</p>
           <Fade direction={'up'}>
-          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+          <p style={{fontSize:(isMobile)?'16px':'26px'}}>
             Con Fastcura troverai infermieri, Caregiver Fisioterapisti, pronti a
             darti una mano
           </p>

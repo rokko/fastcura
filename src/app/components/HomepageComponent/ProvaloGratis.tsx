@@ -15,9 +15,9 @@ const ProvaloGratis = () => {
 
             <Typography  fontWeight={'900'} color="#000000" fontFamily={'Charter'}fontSize={25}>Provalo gratis!</Typography>
 
-            <p style={{fontSize:(isMobile)?'14px':'24px'}}>Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.</p>
+            <p style={{fontSize:(isMobile)?'16px':'26px'}}>Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.</p>
 
-            <p style={{fontSize:(isMobile)?'14px':'24px'}}>Fastcura ha l'obiettivo di darti visibilità sul tuo territorio, allargando la tua rete di clienti</p>
+            <p style={{fontSize:(isMobile)?'16px':'26px'}}>Fastcura ha l'obiettivo di darti visibilità sul tuo territorio, allargando la tua rete di clienti</p>
 
             <Link to = '/signup-professionista'>
 

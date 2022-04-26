@@ -13,7 +13,7 @@ const ChattaDirettamente = () => {
 
           <p className="titleAll" style={{fontSize:(isMobile)?'25px':'48px'}}>Chatta direttamente con il professionista</p>
           <Fade direction={'up'}>
-          <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+          <p style={{fontSize:(isMobile)?'16px':'26px'}}>
             In pochi passaggi potrai contattare l'infermiere,il fisioterapista,
             il caregiver ed esporre il tuo problema.
           </p>

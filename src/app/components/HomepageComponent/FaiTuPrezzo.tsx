@@ -30,7 +30,7 @@ const FaiTuPrezzo = () => {
       </Typography>
 
     <Fade direction={'up'}>
-      <p style={{fontSize:(isMobile)?'14px':'24px'}}>
+      <p style={{fontSize:(isMobile)?'16px':'26px'}}>
         Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
       </p>
     </Fade>
@@ -152,7 +152,7 @@ const FaiTuPrezzo = () => {
         </Typography>
     <Fade direction={'up'}>
 
-        <Typography fontSize={'24px'} fontWeight="bold" color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
+        <Typography fontSize={'26px'} fontWeight="bold" color="#6D6D6D" fontFamily={'Charter'} textAlign={'left'} marginBottom={8}>
           Non ci saranno prezzi standard. Deciderai tu quanto farti pagare.{" "}
         </Typography>
     </Fade>
