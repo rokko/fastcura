@@ -80,7 +80,7 @@ const UploadPhoto = () => {
                   // @ts-ignore
                   setFile(e.target!.files[0])
              }}/>
-              <button onClick={handleSubmit}> Salva </button>
+              <button style={{backgroundColor:'rgb(255, 54, 23)' , width:'100px', height:'30px', borderRadius:'50px', color:'white', fontSize:'16px',border:'none', fontWeight:'bold'}} onClick={handleSubmit}> Salva </button>
           </>
       )
   }
