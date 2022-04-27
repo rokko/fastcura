@@ -58,7 +58,7 @@ const Professionista = () => {
   };
 
 const handleSubmit  = () => {
-    const imageRef= ref(storage,'image')
+    const imageRef= ref(storage,token)
     uploadBytes(imageRef,file).then(()=>{
         getDownloadURL(imageRef).then((url)=> {
             setUrl(url);
