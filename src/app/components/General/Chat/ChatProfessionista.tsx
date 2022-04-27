@@ -39,6 +39,7 @@ const ChatProfessionista = () => {
 
   var io: any;
 
+
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     !!tokenTest ? setToken(tokenTest) : setPop(true);
@@ -190,8 +191,18 @@ const ChatProfessionista = () => {
 
     recuperaConversazione();
   }, [token]);
-
-  return (
+if (!token){
+   return(
+       <ModalLogin
+           open={pop}
+           verifica={setPop}
+           setsnack={setOklog}
+           setsnack2={setKolog}
+           chiudi={setPop}
+       />
+   )
+}
+  else return (
     <>
       <div style={{ height: "100%" }}>
         <HeaderChat
