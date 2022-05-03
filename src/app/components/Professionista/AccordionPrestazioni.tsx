@@ -40,11 +40,16 @@ const AccordionPrestazioni = (prestazione:any) => {
           <MuiAccordionSummary
            sx={{
             height:'30px',
+               display:'flex',
+               alignContent:'center',
+               alignItems:'center',
+               justifyContent:'center',
         }}
+
             aria-controls="panel1d-content"
             id="panel1d-header"
           >
-            <p>{nome} {cognome}</p>
+            <p style={{margin:'auto'}}>{nome} {cognome}</p>
           </MuiAccordionSummary>
           <MuiAccordionDetails>
             <div style={{display:'flex', flexDirection:'column'}}>
