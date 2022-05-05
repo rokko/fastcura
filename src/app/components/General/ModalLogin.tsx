@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import { Box, TextField } from "@mui/material";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import {stringify} from "querystring";
 interface IToken {
   accessToken: string;
   message: number;
@@ -25,9 +26,11 @@ const ModalLogin = (props: any) => {
         const token: IToken = response.data;
 
 
+         console.log(token)
+
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
-
+            localStorage.setItem("type", token.message.toString());
           console.log(token.message)
           if (token.message === 0) {
             props.setsnack(true);

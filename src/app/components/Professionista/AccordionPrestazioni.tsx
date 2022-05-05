@@ -53,8 +53,8 @@ const AccordionPrestazioni = (prestazione:any) => {
           </MuiAccordionSummary>
           <MuiAccordionDetails>
             <div style={{display:'flex', flexDirection:'column'}}>
-             <p> Nome : {nome} {cognome}</p>
-             <p>  Data : {prestazione.prestazione.data}</p>
+             <p>Nome : {nome} {cognome}</p>
+             <p>Data : {prestazione.prestazione.data}</p>
              <p>Pagamento: {prestazione.prestazione.totale} € </p>
              <p>Conferma : {(prestazione.prestazione.conferma==1) && 'Confermato' }
              {(prestazione.prestazione.conferma==2)&& 'Rifiutato'}

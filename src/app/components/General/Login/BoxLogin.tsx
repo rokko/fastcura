@@ -4,7 +4,8 @@ import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 
 interface IToken {
-    accessToken : string
+    accessToken : string,
+    message: number
 
 }
 
@@ -18,7 +19,9 @@ const BoxLogin = (props:any) => {
                 const token : IToken = response.data;
                 if (!!token.accessToken) {
                     localStorage.setItem('tokenaccess', token.accessToken);
+                    localStorage.setItem("type", token.message.toString());
                     props.chiudi(false)
+                    console.log(response)
                     navigate('/')
                 }
             })

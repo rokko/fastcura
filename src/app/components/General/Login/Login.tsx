@@ -21,6 +21,7 @@ const Login = (props: any) => {
         const token: IToken = response.data;
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
+            localStorage.setItem("type", token.message.toString());
           if (token.message === 0) {
               setOklog(true)
             navigate("/cliente");
