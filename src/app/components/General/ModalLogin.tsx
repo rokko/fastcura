@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {stringify} from "querystring";
 interface IToken {
   accessToken: string;
-  message: number;
+  messagge: number;
 }
 
 const ModalLogin = (props: any) => {
@@ -30,9 +30,9 @@ const ModalLogin = (props: any) => {
 
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
-            localStorage.setItem("type", token.message.toString());
-          console.log(token.message)
-          if (token.message === 0) {
+          console.log(token.messagge)
+            localStorage.setItem("type", token.messagge.toString());
+          if (token.messagge === 0) {
             props.setsnack(true);
             props.chiudi(false);
             console.log("Cliente");

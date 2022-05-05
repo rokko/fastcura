@@ -14,7 +14,7 @@ import {useMediaQuery} from "react-responsive";
 
 interface IToken {
   accessToken : string;
-  message: number;
+  messagge: number;
 
 }
 const SignUpClient = () => {
@@ -51,7 +51,7 @@ const SignUpClient = () => {
           const token : IToken = response.data;
           if (!!token.accessToken) {
             localStorage.setItem('tokenaccess', token.accessToken);
-            localStorage.setItem("type", token.message.toString());
+            localStorage.setItem("type", token.messagge.toString());
           }
         })
         .catch(function (error) {
