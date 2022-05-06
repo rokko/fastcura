@@ -136,6 +136,9 @@ const Login = (props: any) => {
               width: "100%",
               backgroundColor: "rgb(57, 177, 217)",
               color: "white",
+              "& .MuiAlert-icon": {
+                color: "white",
+              },
             }}
           >
             Login Effettuato
@@ -250,6 +253,9 @@ const Login = (props: any) => {
               width: "100%",
               backgroundColor: "rgb(57, 177, 217)",
               color: "white",
+              "& .MuiAlert-icon": {
+                color: "white",
+              },
             }}
           >
             Login Effettuato

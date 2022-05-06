@@ -96,16 +96,14 @@ const AggiornaProfilo = () => {
             marginTop: "30px",
           }}
         >
-            <TextField
-                sx={{ width: "90%", marginTop: "10px" }}
-                id="standard-basic"
-                label="Email"
-                variant="standard"
-                inputProps={
-                    {readOnly: true,}
-                }
-                defaultValue={profilo?.email}
-            ></TextField>
+          <TextField
+            sx={{ width: "90%", marginTop: "10px" }}
+            id="standard-basic"
+            label="Email"
+            variant="standard"
+            inputProps={{ readOnly: true }}
+            defaultValue={profilo?.email}
+          ></TextField>
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
@@ -141,7 +139,7 @@ const AggiornaProfilo = () => {
             id="standard-basic"
             label="Numero"
             variant="standard"
-            type = {'number'}
+            type={"number"}
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setNumero(x.target.value)
             }
@@ -176,6 +174,9 @@ const AggiornaProfilo = () => {
               width: "100%",
               backgroundColor: "rgb(57, 177, 217)",
               color: "white",
+              "& .MuiAlert-icon": {
+                color: "white",
+              },
             }}
           >
             Profilo Aggiornato
