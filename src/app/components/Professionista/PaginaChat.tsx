@@ -13,6 +13,7 @@ interface IChat {
   contatti_id: string;
   _id: string;
 }
+
 const PaginaChat = () => {
   const [token, setToken] = useState("");
   const [messaggio, setMessaggio] = useState("");
@@ -27,6 +28,11 @@ const PaginaChat = () => {
 
   const myRef = React.createRef();
 
+  const handleKeyPress = (event: any) => {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  };
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     if (!!tokenTest) setToken(tokenTest);
@@ -287,9 +293,11 @@ const PaginaChat = () => {
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMessaggio(x.target.value)
             }
+            onKeyPress={(e) => handleKeyPress(e)}
             style={{ backgroundColor: "#ffffff" }}
           ></TextField>
           <button
+            className="invi"
             style={{
               marginLeft: "10px",
               width: "80px",

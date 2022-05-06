@@ -41,6 +41,11 @@ const ChatProfessionista = () => {
 
   var io: any;
 
+  const handleKeyPress = (event: any) => {
+    if (event.key === "Enter") {
+      inviaMessaggio();
+    }
+  };
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     !!tokenTest ? setToken(tokenTest) : setPop(true);
@@ -300,8 +305,7 @@ const ChatProfessionista = () => {
                       </div>
                     </>
                   );
-                }
-               else if (x.message.substr(0, 4) == "link") {
+                } else if (x.message.substr(0, 4) == "link") {
                   return (
                     <>
                       <div
@@ -417,6 +421,7 @@ const ChatProfessionista = () => {
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setMessaggio(x.target.value)
               }
+              onKeyPress={(e) => handleKeyPress(e)}
               style={{ backgroundColor: "#ffffff" }}
             ></TextField>
             <button
@@ -430,6 +435,11 @@ const ChatProfessionista = () => {
                 fontSize: "12px",
                 fontWeight: "bold",
                 color: "white",
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  inviaMessaggio();
+                }
               }}
               onClick={() => {
                 inviaMessaggio();
