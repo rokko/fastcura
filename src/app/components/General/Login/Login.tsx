@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { NONAME } from "dns";
 
 interface IToken {
   accessToken: string;
@@ -69,6 +70,7 @@ const Login = (props: any) => {
                 outlineColor: "#ffffff",
                 borderRadius: "30px",
                 "& .MuiOutlinedInput-root": {
+                  font: "none",
                   borderColor: "#ffffff",
                   borderRadius: "30px",
                 },
@@ -86,6 +88,8 @@ const Login = (props: any) => {
                 outlineColor: "#ffffff",
                 borderRadius: "30px",
                 "& .MuiOutlinedInput-root": {
+                  font: "none",
+
                   borderColor: "#ffffff",
                   borderRadius: "30px",
                 },
@@ -182,38 +186,30 @@ const Login = (props: any) => {
             }}
           >
             <p style={{ color: "#ffffff", fontSize: "17px" }}>Accedi</p>
-            <TextField
-              size={"small"}
-              hiddenLabel
-              sx={{
+            <input
+              style={{
+                textIndent: "20px",
                 width: "213px",
                 height: "35px",
                 backgroundColor: "#ffffff",
                 outlineColor: "#ffffff",
                 borderRadius: "30px",
-                "& .MuiOutlinedInput-root": {
-                  borderColor: "#ffffff",
-                  borderRadius: "30px",
-                },
+                border: "none",
               }}
               placeholder="Indirizzo email"
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(x.target.value)
               }
             />
-            <TextField
-              size={"small"}
-              sx={{
+            <input
+              style={{
+                textIndent: "20px",
                 width: "213px",
                 height: "35px",
                 border: "none",
                 backgroundColor: "#ffffff",
                 outlineColor: "#ffffff",
                 borderRadius: "30px",
-                "& .MuiOutlinedInput-root": {
-                  borderColor: "none",
-                  borderRadius: "30px",
-                },
                 marginTop: "20px",
               }}
               type={"password"}
