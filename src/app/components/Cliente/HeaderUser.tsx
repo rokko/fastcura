@@ -1,59 +1,53 @@
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import VerticalMenu from "../Professionista/VerticalMenu";
 import axios from "axios";
 interface IUtente {
-    nome: string;
-    cognome: string;
-    greenpass: string;
-    codicepostale: string;
-    datadinascita: Date;
-    email: string;
-    password: string;
-    referenze: string;
-    sesso: string;
-    __v: number;
-    _id: string;
+  nome: string;
+  cognome: string;
+  greenpass: string;
+  codicepostale: string;
+  datadinascita: Date;
+  email: string;
+  password: string;
+  referenze: string;
+  sesso: string;
+  __v: number;
+  _id: string;
 }
 const HeaderUser = () => {
-
-
   const [open, setOpen] = useState(false);
-const [token,setToken] = useState('')
-    const [ utente, setUtente] = useState<IUtente>()
-    const takeToken = async () => {
-        const tokenTest = await localStorage.getItem("tokenaccess");
-        if (!!tokenTest) setToken(tokenTest);
-    };
+  const [token, setToken] = useState("");
+  const [utente, setUtente] = useState<IUtente>();
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    if (!!tokenTest) setToken(tokenTest);
+  };
 
+  const requestinfo = async () => {
+    if (!!token) {
+      const config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
 
+      axios
+        .post(
+          "https://fastcuradev.herokuapp.com/cliente/infocliente",
+          "",
+          config
+        )
+        .then((response) => {
+          setUtente(response.data);
+        })
+        .catch((e) => console.error(e));
+    }
+  };
 
-    const requestinfo = async () => {
-        if (!!token) {
-            const config = {
-                headers: { Authorization: `Bearer ${token}` },
-            };
-
-            axios
-                .post(
-                    "https://fastcuradev.herokuapp.com/cliente/infocliente",
-                    "",
-                    config
-                )
-                .then((response) => {
-                    setUtente(response.data);
-                })
-                .catch((e) => console.error(e));
-        }
-    };
-
-    useEffect(() => {
-        takeToken();
-        requestinfo();
-    }, [token]);
-
-
+  useEffect(() => {
+    takeToken();
+    requestinfo();
+  }, [token]);
 
   return (
     <>
@@ -138,7 +132,6 @@ const [token,setToken] = useState('')
             alignItems: "center",
           }}
         >
-            <p style={{color:'white', fontSize:'20px',marginRight:'5px'}}>{utente?.nome.charAt(0)}. {utente?.cognome.charAt(0)}.</p>
           <Link to="/chatcliente">
             <svg
               style={{ marginRight: "10px" }}
@@ -167,27 +160,29 @@ const [token,setToken] = useState('')
           </Link>
 
           <div onClick={() => setOpen(!open)}>
-            <svg
-              id="person"
-              xmlns="http://www.w3.org/2000/svg"
-              width="34"
-              height="34"
-              viewBox="0 0 34 34"
+            <div
+              style={{
+                width: "50px",
+                height: "50px",
+                backgroundColor: "white",
+                borderRadius: "100%",
+                display: "flex",
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              <path
-                id="Tracciato_130"
-                data-name="Tracciato 130"
-                d="M0,0H34V34H0Z"
-                fill="none"
-              />
-              <path
-                id="Tracciato_131"
-                data-name="Tracciato 131"
-                d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
-                transform="translate(1.667 1.667)"
-                fill="#fff"
-              />
-            </svg>
+              <p
+                style={{
+                  color: "rgb(57, 177, 217)",
+                  fontSize: "20px",
+                  marginRight: "5px",
+                }}
+              >
+                {utente?.nome.charAt(0)} {utente?.cognome.charAt(0)}
+              </p>
+            </div>
+
             <VerticalMenu open={open} />
           </div>
         </div>

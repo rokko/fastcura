@@ -1,5 +1,12 @@
-import React, {useEffect, useState} from "react";
-import { Alert, Box, Button, IconButton, makeStyles, Snackbar } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import {
+  Alert,
+  Box,
+  Button,
+  IconButton,
+  makeStyles,
+  Snackbar,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
@@ -7,63 +14,59 @@ import ProfiloProfessionista from "../ListaProfessionisti/ProfiloProfessionista"
 import Confir from "../General/Confir";
 import { style } from "@mui/system";
 import axios from "axios";
+import { flexbox } from "@mui/system";
 interface IUtente {
-    nome: string;
-    cognome: string;
-    greenpass: string;
-    codicepostale: string;
-    datadinascita: Date;
-    email: string;
-    password: string;
-    referenze: string;
-    sesso: string;
-    __v: number;
-    _id: string;
+  nome: string;
+  cognome: string;
+  greenpass: string;
+  codicepostale: string;
+  datadinascita: Date;
+  email: string;
+  password: string;
+  referenze: string;
+  sesso: string;
+  __v: number;
+  _id: string;
 }
 
 const HeaderNoLogin = () => {
   const [pop, setPop] = useState(false);
   const [ok, setOk] = useState(false);
   const [oklog, setOklog] = useState(false);
-  const [kolog, setKolog] = useState(false)
-    const [token,setToken] = useState('')
-    const [ utente, setUtente] = useState<IUtente>()
+  const [kolog, setKolog] = useState(false);
+  const [token, setToken] = useState("");
+  const [utente, setUtente] = useState<IUtente>();
 
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    if (!!tokenTest) setToken(tokenTest);
+  };
 
-    const takeToken = async () => {
-        const tokenTest = await localStorage.getItem("tokenaccess");
-        if (!!tokenTest) setToken(tokenTest);
-    };
+  const requestinfo = async () => {
+    if (!!token) {
+      const config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
 
+      axios
+        .post(
+          "https://fastcuradev.herokuapp.com/cliente/infocliente",
+          "",
+          config
+        )
+        .then((response) => {
+          setUtente(response.data);
+        })
+        .catch((e) => console.error(e));
+    }
+  };
 
+  useEffect(() => {
+    takeToken();
+    requestinfo();
+  }, [token]);
 
-    const requestinfo = async () => {
-        if (!!token) {
-            const config = {
-                headers: { Authorization: `Bearer ${token}` },
-            };
-
-            axios
-                .post(
-                    "https://fastcuradev.herokuapp.com/cliente/infocliente",
-                    "",
-                    config
-                )
-                .then((response) => {
-                    setUtente(response.data);
-                })
-                .catch((e) => console.error(e));
-        }
-    };
-
-    useEffect(() => {
-        takeToken();
-        requestinfo();
-    }, [token]);
-
-
-
-    return (
+  return (
     <>
       <Box
         style={{
@@ -137,36 +140,67 @@ const HeaderNoLogin = () => {
             />
           </svg>
         </Link>
-<div style={{display: 'flex', alignContent:'center', alignItems:'center'}}>
-    {!!utente && <p style={{color:'white', fontSize:'20px',marginRight:'5px'}}>{utente?.nome.charAt(0)}. {utente?.cognome.charAt(0)}.</p>}
+        <div
+          style={{
+            display: "flex",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <div style={{ marginRight: "10px" }} onClick={() => setPop(true)}>
-
-          <svg
-            id="person"
-            xmlns="http://www.w3.org/2000/svg"
-            width="34"
-            height="34"
-            viewBox="0 0 34 34"
-          >
-            <path
-              id="Tracciato_130"
-              data-name="Tracciato 130"
-              d="M0,0H34V34H0Z"
-              fill="none"
-            />
-            <path
-              id="Tracciato_131"
-              data-name="Tracciato 131"
-              d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
-              transform="translate(1.667 1.667)"
-              fill="#fff"
-            />
-          </svg>
+            {!!utente && (
+              <div
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  backgroundColor: "white",
+                  borderRadius: "100%",
+                  display: "flex",
+                  alignContent: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p
+                  style={{
+                    color: "rgb(57, 177, 217)",
+                    fontSize: "20px",
+                    marginRight: "5px",
+                  }}
+                >
+                  {utente?.nome.charAt(0)}
+                  {utente?.cognome.charAt(0)}
+                </p>
+              </div>
+            )}
+            {!utente && (
+              <svg
+                id="person"
+                xmlns="http://www.w3.org/2000/svg"
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+              >
+                <path
+                  id="Tracciato_130"
+                  data-name="Tracciato 130"
+                  d="M0,0H34V34H0Z"
+                  fill="none"
+                />
+                <path
+                  id="Tracciato_131"
+                  data-name="Tracciato 131"
+                  d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
+                  transform="translate(1.667 1.667)"
+                  fill="#fff"
+                />
+              </svg>
+            )}
+          </div>
         </div>
-</div>
 
-
-          <ModalLogin
+        <ModalLogin
           setok={setOk}
           open={pop}
           chiudi={setPop}
@@ -174,21 +208,42 @@ const HeaderNoLogin = () => {
           setsnack={setOklog}
           setsnack2={setKolog}
         />
-        <Snackbar  open={oklog} onClose={()=>setOklog(false)} autoHideDuration={2000} >
-        <Alert    severity="success" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
-         Login Effettuato
+        <Snackbar
+          open={oklog}
+          onClose={() => setOklog(false)}
+          autoHideDuration={2000}
+        >
+          <Alert
+            severity="success"
+            sx={{
+              width: "100%",
+              backgroundColor: "rgb(57, 177, 217)",
+              color: "white",
+            }}
+          >
+            Login Effettuato
           </Alert>
         </Snackbar>
-          <Snackbar open={kolog} autoHideDuration={6000} onClose={()=>setKolog(false)} >
-              <Alert   severity="error" sx={{ width: '100%', backgroundColor: "rgb(57, 177, 217)" , color:'white'}} >
-                  Errore Login
-              </Alert>
-          </Snackbar>
+        <Snackbar
+          open={kolog}
+          autoHideDuration={6000}
+          onClose={() => setKolog(false)}
+        >
+          <Alert
+            severity="error"
+            sx={{
+              width: "100%",
+              backgroundColor: "rgb(57, 177, 217)",
+              color: "white",
+            }}
+          >
+            Errore Login
+          </Alert>
+        </Snackbar>
       </Box>
-      <Confir open={ok} message={"Login Effettuato"} setOpen={setOk}/>
+      <Confir open={ok} message={"Login Effettuato"} setOpen={setOk} />
     </>
   );
 };
 
-export default HeaderNoLogin
-
+export default HeaderNoLogin;
