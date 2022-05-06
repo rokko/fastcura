@@ -3,7 +3,7 @@ import Modal from "@mui/material/Modal";
 import { Box, TextField } from "@mui/material";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import {stringify} from "querystring";
+import { stringify } from "querystring";
 interface IToken {
   accessToken: string;
   messagge: number;
@@ -22,28 +22,26 @@ const ModalLogin = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
       .then(function (response) {
-         if (response?.data.accessToken === null) props?.setsnack2(true)
+        if (response?.data.accessToken === null) props?.setsnack2(true);
         const token: IToken = response.data;
 
-
-         console.log(token)
+        console.log(token);
 
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
-          console.log(token.messagge)
-            localStorage.setItem("type", token.messagge.toString());
+          console.log(token.messagge);
+          localStorage.setItem("type", token.messagge.toString());
           if (token.messagge === 0) {
             props.setsnack(true);
             props.chiudi(false);
             console.log("Cliente");
             navigate(0);
-          } else  {
+          } else {
             props.setsnack(true);
             props.chiudi(false);
             console.log("PROFESSIONISTA");
             navigate("/professionista");
           }
-
         }
       })
       .catch(function (error) {
@@ -156,8 +154,9 @@ const ModalLogin = (props: any) => {
               oppure registrati
             </p>
           </Link>
-
-          <p>Hai dimenticato la password?</p>
+          <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
+            <p style={{ color: "white" }}>Hai dimenticato la password?</p>
+          </Link>
         </Box>
       </Modal>
     </>

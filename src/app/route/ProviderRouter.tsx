@@ -12,8 +12,8 @@ import ChatProfessionista from "../components/General/Chat/ChatProfessionista";
 import ChatProfessionisti from "../components/Professionista/ChatProfessionisti";
 import PaginaChat from "../components/Professionista/PaginaChat";
 import DashBoardUtenti from "../components/Cliente/DashboardUtenti";
-import SignupCompletatoProfessionista
-  from "../components/General/SignUp/SignUpProfessionista/SignupCompletatoProfessionista";
+import SignupCompletatoProfessionista from "../components/General/SignUp/SignUpProfessionista/SignupCompletatoProfessionista";
+import SmarritoPassword from "../components/General/Login/SmarritoPassword";
 
 const ProviderRouter = () => {
   return (
@@ -38,7 +38,11 @@ const ProviderRouter = () => {
           />
           <Route path="/chatprofessionista" element={<ChatProfessionisti />} />
           <Route path="/chatmessage" element={<PaginaChat />} />
-          <Route path="/registrazione" element={<SignupCompletatoProfessionista />} />
+          <Route
+            path="/registrazione"
+            element={<SignupCompletatoProfessionista />}
+          />
+          <Route path="/smarrito-password" element={<SmarritoPassword />} />
         </Routes>
       </Router>
     </>
