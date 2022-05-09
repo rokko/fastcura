@@ -14,6 +14,7 @@ import PaginaChat from "../components/Professionista/PaginaChat";
 import DashBoardUtenti from "../components/Cliente/DashboardUtenti";
 import SignupCompletatoProfessionista from "../components/General/SignUp/SignUpProfessionista/SignupCompletatoProfessionista";
 import SmarritoPassword from "../components/General/Login/SmarritoPassword";
+import ListaChat from "../components/Cliente/ListaChat";
 
 const ProviderRouter = () => {
   return (
@@ -23,6 +24,7 @@ const ProviderRouter = () => {
           <Route path="/" element={<TrovaIlTuoProfessionista />} />
           <Route path="/landing-professionista" element={<HomePage />} />
           <Route path="/cliente" element={<DashBoardUtenti />} />
+          <Route path="/chatcliente" element={<ListaChat />} />
           <Route
             path="/signup-professionista"
             element={<SignUpProfessionista />}

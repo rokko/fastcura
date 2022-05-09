@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
 import BoxSearch from "../components/TrovaIlTuoProfessionista/BoxSearch";
@@ -12,28 +12,30 @@ import Login from "../components/General/Login/Login";
 import SeiNuovo from "../components/TrovaIlTuoProfessionista/SeiNuovo";
 import { Fade } from "react-awesome-reveal";
 import Footer from "../components/General/Footer";
+import { AppContext } from "../context/Context";
 
 const TrovaIlTuoProfessionista = () => {
+  const test = useContext(AppContext);
+  console.log(test);
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   if (!isMobile)
     return (
       <>
-          <div style={{width:'100%'}}>
-        <Header />
-        <div style={{ backgroundColor: "#F9F9F9", marginTop: "100px" }}>
-          <div
-            style={{
-              margin: "auto",
-              display: "flex",
-              backgroundColor: "#ffffff",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignContent: "center",
-              alignItems: "center",
-              width: "80%",
-            }}
-          >
-
+        <div style={{ width: "100%" }}>
+          <Header />
+          <div style={{ backgroundColor: "#F9F9F9", marginTop: "100px" }}>
+            <div
+              style={{
+                margin: "auto",
+                display: "flex",
+                backgroundColor: "#ffffff",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+                width: "80%",
+              }}
+            >
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <BoxSearch />
               </div>
@@ -41,28 +43,27 @@ const TrovaIlTuoProfessionista = () => {
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <HaiBisognoDiCure />
               </div>
-           
-        
+
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <ProblemaRisolto />
               </div>
-          
+
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <ChattaDirettamente />
               </div>
-          
+
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <SeiUnProfessionista />
               </div>
-         
-            <div
-              style={{
-                width: "100%",
-                marginTop: "100px",
-                border: "1px solid #39B1D9",
-                display: "inline-block",
-              }}
-            />
+
+              <div
+                style={{
+                  width: "100%",
+                  marginTop: "100px",
+                  border: "1px solid #39B1D9",
+                  display: "inline-block",
+                }}
+              />
               <div style={{ marginTop: "50px", width: "100%" }}>
                 <div
                   style={{
@@ -75,52 +76,51 @@ const TrovaIlTuoProfessionista = () => {
                   <SeiNuovo />
                 </div>
               </div>
+            </div>
           </div>
-        </div>
           <Footer />
-          </div>
-
+        </div>
       </>
     );
   else
     return (
       <>
-          <div style={{width:'100%'}}>
-        <Header />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            alignContent: "center",
-            textAlign: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            width: "100%",
-            marginTop: "100px",
-          }}
-        >
-          <Fade direction={"right"}>
-            <BoxSearch />
-          </Fade>
+        <div style={{ width: "100%" }}>
+          <Header />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              alignContent: "center",
+              textAlign: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "100%",
+              marginTop: "100px",
+            }}
+          >
+            <Fade direction={"right"}>
+              <BoxSearch />
+            </Fade>
 
-          <Lavagna />
+            <Lavagna />
 
-          <HaiBisognoDiCure />
+            <HaiBisognoDiCure />
 
-          <ProblemaRisolto />
+            <ProblemaRisolto />
 
-          <ChattaDirettamente />
+            <ChattaDirettamente />
 
-          <FeedBack />
+            <FeedBack />
 
-          <SeiUnProfessionista />
+            <SeiUnProfessionista />
 
-          <Login />
+            <Login />
 
-          <SeiNuovo />
-        </div>
-          <Footer/>
+            <SeiNuovo />
           </div>
+          <Footer />
+        </div>
       </>
     );
 };

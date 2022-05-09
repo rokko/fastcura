@@ -15,37 +15,44 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
           flexDirection: "row",
           alignContent: "center",
           alignItems: "center",
-          justifyContent:'space-between'
+          justifyContent: "space-between",
         }}
       >
-        <div style={{display:'flex', flexDirection:'row', alignContent:'center', alignItems:'center'}}>
-         <div style={{marginLeft:'20px'}} onClick={()=>history.back()}>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
-        </div>
-        <div>
-          <Box
-            style={{
-              position:'relative',
-              top:'20px',
-              left:'40px',
-              borderRadius: 100,
-              border: "10px solid rgb(57, 177, 217)",
-              width: "65px",
-              height: "65px",
-              backgroundColor: "#ffffff",
-            }}
-          ></Box>
-          <p style={{ color: "#ffffff", fontSize: "21px" }}>
-            {nomeProfessionista.nomeProfessionista}
-          </p>
-          <p style={{ color: "#ffffff" }}>
-            {cognomeProfessionista.cognomeProfessionista}
-          </p>
-        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ marginLeft: "20px" }} onClick={() => history.back()}>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
+          </div>
+          <div>
+            <Box
+              style={{
+                position: "relative",
+                top: "20px",
+                left: "40px",
+                borderRadius: 100,
+                border: "10px solid rgb(57, 177, 217)",
+                width: "65px",
+                height: "65px",
+                backgroundColor: "#ffffff",
+              }}
+            ></Box>
+            <p style={{ color: "#ffffff", fontSize: "21px" }}>
+              {nomeProfessionista.nomeProfessionista}
+            </p>
+            <p style={{ color: "#ffffff" }}>
+              {cognomeProfessionista.cognomeProfessionista}
+            </p>
+          </div>
         </div>
         <Link to="/professionista">
           <svg
-          style={{marginRight:'30px'}}
+            style={{ marginRight: "30px" }}
             id="Raggruppa_16"
             data-name="Raggruppa 16"
             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +110,6 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
             />
           </svg>
         </Link>
-       
       </Box>
     </>
   );

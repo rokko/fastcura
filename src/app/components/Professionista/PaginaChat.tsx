@@ -25,7 +25,6 @@ const PaginaChat = () => {
   const [off, setOff] = useState(false);
   const [apri, setApri] = useState(false);
   const idinvio = conversazione.contatto.id_professionista;
-
   const myRef = React.createRef();
 
   const handleKeyPress = (event: any) => {
