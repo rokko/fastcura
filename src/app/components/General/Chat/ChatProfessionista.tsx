@@ -25,7 +25,7 @@ const ChatProfessionista = () => {
   const valoriProfessionista = location.state as any;
   const idprofessionista =
     valoriProfessionista?.contatto?.id_cliente !== undefined
-      ? valoriProfessionista.contatto.id_cliente
+      ? valoriProfessionista.contatto.id_professionista
       : valoriProfessionista.professionista._id;
   const [pop, setPop] = useState(false);
   const [token, setToken] = useState("");

@@ -15,6 +15,7 @@ import DashBoardUtenti from "../components/Cliente/DashboardUtenti";
 import SignupCompletatoProfessionista from "../components/General/SignUp/SignUpProfessionista/SignupCompletatoProfessionista";
 import SmarritoPassword from "../components/General/Login/SmarritoPassword";
 import ListaChat from "../components/Cliente/ListaChat";
+import FastCuraLoader from "../media/fastcuraLogo.webm";
 
 const ProviderRouter = () => {
   return (
