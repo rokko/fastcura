@@ -19,7 +19,24 @@ interface IRisposta {
 const ProfiloProfessionista = () => {
   const location = useLocation();
   const [risposta, setRisposta] = useState<IRisposta>();
-
+  const [avatar, setAvatar] = useState("");
+  useEffect(() => {
+    const prof = {
+      id_professionista: ValoriParametri._id,
+    };
+    axios
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        prof
+      )
+      .then((response: any) => {
+        if (response.data.message === 1) {
+          setAvatar(response.data.avatar.posizione);
+        } else {
+          setAvatar("");
+        }
+      });
+  }, []);
   const recuperaCurriculum = () => {
     const valore = {
       idprofessionista: ValoriParametri._id,
@@ -62,17 +79,28 @@ const ProfiloProfessionista = () => {
             justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              marginRight: "20px",
-              width: "50px",
-              height: "50px",
-              backgroundColor: "grey",
-              borderRadius: "50%",
-            }}
-          >
-            <p></p>
-          </div>
+          {avatar === "" && (
+            <div
+              style={{
+                marginRight: "20px",
+                width: "50px",
+                height: "50px",
+                backgroundColor: "grey",
+                borderRadius: "50%",
+              }}
+            ></div>
+          )}
+          {avatar !== "" && (
+            <img
+              src={avatar}
+              alt="avatar"
+              height={"50px"}
+              width={"50px"}
+              style={{ borderRadius: "100%" }}
+            />
+          )}
+          <p></p>
+
           <div style={{ display: "flex", flexDirection: "column" }}>
             <p style={{ fontSize: "14px", alignSelf: "flex-start" }}>
               {professio.nome}
