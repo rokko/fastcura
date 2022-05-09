@@ -109,7 +109,7 @@ const ModalOfferta = (props: any) => {
             </TextField>
             <p style={{ textAlign: "left", color: "#39B1D9" }}>Prezzo</p>
             <TextField
-                value={prezzo}
+              value={prezzo}
               id="standard-basic"
               variant="standard"
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -124,7 +124,7 @@ const ModalOfferta = (props: any) => {
                 setGiorno(x.target.value)
               }
               id="outlined-size-small"
-              type={"date"}
+              type={"datetime-local"}
             ></TextField>
           </Box>
           <div
