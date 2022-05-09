@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
-const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
+const HeaderChat = ({ id }: any) => {
+  const [avatar, setAvatar] = useState("");
+
+  console.log(id);
+  useEffect(() => {
+    const prof = {
+      id_professionista: id,
+    };
+    axios
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        prof
+      )
+      .then((response: any) => {
+        if (response.data.message === 1) {
+          setAvatar(response.data.avatar.posizione);
+        } else {
+          setAvatar("");
+        }
+      });
+  });
   const navigate = useNavigate();
   return (
     <>
@@ -15,37 +37,54 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
           flexDirection: "row",
           alignContent: "center",
           alignItems: "center",
-          justifyContent:'space-between'
+          justifyContent: "space-between",
         }}
       >
-        <div style={{display:'flex', flexDirection:'row', alignContent:'center', alignItems:'center'}}>
-         <div style={{marginLeft:'20px'}} onClick={()=>history.back()}>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
-        </div>
-        <div>
-          <Box
-            style={{
-              position:'relative',
-              top:'20px',
-              left:'40px',
-              borderRadius: 100,
-              border: "10px solid rgb(57, 177, 217)",
-              width: "65px",
-              height: "65px",
-              backgroundColor: "#ffffff",
-            }}
-          ></Box>
-          <p style={{ color: "#ffffff", fontSize: "21px" }}>
-            {nomeProfessionista.nomeProfessionista}
-          </p>
-          <p style={{ color: "#ffffff" }}>
-            {cognomeProfessionista.cognomeProfessionista}
-          </p>
-        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ marginLeft: "20px" }} onClick={() => history.back()}>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
+          </div>
+          <div>
+            {avatar === "" && (
+              <Box
+                style={{
+                  position: "relative",
+                  top: "20px",
+                  left: "40px",
+                  borderRadius: 100,
+                  border: "10px solid rgb(57, 177, 217)",
+                  width: "65px",
+                  height: "65px",
+                  backgroundColor: "#ffffff",
+                }}
+              ></Box>
+            )}
+            {avatar !== "" && (
+              <img
+                src={avatar}
+                alt="avatar"
+                style={{
+                  width: "65px",
+                  height: "65px",
+                  borderRadius: "100%",
+                  position: "relative",
+                  top: "20px",
+                  left: "40px",
+                }}
+              />
+            )}
+          </div>
         </div>
         <Link to="/cliente">
           <svg
-          style={{marginRight:'30px'}}
+            style={{ marginRight: "30px" }}
             id="Raggruppa_16"
             data-name="Raggruppa 16"
             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +142,6 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
             />
           </svg>
         </Link>
-       
       </Box>
     </>
   );

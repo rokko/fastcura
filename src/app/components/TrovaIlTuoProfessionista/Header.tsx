@@ -40,6 +40,7 @@ const Header = () => {
           alignItems: "center",
           justifyContent: "space-between",
           height: 50,
+          width: "100%",
         }}
       >
         <Link to="/">

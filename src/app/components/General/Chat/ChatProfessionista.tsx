@@ -23,7 +23,7 @@ const ChatProfessionista = () => {
   const [chat, setChat] = useState<any[]>();
   const location = useLocation();
   const valoriProfessionista = location.state as any;
-  const idprofessionista = valoriProfessionista.professionista._id;
+  const idprofessionista = valoriProfessionista.contatto.id_cliente;
   const [pop, setPop] = useState(false);
   const [token, setToken] = useState("");
   const [messaggio, setMessaggio] = useState("");
@@ -231,10 +231,7 @@ const ChatProfessionista = () => {
     return (
       <>
         <div style={{ height: "100%" }}>
-          <HeaderChat
-            nomeProfessionista={valoriProfessionista.professionista.nome}
-            cognomeProfessionista={valoriProfessionista.professionista.cognome}
-          />
+          <HeaderChat id={valoriProfessionista.contatto.id_professionista} />
           <Box
             id="boxchat"
             style={{

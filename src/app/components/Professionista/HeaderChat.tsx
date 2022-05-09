@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
+const HeaderChat = (idcliente: any) => {
   const navigate = useNavigate();
   return (
     <>
@@ -42,12 +42,6 @@ const HeaderChat = (nomeProfessionista: any, cognomeProfessionista: any) => {
                 backgroundColor: "#ffffff",
               }}
             ></Box>
-            <p style={{ color: "#ffffff", fontSize: "21px" }}>
-              {nomeProfessionista.nomeProfessionista}
-            </p>
-            <p style={{ color: "#ffffff" }}>
-              {cognomeProfessionista.cognomeProfessionista}
-            </p>
           </div>
         </div>
         <Link to="/professionista">
