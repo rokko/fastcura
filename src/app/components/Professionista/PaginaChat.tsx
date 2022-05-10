@@ -292,6 +292,7 @@ const PaginaChat = () => {
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMessaggio(x.target.value)
             }
+            autoComplete={"off"}
             onKeyPress={(e) => handleKeyPress(e)}
             style={{ backgroundColor: "#ffffff" }}
           ></TextField>

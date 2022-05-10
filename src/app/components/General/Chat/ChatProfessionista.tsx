@@ -417,6 +417,7 @@ const ChatProfessionista = () => {
                   borderRadius: "30px",
                 },
               }}
+              autoComplete={"off"}
               value={messaggio}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setMessaggio(x.target.value)
