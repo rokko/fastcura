@@ -23,53 +23,55 @@
   display: none;
 }
 
-.header{
-position: fixed;
+.header {
+  position: fixed;
   top: 0;
-width:100%;
-background:white;
-z-index:1000001;
+  width: 100%;
+  background: white;
+  z-index: 1000001;
 }
-p{
-  font-family: 'Charter'
+p {
+  font-family: "Charter";
 }
-.boldtext{
+.boldtext {
   font-weight: bold;
 }
-.top-test{
-  font-size:23px;
+.top-test {
+  font-size: 23px;
 }
 
+.fiheader {
+  width: 100% !important;
+}
 @media only screen and (max-width: 900px) {
-  .top-test{
-    font-size:40px;
+  .top-test {
+    font-size: 40px;
   }
 }
 
-.bluespan{
-  color: #39B1D9!important;
+.bluespan {
+  color: #39b1d9 !important;
 }
 
-.registertitle{
-  font-size:21px;
-  color:#666666;
-
+.registertitle {
+  font-size: 21px;
+  color: #666666;
 }
 
-.titleAll{
-  font-size:24px;
+.titleAll {
+  font-size: 24px;
   font-weight: 900;
-  color:#000000;
+  color: #000000;
 }
-p{
-  color:#6D6D6D;
-  font-weight:bold;
+p {
+  color: #6d6d6d;
+  font-weight: bold;
 }
 
-.topsearch-text{
+.topsearch-text {
   color: white !important;
   font-weight: bold;
-  font-size:21px;
+  font-size: 21px;
 }
 .App-header {
   min-height: 100vh;
@@ -96,27 +98,26 @@ p{
   }
 }
 
-  @font-face {
-    font-family: 'Charter';
-    src: url(./font/charter.otf) format('otf');
-  }
+@font-face {
+  font-family: "Charter";
+  src: url(./font/charter.otf) format("otf");
+}
 
-  body{
-    font-family: 'Charter'
-  }
+body {
+  font-family: "Charter";
+}
 
-  .svg-stile{
-    mix-blend-mode: multiply;
-    isolation: isolate;
+.svg-stile {
+  mix-blend-mode: multiply;
+  isolation: isolate;
+}
 
-   }
+.svg-stile2 {
+  mix-blend-mode: screen;
+  isolation: isolate;
+}
 
-   .svg-stile2{
-    mix-blend-mode: screen;
-    isolation: isolate;
-   }
-
-   .paragrafidivisi{
-     display: flex;
-     flex-direction: row;
-   }
+.paragrafidivisi {
+  display: flex;
+  flex-direction: row;
+}
