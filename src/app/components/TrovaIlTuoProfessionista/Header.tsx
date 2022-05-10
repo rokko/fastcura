@@ -14,7 +14,6 @@ const Header = () => {
   const [kolog, setKolog] = useState(false);
   return (
     <div
-      className="fiheader"
       style={
         isMobile
           ? {
