@@ -182,11 +182,10 @@ const HeaderUser = () => {
                 {utente?.nome.charAt(0)} {utente?.cognome.charAt(0)}
               </p>
             </div>
-
-            <VerticalMenu open={open} />
           </div>
         </div>
       </Box>
+      <VerticalMenu open={open} />
     </>
   );
 };

@@ -15,6 +15,7 @@ import Confir from "../General/Confir";
 import { style } from "@mui/system";
 import axios from "axios";
 import { flexbox } from "@mui/system";
+import VerticalMenu from "../Professionista/VerticalMenu";
 interface IUtente {
   nome: string;
   cognome: string;
@@ -36,6 +37,7 @@ const HeaderNoLogin = () => {
   const [kolog, setKolog] = useState(false);
   const [token, setToken] = useState("");
   const [utente, setUtente] = useState<IUtente>();
+  const [open, setOpen] = useState(false);
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -148,7 +150,16 @@ const HeaderNoLogin = () => {
             justifyContent: "center",
           }}
         >
-          <div style={{ marginRight: "10px" }} onClick={() => setPop(true)}>
+          <div
+            style={{ marginRight: "10px" }}
+            onClick={() => {
+              if (!utente?.email) {
+                setPop(true);
+              } else {
+                setOpen(!open);
+              }
+            }}
+          >
             {!!utente && (
               <div
                 style={{
@@ -199,7 +210,6 @@ const HeaderNoLogin = () => {
             )}
           </div>
         </div>
-
         <ModalLogin
           setok={setOk}
           open={pop}
@@ -227,6 +237,7 @@ const HeaderNoLogin = () => {
             Login Effettuato
           </Alert>
         </Snackbar>
+
         <Snackbar
           open={kolog}
           autoHideDuration={6000}
@@ -245,6 +256,7 @@ const HeaderNoLogin = () => {
         </Snackbar>
       </Box>
       <Confir open={ok} message={"Login Effettuato"} setOpen={setOk} />
+      <VerticalMenu open={open} />
     </>
   );
 };

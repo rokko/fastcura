@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
 import { useMediaQuery } from "react-responsive";
+import VerticalMenu from "../Professionista/VerticalMenu";
 
 const Header = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -12,6 +13,8 @@ const Header = () => {
   const [pip, setPip] = useState(false);
   const [oklog, setOklog] = useState(false);
   const [kolog, setKolog] = useState(false);
+  const [open, setOpen] = useState(false);
+
   return (
     <div
       style={
@@ -247,6 +250,7 @@ const Header = () => {
           border: "none",
         }}
       />
+      <VerticalMenu open={open} />
     </div>
   );
 };

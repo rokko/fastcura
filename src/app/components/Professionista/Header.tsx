@@ -208,10 +208,10 @@ const Header = () => {
                 />
               </svg>
             )}
-            <VerticalMenu open={open} />
           </div>
         </div>
       </Box>
+      <VerticalMenu open={open} />
     </>
   );
 };
