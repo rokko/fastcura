@@ -33,9 +33,12 @@ const Header = () => {
       };
 
       axios
-        .get("https://fastcuradev.herokuapp.com/professionista/info", config)
+        .post(
+          "https://fastcuradev.herokuapp.com/professionista/info2",
+          {},
+          config
+        )
         .then((response) => {
-          console.log("coaiicjdaicoaj");
           setUtente(response.data);
         })
         .catch((e) => console.error(e));
