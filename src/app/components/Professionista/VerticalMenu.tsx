@@ -40,7 +40,7 @@ const VerticalMenu = (props: any) => {
           </MenuItem>
           <MenuItem
             onClick={() => {
-              localStorage.removeItem("token");
+              localStorage.clear();
               console.log(localStorage.getItem("token"));
               navigate("/");
             }}

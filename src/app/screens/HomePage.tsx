@@ -9,66 +9,95 @@ import Ricavi from "../components/HomepageComponent/Ricavi";
 import ServizioInnovativo from "../components/HomepageComponent/ServizioInnovativo";
 import ProvaloGratis from "../components/HomepageComponent/ProvaloGratis";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 import { Fade } from "react-awesome-reveal";
-import Footer from '../components/General/Footer'
+import Footer from "../components/General/Footer";
 
 const HomePage = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 760px)` })
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   return (
-    <>  
-    <Header />
-      {(!!isMobile)&&      <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
-        <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%', marginTop:'100px'}}>
-          <EntraNelTeam />
-          <Visibilita />
-          <Target />
-          <DecidiTu />
-          <FaiTuPrezzo />
-          <ServizioMessagistica />
-          <Ricavi />
-          <ServizioInnovativo />
-          <ProvaloGratis />
+    <>
+      <Header />
+      {!!isMobile && (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              alignContent: "center",
+              textAlign: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "100%",
+              marginTop: "100px",
+            }}
+          >
+            <EntraNelTeam />
+            <Visibilita />
+            <Target />
+            <DecidiTu />
+            <FaiTuPrezzo />
+            <ServizioMessagistica />
+            <Ricavi />
+            <ServizioInnovativo />
+            <ProvaloGratis />
+          </div>
         </div>
-      </div>
-      }
-      {(!isMobile)&&
-          <>
-            <div style={{width:'100%', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center', backgroundColor:'rgb(249, 249, 249)'}}>
-        <div style={{display: 'flex', alignItems: 'center' , alignContent:'center', textAlign:'center',justifyContent:'center', flexDirection:'column', width:'100%'}}>
+      )}
+      {!isMobile && (
+        <>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              alignContent: "center",
+              justifyContent: "center",
+              backgroundColor: "rgb(249, 249, 249)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                alignContent: "center",
+                textAlign: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                width: "100%",
+              }}
+            >
+              <div style={{ width: "80%" }}>
+                <EntraNelTeam />
 
+                <Visibilita />
+                <Target />
 
-        <div style={{width: '80%'}}>
-          <EntraNelTeam />
+                <DecidiTu />
 
-         
-          <Visibilita />
-          <Target />
-        
+                <FaiTuPrezzo />
 
-          <DecidiTu />
-       
-          <FaiTuPrezzo />
-          
+                <ServizioMessagistica />
 
-          <ServizioMessagistica />
-          
-          <Ricavi />
-          
+                <Ricavi />
 
-          <ServizioInnovativo />
-         
-          <ProvaloGratis />
-          
+                <ServizioInnovativo />
 
-        </div>
-      </div>
-
-      </div>
-
-            </>
-      }
+                <ProvaloGratis />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
       <Footer />
     </>
   );
