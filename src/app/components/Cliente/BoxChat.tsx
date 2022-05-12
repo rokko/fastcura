@@ -13,12 +13,13 @@ interface ICliente {
 }
 const BoxChat = (props: any) => {
 
-  const {settaNotifica} = useContext(AppContext)
+  const setta= useContext(AppContext)
   const [infocliente, setInfocliente] = useState<ICliente>();
   const navigate = useNavigate();
   const [last, setLast] = useState("");
   const [avatar, setAvatar] = useState("");
   const [chat, setChat] = useState<any>();
+
 
 
   const aggiorna = () => {
@@ -27,7 +28,7 @@ const BoxChat = (props: any) => {
   };
 
   useEffect(()=>aggiorna(),[])
-  const recuperaChat = () => {
+  const recuperaChat =async () => {
     const cont = {
       contatti_id: props.contatto._id,
     };
@@ -35,12 +36,15 @@ const BoxChat = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
       .then((x) => setChat(x.data));
+    if(!!chat) {
+      const test = chat.filter((x: any) => x.sender !== props.contatto.id_cliente && x.ricreader === false)
 
 
-    const test  = chat.filter((x:any)=> x.sender !==props.contatto.id_cliente && x.ricreader ===false)
-    if (!!test ) {
-      settaNotifica
+      if (!!test ) {
+        await setta?.setNoti(true)
+      }
     }
+
   };
 
   const recuperaInfo = () => {

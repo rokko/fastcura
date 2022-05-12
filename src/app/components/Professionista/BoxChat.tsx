@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import {AppContext} from "../../context/Context";
 
 interface ICliente {
   codicepostale: string;
@@ -11,12 +12,17 @@ interface ICliente {
   sesso: string;
 }
 const BoxChat = (props: any) => {
+  const setta= useContext(AppContext)
+
   const [infocliente, setInfocliente] = useState<ICliente>();
   const navigate = useNavigate();
   const [last, setLast] = useState("");
   const [chat, setChat] = useState<any>();
-
-  const recuperaChat = () => {
+  const aggiorna = () => {
+    recuperaChat();
+    setTimeout(aggiorna, 1000);
+  };
+  const recuperaChat = async() => {
     const cont = {
       contatti_id: props.contatto._id,
     };
@@ -24,6 +30,16 @@ const BoxChat = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
       .then((x) => setChat(x.data));
+    if(!!chat) {
+      const test = chat.filter((x: any) => x.sender !== props.contatto.id_cliente && x.ricreader === false)
+
+
+      if (!!test ) {
+        await setta?.setNoti(true)
+      }
+    }
+
+
   };
   const recuperaInfo = () => {
     const clienteinfo = {
@@ -39,8 +55,8 @@ const BoxChat = (props: any) => {
   };
 
   useEffect(() => {
+    aggiorna()
     recuperaInfo();
-    recuperaChat();
   }, []);
 
   return (

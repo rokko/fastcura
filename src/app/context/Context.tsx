@@ -7,7 +7,7 @@ interface IContextDati {
   settaNotifica :()=>void;
 }
 
-export const AppContext = React.createContext<IContextDati | null>(null);
+export const AppContext = React.createContext<IContextDati|null>(null);
 
 const AppProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [noti,setNoti] = useState(false)
@@ -17,7 +17,7 @@ const AppProvider: React.FC<React.ReactNode> = ({ children }) => {
     setNoti(true)
   }
 
-  return <AppContext.Provider value={{ setNoti,noti , test,settaNotifica}}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ setNoti : setNoti, noti : noti ,test: test,settaNotifica :settaNotifica}}>{children}</AppContext.Provider>;
 };
 
 export default AppProvider;

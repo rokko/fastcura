@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import VerticalMenu from "../Professionista/VerticalMenu";
 import axios from "axios";
+import {AppContext} from "../../context/Context";
 interface IUtente {
   nome: string;
   cognome: string;
@@ -17,6 +18,8 @@ interface IUtente {
   _id: string;
 }
 const HeaderUser = () => {
+
+    const statte = useContext(AppContext)
   const [open, setOpen] = useState(false);
   const [token, setToken] = useState("");
   const [utente, setUtente] = useState<IUtente>();
@@ -133,7 +136,8 @@ const HeaderUser = () => {
           }}
         >
           <Link to="/chatcliente">
-            <svg
+              {!!statte?.noti && <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACLUlEQVRoge2av04bQRCHP+OzaAwvkDcg0EZKkQ47RQxpyFtYDhilSEVjuQgdTR4AUkXKAyAFpFBCCY6xIpEmdQqTIki2KXYvPuy9vV0DuSn2k1ZnaWZ256f9c3N3hkAg4MsacAxcAyNh7Ro4AmpZItoCknVtrTQRawKS823GmTkWkJhv+xonX0gI6QNlk0LB9IFFuCtklE8u96YAMJd3Fg9FECKNIEQaQYg0ghBpBCHSCEKkEYRIIwiRRhAijSBEGkHII3IBbAHLqPdsZf27CXRcOuiT71vDv0AdKFpyLAIN4CYRN8VRziJWLQImqSTEvJo01nIUUvcQEfNWx14B0aSxlYOIc6aXUwmoAh+BXylCItSeGQFvTA411Fvu/7VnNg05/J7wSaOp7Z8sPkZ6Dom5LpOu9l8y2N4Dz8kWsqztPxzH/Md37CJ+AvOOfcUzbvuUkSVkQdv/+NxHIuBJhs871AnkQpxgwerlxsDH+QX22djzHDxeWk8tPq5Lq+s6I0Vg12L/Amw79hVzpq9Vz7gkL/X11MW5DHzGPAsD4AOzlTobuo8L0u/mthmJGO/ZDZcBv2EWcQI8c83aQInxKdiYIX5Lx/Z0X5kcoj7UX6LuLzvAygwDm3gNDFHlRsUjrqpjhsD6A+Vyb+I/Kdygyo6pciNBhJqJuM5qP3p2HsyhEhoy3jNNpsv4bcYlyVDHSHwMYR23yqGHoOWURgl1Ah2gTqS+bh1gX9uMG/sWav/QuX1/bP8AAAAASUVORK5CYII="/>}
+              {! statte?.noti &&<svg
               style={{ marginRight: "10px" }}
               id="Icon_ionic-md-chatbubbles"
               data-name="Icon ionic-md-chatbubbles"
@@ -156,7 +160,7 @@ const HeaderUser = () => {
                 transform="translate(-3.567 -3.375)"
                 fill="#fff"
               />
-            </svg>
+            </svg>}
           </Link>
 
           <div onClick={() => setOpen(!open)}>
