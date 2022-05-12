@@ -17,7 +17,7 @@ const VerticalMenu = (props: any) => {
           }}
           sx={{
             position: "absolute",
-            top: isMobile ? "-55%" : "-60%",
+            top: isMobile ? "-20rem" : "-20rem",
             left: isMobile ? "50%" : "85%",
           }}
         >

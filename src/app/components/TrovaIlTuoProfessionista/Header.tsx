@@ -91,6 +91,8 @@ const [utente,setUtente] = useState<any>()
              display:'flex',
               height:'50px',
                  justifyContent:'space-evenly',
+                 alignItems:'center',
+                 alignContent:'center',
 
              }
 
@@ -100,7 +102,7 @@ const [utente,setUtente] = useState<any>()
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="100.439"
+            width="130.439"
             height="22.814"
             viewBox="0 0 123.439 22.814"
           >
