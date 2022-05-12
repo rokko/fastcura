@@ -22,7 +22,7 @@ const BoxChat = (props: any) => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont)
+      .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
       .then((x) => setChat(x.data));
   };
   const recuperaInfo = () => {

@@ -154,6 +154,7 @@ const ChatProfessionista = () => {
   const recuperaChat = () => {
     const cont = {
       contatti_id: io,
+       id: idinvio
     };
 
     axios

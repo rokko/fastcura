@@ -1,15 +1,23 @@
 import React, { useContext, useState } from "react";
 
 interface IContextDati {
-  rocc: string;
+  noti: any;
+  setNoti : any;
+  test : string;
+  settaNotifica :()=>void;
 }
 
 export const AppContext = React.createContext<IContextDati | null>(null);
 
 const AppProvider: React.FC<React.ReactNode> = ({ children }) => {
-  const rocc = "ciao";
+  const [noti,setNoti] = useState(false)
+  const test = 'ciao'
 
-  return <AppContext.Provider value={{ rocc }}>{children}</AppContext.Provider>;
+  const settaNotifica = () =>{
+    setNoti(true)
+  }
+
+  return <AppContext.Provider value={{ setNoti,noti , test,settaNotifica}}>{children}</AppContext.Provider>;
 };
 
 export default AppProvider;
