@@ -61,17 +61,25 @@ const [utente,setUtente] = useState<any>()
       takeUtente()
   },[token])
   return (
+      <>
     <div
       style={
          isMobile
           ? {
              width:'100%',
+             overflow:'hidden',
               position: "fixed",
               top: 0,
-              maxWidth: "100%",
+             display:'flex',
+             alignItems:'center',
+             alignContent:'center',
+             justifyContent:'space-evenly',
               background: "white",
               zIndex: "1000001",
-             borderBottom:'3px solid rgb(57, 177, 217)'
+             borderBottom:'3px solid rgb(57, 177, 217)',
+             flexDirection:'row',
+             height:'50px',
+             gap:'10%'
             }
           : {
               position: "fixed",
@@ -79,27 +87,20 @@ const [utente,setUtente] = useState<any>()
               zIndex: "1000001",
               top: 0,
               background: "white",
-                 borderBottom:'3px solid rgb(57, 177, 217)'
+                 borderBottom:'3px solid rgb(57, 177, 217)',
+             display:'flex',
+              height:'50px',
+                 justifyContent:'space-evenly',
 
              }
 
       }
     >
-      <Container
-        style={{
-          display: "flex",
-          marginTop: 10,
-          alignContent: "center",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: 50,
-          width: "100%",
-        }}
-      >
+
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="123.439"
+            width="100.439"
             height="22.814"
             viewBox="0 0 123.439 22.814"
           >
@@ -215,7 +216,7 @@ const [utente,setUtente] = useState<any>()
             </g>
           </svg>
         </Link>
-        <div>
+
           <div
             style={{
               display: "flex",
@@ -328,12 +329,13 @@ const [utente,setUtente] = useState<any>()
               </Alert>
             </Snackbar>
           </div>
-        </div>
-      </Container>
 
 
-      <VerticalMenu open={open} />
+
+
     </div>
+    <VerticalMenu open={open} />
+      </>
   );
 };
 

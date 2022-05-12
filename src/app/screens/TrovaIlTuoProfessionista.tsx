@@ -21,8 +21,9 @@ const TrovaIlTuoProfessionista = () => {
   if (!isMobile)
     return (
       <>
-        <div style={{ width: "100%" }}>
+
           <Header />
+          <div style={{ width: "100%" }}>
           <div style={{ backgroundColor: "#F9F9F9", marginTop: "100px" }}>
             <div
               style={{
@@ -85,8 +86,9 @@ const TrovaIlTuoProfessionista = () => {
   else
     return (
       <>
-        <div style={{ width: "100%" }}>
+          <div style={{ width: "100%" }}>
           <Header />
+
           <div
             style={{
               display: "flex",

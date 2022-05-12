@@ -26,7 +26,7 @@ const ButtonIscriviti = () => {
             style={{
               backgroundColor: "#ffffff",
               height: 30,
-              marginLeft: 15,
+              marginLeft: 1,
               fontSize: "11px",
               textTransform: "none",
               color: "rgb(57, 177, 217)",
@@ -46,7 +46,7 @@ const ButtonIscriviti = () => {
             style={{
               backgroundColor: "#ffffff",
               height: 30,
-              marginLeft: 15,
+              marginLeft: 1,
               fontSize: "11px",
               textTransform: "none",
               color: "rgb(57, 177, 217)",
@@ -66,7 +66,7 @@ const ButtonIscriviti = () => {
             style={{
               backgroundColor: "#ffffff",
               height: 30,
-              marginLeft: 15,
+              marginLeft: 1,
               fontSize: "11px",
               textTransform: "none",
               color: "rgb(57, 177, 217)",
