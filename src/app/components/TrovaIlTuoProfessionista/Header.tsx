@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Alert, Container, makeStyles, Snackbar } from "@mui/material";
 import ButtonIscriviti from "./ButtonIscriviti";
 import { Link } from "react-router-dom";
@@ -6,25 +6,72 @@ import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
 import { useMediaQuery } from "react-responsive";
 import VerticalMenu from "../Professionista/VerticalMenu";
+import axios from "axios";
 
 const Header = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-
+const [utente,setUtente] = useState<any>()
   const [pip, setPip] = useState(false);
   const [oklog, setOklog] = useState(false);
   const [kolog, setKolog] = useState(false);
   const [open, setOpen] = useState(false);
+  const [pop, setPop] = useState(false)
+  const [token, setToken] = useState('')
+    const takeToken = async () => {
+        const tokenTest = await localStorage.getItem("tokenaccess");
+        if (!!tokenTest) setToken(tokenTest);
+    };
 
+  const takeUtente =async () => {
+      if (token!=='') {
+          const config = {
+              headers: { Authorization: `Bearer ${token}` },
+          };
+
+          axios
+              .get(
+                  "https://fastcuradev.herokuapp.com/professionista/info",
+                  config
+              )
+              .then((response:any) => {
+                  setUtente(response.data);
+              })
+              .catch((e:any) => console.error(e));
+      }
+      if (!!token) {
+          const config = {
+              headers: { Authorization: `Bearer ${token}` },
+          };
+
+          axios
+              .post(
+                  "https://fastcuradev.herokuapp.com/cliente/infocliente",
+                  "",
+                  config
+              )
+              .then((response) => {
+                  setUtente(response.data);
+              })
+              .catch((e) => console.error(e));
+      }
+  }
+
+  useEffect(()=>{
+      takeToken()
+      takeUtente()
+  },[token])
   return (
     <div
       style={
-        isMobile
+         isMobile
           ? {
+             width:'100%',
               position: "fixed",
               top: 0,
               maxWidth: "100%",
               background: "white",
               zIndex: "1000001",
+             borderBottom:'3px solid rgb(57, 177, 217)'
             }
           : {
               position: "fixed",
@@ -32,7 +79,10 @@ const Header = () => {
               zIndex: "1000001",
               top: 0,
               background: "white",
-            }
+                 borderBottom:'3px solid rgb(57, 177, 217)'
+
+             }
+
       }
     >
       <Container
@@ -174,30 +224,68 @@ const Header = () => {
               alignItems: "center",
             }}
           >
+
             <ButtonIscriviti />
-            <div onClick={() => setPip(true)}>
-              <svg
-                id="person"
-                xmlns="http://www.w3.org/2000/svg"
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
+              <div
+                  style={{ marginRight: "10px" }}
+                  onClick={() => {
+                      if (!utente?.email) {
+                          setPop(true);
+                      } else {
+                          setOpen(!open);
+                      }
+                  }}
               >
-                <path
-                  id="Tracciato_130"
-                  data-name="Tracciato 130"
-                  d="M0,0H34V34H0Z"
-                  fill="none"
-                />
-                <path
-                  id="Tracciato_131"
-                  data-name="Tracciato 131"
-                  d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
-                  transform="translate(1.667 1.667)"
-                  fill="#39b1d9"
-                />
-              </svg>
-            </div>
+                  {!!utente && (
+                      <div
+                          style={{
+                              width: "50px",
+                              height: "50px",
+                              marginLeft:'10px',
+                              backgroundColor: "rgb(57, 177, 217)",
+                              borderRadius: "100%",
+                              display: "flex",
+                              alignContent: "center",
+                              alignItems: "center",
+                              justifyContent: "center",
+                          }}
+                      >
+                          <p
+                              style={{
+                                  color: "white",
+                                  fontSize: "20px",
+                                  marginRight: "5px",
+                              }}
+                          >
+                              {utente?.nome.charAt(0)}
+                              {utente?.cognome.charAt(0)}
+                          </p>
+                      </div>
+                  )}
+                  {utente =='' && <svg
+                      id="person"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      >
+                      <path
+                      id="Tracciato_130"
+                      data-name="Tracciato 130"
+                      d="M0,0H34V34H0Z"
+                      fill="none"
+                      />
+                      <path
+                      id="Tracciato_131"
+                      data-name="Tracciato 131"
+                      d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
+                      transform="translate(1.667 1.667)"
+                      fill="#39b1d9"
+                      />
+                      </svg>}
+              </div>
+
+
             <ModalLogin
               open={pip}
               chiudi={setPip}
@@ -242,14 +330,8 @@ const Header = () => {
           </div>
         </div>
       </Container>
-      <hr
-        style={{
-          color: "rgb(57, 177, 217)",
-          backgroundColor: "rgb(57, 177, 217)",
-          height: 2,
-          border: "none",
-        }}
-      />
+
+
       <VerticalMenu open={open} />
     </div>
   );
