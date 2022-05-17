@@ -15,15 +15,12 @@ import Footer from "../components/General/Footer";
 import { AppContext } from "../context/Context";
 
 const TrovaIlTuoProfessionista = () => {
-  const test = useContext(AppContext);
-  console.log(test);
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   if (!isMobile)
     return (
       <>
-
-          <Header />
-          <div style={{ width: "100%" }}>
+        <Header />
+        <div style={{ width: "100%" }}>
           <div style={{ backgroundColor: "#F9F9F9", marginTop: "100px" }}>
             <div
               style={{
@@ -86,7 +83,7 @@ const TrovaIlTuoProfessionista = () => {
   else
     return (
       <>
-          <div style={{ width: "100%" }}>
+        <div style={{ width: "100%" }}>
           <Header />
 
           <div
