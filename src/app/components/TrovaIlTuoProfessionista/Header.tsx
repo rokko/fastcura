@@ -87,7 +87,7 @@ const Header = () => {
                 borderBottom: "3px solid rgb(57, 177, 217)",
                 display: "flex",
                 height: "50px",
-                justifyContent: "space-between",
+                justifyContent: "space-evenly",
                 alignItems: "center",
                 alignContent: "center",
               }

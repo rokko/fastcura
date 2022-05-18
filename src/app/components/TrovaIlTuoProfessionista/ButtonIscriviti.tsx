@@ -33,7 +33,7 @@ const ButtonIscriviti = () => {
               border: "solid 2px",
               borderRadius: 10,
               fontWeight: "bold",
-              maxWidth: "2rem",
+              maxWidth: "10rem",
             }}
           >
             Accedi alla Dashboard
@@ -54,6 +54,7 @@ const ButtonIscriviti = () => {
               border: "solid 2px",
               borderRadius: 10,
               fontWeight: "bold",
+              maxWidth: "10rem",
             }}
           >
             Accedi alla Dashboard
@@ -74,6 +75,7 @@ const ButtonIscriviti = () => {
               border: "solid 2px",
               borderRadius: 10,
               fontWeight: "bold",
+              maxWidth: "10rem",
             }}
           >
             Sei un professionista? Iscriviti!
