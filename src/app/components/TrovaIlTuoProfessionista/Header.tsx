@@ -65,7 +65,7 @@ const Header = () => {
             ? {
                 width: "100%",
                 overflow: "hidden",
-                position: "relative",
+                position: "fixed",
                 top: 0,
                 display: "flex",
                 alignItems: "center",
@@ -79,7 +79,7 @@ const Header = () => {
                 gap: "10%",
               }
             : {
-                position: "relative",
+                position: "fixed",
                 width: "100%",
                 zIndex: "1000001",
                 top: 0,
@@ -87,7 +87,7 @@ const Header = () => {
                 borderBottom: "3px solid rgb(57, 177, 217)",
                 display: "flex",
                 height: "50px",
-                justifyContent: "space-evenly",
+                justifyContent: "space-between",
                 alignItems: "center",
                 alignContent: "center",
               }
@@ -223,7 +223,6 @@ const Header = () => {
         >
           <ButtonIscriviti />
           <div
-            style={{ marginRight: "10px" }}
             onClick={() => {
               if (!utente?.email) {
                 setPop(true);
@@ -284,51 +283,50 @@ const Header = () => {
               </div>
             )}
           </div>
-
-          <ModalLogin
-            open={pip}
-            chiudi={setPip}
-            setsnack={setOklog}
-            setsnack2={setKolog}
-          />
-          <Snackbar
-            open={oklog}
-            autoHideDuration={6000}
-            onClose={() => setOklog(false)}
-          >
-            <Alert
-              severity="success"
-              sx={{
-                width: "100%",
-                backgroundColor: "rgb(57, 177, 217)",
-                color: "white",
-                "& .MuiAlert-icon": {
-                  color: "white",
-                },
-              }}
-            >
-              Login Effettuato
-            </Alert>
-          </Snackbar>
-          <Snackbar
-            open={kolog}
-            autoHideDuration={6000}
-            onClose={() => setKolog(false)}
-          >
-            <Alert
-              severity="error"
-              sx={{
-                width: "100%",
-                backgroundColor: "rgb(57, 177, 217)",
-                color: "white",
-              }}
-            >
-              Errore Login
-            </Alert>
-          </Snackbar>
         </div>
-        <VerticalMenu open={open} />
       </div>
+      <ModalLogin
+        open={pip}
+        chiudi={setPip}
+        setsnack={setOklog}
+        setsnack2={setKolog}
+      />
+      <Snackbar
+        open={oklog}
+        autoHideDuration={6000}
+        onClose={() => setOklog(false)}
+      >
+        <Alert
+          severity="success"
+          sx={{
+            width: "100%",
+            backgroundColor: "rgb(57, 177, 217)",
+            color: "white",
+            "& .MuiAlert-icon": {
+              color: "white",
+            },
+          }}
+        >
+          Login Effettuato
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={kolog}
+        autoHideDuration={6000}
+        onClose={() => setKolog(false)}
+      >
+        <Alert
+          severity="error"
+          sx={{
+            width: "100%",
+            backgroundColor: "rgb(57, 177, 217)",
+            color: "white",
+          }}
+        >
+          Errore Login
+        </Alert>
+      </Snackbar>
+      <VerticalMenu open={open} />
     </>
   );
 };

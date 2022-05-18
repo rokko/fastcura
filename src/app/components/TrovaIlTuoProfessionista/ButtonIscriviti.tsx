@@ -17,7 +17,6 @@ const ButtonIscriviti = () => {
     takeToken();
   }, []);
 
-
   return (
     <>
       {token !== "" && type === "1" && (
@@ -34,6 +33,7 @@ const ButtonIscriviti = () => {
               border: "solid 2px",
               borderRadius: 10,
               fontWeight: "bold",
+              maxWidth: "2rem",
             }}
           >
             Accedi alla Dashboard
