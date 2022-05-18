@@ -17,7 +17,7 @@ interface IRisposta {
   ris: number;
 }
 
-const ProfiloProfessionista = () => {
+const ProiloProfessionista = () => {
   const location = useLocation();
   const [risposta, setRisposta] = useState<IRisposta>();
   const [avatar, setAvatar] = useState("");
@@ -346,4 +346,4 @@ const ProfiloProfessionista = () => {
   );
 };
 
-export default ProfiloProfessionista;
+export default ProiloProfessionista;

@@ -7,7 +7,7 @@ import TrovaIlTuoProfessionista from "../screens/TrovaIlTuoProfessionista";
 import Professionista from "../screens/Professionista";
 import RisultatiRicerca from "../screens/RisultatiRicerca";
 import InCostruzione from "../components/General/InCostruzione";
-import ProfiloProfessionista from "../components/ListaProfessionisti/ProfiloProfessionista";
+import { ProfiloProfessionista } from "../components/ListaProfessionisti/profiloprofessionista";
 import ChatProfessionista from "../components/General/Chat/ChatProfessionista";
 import ChatProfessionisti from "../components/Professionista/ChatProfessionisti";
 import PaginaChat from "../components/Professionista/PaginaChat";

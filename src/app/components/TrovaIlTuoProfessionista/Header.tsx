@@ -65,7 +65,7 @@ const Header = () => {
             ? {
                 width: "100%",
                 overflow: "hidden",
-                position: "fixed",
+                position: "relative",
                 top: 0,
                 display: "flex",
                 alignItems: "center",
@@ -79,7 +79,7 @@ const Header = () => {
                 gap: "10%",
               }
             : {
-                position: "fixed",
+                position: "relative",
                 width: "100%",
                 zIndex: "1000001",
                 top: 0,
@@ -259,27 +259,29 @@ const Header = () => {
               </div>
             )}
             {utente === "" && (
-              <svg
-                id="person"
-                xmlns="http://www.w3.org/2000/svg"
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-              >
-                <path
-                  id="Tracciato_130"
-                  data-name="Tracciato 130"
-                  d="M0,0H34V34H0Z"
-                  fill="none"
-                />
-                <path
-                  id="Tracciato_131"
-                  data-name="Tracciato 131"
-                  d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
-                  transform="translate(1.667 1.667)"
-                  fill="#39b1d9"
-                />
-              </svg>
+              <div onClick={() => setPip(!pip)}>
+                <svg
+                  id="person"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                >
+                  <path
+                    id="Tracciato_130"
+                    data-name="Tracciato 130"
+                    d="M0,0H34V34H0Z"
+                    fill="none"
+                  />
+                  <path
+                    id="Tracciato_131"
+                    data-name="Tracciato 131"
+                    d="M15.333,15.333A5.667,5.667,0,1,0,9.667,9.667,5.665,5.665,0,0,0,15.333,15.333Zm0,2.833C11.551,18.167,4,20.065,4,23.833v2.833H26.667V23.833C26.667,20.065,19.116,18.167,15.333,18.167Z"
+                    transform="translate(1.667 1.667)"
+                    fill="#39b1d9"
+                  />
+                </svg>
+              </div>
             )}
           </div>
 
@@ -325,8 +327,8 @@ const Header = () => {
             </Alert>
           </Snackbar>
         </div>
+        <VerticalMenu open={open} />
       </div>
-      <VerticalMenu open={open} />
     </>
   );
 };

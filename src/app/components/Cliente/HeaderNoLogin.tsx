@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
-import ProfiloProfessionista from "../ListaProfessionisti/ProfiloProfessionista";
+import { ProfiloProfessionista } from "../ListaProfessionisti/profiloprofessionista";
 import Confir from "../General/Confir";
 import { style } from "@mui/system";
 import axios from "axios";
