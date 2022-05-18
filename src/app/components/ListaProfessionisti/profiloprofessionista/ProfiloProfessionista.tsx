@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import HeaderNoLogin from "../../Cliente/HeaderNoLogin";
 import axios from "axios";
-import { IDettagliProfessionista, IRisposta } from "./type";
+import { IDettagliProfessionista, IRisposta, IFeedback } from "./type";
 import {
   AvatarStyle,
   ButtonContattaStyle,
@@ -14,22 +14,33 @@ import {
   TextNomeStyle,
   TotalContainer,
 } from "./styled";
+import { useMemo } from "react";
 
 const ProfiloProfessionista = () => {
   const location = useLocation();
+
   const [risposta, setRisposta] = useState<IRisposta>();
   const [avatar, setAvatar] = useState("");
+  const [feedback, setFeedback] = useState(0);
   const [voto, setVoto] = useState();
+  const [voti, setVoti] = useState<IFeedback[]>();
+
+  let ValoriParametri = location.state as any;
+  const professio: IDettagliProfessionista = {
+    nome: ValoriParametri.nome,
+    cognome: ValoriParametri.cognome,
+    citta: ValoriParametri.citta,
+    professione: ValoriParametri.professione,
+    eta: ValoriParametri.eta,
+  };
+
   const sendFeedback = (value: any) => {
     const prof = {
       id_professionista: ValoriParametri._id,
-      voto: voto,
+      voto: value,
     };
     axios
-      .post(
-        "https://fastcuradev.herokuapp.com/cliente/inserisci-feedback",
-        prof
-      )
+      .post("http://localhost:8080/cliente/inserisci-feedback", prof)
       .then((response: any) => {
         if (response.data.message === 1) {
           setAvatar(response.data.avatar.posizione);
@@ -38,6 +49,29 @@ const ProfiloProfessionista = () => {
         }
       });
   };
+  const recuperaFeedback = async () => {
+    const prof = {
+      id_professionista: ValoriParametri._id,
+    };
+    axios
+      .post("http://localhost:8080/cliente/ottieni-feedback", prof)
+      .then((response: any) => {
+        setVoti(response.data);
+      });
+  };
+
+  const totaleFeedback = useMemo(() => {
+    var mediaVoti: number = 0;
+    const totaleVoti: number | undefined = voti?.length;
+    voti?.map((voto) => {
+      console.log(voto);
+      mediaVoti = voto.voto + mediaVoti;
+    });
+    if (totaleVoti !== undefined) {
+      return (mediaVoti / totaleVoti) | 0;
+    }
+  }, [voti]);
+
   useEffect(() => {
     const prof = {
       id_professionista: ValoriParametri._id,
@@ -55,6 +89,9 @@ const ProfiloProfessionista = () => {
         }
       });
   }, []);
+  useEffect(() => {
+    recuperaFeedback();
+  }, []);
   const recuperaCurriculum = () => {
     const valore = {
       idprofessionista: ValoriParametri._id,
@@ -67,14 +104,6 @@ const ProfiloProfessionista = () => {
   useEffect(() => {
     recuperaCurriculum();
   }, []);
-  let ValoriParametri = location.state as any;
-  const professio: IDettagliProfessionista = {
-    nome: ValoriParametri.nome,
-    cognome: ValoriParametri.cognome,
-    citta: ValoriParametri.citta,
-    professione: ValoriParametri.professione,
-    eta: ValoriParametri.eta,
-  };
 
   return (
     <>
@@ -86,86 +115,11 @@ const ProfiloProfessionista = () => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <TextNomeStyle>{professio.nome}</TextNomeStyle>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24.001"
-                height="22.358"
-                viewBox="0 0 24.001 22.358"
-              >
-                <path
-                  id="Icon_ionic-ios-star"
-                  data-name="Icon ionic-ios-star"
-                  d="M24.378,10.768H16.826L14.531,3.919a.832.832,0,0,0-1.561,0l-2.295,6.849h-7.6a.824.824,0,0,0-.821.821.6.6,0,0,0,.015.139.789.789,0,0,0,.344.58l6.207,4.374L6.434,23.608a.824.824,0,0,0,.282.924.794.794,0,0,0,.462.2,1.006,1.006,0,0,0,.513-.185L13.75,20.23l6.058,4.318a.962.962,0,0,0,.513.185.738.738,0,0,0,.457-.2.814.814,0,0,0,.282-.924l-2.382-6.926,6.156-4.415.149-.128a.861.861,0,0,0,.267-.549A.869.869,0,0,0,24.378,10.768Z"
-                  transform="translate(-1.75 -2.875)"
-                  fill="#eadd45"
-                  stroke="#eadd45"
-                  stroke-width="1"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24.001"
-                height="22.358"
-                viewBox="0 0 24.001 22.358"
-              >
-                <path
-                  id="Icon_ionic-ios-star"
-                  data-name="Icon ionic-ios-star"
-                  d="M24.378,10.768H16.826L14.531,3.919a.832.832,0,0,0-1.561,0l-2.295,6.849h-7.6a.824.824,0,0,0-.821.821.6.6,0,0,0,.015.139.789.789,0,0,0,.344.58l6.207,4.374L6.434,23.608a.824.824,0,0,0,.282.924.794.794,0,0,0,.462.2,1.006,1.006,0,0,0,.513-.185L13.75,20.23l6.058,4.318a.962.962,0,0,0,.513.185.738.738,0,0,0,.457-.2.814.814,0,0,0,.282-.924l-2.382-6.926,6.156-4.415.149-.128a.861.861,0,0,0,.267-.549A.869.869,0,0,0,24.378,10.768Z"
-                  transform="translate(-1.75 -2.875)"
-                  fill="#eadd45"
-                  stroke="#eadd45"
-                  stroke-width="1"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24.001"
-                height="22.358"
-                viewBox="0 0 24.001 22.358"
-              >
-                <path
-                  id="Icon_ionic-ios-star"
-                  data-name="Icon ionic-ios-star"
-                  d="M24.378,10.768H16.826L14.531,3.919a.832.832,0,0,0-1.561,0l-2.295,6.849h-7.6a.824.824,0,0,0-.821.821.6.6,0,0,0,.015.139.789.789,0,0,0,.344.58l6.207,4.374L6.434,23.608a.824.824,0,0,0,.282.924.794.794,0,0,0,.462.2,1.006,1.006,0,0,0,.513-.185L13.75,20.23l6.058,4.318a.962.962,0,0,0,.513.185.738.738,0,0,0,.457-.2.814.814,0,0,0,.282-.924l-2.382-6.926,6.156-4.415.149-.128a.861.861,0,0,0,.267-.549A.869.869,0,0,0,24.378,10.768Z"
-                  transform="translate(-1.75 -2.875)"
-                  fill="#eadd45"
-                  stroke="#eadd45"
-                  stroke-width="1"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24.001"
-                height="22.358"
-                viewBox="0 0 24.001 22.358"
-              >
-                <path
-                  id="Icon_ionic-ios-star"
-                  data-name="Icon ionic-ios-star"
-                  d="M24.378,10.768H16.826L14.531,3.919a.832.832,0,0,0-1.561,0l-2.295,6.849h-7.6a.824.824,0,0,0-.821.821.6.6,0,0,0,.015.139.789.789,0,0,0,.344.58l6.207,4.374L6.434,23.608a.824.824,0,0,0,.282.924.794.794,0,0,0,.462.2,1.006,1.006,0,0,0,.513-.185L13.75,20.23l6.058,4.318a.962.962,0,0,0,.513.185.738.738,0,0,0,.457-.2.814.814,0,0,0,.282-.924l-2.382-6.926,6.156-4.415.149-.128a.861.861,0,0,0,.267-.549A.869.869,0,0,0,24.378,10.768Z"
-                  transform="translate(-1.75 -2.875)"
-                  fill="#eadd45"
-                  stroke="#eadd45"
-                  stroke-width="1"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24.001"
-                height="22.358"
-                viewBox="0 0 24.001 22.358"
-              >
-                <path
-                  id="Icon_ionic-ios-star"
-                  data-name="Icon ionic-ios-star"
-                  d="M24.378,10.768H16.826L14.531,3.919a.832.832,0,0,0-1.561,0l-2.295,6.849h-7.6a.824.824,0,0,0-.821.821.6.6,0,0,0,.015.139.789.789,0,0,0,.344.58l6.207,4.374L6.434,23.608a.824.824,0,0,0,.282.924.794.794,0,0,0,.462.2,1.006,1.006,0,0,0,.513-.185L13.75,20.23l6.058,4.318a.962.962,0,0,0,.513.185.738.738,0,0,0,.457-.2.814.814,0,0,0,.282-.924l-2.382-6.926,6.156-4.415.149-.128a.861.861,0,0,0,.267-.549A.869.869,0,0,0,24.378,10.768Z"
-                  transform="translate(-1.75 -2.875)"
-                  fill="#eadd45"
-                  stroke="#eadd45"
-                  stroke-width="1"
-                />
-              </svg>
+              <Rating
+                value={!!totaleFeedback ? totaleFeedback : 0}
+                precision={0.5}
+                readOnly
+              />
             </div>
             <Link
               to="/chat"

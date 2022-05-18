@@ -9,3 +9,8 @@ export interface IDettagliProfessionista {
 export interface IRisposta {
   ris: number;
 }
+
+export interface IFeedback {
+  id_professionista: string;
+  voto: number;
+}
