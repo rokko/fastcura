@@ -40,7 +40,10 @@ const ProfiloProfessionista = () => {
       voto: value,
     };
     axios
-      .post("http://localhost:8080/cliente/inserisci-feedback", prof)
+      .post(
+        "https://fastcuradev.herokuapp.com/cliente/inserisci-feedback",
+        prof
+      )
       .then((response: any) => {
         if (response.data.message === 1) {
           setAvatar(response.data.avatar.posizione);
@@ -54,7 +57,7 @@ const ProfiloProfessionista = () => {
       id_professionista: ValoriParametri._id,
     };
     axios
-      .post("http://localhost:8080/cliente/ottieni-feedback", prof)
+      .post("https://fastcuradev.herokuapp.com/cliente/ottieni-feedback", prof)
       .then((response: any) => {
         setVoti(response.data);
       });
