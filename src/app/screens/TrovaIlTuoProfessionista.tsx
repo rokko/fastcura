@@ -98,9 +98,7 @@ const TrovaIlTuoProfessionista = () => {
               marginTop: "100px",
             }}
           >
-            <Fade direction={"right"}>
-              <BoxSearch />
-            </Fade>
+            <BoxSearch />
 
             <Lavagna />
 
