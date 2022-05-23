@@ -240,7 +240,8 @@ const ChatProfessionista = () => {
           <Box
             id="boxchat"
             style={{
-              height: "500px",
+              overflowX: "hidden",
+              height: "400px",
               overflowY: "scroll",
               marginTop: 30,
               width: "100%",
