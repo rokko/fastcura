@@ -11,6 +11,7 @@ import { Snackbar } from "@mui/material";
 import ModalPosizione from "./ModalPosizione";
 import mappeImmagine from "../../../media/location.gif";
 import ModalTelefono from "./ModalTelefono";
+import { suppressDeprecationWarnings } from "moment";
 
 interface IChat {
   sender: string;
@@ -154,7 +155,7 @@ const ChatProfessionista = () => {
   const recuperaChat = () => {
     const cont = {
       contatti_id: io,
-       id: idinvio
+      id: idinvio,
     };
 
     axios
@@ -251,8 +252,8 @@ const ChatProfessionista = () => {
               chat.map((x: any, k: any) => {
                 if (k == chat.length - 1) {
                   if (k !== lastmessage) {
-                    vaiallafine();
                     setLastmessage(k);
+                    setTimeout(vaiallafine, 1000);
                   }
                 }
                 if (x.message.substr(0, 3) == "tel") {

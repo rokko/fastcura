@@ -128,8 +128,8 @@ const PaginaChat = () => {
             chat.map((x, k) => {
               if (k == chat.length - 1) {
                 if (k !== lastmessage) {
-                  vaiallafine();
                   setLastmessage(k);
+                  setTimeout(vaiallafine, 1000);
                 }
               }
               if (x.message.substr(0, 3) == "tel") {
