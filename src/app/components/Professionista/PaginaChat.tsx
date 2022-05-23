@@ -117,7 +117,7 @@ const PaginaChat = () => {
           id="boxchat"
           style={{
             overflowX: "hidden",
-            height: "400px",
+            maxHeight: "400px",
             overflowY: "scroll",
             marginTop: 30,
             width: "100%",
@@ -270,7 +270,7 @@ const PaginaChat = () => {
             display: "flex",
             flexDirection: "row",
             alignContent: "center",
-            position: "fixed",
+            position: "absolute",
             height: "10%",
             bottom: "0%",
             left: "0%",
