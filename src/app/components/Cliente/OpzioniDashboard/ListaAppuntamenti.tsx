@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AccordionPrestazioni from "../../Professionista/AccordionPrestazioni";
-
+import { Loader } from "../../../loader";
 
 interface Iprestazione {
   data: Date;
@@ -12,6 +12,7 @@ interface Iprestazione {
   totale: number;
 }
 const ListaAppuntamenti = () => {
+  const [load, setLoad] = useState(false);
   const [token, setToken] = useState("");
   const [prestazioni, setPrestazioni] = useState<Iprestazione[]>();
   const takeToken = async () => {
@@ -20,11 +21,13 @@ const ListaAppuntamenti = () => {
   };
 
   useEffect(() => {
+    setLoad(true);
     takeToken();
     if (!!token) recuperaPrestazioni();
   }, [token]);
   //   const [listaPrestazioni, setListaPrestazioni] = useState()
   const recuperaPrestazioni = () => {
+    setLoad(true);
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
@@ -35,7 +38,7 @@ const ListaAppuntamenti = () => {
         config
       )
       .then(function (response) {
-        console.log(response);
+        setLoad(false);
         setPrestazioni(response.data);
       })
       .catch(function (error) {
@@ -43,13 +46,13 @@ const ListaAppuntamenti = () => {
       });
   };
 
-
-
   return (
     <>
+      <Loader isLoading={load} />
       <Box style={{ height: 30, width: "100%" }}>
-        {  // @ts-ignore
-          (prestazioni?.length === 0) && <p>Nessun appuntamento fissato</p>
+        {
+          // @ts-ignore
+          prestazioni?.length === 0 && <p>Nessun appuntamento fissato</p>
         }
         {prestazioni?.map((prestazione: any) => {
           return <AccordionPrestazioni prestazione={prestazione} />;

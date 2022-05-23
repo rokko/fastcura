@@ -2,6 +2,7 @@ import { Autocomplete, Box, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Loader } from "../../loader";
 import AggiornaCurriculum from "../Professionista/AggiornaCurriculum";
 import CronologiaPrestazioni from "../Professionista/CronologiaPrestazioni";
 import PianoAbbonamento from "../Professionista/PianoAbbonamento";
@@ -76,6 +77,7 @@ const DashBoardUtenti = () => {
 
   return (
     <>
+      <Loader isLoading={load} />
       <HeaderUser />
       <div
         style={{

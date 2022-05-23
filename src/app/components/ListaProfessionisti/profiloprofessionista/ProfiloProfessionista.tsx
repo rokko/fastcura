@@ -15,6 +15,7 @@ import {
   TotalContainer,
 } from "./styled";
 import { useMemo } from "react";
+import { Loader } from "../../../loader";
 
 const ProfiloProfessionista = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const ProfiloProfessionista = () => {
   const [feedback, setFeedback] = useState(0);
   const [voto, setVoto] = useState();
   const [voti, setVoti] = useState<IFeedback[]>();
+  const [load, setLoad] = useState(false);
 
   let ValoriParametri = location.state as any;
   const professio: IDettagliProfessionista = {
@@ -96,13 +98,17 @@ const ProfiloProfessionista = () => {
     recuperaFeedback();
   }, []);
   const recuperaCurriculum = () => {
+    setLoad(true);
     const valore = {
       idprofessionista: ValoriParametri._id,
     };
 
     axios
       .post("https://fastcuradev.herokuapp.com/cliente/infocurriculum", valore)
-      .then((res) => setRisposta(res.data));
+      .then((res) => {
+        setLoad(false);
+        setRisposta(res.data);
+      });
   };
   useEffect(() => {
     recuperaCurriculum();
@@ -110,6 +116,7 @@ const ProfiloProfessionista = () => {
 
   return (
     <>
+      <Loader isLoading={load} />
       <HeaderNoLogin />
       <TotalContainer>
         <SecondContainer>

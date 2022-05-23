@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../context/Context";
+import { Loader } from "../../loader";
 
 interface ICliente {
   codicepostale: string;
@@ -88,6 +89,7 @@ const BoxChat = (props: any) => {
 
   return (
     <>
+      <Loader isLoading={load} />
       <div
         onClick={() =>
           navigate("/chat", { state: { contatto: props.contatto } })

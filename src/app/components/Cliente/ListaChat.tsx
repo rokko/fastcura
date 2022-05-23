@@ -62,6 +62,7 @@ const ListaChat = () => {
   };
 
   const requestInfo = async () => {
+    setLoad(true);
     if (token !== "") {
       const config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -70,6 +71,7 @@ const ListaChat = () => {
       axios
         .get("https://fastcuradev.herokuapp.com/cliente/info", config)
         .then((response: any) => {
+          setLoad(false);
           setUtente(response.data);
         })
         .catch((e: any) => console.error(e));
@@ -82,9 +84,9 @@ const ListaChat = () => {
     requestContatti();
   }, [token]);
 
-  if (load) return <Loader />;
   return (
     <>
+      <Loader isLoading={load} />
       <HeaderUser />
 
       <div style={{ width: "100%" }}>
