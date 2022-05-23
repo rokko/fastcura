@@ -401,7 +401,7 @@ const ChatProfessionista = () => {
               display: "flex",
               flexDirection: "row",
               alignContent: "center",
-              position: "absolute",
+              position: "fixed",
               backgroundColor: "white",
               bottom: "0%",
               left: "0%",

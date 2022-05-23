@@ -270,7 +270,7 @@ const PaginaChat = () => {
             display: "flex",
             flexDirection: "row",
             alignContent: "center",
-            position: "absolute",
+            position: "fixed",
             height: "10%",
             bottom: "0%",
             left: "0%",
