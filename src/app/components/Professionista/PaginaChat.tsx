@@ -275,6 +275,8 @@ const PaginaChat = () => {
             bottom: "0%",
             left: "0%",
             right: "0%",
+            backgroundColor: "white",
+            zIndex: 99999,
           }}
         >
           <TextField

@@ -402,9 +402,11 @@ const ChatProfessionista = () => {
               flexDirection: "row",
               alignContent: "center",
               position: "fixed",
+              backgroundColor: "white",
               bottom: "0%",
               left: "0%",
               right: "0%",
+              zIndex: 999999,
             }}
           >
             <TextField
