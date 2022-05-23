@@ -10,6 +10,7 @@ import axios from "axios";
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 const SignUpProfessionista = () => {
   const navigate = useNavigate();
@@ -44,14 +45,14 @@ const SignUpProfessionista = () => {
   const sess = ["Uomo", "Donna"];
   const citt = ["Bari", "Napoli", "Salerno", "Roma", "Milano", "Bologna"];
 
-  const validatePassword = () => {
+  const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
     if (password?.match(check)) {
       return true;
     } else {
       return false;
     }
-  };
+  }, [password]);
 
   const nuovoProfessionista = {
     cognome: cognome,
@@ -137,6 +138,12 @@ const SignUpProfessionista = () => {
               type={"password"}
               label="Password"
             ></TextField>
+            {!validatePassword && (
+              <p style={{ maxWidth: 310, fontSize: "12px" }}>
+                Attenzione la password deve essere lunga 8 caratterei, contenere
+                almeno una lettera maiuscola un numero e un carattere speciale{" "}
+              </p>
+            )}
             <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setData(x.target.value)
@@ -341,7 +348,7 @@ const SignUpProfessionista = () => {
               !!data &&
               !!sesso &&
               !!citta &&
-              validatePassword()
+              validatePassword
                 ? false
                 : true
             }
@@ -634,6 +641,13 @@ const SignUpProfessionista = () => {
                 type={"password"}
                 label="Password"
               ></TextField>
+              {!validatePassword && (
+                <p style={{ maxWidth: 310, fontSize: "12px" }}>
+                  Attenzione la password deve essere lunga 8 caratterei,
+                  contenere almeno una lettera maiuscola un numero e un
+                  carattere speciale{" "}
+                </p>
+              )}
               <TextField
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setData(x.target.value)
@@ -848,7 +862,7 @@ const SignUpProfessionista = () => {
                   !!data &&
                   !!sesso &&
                   !!citta &&
-                  validatePassword()
+                  validatePassword
                     ? false
                     : true
                 }

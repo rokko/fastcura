@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
+import { useMemo } from "react";
 
 interface IToken {
   accessToken: string;
@@ -42,14 +43,14 @@ const SignUpClient = () => {
     cellulare: cellulare,
   };
 
-  const validatePassword = () => {
+  const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
     if (password?.match(check)) {
       return true;
     } else {
       return false;
     }
-  };
+  }, [password]);
   const loginUser = (userlogin: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
@@ -125,6 +126,12 @@ const SignUpClient = () => {
               label="Password"
               type={"password"}
             ></TextField>
+            {!validatePassword && (
+              <p style={{ maxWidth: 310, fontSize: "12px" }}>
+                Attenzione la password deve essere lunga 8 caratterei, contenere
+                almeno una lettera maiuscola un numero e un carattere speciale{" "}
+              </p>
+            )}
             <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setData(x.target.value)
@@ -191,7 +198,7 @@ const SignUpClient = () => {
               !!cellulare &&
               !!handleCheck &&
               !!handleCheck2 &&
-              !!validatePassword()
+              !!validatePassword
                 ? false
                 : true
             }
@@ -398,6 +405,13 @@ const SignUpClient = () => {
                 label="Password"
                 type={"password"}
               ></TextField>
+              {!validatePassword && (
+                <p style={{ maxWidth: 310, fontSize: "12px" }}>
+                  Attenzione la password deve essere lunga 8 caratterei,
+                  contenere almeno una lettera maiuscola un numero e un
+                  carattere speciale{" "}
+                </p>
+              )}
               <TextField
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setData(x.target.value)
@@ -468,7 +482,7 @@ const SignUpClient = () => {
                   !!cellulare &&
                   !!handleCheck &&
                   !!handleCheck2 &&
-                  !!validatePassword()
+                  !!validatePassword
                     ? false
                     : true
                 }
