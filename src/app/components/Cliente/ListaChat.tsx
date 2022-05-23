@@ -5,6 +5,7 @@ import HeaderChat from "../General/Chat/HeaderChat";
 import Header from "./Header";
 import BoxChat from "./BoxChat";
 import HeaderUser from "./HeaderUser";
+import { Loader } from "../../loader";
 
 interface IUtente {
   nome: string;
@@ -34,6 +35,7 @@ const ListaChat = () => {
   const [token, setToken] = useState("");
   const [utente, setUtente] = useState<IDettagliProfessionista>();
   const [contatti, setContatti] = useState([]);
+  const [load, setLoad] = useState(false);
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -41,6 +43,7 @@ const ListaChat = () => {
   };
 
   const requestContatti = async () => {
+    setLoad(true);
     if (token !== "") {
       const config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -51,7 +54,10 @@ const ListaChat = () => {
           {},
           config
         )
-        .then((x) => setContatti(x.data));
+        .then((x) => {
+          setContatti(x.data);
+          setLoad(false);
+        });
     }
   };
 
@@ -76,6 +82,7 @@ const ListaChat = () => {
     requestContatti();
   }, [token]);
 
+  if (load) return <Loader />;
   return (
     <>
       <HeaderUser />

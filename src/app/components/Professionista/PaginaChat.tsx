@@ -40,7 +40,7 @@ const PaginaChat = () => {
   const recuperaChat = async () => {
     const cont = {
       contatti_id: id,
-        id:idinvio,
+      id: idinvio,
     };
     const config = {
       headers: { Authorization: `Bearer ${token}` },

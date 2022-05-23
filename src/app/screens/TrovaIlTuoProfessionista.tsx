@@ -13,6 +13,7 @@ import SeiNuovo from "../components/TrovaIlTuoProfessionista/SeiNuovo";
 import { Fade } from "react-awesome-reveal";
 import Footer from "../components/General/Footer";
 import { AppContext } from "../context/Context";
+import { Loader } from "../loader";
 
 const TrovaIlTuoProfessionista = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });

@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import { Alert, Snackbar, TextField } from "@mui/material";
 import axios from "axios";
 import { truncate } from "fs";
+import { Loader } from "../../loader";
 
 interface ICurriculum {
   titolodistudio: string;
@@ -21,8 +22,9 @@ const AggiornaCurriculum = () => {
   const [curriculum, setCurriculum] = useState<ICurriculum>();
   const [load, setLoad] = useState(false);
   const [ok, setOk] = useState(false);
+  const [caricamento, setCaricamento] = useState(false);
   const ottieniCurriculum = () => {
-    console.log("ciao");
+    setCaricamento(true);
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
@@ -40,6 +42,7 @@ const AggiornaCurriculum = () => {
         setNumeroOrdine(curriculum?.numeroiscrizione);
         setEsperienze(curriculum?.esperienze);
         setAltro(curriculum?.altro);
+        setCaricamento(false);
       })
       .then(() => {
         setLoad(true);
@@ -62,6 +65,7 @@ const AggiornaCurriculum = () => {
   };
 
   const salvaCurriculum = () => {
+    setCaricamento(true);
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
@@ -71,12 +75,12 @@ const AggiornaCurriculum = () => {
         curriculumaggiornato,
         config
       )
-      .then((res) => console.log(res));
+      .then((res) => setCaricamento(false));
     ottieniCurriculum();
     setOk(true);
   };
 
-  if (!load) return null;
+  if (!load || caricamento) return <Loader />;
   else
     return (
       <>
