@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import VerticalMenu from "../Professionista/VerticalMenu";
 import axios from "axios";
-import {AppContext} from "../../context/Context";
+import { AppContext } from "../../context/Context";
 interface IUtente {
   nome: string;
   cognome: string;
@@ -18,8 +18,7 @@ interface IUtente {
   _id: string;
 }
 const HeaderUser = () => {
-
-    const statte = useContext(AppContext)
+  const statte = useContext(AppContext);
   const [open, setOpen] = useState(false);
   const [token, setToken] = useState("");
   const [utente, setUtente] = useState<IUtente>();
@@ -136,31 +135,35 @@ const HeaderUser = () => {
           }}
         >
           <Link to="/chatcliente">
-              {!!statte?.noti && <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACLUlEQVRoge2av04bQRCHP+OzaAwvkDcg0EZKkQ47RQxpyFtYDhilSEVjuQgdTR4AUkXKAyAFpFBCCY6xIpEmdQqTIki2KXYvPuy9vV0DuSn2k1ZnaWZ256f9c3N3hkAg4MsacAxcAyNh7Ro4AmpZItoCknVtrTQRawKS823GmTkWkJhv+xonX0gI6QNlk0LB9IFFuCtklE8u96YAMJd3Fg9FECKNIEQaQYg0ghBpBCHSCEKkEYRIIwiRRhAijSBEGkHII3IBbAHLqPdsZf27CXRcOuiT71vDv0AdKFpyLAIN4CYRN8VRziJWLQImqSTEvJo01nIUUvcQEfNWx14B0aSxlYOIc6aXUwmoAh+BXylCItSeGQFvTA411Fvu/7VnNg05/J7wSaOp7Z8sPkZ6Dom5LpOu9l8y2N4Dz8kWsqztPxzH/Md37CJ+AvOOfcUzbvuUkSVkQdv/+NxHIuBJhs871AnkQpxgwerlxsDH+QX22djzHDxeWk8tPq5Lq+s6I0Vg12L/Amw79hVzpq9Vz7gkL/X11MW5DHzGPAsD4AOzlTobuo8L0u/mthmJGO/ZDZcBv2EWcQI8c83aQInxKdiYIX5Lx/Z0X5kcoj7UX6LuLzvAygwDm3gNDFHlRsUjrqpjhsD6A+Vyb+I/Kdygyo6pciNBhJqJuM5qP3p2HsyhEhoy3jNNpsv4bcYlyVDHSHwMYR23yqGHoOWURgl1Ah2gTqS+bh1gX9uMG/sWav/QuX1/bP8AAAAASUVORK5CYII="/>}
-              {! statte?.noti &&<svg
-              style={{ marginRight: "10px" }}
-              id="Icon_ionic-md-chatbubbles"
-              data-name="Icon ionic-md-chatbubbles"
-              xmlns="http://www.w3.org/2000/svg"
-              width="28.056"
-              height="28.056"
-              viewBox="0 0 28.056 28.056"
-            >
-              <path
-                id="Tracciato_100"
-                data-name="Tracciato 100"
-                d="M9.094,25.278a3.52,3.52,0,0,1-3.021-3.021V11.25H5.425a2.058,2.058,0,0,0-2.05,2.05V31.752L7.32,27.841H21.827a2.083,2.083,0,0,0,2.05-2.084v-.479Z"
-                transform="translate(-3.375 -3.697)"
-                fill="#fff"
-              />
-              <path
-                id="Tracciato_101"
-                data-name="Tracciato 101"
-                d="M29.269,3.375H10.44A2.36,2.36,0,0,0,8.086,5.729V20.977a2.366,2.366,0,0,0,2.354,2.36H26.5l5.119,3.574V5.729A2.36,2.36,0,0,0,29.269,3.375Z"
-                transform="translate(-3.567 -3.375)"
-                fill="#fff"
-              />
-            </svg>}
+            {!!statte?.noti && (
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACLUlEQVRoge2av04bQRCHP+OzaAwvkDcg0EZKkQ47RQxpyFtYDhilSEVjuQgdTR4AUkXKAyAFpFBCCY6xIpEmdQqTIki2KXYvPuy9vV0DuSn2k1ZnaWZ256f9c3N3hkAg4MsacAxcAyNh7Ro4AmpZItoCknVtrTQRawKS823GmTkWkJhv+xonX0gI6QNlk0LB9IFFuCtklE8u96YAMJd3Fg9FECKNIEQaQYg0ghBpBCHSCEKkEYRIIwiRRhAijSBEGkHII3IBbAHLqPdsZf27CXRcOuiT71vDv0AdKFpyLAIN4CYRN8VRziJWLQImqSTEvJo01nIUUvcQEfNWx14B0aSxlYOIc6aXUwmoAh+BXylCItSeGQFvTA411Fvu/7VnNg05/J7wSaOp7Z8sPkZ6Dom5LpOu9l8y2N4Dz8kWsqztPxzH/Md37CJ+AvOOfcUzbvuUkSVkQdv/+NxHIuBJhs871AnkQpxgwerlxsDH+QX22djzHDxeWk8tPq5Lq+s6I0Vg12L/Amw79hVzpq9Vz7gkL/X11MW5DHzGPAsD4AOzlTobuo8L0u/mthmJGO/ZDZcBv2EWcQI8c83aQInxKdiYIX5Lx/Z0X5kcoj7UX6LuLzvAygwDm3gNDFHlRsUjrqpjhsD6A+Vyb+I/Kdygyo6pciNBhJqJuM5qP3p2HsyhEhoy3jNNpsv4bcYlyVDHSHwMYR23yqGHoOWURgl1Ah2gTqS+bh1gX9uMG/sWav/QuX1/bP8AAAAASUVORK5CYII=" />
+            )}
+            {!statte?.noti && (
+              <svg
+                style={{ marginRight: "10px" }}
+                id="Icon_ionic-md-chatbubbles"
+                data-name="Icon ionic-md-chatbubbles"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28.056"
+                height="28.056"
+                viewBox="0 0 28.056 28.056"
+              >
+                <path
+                  id="Tracciato_100"
+                  data-name="Tracciato 100"
+                  d="M9.094,25.278a3.52,3.52,0,0,1-3.021-3.021V11.25H5.425a2.058,2.058,0,0,0-2.05,2.05V31.752L7.32,27.841H21.827a2.083,2.083,0,0,0,2.05-2.084v-.479Z"
+                  transform="translate(-3.375 -3.697)"
+                  fill="#fff"
+                />
+                <path
+                  id="Tracciato_101"
+                  data-name="Tracciato 101"
+                  d="M29.269,3.375H10.44A2.36,2.36,0,0,0,8.086,5.729V20.977a2.366,2.366,0,0,0,2.354,2.36H26.5l5.119,3.574V5.729A2.36,2.36,0,0,0,29.269,3.375Z"
+                  transform="translate(-3.567 -3.375)"
+                  fill="#fff"
+                />
+              </svg>
+            )}
           </Link>
 
           <div onClick={() => setOpen(!open)}>
@@ -181,6 +184,8 @@ const HeaderUser = () => {
                   color: "rgb(57, 177, 217)",
                   fontSize: "20px",
                   marginRight: "5px",
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
                 {utente?.nome.charAt(0)} {utente?.cognome.charAt(0)}
