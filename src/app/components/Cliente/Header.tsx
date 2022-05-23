@@ -124,7 +124,15 @@ const Header = () => {
         </Link>
 
         <div style={{ marginRight: "20px" }}>
-          <p style={{ color: "white", fontSize: "20px", marginRight: "5px" }}>
+          <p
+            style={{
+              color: "white",
+              fontSize: "20px",
+              marginRight: "5px",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
             {utente?.nome.charAt(0)}. {utente?.cognome.charAt(0)}.
           </p>
 

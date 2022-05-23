@@ -178,6 +178,8 @@ const HeaderNoLogin = () => {
                     color: "rgb(57, 177, 217)",
                     fontSize: "20px",
                     marginRight: "5px",
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
                   {utente?.nome.charAt(0)}

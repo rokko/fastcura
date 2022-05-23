@@ -257,6 +257,8 @@ const Header = () => {
                     color: "white",
                     fontSize: "20px",
                     marginRight: "5px",
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
                   {utente?.nome.charAt(0)}
