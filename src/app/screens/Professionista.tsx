@@ -6,6 +6,7 @@ import PianoAbbonamento from "../components/Professionista/PianoAbbonamento";
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import axios from "axios";
+import { Loader } from "../loader";
 
 interface IUtente {
   nome: string;
@@ -27,6 +28,7 @@ const Professionista = () => {
   const [avatar, setAvatar] = useState<any>();
   const [file, setFile] = useState<any>();
   const [url, setUrl] = useState<string>("");
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     const config = {
@@ -106,7 +108,7 @@ const Professionista = () => {
     );
   };
   const requestinfo = async () => {
-    console.log("ciao");
+    setLoad(true);
     if (!!token) {
       const config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -119,9 +121,8 @@ const Professionista = () => {
           config
         )
         .then((response) => {
-          console.log(response);
-          console.log(response.data);
           setUtente(response.data);
+          setLoad(false);
         })
         .catch((e) => console.error(e));
 
@@ -149,6 +150,7 @@ const Professionista = () => {
 
   return (
     <>
+      <Loader isLoading={load} />
       <Header />
       <div
         style={{

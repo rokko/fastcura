@@ -37,9 +37,10 @@ const AccordionPrestazioni = (prestazione: any) => {
         setLoad(false);
       });
   };
-  if (load) return <Loader />;
+
   return (
     <>
+      <Loader isLoading={load} />
       <div>
         <MuiAccordion
           expanded={expanded === "panel1"}

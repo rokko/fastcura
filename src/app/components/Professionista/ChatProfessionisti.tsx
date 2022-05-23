@@ -41,6 +41,7 @@ const ChatProfessionisti = () => {
   };
 
   const requestContatti = async () => {
+    setLoad(true);
     if (token !== "") {
       const config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -51,7 +52,10 @@ const ChatProfessionisti = () => {
           {},
           config
         )
-        .then((x) => setContatti(x.data));
+        .then((x) => {
+          setContatti(x.data);
+          setLoad(false);
+        });
     }
   };
 

@@ -21,7 +21,6 @@ const BoxChat = (props: any) => {
   const [chat, setChat] = useState<any>();
   const [load, setLoad] = useState(false);
   const aggiorna = () => {
-    setLoad(false);
     recuperaChat();
     setTimeout(aggiorna, 1000);
   };
@@ -32,7 +31,10 @@ const BoxChat = (props: any) => {
 
     axios
       .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
-      .then((x) => setChat(x.data));
+      .then((x) => {
+        setLoad(false);
+        setChat(x.data);
+      });
     if (!!chat) {
       const test = chat.filter(
         (x: any) =>
@@ -62,9 +64,9 @@ const BoxChat = (props: any) => {
     aggiorna();
     recuperaInfo();
   }, []);
-  if (load) return <Loader />;
   return (
     <>
+      <Loader isLoading={load} />
       <div
         onClick={() =>
           navigate("/chatmessage", { state: { contatto: props.contatto } })

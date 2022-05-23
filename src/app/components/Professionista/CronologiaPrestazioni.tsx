@@ -44,9 +44,9 @@ const CronologiaPrestazioni = () => {
       });
   };
 
-  if (load) return <Loader />;
   return (
     <>
+      <Loader isLoading={load} />
       <Box style={{ height: 30, width: "100%" }}>
         {prestazioni?.length === 0 && <p>Nessun appuntamento fissato</p>}
 
