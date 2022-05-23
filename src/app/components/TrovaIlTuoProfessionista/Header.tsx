@@ -23,14 +23,21 @@ const Header = () => {
   };
 
   const takeUtente = async () => {
+    console.log("ci sono");
     if (token !== "") {
+      console.log("vero");
       const config = {
         headers: { Authorization: `Bearer ${token}` },
       };
 
       axios
-        .get("https://fastcuradev.herokuapp.com/professionista/info", config)
+        .post(
+          "https://fastcuradev.herokuapp.com/professionista/info2",
+          {},
+          config
+        )
         .then((response: any) => {
+          console.log(response);
           setUtente(response.data);
         })
         .catch((e: any) => console.error(e));
