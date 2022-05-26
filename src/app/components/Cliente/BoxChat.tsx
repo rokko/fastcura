@@ -136,8 +136,17 @@ const BoxChat = (props: any) => {
             {infocliente?.cognome}
           </p>
         </div>
-        <p style={{ color: "blue", width: "40%", textAlign: "left" }}>
-          {!!chat ? chat[chat.length - 1]?.message : "Nessun Messaggio"}
+        <p
+          style={{
+            color:
+              chat && chat[chat?.length - 1]?.ricreader === false
+                ? "rgb(57, 177, 217)"
+                : "",
+            width: "40%",
+            textAlign: "left",
+          }}
+        >
+          {(!!chat && chat[chat.length - 1]?.message) || "Nessun Messaggio"}
         </p>
       </div>
     </>

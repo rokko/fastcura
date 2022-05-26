@@ -104,14 +104,17 @@ const BoxChat = (props: any) => {
         </div>
         <p
           style={{
-            color: "blue",
+            color:
+              chat && chat[chat?.length - 1]?.ricreader === false
+                ? "rgb(57, 177, 217)"
+                : "",
             width: "40%",
             textAlign: "left",
             marginLeft: "5px",
             overflow: "hidden",
           }}
         >
-          {!!chat ? chat[chat.length - 1]?.message : "Nessun Messaggio"}
+          {!!chat && (chat[chat.length - 1]?.message || "Nessun Messaggio")}
         </p>
       </div>
     </>

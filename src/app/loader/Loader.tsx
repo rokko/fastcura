@@ -11,7 +11,7 @@ const Loader = ({ isLoading }: ILoader) => {
       <>
         <div
           style={{
-            background: "rgb(255, 255, 255, 0.5)",
+            backgroundColor: "rgb(148, 155, 160,0.5)",
             height: "100%",
             left: "0",
             position: "fixed",
@@ -23,7 +23,7 @@ const Loader = ({ isLoading }: ILoader) => {
             justifyContent: "center",
           }}
         >
-          <img src={loaderImage} width={"300px"} />
+          <img src={loaderImage} alt={"loader"} width={"300px"} />
         </div>
       </>
     );
