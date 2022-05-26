@@ -129,11 +129,7 @@ const BoxChat = (props: any) => {
           }}
         >
           <p style={{ fontSize: "14px", fontWeight: "bold" }}>
-            {infocliente?.nome}{" "}
-          </p>
-          <p style={{ fontSize: "14px", fontWeight: "bold" }}>
-            {" "}
-            {infocliente?.cognome}
+            {infocliente?.nome} {infocliente?.cognome}
           </p>
         </div>
         <p
