@@ -52,7 +52,7 @@ const HeaderUser = () => {
   }, [token]);
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Box
         style={{
           width: "100%",
@@ -195,7 +195,7 @@ const HeaderUser = () => {
         </div>
       </Box>
       <VerticalMenu open={open} />
-    </>
+    </div>
   );
 };
 
