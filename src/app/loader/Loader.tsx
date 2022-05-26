@@ -11,7 +11,7 @@ const Loader = ({ isLoading }: ILoader) => {
       <>
         <div
           style={{
-            backgroundColor: "rgb(148, 155, 160,0.5)",
+            backgroundColor: "rgb(255, 255, 255,0.5)",
             height: "100%",
             left: "0",
             position: "fixed",
