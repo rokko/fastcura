@@ -124,11 +124,18 @@ const BoxChat = (props: any) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            width: "20%",
+            width: "30%",
             overflow: "hidden",
           }}
         >
-          <p style={{ fontSize: "14px", fontWeight: "bold" }}>
+          <p
+            style={{
+              fontSize: "14px",
+              fontWeight: "bold",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
             {infocliente?.nome} {infocliente?.cognome}
           </p>
         </div>
