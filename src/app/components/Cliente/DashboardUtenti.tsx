@@ -101,6 +101,7 @@ const DashBoardUtenti = () => {
             alignItems: "center",
             alignContent: "center",
             justifyContent: "center",
+            zIndex: 110000,
           }}
         >
           <div onClick={openNewPhoto}>
