@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
 import BoxSearch from "../components/TrovaIlTuoProfessionista/BoxSearch";
@@ -14,8 +14,18 @@ import { Fade } from "react-awesome-reveal";
 import Footer from "../components/General/Footer";
 import { AppContext } from "../context/Context";
 import { Loader } from "../loader";
+import { useEffect } from "react";
 
 const TrovaIlTuoProfessionista = () => {
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    takeToken();
+  }, []);
+
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    if (!!tokenTest) setToken(tokenTest);
+  };
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   if (!isMobile)
     return (
@@ -71,7 +81,7 @@ const TrovaIlTuoProfessionista = () => {
                     justifyContent: "space-around",
                   }}
                 >
-                  <Login />
+                  {token === "" && <Login />}
                   <SeiNuovo />
                 </div>
               </div>
@@ -113,7 +123,7 @@ const TrovaIlTuoProfessionista = () => {
 
             <SeiUnProfessionista />
 
-            <Login />
+            {token === "" && <Login />}
 
             <SeiNuovo />
           </div>
