@@ -174,6 +174,7 @@ const Professionista = () => {
             alignItems: "center",
             alignContent: "center",
             justifyContent: "center",
+            zIndex: 100000,
           }}
         >
           {!avatar && (

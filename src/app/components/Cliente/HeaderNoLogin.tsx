@@ -69,7 +69,7 @@ const HeaderNoLogin = () => {
   }, [token]);
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Box
         style={{
           width: "100%",
@@ -259,7 +259,7 @@ const HeaderNoLogin = () => {
       </Box>
       <Confir open={ok} message={"Login Effettuato"} setOpen={setOk} />
       <VerticalMenu open={open} />
-    </>
+    </div>
   );
 };
 

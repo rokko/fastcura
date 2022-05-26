@@ -63,7 +63,7 @@ const Header = () => {
     takeUtente();
   }, [token]);
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <div
         style={
           isMobile
@@ -334,7 +334,7 @@ const Header = () => {
         </Alert>
       </Snackbar>
       <VerticalMenu open={open} />
-    </>
+    </div>
   );
 };
 
