@@ -127,7 +127,7 @@ const Header = () => {
           <p
             style={{
               color: "white",
-              fontSize: "20px",
+              fontSize: "16px",
               marginRight: "5px",
               display: "flex",
               flexDirection: "row",

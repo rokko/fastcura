@@ -182,7 +182,7 @@ const HeaderUser = () => {
               <p
                 style={{
                   color: "rgb(57, 177, 217)",
-                  fontSize: "20px",
+                  fontSize: "16px",
                   marginRight: "5px",
                   display: "flex",
                   flexDirection: "row",

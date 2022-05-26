@@ -198,9 +198,10 @@ const Professionista = () => {
             <UploadPhoto />{" "}
           </>
         )}
-        {console.log(utente)}
         {!!utente && (
-          <p style={{ fontSize: "20px" }}>
+          <p
+            style={{ fontSize: "15px", display: "flex", flexDirection: "row" }}
+          >
             {utente!.nome} {utente!.cognome}
           </p>
         )}

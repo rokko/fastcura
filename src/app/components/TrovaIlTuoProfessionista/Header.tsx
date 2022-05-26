@@ -23,9 +23,7 @@ const Header = () => {
   };
 
   const takeUtente = async () => {
-    console.log("ci sono");
     if (token !== "") {
-      console.log("vero");
       const config = {
         headers: { Authorization: `Bearer ${token}` },
       };
@@ -255,7 +253,7 @@ const Header = () => {
                 <p
                   style={{
                     color: "white",
-                    fontSize: "20px",
+                    fontSize: "16px",
                     marginRight: "5px",
                     display: "flex",
                     flexDirection: "row",
