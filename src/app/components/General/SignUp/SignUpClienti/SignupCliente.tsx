@@ -128,8 +128,9 @@ const SignUpClient = () => {
             ></TextField>
             {!validatePassword && (
               <p style={{ maxWidth: 310, fontSize: "12px" }}>
-                Attenzione la password deve essere lunga 8 caratterei, contenere
-                almeno una lettera maiuscola un numero e un carattere speciale{" "}
+                Attenzione la password deve essere lunga 8 caratteri, contenere
+                almeno una lettera maiuscola un numero e un carattere speciale (
+                es. ; . ! ?)
               </p>
             )}
             <TextField
@@ -408,9 +409,9 @@ const SignUpClient = () => {
               ></TextField>
               {!validatePassword && (
                 <p style={{ maxWidth: 310, fontSize: "12px" }}>
-                  Attenzione la password deve essere lunga 8 caratterei,
+                  Attenzione la password deve essere lunga 8 caratteri,
                   contenere almeno una lettera maiuscola un numero e un
-                  carattere speciale{" "}
+                  carattere speciale ( es. ; . ! ?)
                 </p>
               )}
               <TextField
