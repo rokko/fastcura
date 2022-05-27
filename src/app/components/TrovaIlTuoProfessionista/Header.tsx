@@ -239,6 +239,7 @@ const Header = () => {
             {!!utente && (
               <div
                 style={{
+                  position: "relative",
                   width: "50px",
                   height: "50px",
                   marginLeft: "10px",
@@ -333,7 +334,7 @@ const Header = () => {
           Errore Login
         </Alert>
       </Snackbar>
-      <VerticalMenu open={open} />
+      <VerticalMenu open={open} primo={true} />
     </div>
   );
 };
