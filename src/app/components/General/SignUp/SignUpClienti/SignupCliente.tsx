@@ -29,7 +29,7 @@ const SignUpClient = () => {
   const [cellulare, setCellulare] = useState<String>();
   const [handleCheck, setHandleCheck] = useState<boolean>(true);
   const [handleCheck2, setHandleCheck2] = useState<boolean>(true);
-
+  const [confPassword, setConfPassword] = useState<String>();
   const sess = ["Uomo", "Donna"];
 
   const nuovoCliente = {
@@ -42,6 +42,10 @@ const SignUpClient = () => {
     cap: cap,
     cellulare: cellulare,
   };
+
+  const getConfPass = useMemo(() => {
+    return password === confPassword;
+  }, [password, confPassword]);
 
   const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
@@ -135,6 +139,18 @@ const SignUpClient = () => {
             )}
             <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                setConfPassword(x.target.value)
+              }
+              style={{ width: 310, marginTop: 10 }}
+              id="outlined-size-small"
+              label="Conferma Password"
+              type={"password"}
+            ></TextField>
+            {!getConfPass && (
+              <p> Attenzione le password inserite non combaciano.</p>
+            )}
+            <TextField
+              onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setData(x.target.value)
               }
               style={{ width: 310, marginTop: 10 }}
@@ -190,6 +206,7 @@ const SignUpClient = () => {
 
           <button
             disabled={
+              !!getConfPass &&
               !!cognome &&
               !!nome &&
               !!email &&
@@ -413,6 +430,18 @@ const SignUpClient = () => {
                   contenere almeno una lettera maiuscola un numero e un
                   carattere speciale ( es. ; . ! ?)
                 </p>
+              )}
+              <TextField
+                onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                  setConfPassword(x.target.value)
+                }
+                style={{ width: 310, marginTop: 10 }}
+                id="outlined-size-small"
+                label="Conferma Password"
+                type={"password"}
+              ></TextField>
+              {!getConfPass && (
+                <p> Attenzione le password inserite non combaciano.</p>
               )}
               <TextField
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>

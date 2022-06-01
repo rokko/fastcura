@@ -38,148 +38,139 @@ const SignUpProfessionista = () => {
   const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due", "Piu di due"];
+  const [passwordconf, setPasswordconf] = useState<String>();
   const anniItalia = ["0-3 Anni ", "3-5", "piu di 5"];
   const lavoro = ["Morte Paziente", "Dimissioni", "Licenziamento", "Nessuna"];
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
   const tit = ["Laurea", "Scuole Superiori", "Diploma (O.S.S., A.S.A.)"];
   const sess = ["Uomo", "Donna"];
+  const getConfN = useMemo(() => {
+    if (professione !== "Badante") return !!numeroiscrizione;
+  }, [professione, numeroiscrizione]);
+
+  const getConfPass = useMemo(() => {
+    return password === passwordconf;
+  }, [password, passwordconf]);
   const citt = [
-      "Agrigento",
-
-       "Alessandria",
-
-      "Ancona",
-       "Arezzo",
-      "Ascoli Piceno",
-       "Asti",
-   "Avellino",
+    "Agrigento",
+    "Alessandria",
+    "Ancona",
+    "Arezzo",
+    "Ascoli Piceno",
+    "Asti",
+    "Avellino",
     "Bari",
-   "Barletta-Andria-Trani",
-   "Belluno",
+    "Barletta-Andria-Trani",
+    "Belluno",
     "Benevento",
-   "Bergamo",
-   "Biella",
-     "Bologna",
+    "Bergamo",
+    "Biella",
+    "Bologna",
     "Bolzano/Bozen",
-     "Brescia",
-      "Brindisi",
-  "Cagliari",
-      "Caltanissetta",
-      "Campobasso",
-     "Carbonia-Iglesias",
- "Caserta",
-     "Catania",
-   "Catanzaro",
-     "Chieti",
-     "Como",
-      "Cosenza",
-       "Cremona",
-      "Crotone",
-   "Cuneo",
+    "Brescia",
+    "Brindisi",
+    "Cagliari",
+    "Caltanissetta",
+    "Campobasso",
+    "Carbonia-Iglesias",
+    "Caserta",
+    "Catania",
+    "Catanzaro",
+    "Chieti",
+    "Como",
+    "Cosenza",
+    "Cremona",
+    "Crotone",
+    "Cuneo",
     "Enna",
     "Fermo",
-  "Ferrara",
+    "Ferrara",
     "Firenze",
-       "Foggia",
-      "Forlì-Cesena",
-     "Frosinone",
-       "Genova",
-       "Gorizia",
-      "Grosseto",
-       "Imperia",
-      "Isernia",
-     "L'Aquila",
-      "La Spezia",
-     "Latina",
-        "Lecce",
-      "Lecco",
-       "Livorno",
-     "Lodi",
-       "Lucca",
-      "Macerata",
-     "Mantova",
-        "Massa-Carrara",
-      "Matera",
-     "Medio Campidano",
-     "Messina",
-     "Milano",
-     "Modena",
+    "Foggia",
+    "Forlì-Cesena",
+    "Frosinone",
+    "Genova",
+    "Gorizia",
+    "Grosseto",
+    "Imperia",
+    "Isernia",
+    "L'Aquila",
+    "La Spezia",
+    "Latina",
+    "Lecce",
+    "Lecco",
+    "Livorno",
+    "Lodi",
+    "Lucca",
+    "Macerata",
+    "Mantova",
+    "Massa-Carrara",
+    "Matera",
+    "Medio Campidano",
+    "Messina",
+    "Milano",
+    "Modena",
     "Monza e della Brianza",
-   "Napoli",
-      "Novara",
-      "Nuoro",
-     "Ogliastra",
+    "Napoli",
+    "Novara",
+    "Nuoro",
+    "Ogliastra",
     "Olbia-Tempio",
-       "Oristano",
-       "Padova",
-       "Palermo",
-      "Parma",
+    "Oristano",
+    "Padova",
+    "Palermo",
+    "Parma",
     "Pavia",
-      "Perugia",
-      "Pesaro e Urbino",
-      "Pescara",
-     "Piacenza",
+    "Perugia",
+    "Pesaro e Urbino",
+    "Pescara",
+    "Piacenza",
     "Pisa",
     "Pistoia",
-   "Pordenone",
+    "Pordenone",
     "Potenza",
+    "Prato",
+    "Ragusa",
+    "Ravenna",
+    "Reggio di Calabria",
+    "Reggio nell'Emilia",
+    "Rieti",
+    "Rimini",
+    "Roma",
+    "Rovigo",
+    "Salerno",
+    "Sassari",
+    "Savona",
+    "Siena",
+    "Siracusa",
+    "Sondrio",
+    "Taranto",
+    "Teramo",
+    "Terni",
+    "Torino",
+    "Trapani",
+    "Trento",
+    "Treviso",
+    "Trieste",
+    "Udine",
 
-         "Prato",
+    "Valle d'Aosta/Vallée d'Aoste",
 
-       "Ragusa",
+    "Varese",
 
-   "Ravenna",
+    "Venezia",
+    "Verbano-Cusio-Ossola",
 
-      "Reggio di Calabria",
+    "Vercelli",
 
-       "Reggio nell'Emilia",
-      "Rieti",
-        "Rimini",
-       "Roma",
-       "Rovigo",
-       "Salerno",
-      "Sassari",
-      "Savona",
-     "Siena",
-      "Siracusa",
-       "Sondrio",
+    "Verona",
 
-        "Taranto",
+    "Vibo Valentia",
 
-         "Teramo",
+    "Vicenza",
 
-        "Terni",
-
-        "Torino",
-      "Trapani",
-
-         "Trento",
-
-        "Treviso",
-
-        "Trieste",
-
-         "Udine",
-
-        "Valle d'Aosta/Vallée d'Aoste",
-
-         "Varese",
-
-         "Venezia",
- "Verbano-Cusio-Ossola",
-
-       "Vercelli",
-
-         "Verona",
-
-        "Vibo Valentia",
-
-         "Vicenza",
-
-       "Viterbo",
-
+    "Viterbo",
   ];
-
   const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
     if (password?.match(check)) {
@@ -188,7 +179,6 @@ const SignUpProfessionista = () => {
       return false;
     }
   }, [password]);
-
   const nuovoProfessionista = {
     cognome: cognome,
     email: email,
@@ -211,7 +201,6 @@ const SignUpProfessionista = () => {
     assicurazione: assicurazione,
     precedente: precedente,
   };
-
   const sendRegister = () => {
     axios
       .post(
@@ -225,12 +214,11 @@ const SignUpProfessionista = () => {
         console.log(error);
       });
   };
-
   return (
     <>
       <Header />
       <p className="registertitle">Compila i dati per iscriverti!</p>
-      {!!isMobile && (
+      {isMobile && (
         <>
           <div
             style={{
@@ -273,12 +261,25 @@ const SignUpProfessionista = () => {
               type={"password"}
               label="Password"
             ></TextField>
+
             {!validatePassword && (
               <p style={{ maxWidth: 310, fontSize: "12px" }}>
                 Attenzione la password deve essere lunga 8 caratteri, contenere
                 almeno una lettera maiuscola un numero e un carattere speciale (
                 es. ; . ! ?)
               </p>
+            )}
+            <TextField
+              onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                setPasswordconf(x.target.value)
+              }
+              style={{ width: 310, marginTop: 10 }}
+              id="outlined-size-small"
+              type={"password"}
+              label="Conferma Password"
+            ></TextField>
+            {!getConfPass && (
+              <p> Attenzione le password inserite non combaciano.</p>
             )}
             <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -451,6 +452,7 @@ const SignUpProfessionista = () => {
                   id="outlined-size-small"
                   label="Numero Iscrizione "
                 ></TextField>
+                {!numeroiscrizione && <p>Questo campo è obbligatorio</p>}
               </>
             )}
 
@@ -478,12 +480,14 @@ const SignUpProfessionista = () => {
               marginBottom: 20,
             }}
             disabled={
+              !!getConfN &&
               !!cognome &&
               !!nome &&
               !!email &&
               !!data &&
               !!sesso &&
               !!citta &&
+              !!getConfPass &&
               validatePassword
                 ? false
                 : true
@@ -786,6 +790,16 @@ const SignUpProfessionista = () => {
               )}
               <TextField
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+                  setPasswordconf(x.target.value)
+                }
+                style={{ width: 310, marginTop: 10 }}
+                id="outlined-size-small"
+                type={"password"}
+                label="Conferma Password"
+              ></TextField>
+              {!getConfPass && <p>Attenzione le password non combaciano.</p>}
+              <TextField
+                onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setData(x.target.value)
                 }
                 style={{ width: 310, marginTop: 10 }}
@@ -965,6 +979,7 @@ const SignUpProfessionista = () => {
                     id="outlined-size-small"
                     label="Numero Iscrizione "
                   ></TextField>
+                  {!numeroiscrizione && <p>Questo campo è obbligatorio</p>}
                 </>
               )}
 
@@ -992,12 +1007,15 @@ const SignUpProfessionista = () => {
                   marginBottom: 30,
                 }}
                 disabled={
+                  getConfN &&
+                  !!numeroiscrizione &&
                   !!cognome &&
                   !!nome &&
                   !!email &&
                   !!data &&
                   !!sesso &&
                   !!citta &&
+                  !!getConfPass &&
                   validatePassword
                     ? false
                     : true
