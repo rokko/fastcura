@@ -201,8 +201,8 @@ const Header = () => {
                     marginRight: "5px",
                   }}
                 >
-                  {utente!.nome.charAt(0).toUpperCase()}{" "}
-                  {utente!.cognome.charAt(0).toUpperCase()}
+                  {utente?.nome.charAt(0).toUpperCase()}{" "}
+                  {utente?.cognome.charAt(0).toUpperCase()}
                 </p>
               </div>
             )}
