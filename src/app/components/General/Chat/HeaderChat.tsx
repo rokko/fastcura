@@ -7,7 +7,6 @@ import axios from "axios";
 const HeaderChat = ({ id }: any) => {
   const [avatar, setAvatar] = useState("");
 
-  console.log(id);
   useEffect(() => {
     const prof = {
       id_professionista: id,

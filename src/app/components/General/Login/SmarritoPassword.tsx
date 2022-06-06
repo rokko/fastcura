@@ -10,7 +10,6 @@ const SmarritoPassword = () => {
 
   const requestPassword = () => {
     setReq(true);
-    console.log(email);
   };
 
   return (

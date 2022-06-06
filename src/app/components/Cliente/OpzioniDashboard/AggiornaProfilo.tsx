@@ -40,9 +40,10 @@ const AggiornaProfilo = () => {
         profiloaggiornato,
         config
       )
-      .then((res) => console.log(res));
-    ottieniProfilo();
-    setOk(true);
+      .then((res) => {
+        ottieniProfilo();
+        setOk(true);
+      });
   };
   const ottieniProfilo = () => {
     setLoad(true);
@@ -56,7 +57,6 @@ const AggiornaProfilo = () => {
         config
       )
       .then((res) => {
-        console.log(res);
         setProfilo(res.data);
       })
       .then(() => {

@@ -7,7 +7,6 @@ import axios from "axios";
 import { Loader } from "../../loader";
 
 const AccordionPrestazioni = (prestazione: any) => {
-  console.log(prestazione);
   const [nome, setNome] = useState("");
   const [cognome, setCognome] = useState("");
   const [load, setLoad] = useState(false);
@@ -31,7 +30,6 @@ const AccordionPrestazioni = (prestazione: any) => {
         ricerca
       )
       .then((response: any) => {
-        console.log(response);
         setNome(response.data.nome);
         setCognome(response.data.cognome);
         setLoad(false);

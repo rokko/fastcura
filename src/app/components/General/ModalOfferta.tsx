@@ -25,7 +25,7 @@ const ModalOfferta = (props: any) => {
 
     axios
       .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
-      .then((x) => console.log(x));
+      .then((x) => {});
   };
   const invioOfferta = () => {
     const invi = {
@@ -44,9 +44,7 @@ const ModalOfferta = (props: any) => {
         "https://fastcuradev.herokuapp.com/professionista/crea-appuntamento",
         invi
       )
-      .then((x) => {
-        console.log(x);
-      });
+      .then((x) => {});
     sendMessage();
 
     props.chiudi(false);

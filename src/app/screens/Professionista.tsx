@@ -40,16 +40,13 @@ const Professionista = () => {
         url: url,
       };
 
-      console.log(newAvatar);
       axios
         .post(
           "https://fastcuradev.herokuapp.com/professionista/inserisci-avatar",
           newAvatar,
           config
         )
-        .then((response) => {
-          console.log(response);
-        })
+        .then((response) => {})
         .catch((e) => console.error(e));
     }
   }, [token, url]);
@@ -133,7 +130,6 @@ const Professionista = () => {
           config
         )
         .then((response) => {
-          console.log(response.data);
           if (response.data.message === 1)
             setAvatar(response.data.avatar.posizione);
           setUrl(response.data.avatar.posizione);

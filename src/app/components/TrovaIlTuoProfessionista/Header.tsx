@@ -35,7 +35,6 @@ const Header = () => {
           config
         )
         .then((response: any) => {
-          console.log(response);
           setUtente(response.data);
         })
         .catch((e: any) => console.error(e));

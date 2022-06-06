@@ -125,7 +125,6 @@ const ModificaPassword = () => {
             fontWeight: "bold",
             marginBottom: "20px",
           }}
-          onClick={() => console.log("ciao")}
         >
           Salva
         </button>

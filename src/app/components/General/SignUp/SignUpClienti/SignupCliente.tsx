@@ -47,8 +47,6 @@ const SignUpClient = () => {
     return password === confPassword;
   }, [password, confPassword]);
 
-  console.log(getConfPass);
-
   const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (password?.match(check)) {

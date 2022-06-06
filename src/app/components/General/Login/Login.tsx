@@ -17,7 +17,6 @@ const Login = (props: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
       .then(function (response) {
-        console.log(response.data);
         if (response?.data.accessToken === null) setKolog(true);
         const token: IToken = response.data;
         if (!!token.accessToken) {
@@ -27,7 +26,6 @@ const Login = (props: any) => {
             setOklog(true);
             navigate("/cliente");
           } else {
-            console.log("professionista");
             setOklog(true);
             navigate("/professionista");
           }

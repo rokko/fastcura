@@ -20,7 +20,6 @@ const BoxLogin = (props: any) => {
           localStorage.setItem("tokenaccess", token.accessToken);
           localStorage.setItem("type", token.messagge.toString());
           props.chiudi(false);
-          console.log(response);
           navigate("/");
         }
       })

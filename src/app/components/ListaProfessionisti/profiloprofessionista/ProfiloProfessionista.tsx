@@ -69,7 +69,6 @@ const ProfiloProfessionista = () => {
     var mediaVoti: number = 0;
     const totaleVoti: number | undefined = voti?.length;
     voti?.map((voto) => {
-      console.log(voto);
       mediaVoti = voto.voto + mediaVoti;
     });
     if (totaleVoti !== undefined) {

@@ -10,7 +10,7 @@ const ModalRicevutaOfferta = (props: any) => {
     };
     axios
       .post("https://fastcuradev.herokuapp.com/cliente/accettaofferta", ris)
-      .then((response) => console.log(response));
+      .then((response) => {});
     props.accetta();
     props.nuovo(true);
     props.chiudi(false);
@@ -21,7 +21,7 @@ const ModalRicevutaOfferta = (props: any) => {
     };
     axios
       .post("https://fastcuradev.herokuapp.com/cliente/rifiutaofferta", ris)
-      .then((response) => console.log(response));
+      .then((response) => {});
     props.rifiuta();
     props.chiudi(false);
   };

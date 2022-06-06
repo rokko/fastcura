@@ -144,7 +144,6 @@ const ChatProfessionista = () => {
       .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
 
       .then((x) => {
-        console.log(x);
         if (x.data != null && x.data.conferma == 0) {
           setOfferta(x.data);
           setOffertaricevuta(true);
@@ -168,8 +167,6 @@ const ChatProfessionista = () => {
       message: messaggio,
       contatti_id: prova,
     };
-
-    console.log(mess);
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },

@@ -25,21 +25,16 @@ const ModalLogin = (props: any) => {
         if (response?.data.accessToken === null) props?.setsnack2(true);
         const token: IToken = response.data;
 
-        console.log(token);
-
         if (!!token.accessToken) {
           localStorage.setItem("tokenaccess", token.accessToken);
-          console.log(token.messagge);
           localStorage.setItem("type", token.messagge.toString());
           if (token.messagge === 0) {
             props.setsnack(true);
             props.chiudi(false);
-            console.log("Cliente");
             navigate(0);
           } else {
             props.setsnack(true);
             props.chiudi(false);
-            console.log("PROFESSIONISTA");
             navigate("/professionista");
           }
         }

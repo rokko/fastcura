@@ -203,16 +203,13 @@ const DashBoardUtenti = () => {
         url: url,
       };
 
-      console.log(newAvatar);
       axios
         .post(
           "https://fastcuradev.herokuapp.com/professionista/inserisci-avatar",
           newAvatar,
           config
         )
-        .then((response) => {
-          console.log(response);
-        })
+        .then((response) => {})
         .catch((e) => console.error(e));
     }
   }, [token, url]);
@@ -254,9 +251,7 @@ const DashBoardUtenti = () => {
     if (!!tokenTest) setToken(tokenTest);
   };
 
-  const save = () => {
-    console.log("salva");
-  };
+  const save = () => {};
 
   const requestinfo = async () => {
     setLoad(true);
@@ -284,7 +279,6 @@ const DashBoardUtenti = () => {
           config
         )
         .then((response) => {
-          console.log(response.data);
           if (response.data.message === 1)
             setAvatar(response.data.avatar.posizione);
           setUrl(response.data.avatar.posizione);
