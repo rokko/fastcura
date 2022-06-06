@@ -202,6 +202,16 @@ const SignUpProfessionista = () => {
     assicurazione: assicurazione,
     precedente: precedente,
   };
+
+  const validationEmail = useMemo(() => {
+    let check =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email?.match(check)) {
+      return true;
+    } else {
+      return false;
+    }
+  }, [email]);
   const sendRegister = () => {
     axios
       .post(
@@ -484,7 +494,7 @@ const SignUpProfessionista = () => {
               !getConfN ||
               cognome === "" ||
               nome === "" ||
-              email === "" ||
+              !validationEmail ||
               data === "" ||
               sesso === "" ||
               citta === "" ||
@@ -1009,7 +1019,7 @@ const SignUpProfessionista = () => {
                   !getConfN ||
                   cognome === "" ||
                   nome === "" ||
-                  email === "" ||
+                  !validationEmail ||
                   data === "" ||
                   sesso === "" ||
                   citta === "" ||

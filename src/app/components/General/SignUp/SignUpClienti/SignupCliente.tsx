@@ -55,6 +55,17 @@ const SignUpClient = () => {
       return false;
     }
   }, [password]);
+
+  const validationEmail = useMemo(() => {
+    let check =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email?.match(check)) {
+      return true;
+    } else {
+      return false;
+    }
+  }, [email]);
+
   const loginUser = (userlogin: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
@@ -203,7 +214,7 @@ const SignUpClient = () => {
               !getConfPass ||
               cognome === "" ||
               nome === "" ||
-              email === "" ||
+              !validationEmail ||
               password === "" ||
               data === "" ||
               sesso === "" ||
@@ -494,7 +505,7 @@ const SignUpClient = () => {
                   !getConfPass ||
                   cognome === "" ||
                   nome === "" ||
-                  email === "" ||
+                  !validationEmail ||
                   password === "" ||
                   data === "" ||
                   sesso === "" ||
