@@ -89,7 +89,9 @@ const SignUpClient = () => {
           email: response.data.email,
           password: response.data.password,
         });
-        navigate(-1);
+        /*
+        navigate(-1);*/
+        navigate("/registrazione");
       })
       .catch(function (error) {
         console.log(error);
