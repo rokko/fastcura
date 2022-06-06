@@ -9,10 +9,12 @@ const Footer = () => {
       <div
         style={{
           display: "flex",
+          position: "fixed",
+          bottom: "0",
           marginTop: "50px",
           flexDirection: "column",
           height: "50px",
-          position: "absolute",
+
           width: "100%",
         }}
       >
