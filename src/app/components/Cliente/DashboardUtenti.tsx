@@ -1,7 +1,7 @@
 import { Autocomplete, Box, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Loader } from "../../loader";
 import AggiornaCurriculum from "../Professionista/AggiornaCurriculum";
 import CronologiaPrestazioni from "../Professionista/CronologiaPrestazioni";
@@ -174,8 +174,13 @@ const DashBoardUtenti = () => {
   const [url, setUrl] = useState<string>("");
   const [file, setFile] = useState<any>();
   const [avatar, setAvatar] = useState<any>();
-  const [up, setUp] = useState(false);
+  const navigate = useNavigate();
 
+  const [up, setUp] = useState(false);
+  useEffect(() => {
+    takeToken();
+    requestinfo();
+  }, [token]);
   const handleSubmit = () => {
     const imageRef = ref(storage, token);
     uploadBytes(imageRef, file)
@@ -248,7 +253,7 @@ const DashBoardUtenti = () => {
   };
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
-    if (!!tokenTest) setToken(tokenTest);
+    !!tokenTest ? setToken(tokenTest) : navigate("/");
   };
 
   const save = () => {};
@@ -287,10 +292,6 @@ const DashBoardUtenti = () => {
     }
   };
 
-  useEffect(() => {
-    takeToken();
-    requestinfo();
-  }, [token]);
   const [scelta, setScelta] = React.useState("");
 
   return (
