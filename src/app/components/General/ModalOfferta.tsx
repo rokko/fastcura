@@ -109,6 +109,7 @@ const ModalOfferta = (props: any) => {
             <TextField
               value={prezzo}
               id="standard-basic"
+              type={"number"}
               variant="standard"
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPrezzo(x.target.value)

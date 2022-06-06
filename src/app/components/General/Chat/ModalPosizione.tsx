@@ -45,7 +45,7 @@ const ModalPosizione = (props: any) => {
             }}
           >
             <p style={{ textAlign: "left", color: "#39B1D9" }}>
-              Inserisci la posizione dove si terrà la prestazione
+              Inserisci l'indirizzo dove si terrà la prestazione
             </p>
             <TextField
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
