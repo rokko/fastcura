@@ -200,7 +200,7 @@ const SignUpClient = () => {
 
           <button
             disabled={
-              !!getConfPass &&
+              getConfPass &&
               !!cognome &&
               !!nome &&
               !!email &&
@@ -209,11 +209,9 @@ const SignUpClient = () => {
               !!sesso &&
               !!cap &&
               !!cellulare &&
-              !!handleCheck &&
-              !!handleCheck2 &&
-              !!validatePassword
-                ? false
-                : true
+              handleCheck &&
+              handleCheck2 &&
+              validatePassword
             }
             style={{
               backgroundColor: "#39B1D9",
@@ -501,11 +499,9 @@ const SignUpClient = () => {
                   !!sesso &&
                   !!cap &&
                   !!cellulare &&
-                  !!handleCheck &&
-                  !!handleCheck2 &&
-                  !!validatePassword
-                    ? false
-                    : true
+                  handleCheck &&
+                  handleCheck2 &&
+                  validatePassword
                 }
                 style={{
                   backgroundColor: "#39B1D9",
