@@ -458,11 +458,11 @@ const SignUpProfessionista = () => {
 
             <FormGroup>
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={<Checkbox />}
                 label="Acconsento all'utilizzo dei dati personali"
               />
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={<Checkbox />}
                 label="Accetto termini e condizioni"
               />{" "}
             </FormGroup>
@@ -985,11 +985,11 @@ const SignUpProfessionista = () => {
 
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
+                  control={<Checkbox />}
                   label="Acconsento all'utilizzo dei dati personali"
                 />
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
+                  control={<Checkbox />}
                   label="Accetto termini e condizioni"
                 />{" "}
               </FormGroup>

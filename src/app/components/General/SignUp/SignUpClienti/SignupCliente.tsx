@@ -185,19 +185,13 @@ const SignUpClient = () => {
             <FormGroup>
               <FormControlLabel
                 control={
-                  <Checkbox
-                    checked={handleCheck2}
-                    onChange={(x) => setHandleCheck2(!handleCheck2)}
-                  />
+                  <Checkbox onChange={(x) => setHandleCheck2(!handleCheck2)} />
                 }
                 label="Acconsento all'utilizzo dei dati personali"
               />
               <FormControlLabel
                 control={
-                  <Checkbox
-                    checked={handleCheck}
-                    onChange={(x) => setHandleCheck(!handleCheck)}
-                  />
+                  <Checkbox onChange={(x) => setHandleCheck(!handleCheck)} />
                 }
                 label="Accetto termini e condizioni"
               />{" "}
@@ -482,7 +476,6 @@ const SignUpClient = () => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      checked={handleCheck2}
                       onChange={(x) => setHandleCheck2(!handleCheck2)}
                     />
                   }
@@ -490,10 +483,7 @@ const SignUpClient = () => {
                 />
                 <FormControlLabel
                   control={
-                    <Checkbox
-                      checked={handleCheck}
-                      onChange={(x) => setHandleCheck(!handleCheck)}
-                    />
+                    <Checkbox onChange={(x) => setHandleCheck(!handleCheck)} />
                   }
                   label="Accetto termini e condizioni"
                 />{" "}
