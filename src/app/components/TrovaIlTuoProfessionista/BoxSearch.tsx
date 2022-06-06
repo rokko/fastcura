@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -147,6 +147,10 @@ const BoxSearch = () => {
   const [professione, setProfessione] = useState<String | null>("");
   const [citta, setCitta] = useState<String | null>("");
 
+  const getCompleted = useMemo(() => {
+    return professione !== "" && citta !== "";
+  }, [citta, professione]);
+
   if (!isMobile)
     return (
       <>
@@ -240,23 +244,44 @@ const BoxSearch = () => {
                 onChange={(x, value) => setCitta(value)}
               />
             </Box>
-            <Link to="/risultati" state={{ professione, citta }}>
-              <button
-                style={{
-                  width: "220px",
-                  height: "50px",
-                  backgroundColor: "#FF3617",
-                  fontWeight: "bold",
-                  border: "none",
-                  marginTop: 20,
-                  borderRadius: 20,
-                  color: "#ffffff",
-                  fontSize: "30px",
-                }}
-              >
-                Vai
-              </button>
-            </Link>
+            {getCompleted && (
+              <Link to="/risultati" state={{ professione, citta }}>
+                <button
+                  style={{
+                    width: "220px",
+                    height: "50px",
+                    backgroundColor: "#FF3617",
+                    fontWeight: "bold",
+                    border: "none",
+                    marginTop: 20,
+                    borderRadius: 20,
+                    color: "#ffffff",
+                    fontSize: "30px",
+                  }}
+                >
+                  Vai
+                </button>
+              </Link>
+            )}
+            {!getCompleted && (
+              <>
+                <button
+                  style={{
+                    width: "220px",
+                    height: "50px",
+                    backgroundColor: "#FF3617",
+                    fontWeight: "bold",
+                    border: "none",
+                    marginTop: 20,
+                    borderRadius: 20,
+                    color: "#ffffff",
+                    fontSize: "30px",
+                  }}
+                >
+                  Vai
+                </button>
+              </>
+            )}
           </div>
         </div>
       </>
@@ -332,23 +357,45 @@ const BoxSearch = () => {
             onChange={(x, value) => setCitta(value)}
           />
         </Box>
-        <Link to="/risultati" state={{ professione, citta }}>
-          <button
-            style={{
-              width: "120px",
-              height: "50px",
-              backgroundColor: "#FF3617",
-              fontWeight: "bold",
-              border: "none",
-              marginTop: 20,
-              borderRadius: 20,
-              color: "#ffffff",
-              fontSize: "18px",
-            }}
-          >
-            Vai
-          </button>
-        </Link>
+        {getCompleted && (
+          <Link to="/risultati" state={{ professione, citta }}>
+            <button
+              disabled={!getCompleted}
+              style={{
+                width: "120px",
+                height: "50px",
+                backgroundColor: "#FF3617",
+                fontWeight: "bold",
+                border: "none",
+                marginTop: 20,
+                borderRadius: 20,
+                color: "#ffffff",
+                fontSize: "18px",
+              }}
+            >
+              Vai
+            </button>
+          </Link>
+        )}
+        {!getCompleted && (
+          <>
+            <button
+              style={{
+                width: "120px",
+                height: "50px",
+                backgroundColor: "#FF3617",
+                fontWeight: "bold",
+                border: "none",
+                marginTop: 20,
+                borderRadius: 20,
+                color: "#ffffff",
+                fontSize: "18px",
+              }}
+            >
+              Vai
+            </button>
+          </>
+        )}
       </>
     );
 };
