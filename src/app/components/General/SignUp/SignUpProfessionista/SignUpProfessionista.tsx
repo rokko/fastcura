@@ -15,37 +15,38 @@ import { useMemo } from "react";
 const SignUpProfessionista = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  const [cognome, setCognome] = useState<String | null>();
-  const [nome, setNome] = useState<String>();
-  const [email, setEmail] = useState<String>();
-  const [password, setPassword] = useState<String>();
-  const [data, setData] = useState<String>();
-  const [sesso, setSesso] = useState<String | null>();
-  const [citta, setCitta] = useState<String | null>();
-  const [cellulare, setCellulare] = useState<String>();
-  const [professione, setProfessione] = useState<String | null>();
-  const [greenpass, setGreenpass] = useState<String | null>();
-  const [referenze, setReferenze] = useState<String | null>();
-  const [anni, setAnni] = useState<String | null>();
-  const [anniEsperienza, setAnniEsperienza] = useState<String | null>();
-  const [terminelavoro, setTerminelavoro] = useState<String | null>();
-  const [livelloItaliano, setLivelloItaliano] = useState<String | null>();
-  const [titoloStudio, setTitoloStudio] = useState<String | null>();
-  const [dichiarazione, setDichiarazione] = useState<String | null>();
-  const [numeroiscrizione, setNumeroiscrizione] = useState<String | null>();
-  const [assicurazione, setAssicurazione] = useState<String | null>();
-  const [precedente, setPrecedente] = useState<String | null>();
+  const [cognome, setCognome] = useState<String | null>("");
+  const [nome, setNome] = useState<String>("");
+  const [email, setEmail] = useState<String>("");
+  const [password, setPassword] = useState<String>("");
+  const [data, setData] = useState<String>("");
+  const [sesso, setSesso] = useState<String | null>("");
+  const [citta, setCitta] = useState<String | null>("");
+  const [cellulare, setCellulare] = useState<String>("");
+  const [professione, setProfessione] = useState<String | null>("");
+  const [greenpass, setGreenpass] = useState<String | null>("");
+  const [referenze, setReferenze] = useState<String | null>("");
+  const [anni, setAnni] = useState<String | null>("");
+  const [anniEsperienza, setAnniEsperienza] = useState<String | null>("");
+  const [terminelavoro, setTerminelavoro] = useState<String | null>("");
+  const [livelloItaliano, setLivelloItaliano] = useState<String | null>("");
+  const [titoloStudio, setTitoloStudio] = useState<String | null>("");
+  const [dichiarazione, setDichiarazione] = useState<String | null>("");
+  const [numeroiscrizione, setNumeroiscrizione] = useState<String | null>("");
+  const [assicurazione, setAssicurazione] = useState<String | null>("");
+  const [precedente, setPrecedente] = useState<String | null>("");
   const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due", "Piu di due"];
-  const [passwordconf, setPasswordconf] = useState<String>();
+  const [passwordconf, setPasswordconf] = useState<String>("");
   const anniItalia = ["0-3 Anni ", "3-5", "piu di 5"];
   const lavoro = ["Morte Paziente", "Dimissioni", "Licenziamento", "Nessuna"];
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
   const tit = ["Laurea", "Scuole Superiori", "Diploma (O.S.S., A.S.A.)"];
   const sess = ["Uomo", "Donna"];
   const getConfN = useMemo(() => {
-    if (professione !== "Badante") return !!numeroiscrizione;
+    if (professione !== "Badante") return numeroiscrizione === "";
+    else return true;
   }, [professione, numeroiscrizione]);
 
   const getConfPass = useMemo(() => {
@@ -172,7 +173,7 @@ const SignUpProfessionista = () => {
     "Viterbo",
   ];
   const validatePassword = useMemo(() => {
-    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (password?.match(check)) {
       return true;
     } else {
@@ -480,17 +481,15 @@ const SignUpProfessionista = () => {
               marginBottom: 20,
             }}
             disabled={
-              !!getConfN &&
-              !!cognome &&
-              !!nome &&
-              !!email &&
-              !!data &&
-              !!sesso &&
-              !!citta &&
-              !!getConfPass &&
-              validatePassword
-                ? false
-                : true
+              !getConfN ||
+              cognome === "" ||
+              nome === "" ||
+              email === "" ||
+              data === "" ||
+              sesso === "" ||
+              citta === "" ||
+              !getConfPass ||
+              !validatePassword
             }
             onClick={() => sendRegister()}
           >
@@ -1007,18 +1006,15 @@ const SignUpProfessionista = () => {
                   marginBottom: 30,
                 }}
                 disabled={
-                  getConfN &&
-                  !!numeroiscrizione &&
-                  !!cognome &&
-                  !!nome &&
-                  !!email &&
-                  !!data &&
-                  !!sesso &&
-                  !!citta &&
-                  !!getConfPass &&
-                  validatePassword
-                    ? false
-                    : true
+                  !getConfN ||
+                  cognome === "" ||
+                  nome === "" ||
+                  email === "" ||
+                  data === "" ||
+                  sesso === "" ||
+                  citta === "" ||
+                  !getConfPass ||
+                  !validatePassword
                 }
                 onClick={() => sendRegister()}
               >

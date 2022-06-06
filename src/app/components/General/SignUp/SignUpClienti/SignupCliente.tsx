@@ -19,17 +19,17 @@ interface IToken {
 const SignUpClient = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  const [cognome, setCognome] = useState<String>();
-  const [nome, setNome] = useState<String>();
-  const [email, setEmail] = useState<String>();
-  const [password, setPassword] = useState<String>();
-  const [data, setData] = useState<String>();
-  const [sesso, setSesso] = useState<String | null>();
-  const [cap, setCap] = useState<String>();
-  const [cellulare, setCellulare] = useState<String>();
-  const [handleCheck, setHandleCheck] = useState<boolean>(true);
-  const [handleCheck2, setHandleCheck2] = useState<boolean>(true);
-  const [confPassword, setConfPassword] = useState<String>();
+  const [cognome, setCognome] = useState<String>("");
+  const [nome, setNome] = useState<String>("");
+  const [email, setEmail] = useState<String>("");
+  const [password, setPassword] = useState<String>("");
+  const [data, setData] = useState<String>("");
+  const [sesso, setSesso] = useState<String | null>("");
+  const [cap, setCap] = useState<String>("");
+  const [cellulare, setCellulare] = useState<String>("");
+  const [handleCheck, setHandleCheck] = useState<boolean>(false);
+  const [handleCheck2, setHandleCheck2] = useState<boolean>(false);
+  const [confPassword, setConfPassword] = useState<String>("");
   const sess = ["Uomo", "Donna"];
 
   const nuovoCliente = {
@@ -47,8 +47,10 @@ const SignUpClient = () => {
     return password === confPassword;
   }, [password, confPassword]);
 
+  console.log(getConfPass);
+
   const validatePassword = useMemo(() => {
-    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (password?.match(check)) {
       return true;
     } else {
@@ -200,18 +202,18 @@ const SignUpClient = () => {
 
           <button
             disabled={
-              getConfPass &&
-              !!cognome &&
-              !!nome &&
-              !!email &&
-              !!password &&
-              !!data &&
-              !!sesso &&
-              !!cap &&
-              !!cellulare &&
-              handleCheck &&
-              handleCheck2 &&
-              validatePassword
+              !getConfPass ||
+              cognome === "" ||
+              nome === "" ||
+              email === "" ||
+              password === "" ||
+              data === "" ||
+              sesso === "" ||
+              cap === "" ||
+              cellulare === "" ||
+              !handleCheck ||
+              !handleCheck2 ||
+              !validatePassword
             }
             style={{
               backgroundColor: "#39B1D9",
@@ -491,17 +493,18 @@ const SignUpClient = () => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <button
                 disabled={
-                  !!cognome &&
-                  !!nome &&
-                  !!email &&
-                  !!password &&
-                  !!data &&
-                  !!sesso &&
-                  !!cap &&
-                  !!cellulare &&
-                  handleCheck &&
-                  handleCheck2 &&
-                  validatePassword
+                  !getConfPass ||
+                  cognome === "" ||
+                  nome === "" ||
+                  email === "" ||
+                  password === "" ||
+                  data === "" ||
+                  sesso === "" ||
+                  cap === "" ||
+                  cellulare === "" ||
+                  !handleCheck ||
+                  !handleCheck2 ||
+                  !validatePassword
                 }
                 style={{
                   backgroundColor: "#39B1D9",
