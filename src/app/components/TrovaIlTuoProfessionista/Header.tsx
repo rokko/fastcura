@@ -19,7 +19,10 @@ const Header = () => {
   const [token, setToken] = useState("");
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
-    if (!!tokenTest) setToken(tokenTest);
+    if (!!tokenTest) {
+      setToken(tokenTest);
+      takeUtente();
+    }
   };
 
   const takeUtente = async () => {
@@ -59,7 +62,6 @@ const Header = () => {
 
   useEffect(() => {
     takeToken();
-    takeUtente();
   }, [token]);
   return (
     <div style={{ position: "relative" }}>
@@ -259,8 +261,8 @@ const Header = () => {
                     flexDirection: "row",
                   }}
                 >
-                  {utente?.nome.charAt(0)}
-                  {utente?.cognome.charAt(0)}
+                  {utente!.nome.charAt(0)}
+                  {utente!.cognome.charAt(0)}
                 </p>
               </div>
             )}
