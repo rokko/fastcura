@@ -26,8 +26,13 @@ const ProfiloProfessionista = () => {
   const [voto, setVoto] = useState();
   const [voti, setVoti] = useState<IFeedback[]>();
   const [load, setLoad] = useState(false);
-
+  const [token, setToken] = useState<String | null>();
   let ValoriParametri = location.state as any;
+
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    if (!!tokenTest) setToken(tokenTest);
+  };
   const professio: IDettagliProfessionista = {
     nome: ValoriParametri.nome,
     cognome: ValoriParametri.cognome,
@@ -77,6 +82,7 @@ const ProfiloProfessionista = () => {
   }, [voti]);
 
   useEffect(() => {
+    takeToken();
     const prof = {
       id_professionista: ValoriParametri._id,
     };
@@ -234,17 +240,19 @@ const ProfiloProfessionista = () => {
           )}
         </Box>
       </TotalContainer>
-      <RatingDivStyle>
-        <p>Lascia un feedback con un voto da 1 a 5</p>
-        <Stack>
-          <Rating
-            value={voto}
-            onChange={(e, value) => sendFeedback(value)}
-            precision={0.5}
-            size={"large"}
-          />
-        </Stack>
-      </RatingDivStyle>
+      {!!token && (
+        <RatingDivStyle>
+          <p>Lascia un feedback con un voto da 1 a 5</p>
+          <Stack>
+            <Rating
+              value={voto}
+              onChange={(e, value) => sendFeedback(value)}
+              precision={0.5}
+              size={"large"}
+            />
+          </Stack>
+        </RatingDivStyle>
+      )}
     </>
   );
 };

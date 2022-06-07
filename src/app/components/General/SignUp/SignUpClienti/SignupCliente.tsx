@@ -96,6 +96,36 @@ const SignUpClient = () => {
         console.log(error);
       });
   };
+
+  const validation = useMemo(() => {
+    return (
+      !getConfPass ||
+      cognome === "" ||
+      nome === "" ||
+      !validationEmail ||
+      password === "" ||
+      data === "" ||
+      sesso === "" ||
+      cap === "" ||
+      cellulare === "" ||
+      !handleCheck ||
+      !handleCheck2 ||
+      !validatePassword
+    );
+  }, [
+    cap,
+    cellulare,
+    cognome,
+    data,
+    getConfPass,
+    handleCheck,
+    handleCheck2,
+    nome,
+    password,
+    sesso,
+    validatePassword,
+    validationEmail,
+  ]);
   return (
     <>
       <Header />
@@ -110,6 +140,7 @@ const SignUpClient = () => {
             }}
           >
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCognome(x.target.value)
               }
@@ -118,6 +149,7 @@ const SignUpClient = () => {
               label="Cognome"
             ></TextField>
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setNome(x.target.value)
               }
@@ -126,6 +158,7 @@ const SignUpClient = () => {
               label="Nome"
             ></TextField>
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(x.target.value)
               }
@@ -133,7 +166,9 @@ const SignUpClient = () => {
               id="outlined-size-small"
               label="Indirizzo email"
             ></TextField>
+            {!validationEmail && <p>L'indirizzo email non è corretto</p>}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPassword(x.target.value)
               }
@@ -150,6 +185,7 @@ const SignUpClient = () => {
               </p>
             )}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setConfPassword(x.target.value)
               }
@@ -162,6 +198,7 @@ const SignUpClient = () => {
               <p> Attenzione le password inserite non combaciano.</p>
             )}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setData(x.target.value)
               }
@@ -179,6 +216,7 @@ const SignUpClient = () => {
               onChange={(x, value) => setSesso(value)}
             />
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCap(x.target.value)
               }
@@ -187,6 +225,7 @@ const SignUpClient = () => {
               label="Codice postale"
             ></TextField>
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCellulare(x.target.value)
               }
@@ -211,22 +250,9 @@ const SignUpClient = () => {
           </div>
 
           <button
-            disabled={
-              !getConfPass ||
-              cognome === "" ||
-              nome === "" ||
-              !validationEmail ||
-              password === "" ||
-              data === "" ||
-              sesso === "" ||
-              cap === "" ||
-              cellulare === "" ||
-              !handleCheck ||
-              !handleCheck2 ||
-              !validatePassword
-            }
+            disabled={validation}
             style={{
-              backgroundColor: "#39B1D9",
+              backgroundColor: !validation ? "#39B1D9" : "grey",
               width: 220,
               height: 37,
               borderRadius: 20,
@@ -396,6 +422,7 @@ const SignUpClient = () => {
               }}
             >
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCognome(x.target.value)
                 }
@@ -404,6 +431,7 @@ const SignUpClient = () => {
                 label="Cognome"
               ></TextField>
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setNome(x.target.value)
                 }
@@ -412,6 +440,7 @@ const SignUpClient = () => {
                 label="Nome"
               ></TextField>
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setEmail(x.target.value)
                 }
@@ -419,7 +448,10 @@ const SignUpClient = () => {
                 id="outlined-size-small"
                 label="Indirizzo email"
               ></TextField>
+              {!validationEmail && <p>L'indirizzo email non è corretto</p>}
+
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(x.target.value)
                 }
@@ -436,6 +468,7 @@ const SignUpClient = () => {
                 </p>
               )}
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setConfPassword(x.target.value)
                 }
@@ -448,6 +481,7 @@ const SignUpClient = () => {
                 <p> Attenzione le password inserite non combaciano.</p>
               )}
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setData(x.target.value)
                 }
@@ -467,6 +501,7 @@ const SignUpClient = () => {
                 onChange={(x, value) => setSesso(value)}
               />
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCap(x.target.value)
                 }
@@ -475,6 +510,7 @@ const SignUpClient = () => {
                 label="Codice postale"
               ></TextField>
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCellulare(x.target.value)
                 }
@@ -502,22 +538,9 @@ const SignUpClient = () => {
 
             <div style={{ display: "flex", flexDirection: "column" }}>
               <button
-                disabled={
-                  !getConfPass ||
-                  cognome === "" ||
-                  nome === "" ||
-                  !validationEmail ||
-                  password === "" ||
-                  data === "" ||
-                  sesso === "" ||
-                  cap === "" ||
-                  cellulare === "" ||
-                  !handleCheck ||
-                  !handleCheck2 ||
-                  !validatePassword
-                }
+                disabled={validation}
                 style={{
-                  backgroundColor: "#39B1D9",
+                  backgroundColor: !validation ? "#39B1D9" : "grey",
                   width: 220,
                   height: 37,
                   borderRadius: 20,

@@ -10,7 +10,7 @@ import axios from "axios";
 
 const Header = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  const [utente, setUtente] = useState<any>("");
+  const [utente, setUtente] = useState<any>();
   const [pip, setPip] = useState(false);
   const [oklog, setOklog] = useState(false);
   const [kolog, setKolog] = useState(false);
@@ -241,8 +241,8 @@ const Header = () => {
               <div
                 style={{
                   position: "relative",
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   marginLeft: "10px",
                   backgroundColor: "rgb(57, 177, 217)",
                   borderRadius: "100%",

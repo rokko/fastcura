@@ -46,7 +46,7 @@ const SignUpProfessionista = () => {
   const sess = ["Uomo", "Donna"];
   const getConfN = useMemo(() => {
     if (professione !== "Badante") return numeroiscrizione === "";
-    else return true;
+    else return false;
   }, [professione, numeroiscrizione]);
 
   const getConfPass = useMemo(() => {
@@ -225,6 +225,30 @@ const SignUpProfessionista = () => {
         console.log(error);
       });
   };
+
+  const validation = useMemo(() => {
+    return (
+      getConfN ||
+      cognome === "" ||
+      nome === "" ||
+      !validationEmail ||
+      data === "" ||
+      sesso === "" ||
+      citta === "" ||
+      !getConfPass ||
+      !validatePassword
+    );
+  }, [
+    citta,
+    cognome,
+    data,
+    getConfN,
+    getConfPass,
+    nome,
+    sesso,
+    validatePassword,
+    validationEmail,
+  ]);
   return (
     <>
       <Header />
@@ -240,6 +264,7 @@ const SignUpProfessionista = () => {
             }}
           >
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCognome(x.target.value)
               }
@@ -248,6 +273,7 @@ const SignUpProfessionista = () => {
               label="Cognome"
             ></TextField>
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setNome(x.target.value)
               }
@@ -256,6 +282,7 @@ const SignUpProfessionista = () => {
               label="Nome"
             ></TextField>
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(x.target.value)
               }
@@ -263,7 +290,9 @@ const SignUpProfessionista = () => {
               id="outlined-size-small"
               label="Indirizzo email"
             ></TextField>
+            {!validationEmail && <p>L'indirizzo email non è corretto</p>}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPassword(x.target.value)
               }
@@ -281,6 +310,7 @@ const SignUpProfessionista = () => {
               </p>
             )}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPasswordconf(x.target.value)
               }
@@ -293,6 +323,7 @@ const SignUpProfessionista = () => {
               <p> Attenzione le password inserite non combaciano.</p>
             )}
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setData(x.target.value)
               }
@@ -319,6 +350,7 @@ const SignUpProfessionista = () => {
               onChange={(x, value) => setCitta(value)}
             />
             <TextField
+              required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCellulare(x.target.value)
               }
@@ -456,6 +488,7 @@ const SignUpProfessionista = () => {
                   onChange={(x, value) => setPrecedente(value)}
                 />
                 <TextField
+                  required={true}
                   onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                     setNumeroiscrizione(x.target.value)
                   }
@@ -481,7 +514,7 @@ const SignUpProfessionista = () => {
 
           <button
             style={{
-              backgroundColor: "#39B1D9",
+              backgroundColor: !validation ? "#39B1D9" : "grey",
               width: 220,
               height: 37,
               borderRadius: 20,
@@ -490,17 +523,7 @@ const SignUpProfessionista = () => {
               marginTop: 10,
               marginBottom: 20,
             }}
-            disabled={
-              !getConfN ||
-              cognome === "" ||
-              nome === "" ||
-              !validationEmail ||
-              data === "" ||
-              sesso === "" ||
-              citta === "" ||
-              !getConfPass ||
-              !validatePassword
-            }
+            disabled={validation}
             onClick={() => sendRegister()}
           >
             Iscriviti
@@ -758,6 +781,7 @@ const SignUpProfessionista = () => {
               }}
             >
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCognome(x.target.value)
                 }
@@ -766,6 +790,7 @@ const SignUpProfessionista = () => {
                 label="Cognome"
               ></TextField>
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setNome(x.target.value)
                 }
@@ -774,6 +799,7 @@ const SignUpProfessionista = () => {
                 label="Nome"
               ></TextField>
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setEmail(x.target.value)
                 }
@@ -781,7 +807,9 @@ const SignUpProfessionista = () => {
                 id="outlined-size-small"
                 label="Indirizzo email"
               ></TextField>
+              {!validationEmail && <p>L'indirizzo email non è corretto</p>}
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(x.target.value)
                 }
@@ -798,6 +826,7 @@ const SignUpProfessionista = () => {
                 </p>
               )}
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPasswordconf(x.target.value)
                 }
@@ -808,6 +837,7 @@ const SignUpProfessionista = () => {
               ></TextField>
               {!getConfPass && <p>Attenzione le password non combaciano.</p>}
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setData(x.target.value)
                 }
@@ -838,6 +868,7 @@ const SignUpProfessionista = () => {
                 onChange={(x, value) => setCitta(value)}
               />
               <TextField
+                required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCellulare(x.target.value)
                 }
@@ -935,7 +966,11 @@ const SignUpProfessionista = () => {
                     sx={{ width: 310, marginTop: 1.5 }}
                     style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
                     renderInput={(params) => (
-                      <TextField {...params} label="Titolo Studio" />
+                      <TextField
+                        required={true}
+                        {...params}
+                        label="Titolo Studio"
+                      />
                     )}
                     onChange={(x, value) => setTitoloStudio(value)}
                   />
@@ -952,6 +987,7 @@ const SignUpProfessionista = () => {
                     style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
                     renderInput={(params) => (
                       <TextField
+                        required={true}
                         {...params}
                         label="In possesso di diploma di Laurea"
                       />
@@ -965,7 +1001,11 @@ const SignUpProfessionista = () => {
                     sx={{ width: 310, marginTop: 1.5 }}
                     style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
                     renderInput={(params) => (
-                      <TextField {...params} label="Sono assicurato?" />
+                      <TextField
+                        required={true}
+                        {...params}
+                        label="Sono assicurato?"
+                      />
                     )}
                     onChange={(x, value) => setAssicurazione(value)}
                   />
@@ -981,6 +1021,7 @@ const SignUpProfessionista = () => {
                     onChange={(x, value) => setPrecedente(value)}
                   />
                   <TextField
+                    required={true}
                     onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                       setNumeroiscrizione(x.target.value)
                     }
@@ -1006,7 +1047,7 @@ const SignUpProfessionista = () => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <button
                 style={{
-                  backgroundColor: "#39B1D9",
+                  backgroundColor: !validation ? "#39B1D9" : "grey",
                   width: 220,
                   height: 37,
                   borderRadius: 20,
@@ -1015,17 +1056,7 @@ const SignUpProfessionista = () => {
                   marginTop: 10,
                   marginBottom: 30,
                 }}
-                disabled={
-                  !getConfN ||
-                  cognome === "" ||
-                  nome === "" ||
-                  !validationEmail ||
-                  data === "" ||
-                  sesso === "" ||
-                  citta === "" ||
-                  !getConfPass ||
-                  !validatePassword
-                }
+                disabled={validation}
                 onClick={() => sendRegister()}
               >
                 Iscriviti
