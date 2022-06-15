@@ -30,6 +30,7 @@ const SignUpClient = () => {
   const [handleCheck, setHandleCheck] = useState<boolean>(false);
   const [handleCheck2, setHandleCheck2] = useState<boolean>(false);
   const [confPassword, setConfPassword] = useState<String>("");
+  const [esisteMail, setEsisteMail] = useState(false);
   const sess = ["Uomo", "Donna"];
 
   const nuovoCliente = {
@@ -47,15 +48,6 @@ const SignUpClient = () => {
     return password === confPassword;
   }, [password, confPassword]);
 
-  const validatePassword = useMemo(() => {
-    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
-    if (password?.match(check)) {
-      return true;
-    } else {
-      return false;
-    }
-  }, [password]);
-
   const validationEmail = useMemo(() => {
     let check =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -65,6 +57,32 @@ const SignUpClient = () => {
       return false;
     }
   }, [email]);
+
+  const validatePassword = useMemo(() => {
+    let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+    if (password?.match(check)) {
+      return true;
+    } else {
+      return false;
+    }
+  }, [password]);
+  const controllaMail = useMemo(async () => {
+    if (validationEmail) {
+      const emailDaInviare = {
+        email: email,
+      };
+
+      return axios
+        .post(
+          "https://fastcuradev.herokuapp.com/clienti/mail-utente",
+          emailDaInviare,
+          {}
+        )
+        .then((res) => {
+          return res.data.risult;
+        });
+    } else return false;
+  }, [email, validationEmail]);
 
   const loginUser = (userlogin: any) => {
     axios
@@ -80,21 +98,24 @@ const SignUpClient = () => {
         console.log(error);
       });
   };
-  const sendRegister = () => {
+  const sendRegister = async () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente);
-    axios
-      .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
-      .then(function (response) {
-        loginUser({
-          email: response.data.email,
-          password: response.data.password,
-        });
 
-        navigate(-1);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (!controllaMail) {
+      axios
+        .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
+        .then(function (response) {
+          loginUser({
+            email: response.data.email,
+            password: response.data.password,
+          });
+
+          navigate(-1);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 
   const validation = useMemo(() => {
@@ -167,6 +188,8 @@ const SignUpClient = () => {
               label="Indirizzo email"
             ></TextField>
             {!validationEmail && <p>L'indirizzo email non è corretto</p>}
+            {controllaMail && <p>Attenzione la mail risulta gia registrata</p>}
+
             <TextField
               required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -449,7 +472,9 @@ const SignUpClient = () => {
                 label="Indirizzo email"
               ></TextField>
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-
+              {controllaMail && (
+                <p>Attenzione la mail risulta gia registrata</p>
+              )}
               <TextField
                 required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -480,6 +505,7 @@ const SignUpClient = () => {
               {!getConfPass && (
                 <p> Attenzione le password inserite non combaciano.</p>
               )}
+
               <TextField
                 required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUpClient from "../components/General/SignUp/SignUpClienti/SignupCliente";
 import SignUpProfessionista from "../components/General/SignUp/SignUpProfessionista/SignUpProfessionista";
 import HomePage from "../screens/HomePage";
-import TrovaIlTuoProfessionista from "../screens/TrovaIlTuoProfessionista";
 import Professionista from "../screens/Professionista";
 import RisultatiRicerca from "../screens/RisultatiRicerca";
 import InCostruzione from "../components/General/InCostruzione";
@@ -15,16 +14,19 @@ import DashBoardUtenti from "../components/Cliente/DashboardUtenti";
 import SignupCompletatoProfessionista from "../components/General/SignUp/SignUpProfessionista/SignupCompletatoProfessionista";
 import SmarritoPassword from "../components/General/Login/SmarritoPassword";
 import ListaChat from "../components/Cliente/ListaChat";
-import FastCuraLoader from "../media/fastcuraLogo.webm";
-import { Loader } from "../loader";
+import { TrovaProfessionista } from "../screens/trovaprofessionista";
+import { LandingProfessionista } from "../screens/landingprofessionista";
 
 const ProviderRouter = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<TrovaIlTuoProfessionista />} />
-          <Route path="/landing-professionista" element={<HomePage />} />
+          <Route path="/" element={<TrovaProfessionista />} />
+          <Route
+            path="/landing-professionista"
+            element={<LandingProfessionista />}
+          />
           <Route path="/cliente" element={<DashBoardUtenti />} />
           <Route path="/chatcliente" element={<ListaChat />} />
           <Route

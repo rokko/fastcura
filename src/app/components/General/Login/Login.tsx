@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { NONAME } from "dns";
+import { styled } from "@mui/system";
 
 interface IToken {
   accessToken: string;
@@ -45,9 +46,77 @@ const Login = (props: any) => {
     email: email,
     password: passw,
   };
-  if (!isMobile)
-    return (
-      <>
+  const InputStyle = styled("input")`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 19px;
+    gap: 10px;
+    background: #e2f4fc;
+    border-radius: 10px;
+    border: none;
+  `;
+  const ContainerLogin = styled("div")`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 318px;
+  `;
+
+  const ButtonLogin = styled("button")`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 19px;
+    gap: 10px;
+    border: none;
+    background: #39b1d9;
+    border-radius: 40px;
+    color: white;
+  `;
+
+  const Title = styled("p")`
+    font-style: normal;
+    font-weight: 900;
+    font-size: 23px;
+    line-height: 27px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* Black */
+
+    color: #273237;
+  `;
+
+  return (
+    <ContainerLogin>
+      <Title>Accedi</Title>
+      <InputStyle
+        placeholder="Indirizzo email"
+        onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+          setEmail(x.target.value)
+        }
+      />
+      <InputStyle
+        placeholder="Password"
+        onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+          setPassw(x.target.value)
+        }
+        type={"password"}
+      />
+      <ButtonLogin onClick={() => loginUser()}>Entra</ButtonLogin>
+      <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
+        <p style={{ color: "#39B1D9" }}>Hai dimenticato la password?</p>
+      </Link>
+    </ContainerLogin>
+  );
+};
+
+export default Login;
+
+/*<>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Box
             style={{
@@ -274,9 +343,4 @@ const Login = (props: any) => {
           >
             Errore Login
           </Alert>
-        </Snackbar>
-      </>
-    );
-};
-
-export default Login;
+        </Snackbar>*/

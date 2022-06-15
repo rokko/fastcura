@@ -1,10 +1,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { styled } from "@mui/system";
+import SeinuovoImage from "../../media/seinuovo.png";
+import { Button } from "@mui/material";
+const ButtonSeiNuovo = styled("button")`
+  background-color: #39b1d9;
+  border: none;
+  border-radius: 40px;
+
+  width: 150px;
+  height: 35px;
+  color: white;
+`;
+
+const ContainerSeiNuovo = styled("div")`
+  display: flex;
+  flex-direction: column;
+  height: 318px;
+`;
+
+const ContainerButton = styled("div")`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`;
+
+const Title = styled("p")`
+  font-style: normal;
+  font-weight: 900;
+  font-size: 23px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* Black */
+
+  color: #273237;
+`;
+
 const SeiNuovo = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  return (
+    <ContainerSeiNuovo>
+      <Title>Sei nuovo?</Title>
+      <img src={SeinuovoImage} alt={"seinuovo"} />
+      <ContainerButton>
+        <Link style={{ textDecoration: "none" }} to="/signup-cliente">
+          <ButtonSeiNuovo>Hai bisogno di cure</ButtonSeiNuovo>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/signup-professionista">
+          <ButtonSeiNuovo>Sei un professionista</ButtonSeiNuovo>
+        </Link>
+      </ContainerButton>
+    </ContainerSeiNuovo>
+  );
+};
 
-  if (!isMobile)
+export default SeiNuovo;
+
+/*
+if (!isMobile)
     return (
       <>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -839,7 +896,4 @@ const SeiNuovo = () => {
           </div>
         </div>
       </>
-    );
-};
-
-export default SeiNuovo;
+ */
