@@ -112,6 +112,7 @@ const TrovaProfessionista = () => {
           <SeiNuovo />
         </BoxInfo2>
       </ContainerTrova>
+      <BoxSearch />
     </>
   );
 };
@@ -196,7 +197,7 @@ export default TrovaProfessionista;
               marginTop: "100px",
             }}
           >
-            <BoxSearch />
+
 
             <Lavagna />
 
