@@ -25,6 +25,7 @@ import {
   ContainerTitleProfessionista,
   ContainerTrova,
   Left,
+  Right,
   SpanTop,
   TextSection,
   TitleOne,
@@ -58,6 +59,8 @@ const TrovaProfessionista = () => {
             alt={"first"}
           />
         </Left>
+
+        <BoxSearch />
       </CercaContainter>
       <ContainerTrova>
         <BoxInfo>
@@ -112,7 +115,6 @@ const TrovaProfessionista = () => {
           <SeiNuovo />
         </BoxInfo2>
       </ContainerTrova>
-      <BoxSearch />
     </>
   );
 };

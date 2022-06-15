@@ -1,9 +1,70 @@
-import { Box } from "@mui/system";
+import { Box, styled } from "@mui/system";
 import React, { useMemo, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Lavagna from "./Lavagna";
+
+const TitleBoxS = styled("p")`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #39b1d9;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+const BoxS = styled("div")`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 11px;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50px;
+  width: 348px;
+
+  background: #ffffff;
+  backdrop-filter: blur(33px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 20px;
+`;
+
+const InputBoxS = styled("input")`
+  width: 308px;
+  height: 48px;
+
+  background: rgba(226, 226, 226, 0.3);
+  border-radius: 10px;
+  border: none;
+
+  /* Inside auto layout */
+`;
+
+const ButtonBoxS = styled("button")`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 19px;
+  gap: 10px;
+  color: white;
+  width: 308px;
+  height: 47px;
+  border: none;
+
+  background: #39b1d9;
+  border-radius: 40px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+`;
 const BoxSearch = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -151,6 +212,19 @@ const BoxSearch = () => {
     return professione !== "" && citta !== "";
   }, [citta, professione]);
 
+  return (
+    <>
+      <BoxS>
+        <TitleBoxS>Cosa cerchi?</TitleBoxS>
+        <InputBoxS />
+        <TitleBoxS>Dove ti trovi?</TitleBoxS>
+        <InputBoxS />
+        <ButtonBoxS>Cerca</ButtonBoxS>
+      </BoxS>
+    </>
+  );
+};
+/*
   if (!isMobile)
     return (
       <>
@@ -399,5 +473,7 @@ const BoxSearch = () => {
       </>
     );
 };
+
+ */
 
 export default BoxSearch;

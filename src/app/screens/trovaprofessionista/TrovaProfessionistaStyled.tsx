@@ -24,6 +24,8 @@ const BoxInfo2 = styled("div")`
 
 const CercaContainter = styled("div")`
   height: 624px;
+  max-height: 624px;
+  min-height: 624px;
   background-color: #39b1d9;
   padding: 3rem;
 `;
