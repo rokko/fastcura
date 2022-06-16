@@ -4,14 +4,17 @@ import PrimaImmagine from "../../media/landingprofessionista.png";
 import EntraNelTeam from "../../components/HomepageComponent/EntraNelTeam";
 import Target from "../../components/HomepageComponent/Target";
 import DecidiTu from "../../components/HomepageComponent/DecidiTu";
-import FaiTuPrezzo from "../../components/HomepageComponent/FaiTuPrezzo";
+import FaiTuPrezzo from "../../media/faiprezzo.png";
 import ServizioMessagistica from "../../components/HomepageComponent/ServizioMessagistica";
-import Ricavi from "../../components/HomepageComponent/Ricavi";
 import ServizioInnovativo from "../../components/HomepageComponent/ServizioInnovativo";
 import ProvaloGratis from "../../components/HomepageComponent/ProvaloGratis";
 import Footer from "../../components/General/Footer";
+import Messaggistica from "../../media/messagistica.png";
 import Visibilita from "../../media/visibilita.png";
 import DiciTu from "../../media/dicitu.png";
+import Ricavi from "../../media/ricavi.png";
+import Servizio from "../../media/servizio.png";
+import Car from "../../media/car.png";
 import {
   BoxInfo,
   ButtonFirstContainer,
@@ -52,10 +55,12 @@ const LandingProfessionista = () => {
           </BoxDescription>
         </BoxInfo>
         <BoxInfo>
-          <TitleSection>
-            Per Infermieri, Caregiver e Fisioterapisti
-          </TitleSection>
-          <TextSection></TextSection>
+          <BoxDescription>
+            <TitleSection>
+              Per Infermieri, Caregiver e Fisioterapisti
+            </TitleSection>
+          </BoxDescription>
+          <img src={Car} alt={"car driver"} />
         </BoxInfo>
         <BoxInfo>
           <img src={DiciTu} alt={"dici tu"} />
@@ -68,34 +73,46 @@ const LandingProfessionista = () => {
           </BoxDescription>
         </BoxInfo>
         <BoxInfo>
-          <TitleSection>Fai tu il prezzo</TitleSection>
-          <TextSection>
-            Potrai recensire e vederele recensioni degli altri.
-          </TextSection>
+          <BoxDescription>
+            <TitleSection>Fai tu il prezzo</TitleSection>
+            <TextSection>
+              Potrai recensire e vederele recensioni degli altri.
+            </TextSection>
+          </BoxDescription>
+          <img src={FaiTuPrezzo} alt={"fai prezzo"} />
         </BoxInfo>
         <BoxInfo>
-          <TitleSection>
-            Servizio di messaggistica diretto con il cliente
-          </TitleSection>
-          <TextSection>
-            La persona trova i professionisti più vicini a lui e ne valuta le
-            competenze e la qualità dei servizi erogati attraverso le recensioni
-            lasciate da altri utenti
-          </TextSection>
+          <img src={Messaggistica} alt={"messaggistica"} />
+          <BoxDescription>
+            <TitleSection>
+              Servizio di messaggistica diretto con il cliente
+            </TitleSection>
+            <TextSection>
+              La persona trova i professionisti più vicini a lui e ne valuta le
+              competenze e la qualità dei servizi erogati attraverso le
+              recensioni lasciate da altri utenti
+            </TextSection>
+          </BoxDescription>
         </BoxInfo>
         <BoxInfo>
-          <TitleSection>Ricavi</TitleSection>
-          <TextSection>
-            Accordato con il cliente il prezzo, lui potrà pagare nella più
-            completa sicurezza sul sito o in contanti a prestazione ultimata
-          </TextSection>
+          <BoxDescription>
+            <TitleSection>Ricavi</TitleSection>
+            <TextSection>
+              Accordato con il cliente il prezzo, lui potrà pagare nella più
+              completa sicurezza sul sito o in contanti a prestazione ultimata
+            </TextSection>
+          </BoxDescription>
+          <img src={Ricavi} alt={"ricavi"} />
         </BoxInfo>
         <BoxInfo>
-          <TitleSection>Un servizio innovativo</TitleSection>
-          <TextSection>
-            Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
-            la tutela del professionista.
-          </TextSection>
+          <img src={Servizio} alt={"servizio"} />
+          <BoxDescription>
+            <TitleSection>Un servizio innovativo</TitleSection>
+            <TextSection>
+              Fastcura è un servizio unico nel suo genere. Al centro di tutto vi
+              è la tutela del professionista.
+            </TextSection>
+          </BoxDescription>
         </BoxInfo>
         <TitleFinal>Provalo gratis!</TitleFinal>
         <TextFinal>

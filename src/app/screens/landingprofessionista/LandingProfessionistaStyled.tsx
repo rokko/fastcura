@@ -64,9 +64,11 @@ const ButtonSection = styled("button")`
   gap: 10px;
   width: 310px;
   height: 50px;
-
+  border: none;
   background: #39b1d9;
   border-radius: 40px;
+  color: white;
+  font-weight: 400;
 `;
 const TitleSection = styled("p")`
   color: #273237;
