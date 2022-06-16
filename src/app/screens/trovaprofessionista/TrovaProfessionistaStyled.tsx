@@ -8,6 +8,10 @@ const BoxInfo = styled("div")`
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 340px;
+  }
 `;
 
 const BoxInfo2 = styled("div")`
@@ -20,6 +24,10 @@ const BoxInfo2 = styled("div")`
   align-items: center;
   align-content: center;
   justify-content: space-evenly;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 340px;
+  }
 `;
 
 const CercaContainter = styled("div")`
@@ -28,6 +36,9 @@ const CercaContainter = styled("div")`
   min-height: 624px;
   background-color: #39b1d9;
   padding: 3rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ContainerTrova = styled("div")`
@@ -37,6 +48,9 @@ const ContainerTrova = styled("div")`
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ContainerProfessionista = styled("div")`
