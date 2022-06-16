@@ -22,6 +22,7 @@ import {
   ContainerFirstImage,
   ContainerOther,
   FinalButton,
+  Immagini,
   SpanTitle,
   TextFinal,
   TextSection,
@@ -40,11 +41,11 @@ const LandingProfessionista = () => {
           Iscriviti a <SpanTitle>Fastcura</SpanTitle>
         </TitleFirstContainer>
         <ButtonFirstContainer>Inizia la prova gratuita</ButtonFirstContainer>
-        <img src={PrimaImmagine} width={"830px"} alt={"prima immagine"} />
+        <Immagini src={PrimaImmagine} width={"830px"} alt={"prima immagine"} />
       </ContainerFirstImage>
       <ContainerOther>
         <BoxInfo>
-          <img src={Visibilita} alt={"visibilita"} />
+          <Immagini src={Visibilita} alt={"visibilita"} />
           <BoxDescription>
             <TitleSection>Visibilità</TitleSection>
             <TextSection>
@@ -60,10 +61,10 @@ const LandingProfessionista = () => {
               Per Infermieri, Caregiver e Fisioterapisti
             </TitleSection>
           </BoxDescription>
-          <img src={Car} alt={"car driver"} />
+          <Immagini src={Car} alt={"car driver"} />
         </BoxInfo>
         <BoxInfo>
-          <img src={DiciTu} alt={"dici tu"} />
+          <Immagini src={DiciTu} alt={"dici tu"} />
           <BoxDescription>
             <TitleSection>Decidi tu quando!</TitleSection>
             <TextSection>
@@ -79,7 +80,7 @@ const LandingProfessionista = () => {
               Potrai recensire e vederele recensioni degli altri.
             </TextSection>
           </BoxDescription>
-          <img src={FaiTuPrezzo} alt={"fai prezzo"} />
+          <Immagini src={FaiTuPrezzo} alt={"fai prezzo"} />
         </BoxInfo>
         <BoxInfo>
           <img src={Messaggistica} alt={"messaggistica"} />
@@ -102,10 +103,10 @@ const LandingProfessionista = () => {
               completa sicurezza sul sito o in contanti a prestazione ultimata
             </TextSection>
           </BoxDescription>
-          <img src={Ricavi} alt={"ricavi"} />
+          <Immagini src={Ricavi} alt={"ricavi"} />
         </BoxInfo>
         <BoxInfo>
-          <img src={Servizio} alt={"servizio"} />
+          <Immagini src={Servizio} alt={"servizio"} />
           <BoxDescription>
             <TitleSection>Un servizio innovativo</TitleSection>
             <TextSection>

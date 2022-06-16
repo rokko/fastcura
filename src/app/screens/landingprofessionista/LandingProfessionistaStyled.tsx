@@ -17,6 +17,10 @@ const TitleFirstContainer = styled("p")`
     font-size: 38px;
   }
 `;
+
+const Immagini = styled("img")`
+  width: 100%;
+`;
 const ButtonFirstContainer = styled("button")`
   display: flex;
   flex-direction: row;
@@ -61,6 +65,9 @@ const BoxInfo = styled("div")`
   @media (max-width: 768px) {
     flex-direction: column;
     width: 337px;
+    height: 400px;
+    align-content: center;
+    align-items: center;
   }
 `;
 
@@ -107,7 +114,6 @@ const TextFinal = styled("p")`
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-
   color: #273237;
 `;
 
@@ -154,4 +160,5 @@ export {
   FinalButton,
   TextFinal,
   TitleFinal,
+  Immagini,
 };

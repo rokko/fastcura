@@ -75,6 +75,9 @@ const TitleSection = styled("p")`
   font-size: 36px;
   line-height: 42px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 23px;
+  }
 `;
 const TextSection = styled("p")`
   font-style: normal;
@@ -83,6 +86,9 @@ const TextSection = styled("p")`
   line-height: 23px;
   text-align: center;
   color: #a6a6a6;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 const TitleTop = styled("p")`
   font-weight: 400;
@@ -102,6 +108,10 @@ const BoxDescription = styled("div")`
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+  }
 `;
 
 const ContainerTitleProfessionista = styled("div")`
