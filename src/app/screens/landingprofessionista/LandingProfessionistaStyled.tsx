@@ -35,6 +35,8 @@ const ContainerOther = styled("div")`
   background-color: #e5e5e5;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 `;
 
 const SpanTitle = styled("span")`
@@ -43,6 +45,7 @@ const SpanTitle = styled("span")`
 
 const BoxInfo = styled("div")`
   background-color: white;
+  width: 965px;
   max-width: 965px;
   height: 367px;
   display: flex;
@@ -80,6 +83,47 @@ const TextSection = styled("p")`
   text-align: center;
   color: #a6a6a6;
 `;
+
+const TextFinal = styled("p")`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #273237;
+`;
+
+const TitleFinal = styled("p")`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 39px;
+  text-align: center;
+
+  /* Black */
+
+  color: #273237;
+`;
+
+const FinalButton = styled("button")`
+  width: 209px;
+  height: 21px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #39b1d9;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
 export {
   ContainerFirstImage,
   SpanTitle,
@@ -90,4 +134,7 @@ export {
   TitleSection,
   TextSection,
   ButtonSection,
+  FinalButton,
+  TextFinal,
+  TitleFinal,
 };

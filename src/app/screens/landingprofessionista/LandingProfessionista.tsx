@@ -18,8 +18,11 @@ import {
   ButtonSection,
   ContainerFirstImage,
   ContainerOther,
+  FinalButton,
   SpanTitle,
+  TextFinal,
   TextSection,
+  TitleFinal,
   TitleFirstContainer,
   TitleSection,
 } from "./LandingProfessionistaStyled";
@@ -82,12 +85,25 @@ const LandingProfessionista = () => {
         </BoxInfo>
         <BoxInfo>
           <TitleSection>Ricavi</TitleSection>
-          <TextSection></TextSection>
+          <TextSection>
+            Accordato con il cliente il prezzo, lui potrà pagare nella più
+            completa sicurezza sul sito o in contanti a prestazione ultimata
+          </TextSection>
         </BoxInfo>
         <BoxInfo>
           <TitleSection>Un servizio innovativo</TitleSection>
-          <TextSection></TextSection>
+          <TextSection>
+            Fastcura è un servizio unico nel suo genere. Al centro di tutto vi è
+            la tutela del professionista.
+          </TextSection>
         </BoxInfo>
+        <TitleFinal>Provalo gratis!</TitleFinal>
+        <TextFinal>
+          Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
+          Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
+          allargando la tua rete di clienti
+        </TextFinal>
+        <FinalButton>Inizia ora la prova gratuita</FinalButton>
       </ContainerOther>
     </>
   );
