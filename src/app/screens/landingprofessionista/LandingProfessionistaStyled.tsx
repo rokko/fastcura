@@ -12,8 +12,10 @@ const TitleFirstContainer = styled("p")`
   font-size: 60px;
   line-height: 70px;
   text-align: center;
-
   color: #39b1d9;
+  @media (max-width: 768px) {
+    font-size: 38px;
+  }
 `;
 const ButtonFirstContainer = styled("button")`
   display: flex;
@@ -29,6 +31,9 @@ const ButtonFirstContainer = styled("button")`
   background: #39b1d9;
   border-radius: 40px;
   font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const ContainerOther = styled("div")`
@@ -53,6 +58,10 @@ const BoxInfo = styled("div")`
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 337px;
+  }
 `;
 
 const ButtonSection = styled("button")`
@@ -76,6 +85,9 @@ const TitleSection = styled("p")`
   font-size: 36px;
   line-height: 42px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 23px;
+  }
 `;
 const TextSection = styled("p")`
   font-style: normal;
@@ -84,6 +96,9 @@ const TextSection = styled("p")`
   line-height: 23px;
   text-align: center;
   color: #a6a6a6;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const TextFinal = styled("p")`
