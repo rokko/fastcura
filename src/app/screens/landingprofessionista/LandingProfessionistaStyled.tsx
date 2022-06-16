@@ -52,6 +52,19 @@ const BoxInfo = styled("div")`
   align-items: center;
 `;
 
+const ButtonSection = styled("button")`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 19px;
+  gap: 10px;
+  width: 310px;
+  height: 50px;
+
+  background: #39b1d9;
+  border-radius: 40px;
+`;
 const TitleSection = styled("p")`
   color: #273237;
   font-weight: 900;
@@ -76,4 +89,5 @@ export {
   BoxInfo,
   TitleSection,
   TextSection,
+  ButtonSection,
 };
