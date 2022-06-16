@@ -24,6 +24,7 @@ import {
   ContainerProfessionista,
   ContainerTitleProfessionista,
   ContainerTrova,
+  Immagini,
   Left,
   Right,
   SpanTop,
@@ -53,7 +54,7 @@ const TrovaProfessionista = () => {
           <TitleTop>
             L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
           </TitleTop>
-          <img
+          <Immagini
             style={{ position: "absolute", bottom: "-412px" }}
             src={FirstPng}
             alt={"first"}
@@ -64,7 +65,7 @@ const TrovaProfessionista = () => {
       </CercaContainter>
       <ContainerTrova>
         <BoxInfo>
-          <img src={HaiBisogno} alt={"hai bisogno"} />
+          <Immagini src={HaiBisogno} alt={"hai bisogno"} />
           <BoxDescription>
             <TitleSection>Hai bisogno di cure?</TitleSection>
             <TextSection>
@@ -80,7 +81,7 @@ const TrovaProfessionista = () => {
               L’assistenza domiciliare non è mai stata così veloce!
             </TextSection>
           </BoxDescription>
-          <img src={ProblemaRisolto} alt={"problema risolto"} />
+          <Immagini src={ProblemaRisolto} alt={"problema risolto"} />
         </BoxInfo>
         <BoxInfo>
           <img src={ChattaDirettamente} alt={"chatta direttamente"} />
@@ -101,14 +102,14 @@ const TrovaProfessionista = () => {
               Potrai recensire e vedere le recensioni degli altri.
             </TextSection>
           </BoxDescription>
-          <img src={Feedback} alt={"feedback"} />
+          <Immagini src={Feedback} alt={"feedback"} />
         </BoxInfo>
         <ContainerProfessionista>
           <ContainerTitleProfessionista>
             <TitleOne>Sei un professionista?</TitleOne>
             <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
           </ContainerTitleProfessionista>
-          <img src={Professi} alt={"professionista"} />
+          <Immagini src={Professi} alt={"professionista"} />
         </ContainerProfessionista>
         <BoxInfo2>
           <Login />

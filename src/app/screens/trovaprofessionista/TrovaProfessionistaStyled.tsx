@@ -41,6 +41,10 @@ const CercaContainter = styled("div")`
   }
 `;
 
+const Immagini = styled("img")`
+  width: 100%;
+`;
+
 const ContainerTrova = styled("div")`
   display: flex;
   flex-direction: column;
@@ -54,8 +58,11 @@ const ContainerTrova = styled("div")`
 `;
 
 const ContainerProfessionista = styled("div")`
-  height: auto;
   width: 100%;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Left = styled("div")`
@@ -96,6 +103,14 @@ const TitleTop = styled("p")`
   line-height: 70px;
   color: #ffffff;
   text-align: left;
+  @media (max-width: 768px) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+
+    color: #ffffff;
+  }
 `;
 
 const SpanTop = styled(`span`)`
@@ -121,6 +136,9 @@ const ContainerTitleProfessionista = styled("div")`
   padding: 7rem;
   gap: 40rem;
   justify-content: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TitleOne = styled("p")`
@@ -152,6 +170,7 @@ const ButtonTwo = styled("button")`
 `;
 
 export {
+  Immagini,
   BoxInfo,
   ContainerTrova,
   CercaContainter,
