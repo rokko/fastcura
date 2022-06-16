@@ -1,6 +1,8 @@
 import { styled } from "@mui/system";
 
 const BoxInfo = styled("div")`
+  background-color: white;
+  width: 965px;
   max-width: 965px;
   height: 367px;
   display: flex;
@@ -10,7 +12,11 @@ const BoxInfo = styled("div")`
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 340px;
+    width: 337px;
+    height: 500px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -19,6 +25,7 @@ const BoxInfo2 = styled("div")`
   height: 367px;
   display: flex;
   padding: 2rem;
+  background-color: white;
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-items: center;
@@ -27,6 +34,7 @@ const BoxInfo2 = styled("div")`
   @media (max-width: 768px) {
     flex-direction: column;
     width: 340px;
+    height: 600px;
   }
 `;
 
@@ -42,7 +50,10 @@ const CercaContainter = styled("div")`
 `;
 
 const Immagini = styled("img")`
-  width: 100%;
+  width: auto;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 
 const ContainerTrova = styled("div")`
@@ -52,6 +63,8 @@ const ContainerTrova = styled("div")`
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  padding: 2rem;
+  background-color: #e5e5e5;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -62,6 +75,7 @@ const ContainerProfessionista = styled("div")`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 `;
 

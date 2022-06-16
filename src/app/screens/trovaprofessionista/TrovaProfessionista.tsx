@@ -183,9 +183,10 @@ const TrovaProfessionista = () => {
           <ContainerProfessionista>
             <ContainerTitleProfessionista>
               <TitleOne>Sei un professionista?</TitleOne>
+              <img src={Professi} alt={"professionista"} />
+
               <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
             </ContainerTitleProfessionista>
-            <Immagini src={Professi} alt={"professionista"} />
           </ContainerProfessionista>
           <BoxInfo2>
             <Login />
