@@ -15,11 +15,15 @@ const TitleFirstContainer = styled("p")`
   color: #39b1d9;
   @media (max-width: 768px) {
     font-size: 38px;
+    margin-top: 5rem;
   }
 `;
 
 const Immagini = styled("img")`
-  width: 100%;
+  width: auto;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 const ButtonFirstContainer = styled("button")`
   display: flex;
@@ -46,6 +50,11 @@ const ContainerOther = styled("div")`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  height: 100%;
+  padding: 2rem;
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const SpanTitle = styled("span")`
@@ -65,9 +74,10 @@ const BoxInfo = styled("div")`
   @media (max-width: 768px) {
     flex-direction: column;
     width: 337px;
-    height: 400px;
+    height: 500px;
     align-content: center;
     align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -131,12 +141,13 @@ const TitleFinal = styled("p")`
 
 const FinalButton = styled("button")`
   width: 209px;
-  height: 21px;
+  height: 50px;
   border: none;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
+  border-radius: 20px;
   /* identical to box height */
 
   color: #39b1d9;
@@ -146,6 +157,9 @@ const FinalButton = styled("button")`
   flex: none;
   order: 0;
   flex-grow: 0;
+  @media (max-width: 768px) {
+    height: 50px;
+  }
 `;
 export {
   ContainerFirstImage,
