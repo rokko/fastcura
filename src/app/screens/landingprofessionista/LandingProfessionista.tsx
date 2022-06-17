@@ -30,8 +30,12 @@ import {
   TitleFirstContainer,
   TitleSection,
 } from "./LandingProfessionistaStyled";
-import { BoxDescription } from "../trovaprofessionista/TrovaProfessionistaStyled";
+import {
+  BoxDescription,
+  ButtonTwo,
+} from "../trovaprofessionista/TrovaProfessionistaStyled";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const LandingProfessionista = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -44,7 +48,11 @@ const LandingProfessionista = () => {
           <TitleFirstContainer>
             Iscriviti a <SpanTitle>Fastcura</SpanTitle>
           </TitleFirstContainer>
-          <ButtonFirstContainer>Inizia la prova gratuita</ButtonFirstContainer>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            <ButtonFirstContainer>
+              Inizia la prova gratuita
+            </ButtonFirstContainer>
+          </Link>
           <Immagini
             src={PrimaImmagine}
             width={"830px"}
@@ -60,7 +68,12 @@ const LandingProfessionista = () => {
                 Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
                 allargando la tua rete di clienti
               </TextSection>
-              <ButtonSection>Scopri di più</ButtonSection>
+              <Link
+                to="/signup-professionista"
+                style={{ textDecoration: "none" }}
+              >
+                <ButtonSection>Scopri di più</ButtonSection>
+              </Link>
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
@@ -123,13 +136,17 @@ const LandingProfessionista = () => {
               </TextSection>
             </BoxDescription>
           </BoxInfo>
-          <TitleFinal>Provalo gratis!</TitleFinal>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            <TitleFinal>Provalo gratis!</TitleFinal>
+          </Link>
           <TextFinal>
             Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
             Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
             allargando la tua rete di clienti
           </TextFinal>
-          <FinalButton>Inizia ora la prova gratuita</FinalButton>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            <FinalButton>Inizia ora la prova gratuita</FinalButton>
+          </Link>
         </ContainerOther>
       </>
     );
@@ -141,7 +158,11 @@ const LandingProfessionista = () => {
           <TitleFirstContainer>
             Iscriviti a <SpanTitle>Fastcura</SpanTitle>
           </TitleFirstContainer>
-          <ButtonFirstContainer>Inizia la prova gratuita</ButtonFirstContainer>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            <ButtonFirstContainer>
+              Inizia la prova gratuita
+            </ButtonFirstContainer>
+          </Link>
           <Immagini
             src={PrimaImmagine}
             width={"830px"}
@@ -157,7 +178,12 @@ const LandingProfessionista = () => {
                 Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
                 allargando la tua rete di clienti
               </TextSection>
-              <ButtonSection>Scopri di più</ButtonSection>
+              <Link
+                to="/signup-professionista"
+                style={{ textDecoration: "none" }}
+              >
+                <ButtonSection>Scopri di più</ButtonSection>
+              </Link>
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
@@ -223,13 +249,18 @@ const LandingProfessionista = () => {
               </TextSection>
             </BoxDescription>
           </BoxInfo>
-          <TitleFinal>Provalo gratis!</TitleFinal>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            <TitleFinal>Provalo gratis!</TitleFinal>
+          </Link>
           <TextFinal>
             Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
             Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
             allargando la tua rete di clienti
           </TextFinal>
-          <FinalButton>Inizia ora la prova gratuita</FinalButton>
+          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
+            {" "}
+            <FinalButton>Inizia ora la prova gratuita</FinalButton>
+          </Link>
         </ContainerOther>
       </>
     );

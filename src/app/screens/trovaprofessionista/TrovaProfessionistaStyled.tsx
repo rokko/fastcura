@@ -181,7 +181,7 @@ const TitleOne = styled("p")`
 
 const ButtonTwo = styled("button")`
   width: 237px;
-  height: 21px;
+  height: 50px;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

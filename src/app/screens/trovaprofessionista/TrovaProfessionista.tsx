@@ -34,6 +34,7 @@ import {
   TitleTop,
 } from "./TrovaProfessionistaStyled";
 import { Title } from "react-head";
+import { Link } from "react-router-dom";
 
 const TrovaProfessionista = () => {
   const [token, setToken] = useState("");
@@ -108,7 +109,12 @@ const TrovaProfessionista = () => {
           <ContainerProfessionista>
             <ContainerTitleProfessionista>
               <TitleOne>Sei un professionista?</TitleOne>
-              <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+              <Link
+                to="/signup-professionista"
+                style={{ textDecoration: "none" }}
+              >
+                <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+              </Link>
             </ContainerTitleProfessionista>
             <Immagini src={Professi} alt={"professionista"} />
           </ContainerProfessionista>
@@ -184,7 +190,12 @@ const TrovaProfessionista = () => {
             </ContainerTitleProfessionista>
             <img src={Professi} alt={"professionista"} width={"100%"} />
 
-            <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+            </Link>
           </ContainerProfessionista>
           <BoxInfo2>
             <Login />
