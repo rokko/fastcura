@@ -24,8 +24,8 @@ const BoxS = styled("div")`
   align-items: center;
   position: absolute;
   right: 50px;
+  top: 20rem;
   width: 348px;
-
   background: #ffffff;
   backdrop-filter: blur(33px);
   /* Note: backdrop-filter has minimal browser support */

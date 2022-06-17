@@ -51,15 +51,15 @@ const TrovaProfessionista = () => {
       <>
         <Header />
         <CercaContainter>
+          <Immagini
+            style={{ position: "absolute", bottom: "0px" }}
+            src={FirstPng}
+            alt={"first"}
+          />
           <Left>
             <TitleTop>
               L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
             </TitleTop>
-            <Immagini
-              style={{ position: "absolute", bottom: "-412px" }}
-              src={FirstPng}
-              alt={"first"}
-            />
           </Left>
 
           <BoxSearch />
