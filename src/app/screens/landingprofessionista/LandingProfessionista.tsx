@@ -148,6 +148,7 @@ const LandingProfessionista = () => {
             <FinalButton>Inizia ora la prova gratuita</FinalButton>
           </Link>
         </ContainerOther>
+        <Footer />
       </>
     );
   else
@@ -262,6 +263,7 @@ const LandingProfessionista = () => {
             <FinalButton>Inizia ora la prova gratuita</FinalButton>
           </Link>
         </ContainerOther>
+        <Footer />
       </>
     );
 };

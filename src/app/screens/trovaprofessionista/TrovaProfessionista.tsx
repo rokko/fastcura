@@ -123,6 +123,7 @@ const TrovaProfessionista = () => {
             <SeiNuovo />
           </BoxInfo2>
         </ContainerTrova>
+        <Footer />
       </>
     );
   else
@@ -204,6 +205,7 @@ const TrovaProfessionista = () => {
             <SeiNuovo />
           </BoxInfo2>
         </ContainerTrova>
+        <Footer />
       </>
     );
 };
