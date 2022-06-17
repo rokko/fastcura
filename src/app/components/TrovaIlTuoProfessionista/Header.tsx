@@ -76,14 +76,15 @@ const Header = () => {
   const [kolog, setKolog] = useState(false);
   const [open, setOpen] = useState(false);
   const [pop, setPop] = useState(false);
+  const [type, setType] = useState("");
   const [token, setToken] = useState("");
-
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
-    if (!!tokenTest) {
-      setToken(tokenTest);
-      takeUtente();
-    }
+    const type = await localStorage.getItem("type");
+
+    if (!!type) setType(type);
+    if (!!tokenTest) setToken(tokenTest);
+    await takeUtente();
   };
 
   const takeUtente = async () => {
@@ -122,11 +123,14 @@ const Header = () => {
   };
 
   useEffect(() => {
-    takeToken();
+    takeToken().then((r) => console.log(""));
   }, [token]);
+
   return (
     <ContainerHeader>
-      <img src={Logo} alt={"logo"} />
+      <Link to="/">
+        <img src={Logo} alt={"logo"} />
+      </Link>
       <div
         style={{
           padding: "0.5rem",
@@ -137,10 +141,68 @@ const Header = () => {
         }}
       >
         <ButtonRight>
-          <TextButton>Sei un professionista? Iscriviti</TextButton>
-        </ButtonRight>
+          {token !== "" && type === "1" && (
+            <Link to="/professionista" style={{ textDecoration: "none" }}>
+              <TextButton>Accedi alla Dashboard</TextButton>
+            </Link>
+          )}
+          {token !== "" && type === "0" && (
+            <Link to="/cliente" style={{ textDecoration: "none" }}>
+              <TextButton>Accedi alla Dashboard</TextButton>
+            </Link>
+          )}
 
-        <img src={Icon} alt={"icon"} />
+          {token === "" && (
+            <Link
+              to="/landing-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              <TextButton>Sei un professionista? Iscriviti!</TextButton>
+            </Link>
+          )}
+        </ButtonRight>
+        {!!utente && (
+          <div
+            onClick={() => {
+              if (!utente?.email) {
+                setPop(true);
+              } else {
+                setOpen(!open);
+              }
+            }}
+            style={{
+              position: "relative",
+              width: "40px",
+              height: "40px",
+              marginLeft: "10px",
+              backgroundColor: "rgb(57, 177, 217)",
+              borderRadius: "100%",
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <p
+              style={{
+                color: "white",
+                fontSize: "16px",
+                marginRight: "5px",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              {utente!.nome.charAt(0)}
+              {utente!.cognome.charAt(0)}
+            </p>
+            {!!open && <VerticalMenu open={open} primo={true} />}
+          </div>
+        )}
+        {!utente && (
+          <div onClick={() => setPip(true)}>
+            <img src={Icon} alt={"icon"} />
+          </div>
+        )}
       </div>
       <ModalLogin
         open={pip}
@@ -183,7 +245,6 @@ const Header = () => {
           Errore Login
         </Alert>
       </Snackbar>
-      <VerticalMenu open={open} primo={true} />
     </ContainerHeader>
   );
 };

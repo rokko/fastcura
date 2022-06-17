@@ -198,6 +198,7 @@ const HeaderNoLogin = () => {
                   {utente?.nome.charAt(0)}
                   {utente?.cognome.charAt(0)}
                 </p>
+                {!!open && <VerticalMenu open={open} />}
               </div>
             )}
             {!utente && (
@@ -270,7 +271,6 @@ const HeaderNoLogin = () => {
         </Snackbar>
       </Box>
       <Confir open={ok} message={"Login Effettuato"} setOpen={setOk} />
-      <VerticalMenu open={open} />
     </div>
   );
 };

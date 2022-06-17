@@ -235,7 +235,9 @@ const BoxSearch = () => {
       <InputBoxS />
       <TitleBoxS>Dove ti trovi?</TitleBoxS>
       <InputBoxS />
-      <ButtonBoxS>Cerca</ButtonBoxS>
+      <Link to="/risultati" state={{ professione, citta }}>
+        <ButtonBoxS>Cerca</ButtonBoxS>
+      </Link>
     </BoxS>
   );
 };

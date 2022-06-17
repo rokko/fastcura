@@ -203,11 +203,11 @@ const HeaderUser = () => {
               >
                 {utente?.nome.charAt(0)} {utente?.cognome.charAt(0)}
               </p>
+              {!!open && <VerticalMenu open={open} />}
             </div>
           </div>
         </div>
       </Box>
-      <VerticalMenu open={open} />
     </div>
   );
 };

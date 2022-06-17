@@ -8,57 +8,94 @@ const VerticalMenu = (props: any) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const isBig = useMediaQuery({ query: `(max-width: 1300px)` });
   const navigate = useNavigate();
-  if (props.primo === true) {
-    return (
-      <Menu
-        open={props.open}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-        sx={{
-          marginTop: "5rem",
-          top: isMobile ? "-70%" : "-70%",
-          left: isMobile ? "40%" : "65%",
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: "4rem",
+        right: isMobile ? "1rem" : "0rem",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        backgroundColor: "white",
+        padding: "1rem",
+        width: "180px",
+        borderRadius: "20px",
+        border: "0.5px solid grey ",
+        zIndex: "10000000",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignContent: "center",
+          alignItems: "center",
         }}
       >
-        <MenuItem>
-          <img src="https://img.icons8.com/material-outlined/24/000000/settings--v1.png" />
-          <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
-            Impostazioni
-          </p>
-        </MenuItem>
-        <MenuItem>
-          <img src="https://img.icons8.com/material-outlined/24/000000/customer-support.png" />
-          <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
-            {" "}
-            Assistenza
-          </p>
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            localStorage.clear();
-            navigate("/");
-          }}
-        >
-          <img src="https://img.icons8.com/material-outlined/24/000000/exit.png" />{" "}
-          <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
-            {" "}
-            Logout
-          </p>
-        </MenuItem>
-      </Menu>
-    );
-  }
+        <img
+          width={"30px"}
+          height={"30px"}
+          src="https://img.icons8.com/material-outlined/24/000000/settings--v1.png"
+        />
+        <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
+          Impostazioni
+        </p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          width={"30px"}
+          height={"30px"}
+          src="https://img.icons8.com/material-outlined/24/000000/customer-support.png"
+        />
+        <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
+          {" "}
+          Assistenza
+        </p>
+      </div>
+      <div
+        onClick={async () => {
+          await localStorage.clear();
+          navigate("/");
+        }}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          width={"30px"}
+          height={"30px"}
+          src="https://img.icons8.com/material-outlined/24/000000/exit.png"
+        />{" "}
+        <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
+          {" "}
+          Logout
+        </p>
+      </div>
+    </div>
+  );
+  /*
   return (
     <Menu
       open={props.open}
+      style={{ position: "absolute", top: "0rem" }}
       MenuListProps={{
         "aria-labelledby": "basic-button",
       }}
       sx={{
         position: "absolute",
-        top: isMobile ? "-16rem" : "-16rem",
-        left: isMobile ? "15rem" : "80%",
+        top: "0rem",
       }}
     >
       <MenuItem>
@@ -75,8 +112,8 @@ const VerticalMenu = (props: any) => {
         </p>
       </MenuItem>
       <MenuItem
-        onClick={() => {
-          localStorage.clear();
+        onClick={async () => {
+          await localStorage.clear();
           navigate("/");
         }}
       >
@@ -87,7 +124,7 @@ const VerticalMenu = (props: any) => {
         </p>
       </MenuItem>
     </Menu>
-  );
+  );*/
 };
 
 export default VerticalMenu;
