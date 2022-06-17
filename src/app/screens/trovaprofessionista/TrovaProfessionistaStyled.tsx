@@ -12,7 +12,7 @@ const BoxInfo = styled("div")`
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 337px;
+    width: 290px;
     height: 500px;
     align-content: center;
     align-items: center;
@@ -33,7 +33,8 @@ const BoxInfo2 = styled("div")`
   justify-content: space-evenly;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 340px;
+    width: 290px;
+
     height: 600px;
   }
 `;
@@ -43,9 +44,14 @@ const CercaContainter = styled("div")`
   max-height: 624px;
   min-height: 624px;
   background-color: #39b1d9;
+  position: relative;
   padding: 3rem;
+  display: flex;
   @media (max-width: 768px) {
     flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 5rem;
   }
 `;
 
@@ -76,6 +82,8 @@ const ContainerProfessionista = styled("div")`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 `;
 
@@ -152,6 +160,7 @@ const ContainerTitleProfessionista = styled("div")`
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 0.5rem;
   }
 `;
 
@@ -165,6 +174,9 @@ const TitleOne = styled("p")`
   /* Black */
 
   color: #273237;
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const ButtonTwo = styled("button")`
@@ -181,6 +193,9 @@ const ButtonTwo = styled("button")`
   order: 0;
   flex-grow: 0;
   border: none;
+  @media (max-width: 768px) {
+    height: 50px;
+  }
 `;
 
 export {

@@ -124,16 +124,14 @@ const TrovaProfessionista = () => {
       <>
         <Header />
         <CercaContainter>
-          <Left>
-            <TitleTop>
-              L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
-            </TitleTop>
-            <Immagini
-              style={{ position: "absolute", bottom: "-412px" }}
-              src={FirstPng}
-              alt={"first"}
-            />
-          </Left>
+          <Immagini
+            style={{ position: "absolute", top: "14rem" }}
+            src={FirstPng}
+            alt={"first"}
+          />
+          <TitleTop>
+            L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
+          </TitleTop>
 
           <BoxSearch />
         </CercaContainter>
@@ -183,13 +181,15 @@ const TrovaProfessionista = () => {
           <ContainerProfessionista>
             <ContainerTitleProfessionista>
               <TitleOne>Sei un professionista?</TitleOne>
-              <img src={Professi} alt={"professionista"} />
-
-              <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
             </ContainerTitleProfessionista>
+            <img src={Professi} alt={"professionista"} width={"100%"} />
+
+            <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
           </ContainerProfessionista>
           <BoxInfo2>
             <Login />
+          </BoxInfo2>
+          <BoxInfo2>
             <SeiNuovo />
           </BoxInfo2>
         </ContainerTrova>

@@ -31,6 +31,23 @@ const BoxS = styled("div")`
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 20px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 11px;
+
+    width: 300px;
+
+    background: #ffffff;
+    backdrop-filter: blur(33px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 20px;
+    position: absolute;
+    bottom: 1rem;
+  }
 `;
 
 const InputBoxS = styled("input")`
@@ -213,15 +230,13 @@ const BoxSearch = () => {
   }, [citta, professione]);
 
   return (
-    <>
-      <BoxS>
-        <TitleBoxS>Cosa cerchi?</TitleBoxS>
-        <InputBoxS />
-        <TitleBoxS>Dove ti trovi?</TitleBoxS>
-        <InputBoxS />
-        <ButtonBoxS>Cerca</ButtonBoxS>
-      </BoxS>
-    </>
+    <BoxS>
+      <TitleBoxS>Cosa cerchi?</TitleBoxS>
+      <InputBoxS />
+      <TitleBoxS>Dove ti trovi?</TitleBoxS>
+      <InputBoxS />
+      <ButtonBoxS>Cerca</ButtonBoxS>
+    </BoxS>
   );
 };
 /*
