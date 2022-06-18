@@ -12,8 +12,8 @@ const BoxInfo = styled("div")`
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 290px;
-    height: 500px;
+    max-width: 337px;
+    height: 367px;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -33,9 +33,8 @@ const BoxInfo2 = styled("div")`
   justify-content: space-evenly;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 290px;
-
-    height: 600px;
+    max-width: 337px;
+    height: 367px;
   }
 `;
 
@@ -72,6 +71,7 @@ const ContainerTrova = styled("div")`
   padding: 2rem;
   background-color: #e5e5e5;
   @media (max-width: 768px) {
+    padding: 19px;
     flex-direction: column;
   }
 `;

@@ -16,6 +16,12 @@ import SmarritoPassword from "../components/General/Login/SmarritoPassword";
 import ListaChat from "../components/Cliente/ListaChat";
 import { TrovaProfessionista } from "../screens/trovaprofessionista";
 import { LandingProfessionista } from "../screens/landingprofessionista";
+import {
+  TerminiECondizioni,
+  Cookies,
+  Privacy,
+  ConsensoPrivacy,
+} from "../condizioni";
 
 const ProviderRouter = () => {
   return (
@@ -49,6 +55,10 @@ const ProviderRouter = () => {
             element={<SignupCompletatoProfessionista />}
           />
           <Route path="/smarrito-password" element={<SmarritoPassword />} />
+          <Route path="/termini-condizioni" element={<TerminiECondizioni />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/consenso-privacy" element={<ConsensoPrivacy />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </Router>
     </>

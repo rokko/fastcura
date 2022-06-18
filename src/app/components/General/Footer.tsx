@@ -1,6 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -10,7 +10,14 @@ const Footer = () => {
     <div
       style={{
         display: "flex",
-        position: location.pathname == "/risultati" ? "fixed" : "relative",
+        position:
+          location.pathname == "/risultati" ||
+          location.pathname == "/consenso-privacy" ||
+          location.pathname == "/termini-condizioni" ||
+          location.pathname == "/cookies" ||
+          location.pathname == "/privacy"
+            ? "fixed"
+            : "relative",
         bottom: "0",
         marginTop: "50px",
         flexDirection: "column",
@@ -28,18 +35,18 @@ const Footer = () => {
         }}
       >
         <p style={{ color: "#ffffff" }}>FastCura Copyright 2022</p>
-        <a style={{ textDecoration: "none" }} href="/terminicondizioni.pdf">
+        <Link style={{ textDecoration: "none" }} to={"/termini-condizioni"}>
           <p style={{ color: "#ffffff" }}>Termini e Condizioni</p>
-        </a>
-        <a style={{ textDecoration: "none" }} href="/cookie.docx.pdf">
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/cookies">
           <p style={{ color: "#ffffff" }}>Cookies</p>
-        </a>
-        <a style={{ textDecoration: "none" }} href="/Privacy.docx.pdf">
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/privacy">
           <p style={{ color: "#ffffff" }}>Privacy</p>
-        </a>
-        <a style={{ textDecoration: "none" }} href="/consensoprivacy.docx.pdf">
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/consenso-privacy">
           <p style={{ color: "#ffffff" }}>Consenso Privacy</p>
-        </a>
+        </Link>
       </div>
     </div>
   );
