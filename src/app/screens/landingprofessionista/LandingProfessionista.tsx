@@ -141,6 +141,7 @@ const LandingProfessionista = () => {
           </Link>
           <TextFinal>
             Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
+            <br />
             Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
             allargando la tua rete di clienti
           </TextFinal>

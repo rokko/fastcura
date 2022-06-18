@@ -158,7 +158,11 @@ const TextFinal = styled("p")`
   font-size: 14px;
   line-height: 16px;
   text-align: center;
+
+  /* Black */
+
   color: #273237;
+  width: 374px;
 `;
 
 const TitleFinal = styled("p")`
