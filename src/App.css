@@ -35,7 +35,7 @@ body {
   z-index: 1000001;
 }
 p {
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
 }
 
 .boldtext {
