@@ -45,7 +45,7 @@ const SeiNuovo = () => {
   return (
     <ContainerSeiNuovo>
       <Title>Sei nuovo?</Title>
-      <img src={SeinuovoImage} alt={"seinuovo"} />
+      <img width={"324px"} src={SeinuovoImage} alt={"seinuovo"} />
       <ContainerButton>
         <Link style={{ textDecoration: "none" }} to="/signup-cliente">
           <ButtonSeiNuovo>Hai bisogno di cure</ButtonSeiNuovo>

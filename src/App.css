@@ -35,8 +35,9 @@ body {
   z-index: 1000001;
 }
 p {
-  font-family: "Charter";
+  font-family: "Roboto";
 }
+
 .boldtext {
   font-weight: bold;
 }

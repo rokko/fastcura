@@ -105,7 +105,22 @@ const TitleSection = styled("p")`
   line-height: 42px;
   text-align: center;
   @media (max-width: 768px) {
+    height: 27px;
+
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 900;
     font-size: 23px;
+    line-height: 27px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* Black */
+
+    color: #273237;
+
+    /* Inside auto layout */
   }
 `;
 const TextSection = styled("p")`
@@ -116,7 +131,15 @@ const TextSection = styled("p")`
   text-align: center;
   color: #a6a6a6;
   @media (max-width: 768px) {
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    /* Dark Grey */
+
+    color: #a6a6a6;
   }
 `;
 const TitleTop = styled("p")`

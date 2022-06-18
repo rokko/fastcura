@@ -144,7 +144,7 @@ const TrovaProfessionista = () => {
         </CercaContainter>
         <ContainerTrova>
           <BoxInfo>
-            <Immagini src={HaiBisogno} alt={"hai bisogno"} />
+            <img width={"290px"} src={HaiBisogno} alt={"hai bisogno"} />
             <BoxDescription>
               <TitleSection>Hai bisogno di cure?</TitleSection>
               <TextSection>
@@ -154,7 +154,11 @@ const TrovaProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={ProblemaRisolto} alt={"problema risolto"} />
+            <img
+              width={"230px"}
+              src={ProblemaRisolto}
+              alt={"problema risolto"}
+            />
 
             <BoxDescription>
               <TitleSection>Il tuo problema risolto con un click!</TitleSection>
@@ -164,7 +168,11 @@ const TrovaProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={ChattaDirettamente} alt={"chatta direttamente"} />
+            <img
+              width={"146px"}
+              src={ChattaDirettamente}
+              alt={"chatta direttamente"}
+            />
             <BoxDescription>
               <TitleSection>
                 Chatta direttamente con il professionista
@@ -176,7 +184,7 @@ const TrovaProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={Feedback} alt={"feedback"} />
+            <img width={"292px"} src={Feedback} alt={"feedback"} />
 
             <BoxDescription>
               <TitleSection>FeedBack</TitleSection>
@@ -189,7 +197,7 @@ const TrovaProfessionista = () => {
             <ContainerTitleProfessionista>
               <TitleOne>Sei un professionista?</TitleOne>
             </ContainerTitleProfessionista>
-            <img src={Professi} alt={"professionista"} width={"100%"} />
+            <img src={Professi} alt={"professionista"} width={"390px"} />
 
             <Link
               to="/signup-professionista"
