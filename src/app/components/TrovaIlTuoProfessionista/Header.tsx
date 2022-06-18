@@ -10,6 +10,7 @@ import Icon from "../../media/icon.png";
 import Logo from "../../media/logo.png";
 import axios from "axios";
 import { styled } from "@mui/system";
+import { ReactComponent as LogoSVG } from "../../media/Logo.svg";
 
 const ContainerHeader = styled("div")`
   width: 100%;
@@ -129,7 +130,7 @@ const Header = () => {
   return (
     <ContainerHeader>
       <Link to="/">
-        <img src={Logo} alt={"logo"} />
+        <LogoSVG />
       </Link>
       <div
         style={{
