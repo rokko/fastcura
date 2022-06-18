@@ -86,7 +86,11 @@ const TrovaProfessionista = () => {
             <Immagini src={ProblemaRisolto} alt={"problema risolto"} />
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={ChattaDirettamente} alt={"chatta direttamente"} />
+            <img
+              width={"250px"}
+              src={ChattaDirettamente}
+              alt={"chatta direttamente"}
+            />
             <BoxDescription>
               <TitleSection>
                 Chatta direttamente con il professionista
@@ -116,7 +120,7 @@ const TrovaProfessionista = () => {
                 <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
               </Link>
             </ContainerTitleProfessionista>
-            <Immagini src={Professi} alt={"professionista"} />
+            <img width={"670px"} src={Professi} alt={"professionista"} />
           </ContainerProfessionista>
           <BoxInfo2>
             <Login />
