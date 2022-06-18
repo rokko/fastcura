@@ -34,19 +34,21 @@ const BoxS = styled("div")`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     gap: 11px;
 
-    width: 300px;
+    position: absolute;
+    max-width: 300px;
+    left: calc(50% - 348px / 2);
+    top: 57.21%;
+    bottom: 2.88%;
 
     background: #ffffff;
     backdrop-filter: blur(33px);
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 20px;
-    position: absolute;
-    bottom: 1rem;
   }
 `;
 
@@ -57,6 +59,10 @@ const InputBoxS = styled("input")`
   background: rgba(226, 226, 226, 0.3);
   border-radius: 10px;
   border: none;
+  @media (max-width: 768px) {
+    width: 290px;
+    height: 50px;
+  }
 
   /* Inside auto layout */
 `;
@@ -235,7 +241,11 @@ const BoxSearch = () => {
       <InputBoxS />
       <TitleBoxS>Dove ti trovi?</TitleBoxS>
       <InputBoxS />
-      <Link to="/risultati" state={{ professione, citta }}>
+      <Link
+        to="/risultati"
+        style={{ textDecoration: "none" }}
+        state={{ professione, citta }}
+      >
         <ButtonBoxS>Cerca</ButtonBoxS>
       </Link>
     </BoxS>
