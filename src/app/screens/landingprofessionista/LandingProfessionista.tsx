@@ -164,15 +164,11 @@ const LandingProfessionista = () => {
               Inizia la prova gratuita
             </ButtonFirstContainer>
           </Link>
-          <Immagini
-            src={PrimaImmagine}
-            width={"830px"}
-            alt={"prima immagine"}
-          />
+          <img src={PrimaImmagine} width={"100%"} alt={"prima immagine"} />
         </ContainerFirstImage>
         <ContainerOther>
           <BoxInfo>
-            <Immagini src={Visibilita} alt={"visibilita"} />
+            <img width={"236px"} src={Visibilita} alt={"visibilita"} />
             <BoxDescription>
               <TitleSection>Visibilità</TitleSection>
               <TextSection>
@@ -188,7 +184,7 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={Car} alt={"car driver"} />
+            <img width={"290px"} src={Car} alt={"car driver"} />
 
             <BoxDescription>
               <TitleSection>
@@ -197,7 +193,7 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={DiciTu} alt={"dici tu"} />
+            <img width={"248px"} src={DiciTu} alt={"dici tu"} />
             <BoxDescription>
               <TitleSection>Decidi tu quando!</TitleSection>
               <TextSection>
@@ -207,7 +203,7 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={FaiTuPrezzo} alt={"fai prezzo"} />
+            <img width={"280px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
 
             <BoxDescription>
               <TitleSection>Fai tu il prezzo</TitleSection>
@@ -217,7 +213,12 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={Messaggistica} alt={"messaggistica"} />
+            <img
+              width={"220px"}
+              src={Messaggistica}
+              alt={"messaggistica"}
+              style={{ marginTop: "1.5rem" }}
+            />
             <BoxDescription>
               <TitleSection>
                 Servizio di messaggistica diretto con il cliente
@@ -230,7 +231,7 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={Ricavi} alt={"ricavi"} />
+            <img width={"276px"} src={Ricavi} alt={"ricavi"} />
 
             <BoxDescription>
               <TitleSection>Ricavi</TitleSection>
@@ -241,7 +242,12 @@ const LandingProfessionista = () => {
             </BoxDescription>
           </BoxInfo>
           <BoxInfo>
-            <Immagini src={Servizio} alt={"servizio"} />
+            <img
+              width={"240px"}
+              src={Servizio}
+              alt={"servizio"}
+              style={{ marginTop: "3rem" }}
+            />
             <BoxDescription>
               <TitleSection>Un servizio innovativo</TitleSection>
               <TextSection>

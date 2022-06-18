@@ -171,6 +171,7 @@ const BoxDescription = styled("div")`
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  align-items: center;
   @media (max-width: 768px) {
     width: 100%;
     max-width: 100%;
