@@ -45,7 +45,7 @@ const ButtonFirstContainer = styled("button")`
 `;
 
 const ContainerOther = styled("div")`
-  background-color: #e5e5e5;
+  background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
   align-items: center;

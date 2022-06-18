@@ -101,7 +101,7 @@ const LandingProfessionista = () => {
                 Potrai recensire e vederele recensioni degli altri.
               </TextSection>
             </BoxDescription>
-            <Immagini src={FaiTuPrezzo} alt={"fai prezzo"} />
+            <img width={"322px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
           </BoxInfo>
           <BoxInfo>
             <img src={Messaggistica} alt={"messaggistica"} />

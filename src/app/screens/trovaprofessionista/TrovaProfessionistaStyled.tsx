@@ -72,7 +72,7 @@ const ContainerTrova = styled("div")`
   align-items: center;
   gap: 3rem;
   padding: 2rem;
-  background-color: #e5e5e5;
+  background-color: #f6f6f6;
   @media (max-width: 768px) {
     padding: 19px;
     flex-direction: column;
