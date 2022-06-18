@@ -73,8 +73,8 @@ const BoxInfo = styled("div")`
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 337px;
-    height: 500px;
+    max-width: 270px;
+    height: 367px;
     align-content: center;
     align-items: center;
     justify-content: center;

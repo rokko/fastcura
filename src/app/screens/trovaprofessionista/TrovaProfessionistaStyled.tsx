@@ -12,7 +12,7 @@ const BoxInfo = styled("div")`
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    max-width: 337px;
+    max-width: 270px;
     height: 367px;
     align-content: center;
     align-items: center;
@@ -33,8 +33,11 @@ const BoxInfo2 = styled("div")`
   justify-content: space-evenly;
   @media (max-width: 768px) {
     flex-direction: column;
-    max-width: 337px;
+    max-width: 270px;
     height: 367px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
