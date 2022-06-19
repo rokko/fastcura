@@ -238,16 +238,65 @@ const BoxSearch = () => {
   return (
     <BoxS>
       <TitleBoxS>Cosa cerchi?</TitleBoxS>
-      <InputBoxS />
+      <Autocomplete
+        disablePortal
+        id="lista-servizi"
+        options={options}
+        size="small"
+        sx={{
+          height: "50px",
+          width: "308px",
+          border: "none",
+          outline: "false",
+          borderRadius: "30px",
+          "& .MuiOutlinedInput-root": {
+            background: "rgba(226, 226, 226, 0.3)",
+            borderRadius: " 10px",
+          },
+        }}
+        style={{ backgroundColor: "#ffffff", border: "none" }}
+        renderInput={(params) => (
+          <TextField
+            style={{ border: "none" }}
+            {...params}
+            placeholder="Infermiere, Badante, Fisio..."
+          />
+        )}
+        onChange={(x, value) => setProfessione(value)}
+      />
       <TitleBoxS>Dove ti trovi?</TitleBoxS>
-      <InputBoxS />
-      <Link
-        to="/risultati"
-        style={{ textDecoration: "none" }}
-        state={{ professione, citta }}
-      >
-        <ButtonBoxS>Cerca</ButtonBoxS>
-      </Link>
+      <Autocomplete
+        disablePortal
+        id="lista-citta"
+        options={city}
+        size="small"
+        sx={{
+          height: "50px",
+          width: "308px",
+          border: "none",
+          outline: "false",
+          borderRadius: "30px",
+          "& .MuiOutlinedInput-root": {
+            background: "rgba(226, 226, 226, 0.3)",
+            borderRadius: " 10px",
+          },
+        }}
+        style={{ backgroundColor: "#ffffff" }}
+        renderInput={(params) => (
+          <TextField {...params} placeholder="Milano, Napoli, Roma ecc..." />
+        )}
+        onChange={(x, value) => setCitta(value)}
+      />
+      {!getCompleted && <ButtonBoxS>Cerca</ButtonBoxS>}
+      {!!getCompleted && (
+        <Link
+          to="/risultati"
+          style={{ textDecoration: "none" }}
+          state={{ professione, citta }}
+        >
+          <ButtonBoxS>Cerca</ButtonBoxS>
+        </Link>
+      )}
     </BoxS>
   );
 };
@@ -301,49 +350,9 @@ const BoxSearch = () => {
             >
               <p className="topsearch-text">Cosa cerchi?</p>
 
-              <Autocomplete
-                disablePortal
-                id="lista-servizi"
-                options={options}
-                size="small"
-                sx={{
-                  width: "240px",
-                  border: "none",
-                  outline: "false",
-                  borderRadius: "30px",
-                  "& .MuiOutlinedInput-root": {
-                    borderColor: "#ffffff",
-                    borderRadius: "30px",
-                  },
-                }}
-                style={{ backgroundColor: "#ffffff", border: "none" }}
-                renderInput={(params) => (
-                  <TextField {...params} placeholder="Infermiere..." />
-                )}
-                onChange={(x, value) => setProfessione(value)}
-              />
+
               <p className="topsearch-text">Dove ti trovi?</p>
-              <Autocomplete
-                disablePortal
-                id="lista-citta"
-                options={city}
-                size="small"
-                sx={{
-                  width: "240px",
-                  border: "none",
-                  outline: "false",
-                  borderRadius: "30px",
-                  "& .MuiOutlinedInput-root": {
-                    borderColor: "#ffffff",
-                    borderRadius: "30px",
-                  },
-                }}
-                style={{ backgroundColor: "#ffffff" }}
-                renderInput={(params) => (
-                  <TextField {...params} placeholder="Milano..." />
-                )}
-                onChange={(x, value) => setCitta(value)}
-              />
+
             </Box>
             {getCompleted && (
               <Link to="/risultati" state={{ professione, citta }}>
