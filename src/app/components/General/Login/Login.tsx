@@ -52,9 +52,10 @@ const Login = (props: any) => {
     align-items: center;
     padding: 13px 19px;
     gap: 10px;
+    width: 250px;
+    border: none;
     background: #e2f4fc;
     border-radius: 10px;
-    border: none;
   `;
   const ContainerLogin = styled("div")`
     display: flex;

@@ -24,7 +24,6 @@ const BoxInfo2 = styled("div")`
   width: 965px;
   height: 367px;
   display: flex;
-  padding: 2rem;
   background-color: white;
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
@@ -33,7 +32,7 @@ const BoxInfo2 = styled("div")`
   justify-content: space-evenly;
   @media (max-width: 768px) {
     flex-direction: column;
-    max-width: 270px;
+    width: 327px;
     height: 367px;
     align-content: center;
     align-items: center;
@@ -207,19 +206,28 @@ const TitleOne = styled("p")`
 `;
 
 const ButtonTwo = styled("button")`
-  width: 237px;
-  height: 50px;
+  width: 310px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 19px;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 40px;
+  height: 21px;
+
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  background-color: #ffffff;
-  border-radius: 40px;
+  /* identical to box height */
+
   color: #39b1d9;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
   border: none;
+
+  /* Inside auto layout */
+
   @media (max-width: 768px) {
     height: 50px;
   }
