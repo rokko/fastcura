@@ -182,7 +182,7 @@ const ContainerTitleProfessionista = styled("div")`
   flex-direction: row;
   align-items: center;
   padding: 7rem;
-  gap: 40rem;
+  gap: 20rem;
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -207,6 +207,7 @@ const TitleOne = styled("p")`
 
 const ButtonTwo = styled("button")`
   width: 310px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -215,7 +216,6 @@ const ButtonTwo = styled("button")`
   gap: 10px;
   background: #ffffff;
   border-radius: 40px;
-  height: 21px;
 
   font-style: normal;
   font-weight: 500;
