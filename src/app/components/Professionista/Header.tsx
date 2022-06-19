@@ -232,7 +232,7 @@ const Header = () => {
           </div>
         </div>
       </Box>
-      <VerticalMenu open={open} />
+      {open && <VerticalMenu open={open} />}
     </div>
   );
 };

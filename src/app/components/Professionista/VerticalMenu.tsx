@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useMediaQuery } from "react-responsive";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const VerticalMenu = (props: any) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -43,24 +43,26 @@ const VerticalMenu = (props: any) => {
           Impostazioni
         </p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img
-          width={"30px"}
-          height={"30px"}
-          src="https://img.icons8.com/material-outlined/24/000000/customer-support.png"
-        />
-        <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
-          {" "}
-          Assistenza
-        </p>
-      </div>
+      <Link to={"/assistenza"} style={{ textDecoration: "none" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            width={"30px"}
+            height={"30px"}
+            src="https://img.icons8.com/material-outlined/24/000000/customer-support.png"
+          />
+          <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
+            {" "}
+            Assistenza
+          </p>
+        </div>
+      </Link>
       <div
         onClick={async () => {
           await localStorage.clear();

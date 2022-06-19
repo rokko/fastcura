@@ -22,6 +22,7 @@ import {
   Privacy,
   ConsensoPrivacy,
 } from "../condizioni";
+import Assistenza from "../components/Professionista/Assistenza";
 
 const ProviderRouter = () => {
   return (
@@ -48,6 +49,7 @@ const ProviderRouter = () => {
             path="/profilo-professionista"
             element={<ProfiloProfessionista />}
           />
+          <Route path="/assistenza" element={<Assistenza />} />
           <Route path="/chatprofessionista" element={<ChatProfessionisti />} />
           <Route path="/chatmessage" element={<PaginaChat />} />
           <Route

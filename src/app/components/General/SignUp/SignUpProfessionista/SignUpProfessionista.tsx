@@ -44,6 +44,7 @@ const SignUpProfessionista = () => {
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
   const tit = ["Laurea", "Scuole Superiori", "Diploma (O.S.S., A.S.A.)"];
   const sess = ["Uomo", "Donna"];
+  const [risult, setRisult] = useState(false);
   const getConfN = useMemo(() => {
     if (professione !== "Badante") return numeroiscrizione === "";
     else return false;
@@ -172,6 +173,24 @@ const SignUpProfessionista = () => {
 
     "Viterbo",
   ];
+
+  const controllaMail = () => {
+    const emailDaInviare = {
+      email: email,
+    };
+
+    return axios
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/mail-utente",
+        emailDaInviare,
+        {}
+      )
+      .then((res) => {
+        console.log(res.data.risult);
+        setRisult(res.data.risult);
+        return res.data.risult;
+      });
+  };
   const validatePassword = useMemo(() => {
     let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (password?.match(check)) {
@@ -180,6 +199,7 @@ const SignUpProfessionista = () => {
       return false;
     }
   }, [password]);
+
   const nuovoProfessionista = {
     cognome: cognome,
     email: email,
@@ -212,18 +232,23 @@ const SignUpProfessionista = () => {
       return false;
     }
   }, [email]);
-  const sendRegister = () => {
-    axios
-      .post(
-        "https://fastcuradev.herokuapp.com/professionista/signup",
-        nuovoProfessionista
-      )
-      .then(function (response) {
-        navigate("/registrazione");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  const sendRegister = async () => {
+    await controllaMail();
+    if (!(await controllaMail())) {
+      axios
+        .post(
+          "https://fastcuradev.herokuapp.com/professionista/signup",
+          nuovoProfessionista
+        )
+        .then(function (response) {
+          navigate("/registrazione");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      console.log("mail gia usata");
+    }
   };
 
   const validation = useMemo(() => {
@@ -291,6 +316,8 @@ const SignUpProfessionista = () => {
               label="Indirizzo email"
             ></TextField>
             {!validationEmail && <p>L'indirizzo email non è corretto</p>}
+            {risult && <p>Attenzione la mail risulta gia registrata</p>}
+
             <TextField
               required={true}
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -808,6 +835,8 @@ const SignUpProfessionista = () => {
                 label="Indirizzo email"
               ></TextField>
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
+              {risult && <p>Attenzione la mail risulta gia registrata</p>}
+
               <TextField
                 required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>

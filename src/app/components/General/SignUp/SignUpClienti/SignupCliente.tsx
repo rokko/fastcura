@@ -32,6 +32,7 @@ const SignUpClient = () => {
   const [confPassword, setConfPassword] = useState<String>("");
   const [esisteMail, setEsisteMail] = useState(false);
   const sess = ["Uomo", "Donna"];
+  const [risult, setRisult] = useState(false);
 
   const nuovoCliente = {
     cognome: cognome,
@@ -66,7 +67,7 @@ const SignUpClient = () => {
       return false;
     }
   }, [password]);
-  const controllaMail = useMemo(async () => {
+  const controllaMail = () => {
     if (validationEmail) {
       const emailDaInviare = {
         email: email,
@@ -74,16 +75,16 @@ const SignUpClient = () => {
 
       return axios
         .post(
-          "https://fastcuradev.herokuapp.com/clienti/mail-utente",
+          "https://fastcuradev.herokuapp.com/cliente/mail-utente",
           emailDaInviare,
           {}
         )
         .then((res) => {
+          setRisult(res.data.risult);
           return res.data.risult;
         });
     } else return false;
-  }, [email, validationEmail]);
-
+  };
   const loginUser = (userlogin: any) => {
     axios
       .post("https://fastcuradev.herokuapp.com/login", userlogin)
@@ -98,10 +99,12 @@ const SignUpClient = () => {
         console.log(error);
       });
   };
+
   const sendRegister = async () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente);
+    await controllaMail();
 
-    if (!controllaMail) {
+    if (!controllaMail()) {
       axios
         .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
         .then(function (response) {
@@ -115,6 +118,8 @@ const SignUpClient = () => {
         .catch(function (error) {
           console.log(error);
         });
+    } else {
+      console.log("Email Registrata");
     }
   };
 
@@ -188,7 +193,7 @@ const SignUpClient = () => {
               label="Indirizzo email"
             ></TextField>
             {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-            {controllaMail && <p>Attenzione la mail risulta gia registrata</p>}
+            {risult && <p>Attenzione la mail risulta gia registrata</p>}
 
             <TextField
               required={true}
@@ -252,6 +257,7 @@ const SignUpClient = () => {
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setCellulare(x.target.value)
               }
+              type={"number"}
               style={{ width: 310, marginTop: 10 }}
               id="outlined-size-small"
               label="Cellulare"
@@ -472,9 +478,7 @@ const SignUpClient = () => {
                 label="Indirizzo email"
               ></TextField>
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-              {controllaMail && (
-                <p>Attenzione la mail risulta gia registrata</p>
-              )}
+              {risult && <p>Attenzione la mail risulta gia registrata</p>}
               <TextField
                 required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -540,6 +544,7 @@ const SignUpClient = () => {
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setCellulare(x.target.value)
                 }
+                type={"number"}
                 style={{ width: 310, marginTop: 10 }}
                 id="outlined-size-small"
                 label="Cellulare"
