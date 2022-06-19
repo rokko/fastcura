@@ -137,7 +137,7 @@ const TrovaProfessionista = () => {
         <CercaContainter>
           <img
             width={"324px"}
-            style={{ position: "absolute", top: "14rem" }}
+            style={{ position: "absolute", top: "14.25rem" }}
             src={FirstPng}
             alt={"first"}
           />
