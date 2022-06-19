@@ -11,10 +11,12 @@ import Logo from "../../media/logo.png";
 import axios from "axios";
 import { styled } from "@mui/system";
 import { ReactComponent as LogoSVG } from "../../media/Logo.svg";
+import { ReactComponent as Omino } from "../../media/omino.svg";
 
 const ContainerHeader = styled("div")`
   width: 100%;
   padding: 0.5rem;
+
   height: 50px;
   position: fixed;
   top: 0;
@@ -22,7 +24,7 @@ const ContainerHeader = styled("div")`
   z-index: 100000;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -129,7 +131,7 @@ const Header = () => {
 
   return (
     <ContainerHeader>
-      <Link to="/">
+      <Link style={{ marginLeft: "1.5rem" }} to="/">
         <LogoSVG />
       </Link>
       <div
@@ -139,6 +141,7 @@ const Header = () => {
           flexDirection: "row",
           alignItems: "center",
           alignContent: "center",
+          marginRight: "1.5rem",
         }}
       >
         <ButtonRight>
@@ -175,7 +178,7 @@ const Header = () => {
               position: "relative",
               width: "40px",
               height: "40px",
-              marginLeft: "10px",
+              marginLeft: "0.5rem",
               backgroundColor: "rgb(57, 177, 217)",
               borderRadius: "100%",
               display: "flex",
@@ -200,8 +203,8 @@ const Header = () => {
           </div>
         )}
         {!utente && (
-          <div onClick={() => setPip(true)}>
-            <img src={Icon} alt={"icon"} />
+          <div style={{ marginLeft: "0.5rem" }} onClick={() => setPip(true)}>
+            <Omino />
           </div>
         )}
       </div>

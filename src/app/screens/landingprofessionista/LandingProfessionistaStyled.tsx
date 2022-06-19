@@ -27,6 +27,8 @@ const Immagini = styled("img")`
 `;
 const ButtonFirstContainer = styled("button")`
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 41px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -71,6 +73,8 @@ const BoxInfo = styled("div")`
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-items: center;
+  color: white;
+  font-weight: 400;
   @media (max-width: 768px) {
     flex-direction: column;
     max-width: 270px;
@@ -95,6 +99,7 @@ const ButtonSection = styled("button")`
   border-radius: 40px;
   color: white;
   font-weight: 400;
+  font-size: 18px;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -162,7 +167,6 @@ const TextFinal = styled("p")`
   /* Black */
 
   color: #273237;
-  width: 374px;
 `;
 
 const TitleFinal = styled("p")`
@@ -196,7 +200,29 @@ const FinalButton = styled("button")`
   order: 0;
   flex-grow: 0;
   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 19px;
+    gap: 10px;
+    width: 308px;
     height: 50px;
+    background: #ffffff;
+    border-radius: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+
+    color: #39b1d9;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
   }
 `;
 export {

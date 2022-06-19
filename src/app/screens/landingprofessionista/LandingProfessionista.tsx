@@ -160,12 +160,12 @@ const LandingProfessionista = () => {
           <TitleFirstContainer>
             Iscriviti a <SpanTitle>Fastcura</SpanTitle>
           </TitleFirstContainer>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            <ButtonFirstContainer>
-              Inizia la prova gratuita
-            </ButtonFirstContainer>
-          </Link>
+          <Link
+            to="/signup-professionista"
+            style={{ textDecoration: "none" }}
+          ></Link>
           <img src={PrimaImmagine} width={"100%"} alt={"prima immagine"} />
+          <ButtonFirstContainer>Inizia la prova gratuita</ButtonFirstContainer>
         </ContainerFirstImage>
         <ContainerOther>
           <BoxInfo>
@@ -257,18 +257,28 @@ const LandingProfessionista = () => {
               </TextSection>
             </BoxDescription>
           </BoxInfo>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            <TitleFinal>Provalo gratis!</TitleFinal>
-          </Link>
-          <TextFinal>
-            Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
-            Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
-            allargando la tua rete di clienti
-          </TextFinal>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            {" "}
-            <FinalButton>Inizia ora la prova gratuita</FinalButton>
-          </Link>
+          <div>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              <TitleFinal>Provalo gratis!</TitleFinal>
+            </Link>
+            <TextFinal>
+              Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
+            </TextFinal>
+            <TextFinal>
+              Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
+              allargando la tua rete di clienti
+            </TextFinal>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              <FinalButton>Inizia ora la prova gratuita</FinalButton>
+            </Link>
+          </div>
         </ContainerOther>
         <Footer />
       </>
