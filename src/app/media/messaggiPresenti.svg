@@ -1,0 +1,10 @@
+<svg id="Componente_1_1" data-name="Componente 1 – 1" xmlns="http://www.w3.org/2000/svg" width="34.832" height="34.832" viewBox="0 0 34.832 34.832">
+    <g id="Icon_ionic-md-chatbubbles" data-name="Icon ionic-md-chatbubbles" transform="translate(0 6.776)">
+        <path id="Tracciato_100" data-name="Tracciato 100" d="M9.094,25.278a3.52,3.52,0,0,1-3.021-3.021V11.25H5.425a2.058,2.058,0,0,0-2.05,2.05V31.752L7.32,27.841H21.827a2.083,2.083,0,0,0,2.05-2.084v-.479Z" transform="translate(-3.375 -3.697)" fill="#fff"/>
+        <path id="Tracciato_101" data-name="Tracciato 101" d="M29.269,3.375H10.44A2.36,2.36,0,0,0,8.086,5.729V20.977a2.366,2.366,0,0,0,2.354,2.36H26.5l5.119,3.574V5.729A2.36,2.36,0,0,0,29.269,3.375Z" transform="translate(-3.567 -3.375)" fill="#fff"/>
+    </g>
+    <g id="brightness_1" transform="translate(21.279)">
+        <path id="Tracciato_115" data-name="Tracciato 115" d="M0,0H13.553V13.553H0Z" fill="none"/>
+        <circle id="Ellisse_28" data-name="Ellisse 28" cx="5.5" cy="5.5" r="5.5" transform="translate(1.276 1.276)" fill="#e93323"/>
+    </g>
+</svg>
