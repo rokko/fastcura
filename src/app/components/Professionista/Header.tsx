@@ -206,6 +206,7 @@ const Header = () => {
                 </p>
               </div>
             )}
+            {open && <VerticalMenu open={open} />}
             {!utente && (
               <svg
                 id="person"
@@ -232,7 +233,6 @@ const Header = () => {
           </div>
         </div>
       </Box>
-      {open && <VerticalMenu open={open} />}
     </div>
   );
 };
