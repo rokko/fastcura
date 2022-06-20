@@ -34,20 +34,21 @@ const AggiornaCurriculum = () => {
         config
       )
       .then((res) => {
+        console.log(res.data);
         setCurriculum(res.data);
-      })
-      .then(() => {
-        setTitoloStudio(curriculum?.titolodistudio);
-        setMaster(curriculum?.master);
-        setNumeroOrdine(curriculum?.numeroiscrizione);
-        setEsperienze(curriculum?.esperienze);
-        setAltro(curriculum?.altro);
+        setTitoloStudio(res.data.titolodistudio);
+        setNumeroOrdine(res.data.numeroiscrizione);
+        setEsperienze(res.data.esperienze);
+        setAltro(res.data.altro);
+        setMaster(res.data.master);
         setCaricamento(false);
       })
       .then(() => {
         setLoad(true);
       });
   };
+
+  console.log(titoloStudio);
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     if (!!tokenTest) setToken(tokenTest);
@@ -64,7 +65,7 @@ const AggiornaCurriculum = () => {
     altro: altro,
   };
 
-  const salvaCurriculum = () => {
+  const salvaCurriculum = async () => {
     setCaricamento(true);
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -76,7 +77,7 @@ const AggiornaCurriculum = () => {
         config
       )
       .then((res) => setCaricamento(false));
-    ottieniCurriculum();
+    await ottieniCurriculum();
     setOk(true);
   };
 
@@ -101,25 +102,28 @@ const AggiornaCurriculum = () => {
         >
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
+            InputLabelProps={{ shrink: true }}
             id="standard-basic"
             label="Titolo di studio"
             variant="standard"
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setTitoloStudio(x.target.value)
             }
-            defaultValue={curriculum?.titolodistudio}
+            value={titoloStudio}
           ></TextField>
           <TextField
             sx={{ width: "90%", marginTop: "10px" }}
+            InputLabelProps={{ shrink: true }}
             id="standard-basic"
             label="Master/Specializzazioni"
             variant="standard"
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setMaster(x.target.value)
             }
-            defaultValue={curriculum?.master}
+            value={master}
           ></TextField>
           <TextField
+            InputLabelProps={{ shrink: true }}
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
             label="Numero ordine/albo"
@@ -127,9 +131,10 @@ const AggiornaCurriculum = () => {
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setNumeroOrdine(x.target.value)
             }
-            defaultValue={curriculum?.numeroiscrizione}
+            value={numeroOrdine}
           ></TextField>
           <TextField
+            InputLabelProps={{ shrink: true }}
             sx={{ width: "90%", marginTop: "10px" }}
             id="standard-basic"
             label="Esperienze"
@@ -137,9 +142,10 @@ const AggiornaCurriculum = () => {
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setEsperienze(x.target.value)
             }
-            defaultValue={curriculum?.esperienze}
+            value={esperienze}
           ></TextField>
           <TextField
+            InputLabelProps={{ shrink: true }}
             multiline
             rows={5}
             sx={{ width: "90%" }}
@@ -149,7 +155,7 @@ const AggiornaCurriculum = () => {
             onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
               setAltro(x.target.value)
             }
-            defaultValue={curriculum?.altro}
+            value={altro}
           ></TextField>
         </Box>
         <Snackbar
