@@ -176,7 +176,7 @@ const SignUpProfessionista = () => {
 
   const controllaMail = () => {
     const emailDaInviare = {
-      email: email,
+      email: email.toLowerCase(),
     };
 
     return axios
