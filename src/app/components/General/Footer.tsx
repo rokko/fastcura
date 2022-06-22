@@ -15,7 +15,9 @@ const Footer = () => {
           location.pathname == "/consenso-privacy" ||
           location.pathname == "/termini-condizioni" ||
           location.pathname == "/cookies" ||
-          location.pathname == "/privacy"
+          location.pathname == "/privacy" ||
+          location.pathname == "/registrazione" ||
+          location.pathname == "/assistenza"
             ? "fixed"
             : "relative",
         bottom: "0",
