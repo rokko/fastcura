@@ -42,6 +42,7 @@ const Assistenza = () => {
           style={{ width: "400px" }}
         ></TextField>
         <TextField
+          multiline
           id="outlined-basic"
           placeholder={"Richiesta"}
           style={{ width: "400px" }}
