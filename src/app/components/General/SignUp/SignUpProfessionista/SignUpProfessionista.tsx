@@ -11,6 +11,7 @@ import Header from "../../../TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { useMemo } from "react";
+import { Loader } from "../../../../loader";
 
 const SignUpProfessionista = () => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const SignUpProfessionista = () => {
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due", "Piu di due"];
   const [passwordconf, setPasswordconf] = useState<String>("");
+  const [load, setLoad] = useState(false);
   const anniItalia = ["0-3 Anni ", "3-5", "piu di 5"];
   const lavoro = ["Morte Paziente", "Dimissioni", "Licenziamento", "Nessuna"];
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
@@ -235,12 +237,14 @@ const SignUpProfessionista = () => {
   const sendRegister = async () => {
     await controllaMail();
     if (!(await controllaMail())) {
+      setLoad(true);
       axios
         .post(
           "https://fastcuradev.herokuapp.com/professionista/signup",
           nuovoProfessionista
         )
         .then(function (response) {
+          setLoad(false);
           navigate("/registrazione");
         })
         .catch(function (error) {
@@ -285,6 +289,7 @@ const SignUpProfessionista = () => {
   ]);
   return (
     <>
+      <Loader isLoading={load} />
       <Header />
       <p className="registertitle">Compila i dati per iscriverti!</p>
       {isMobile && (
