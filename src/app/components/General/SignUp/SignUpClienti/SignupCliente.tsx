@@ -7,6 +7,9 @@ import {
   FormControlLabel,
   Checkbox,
   Autocomplete,
+  InputAdornment,
+  IconButton,
+  OutlinedInput,
 } from "@mui/material";
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
@@ -17,6 +20,7 @@ interface IToken {
   messagge: number;
 }
 const SignUpClient = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [cognome, setCognome] = useState<String>("");
@@ -67,6 +71,10 @@ const SignUpClient = () => {
       return false;
     }
   }, [password]);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   const controllaMail = () => {
     if (validationEmail) {
       const emailDaInviare = {
@@ -212,7 +220,17 @@ const SignUpClient = () => {
               style={{ width: 310, marginTop: 10 }}
               id="outlined-size-small"
               label="Password"
-              type={"password"}
+              type={showPassword ? "text" : "password"}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <img
+                      onClick={handleClickShowPassword}
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                    />
+                  </InputAdornment>
+                ),
+              }}
             ></TextField>
             {!validatePassword && (
               <p style={{ maxWidth: 310, fontSize: "12px" }}>
@@ -229,7 +247,17 @@ const SignUpClient = () => {
               style={{ width: 310, marginTop: 10 }}
               id="outlined-size-small"
               label="Conferma Password"
-              type={"password"}
+              type={showPassword ? "text" : "password"}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <img
+                      onClick={handleClickShowPassword}
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                    />
+                  </InputAdornment>
+                ),
+              }}
             ></TextField>
             {!getConfPass && (
               <p> Attenzione le password inserite non combaciano.</p>
@@ -489,14 +517,24 @@ const SignUpClient = () => {
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
               {risult && <p>Attenzione la mail risulta gia registrata</p>}
               <TextField
+                label="Password"
                 required={true}
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(x.target.value)
                 }
                 style={{ width: 310, marginTop: 10 }}
                 id="outlined-size-small"
-                label="Password"
-                type={"password"}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <img
+                        onClick={handleClickShowPassword}
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                      />
+                    </InputAdornment>
+                  ),
+                }}
+                type={showPassword ? "text" : "password"}
               ></TextField>
               {!validatePassword && (
                 <p style={{ maxWidth: 310, fontSize: "12px" }}>
@@ -510,10 +548,20 @@ const SignUpClient = () => {
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setConfPassword(x.target.value)
                 }
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <img
+                        onClick={handleClickShowPassword}
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                      />
+                    </InputAdornment>
+                  ),
+                }}
                 style={{ width: 310, marginTop: 10 }}
                 id="outlined-size-small"
                 label="Conferma Password"
-                type={"password"}
+                type={showPassword ? "text" : "password"}
               ></TextField>
               {!getConfPass && (
                 <p> Attenzione le password inserite non combaciano.</p>

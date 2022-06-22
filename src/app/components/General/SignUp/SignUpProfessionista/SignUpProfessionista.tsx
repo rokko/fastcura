@@ -5,6 +5,7 @@ import {
   FormControlLabel,
   Checkbox,
   Autocomplete,
+  InputAdornment,
 } from "@mui/material";
 import axios from "axios";
 import Header from "../../../TrovaIlTuoProfessionista/Header";
@@ -46,11 +47,16 @@ const SignUpProfessionista = () => {
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
   const tit = ["Laurea", "Scuole Superiori", "Diploma (O.S.S., A.S.A.)"];
   const sess = ["Uomo", "Donna"];
+
   const [risult, setRisult] = useState(false);
   const getConfN = useMemo(() => {
     if (professione !== "Badante") return numeroiscrizione === "";
     else return false;
   }, [professione, numeroiscrizione]);
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const getConfPass = useMemo(() => {
     return password === passwordconf;
@@ -337,11 +343,23 @@ const SignUpProfessionista = () => {
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPassword(x.target.value)
               }
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <img
+                      onClick={handleClickShowPassword}
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                    />
+                  </InputAdornment>
+                ),
+              }}
               style={{ width: 310, marginTop: 10 }}
               id="outlined-size-small"
-              type={"password"}
+              type={showPassword ? "text" : "password"}
               label="Password"
-            ></TextField>
+            >
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVRIie3UTS6EQRAG4IeFECz87UhIjBOw9rOX4TR+D8A1uMAMbsGCBRuCRMbsSMwBxqJbwjfd841E2HiTSif91ltVqa4u/vHX6Cvhx7GJKuYxE++fcIdatJfvJh7CPlpol1gLe1HTE6Zx0UPgol1hriz4ApoJcQ3LGI62gpOEXxOVXPApPCZEW10K2k34P2Ay5XyWqRwGcIhnNHAQ7+A0oasXg1cTTm2hLWLAIncQudWMdv1zgpuM00jkGwmuEbnRjPYa+lO9+kl8JNjO8IvxPE5wR/Fcymg7hiM1dieRGxB63tD5yN2G4wsmhRErOu9mKiT89qL/PSZygor0RzsVpmUk2lqm8qaws7piGucJcZldYrYs+AcGhdb0suzesBM1HShb12PCJ9wQ2vd5Xd8Kj1nHa6+V/+P38Q7LJqisy2fc2QAAAABJRU5ErkJggg==" />
+            </TextField>
 
             {!validatePassword && (
               <p style={{ maxWidth: 310, fontSize: "12px" }}>
@@ -355,9 +373,19 @@ const SignUpProfessionista = () => {
               onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                 setPasswordconf(x.target.value)
               }
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <img
+                      onClick={handleClickShowPassword}
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                    />
+                  </InputAdornment>
+                ),
+              }}
               style={{ width: 310, marginTop: 10 }}
               id="outlined-size-small"
-              type={"password"}
+              type={showPassword ? "text" : "password"}
               label="Conferma Password"
             ></TextField>
             {!getConfPass && (
@@ -856,9 +884,19 @@ const SignUpProfessionista = () => {
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(x.target.value)
                 }
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <img
+                        onClick={handleClickShowPassword}
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                      />
+                    </InputAdornment>
+                  ),
+                }}
                 style={{ width: 310, marginTop: 10 }}
                 id="outlined-size-small"
-                type={"password"}
+                type={showPassword ? "text" : "password"}
                 label="Password"
               ></TextField>
               {!validatePassword && (
@@ -873,9 +911,19 @@ const SignUpProfessionista = () => {
                 onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
                   setPasswordconf(x.target.value)
                 }
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <img
+                        onClick={handleClickShowPassword}
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+                      />
+                    </InputAdornment>
+                  ),
+                }}
                 style={{ width: 310, marginTop: 10 }}
                 id="outlined-size-small"
-                type={"password"}
+                type={showPassword ? "text" : "password"}
                 label="Conferma Password"
               ></TextField>
               {!getConfPass && <p>Attenzione le password non combaciano.</p>}

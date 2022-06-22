@@ -1,4 +1,4 @@
-import { Alert, Box, Snackbar, TextField } from "@mui/material";
+import { Alert, Box, InputAdornment, Snackbar, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import axios from "axios";
@@ -12,6 +12,10 @@ interface IToken {
 }
 
 const Login = (props: any) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   let navigate = useNavigate();
 
   const loginUser = () => {
@@ -100,13 +104,28 @@ const Login = (props: any) => {
           setEmail(x.target.value)
         }
       />
-      <InputStyle
-        placeholder="Password"
-        onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-          setPassw(x.target.value)
-        }
-        type={"password"}
-      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "relative",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <InputStyle
+          placeholder="Password"
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setPassw(x.target.value)
+          }
+          type={showPassword ? "text" : "password"}
+        ></InputStyle>
+        <img
+          style={{ marginLeft: "-30px", width: "24px", height: "24px" }}
+          onClick={handleClickShowPassword}
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+        />
+      </div>
       <ButtonLogin onClick={() => loginUser()}>Entra</ButtonLogin>
       <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
         <p style={{ color: "#39B1D9" }}>Hai dimenticato la password?</p>
