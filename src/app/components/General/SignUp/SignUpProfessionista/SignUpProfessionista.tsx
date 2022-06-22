@@ -251,11 +251,20 @@ const SignUpProfessionista = () => {
     }
   };
 
+  const valName = (indi: String | null) => {
+    let check = /^[a-zA-Z]/;
+    if (indi?.match(check)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const validation = useMemo(() => {
     return (
       getConfN ||
-      cognome === "" ||
-      nome === "" ||
+      !valName(cognome) ||
+      !valName(nome) ||
       !validationEmail ||
       data === "" ||
       sesso === "" ||
