@@ -100,6 +100,15 @@ const SignUpClient = () => {
       });
   };
 
+  const valName = (indi: String | null) => {
+    let check = /^[a-zA-Z]/;
+    if (indi?.match(check)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const sendRegister = async () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente);
     await controllaMail();
@@ -126,8 +135,8 @@ const SignUpClient = () => {
   const validation = useMemo(() => {
     return (
       !getConfPass ||
-      cognome === "" ||
-      nome === "" ||
+      !valName(cognome) ||
+      !valName(nome) ||
       !validationEmail ||
       password === "" ||
       data === "" ||
