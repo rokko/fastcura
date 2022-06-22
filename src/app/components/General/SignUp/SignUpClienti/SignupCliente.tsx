@@ -70,7 +70,7 @@ const SignUpClient = () => {
   const controllaMail = () => {
     if (validationEmail) {
       const emailDaInviare = {
-        email: email,
+        email: email.toLowerCase(),
       };
 
       return axios
@@ -113,7 +113,7 @@ const SignUpClient = () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente);
     await controllaMail();
 
-    if (!controllaMail()) {
+    if (!(await controllaMail())) {
       axios
         .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
         .then(function (response) {
