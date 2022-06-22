@@ -43,221 +43,105 @@ const LandingProfessionista = () => {
   if (!isMobile)
     return (
       <>
-        <Header />
-        <ContainerFirstImage>
-          <TitleFirstContainer>
-            Iscriviti a <SpanTitle>Fastcura</SpanTitle>
-          </TitleFirstContainer>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            <ButtonFirstContainer>
-              Inizia la prova gratuita
-            </ButtonFirstContainer>
-          </Link>
-          <Immagini
-            src={PrimaImmagine}
-            width={"830px"}
-            alt={"prima immagine"}
-          />
-        </ContainerFirstImage>
-        <ContainerOther>
-          <BoxInfo>
-            <Immagini src={Visibilita} alt={"visibilita"} />
-            <BoxDescription>
-              <TitleSection>Visibilità</TitleSection>
-              <TextSection>
-                Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
-                allargando la tua rete di clienti
-              </TextSection>
-              <Link
-                to="/signup-professionista"
-                style={{ textDecoration: "none" }}
-              >
-                <ButtonSection>Scopri di più</ButtonSection>
-              </Link>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <BoxDescription>
-              <TitleSection>
-                Per Infermieri, Caregiver e Fisioterapisti
-              </TitleSection>
-            </BoxDescription>
-            <Immagini src={Car} alt={"car driver"} />
-          </BoxInfo>
-          <BoxInfo>
-            <Immagini src={DiciTu} alt={"dici tu"} />
-            <BoxDescription>
-              <TitleSection>Decidi tu quando!</TitleSection>
-              <TextSection>
-                Decidi tu quando e come lavorare. Tu ci metti le competenze,
-                Fastcura ti trova i clienti
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <BoxDescription>
-              <TitleSection>Fai tu il prezzo</TitleSection>
-              <TextSection>
-                Potrai recensire e vederele recensioni degli altri.
-              </TextSection>
-            </BoxDescription>
-            <img width={"322px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
-          </BoxInfo>
-          <BoxInfo>
-            <img src={Messaggistica} alt={"messaggistica"} />
-            <BoxDescription>
-              <TitleSection>
-                Servizio di messaggistica diretto con il cliente
-              </TitleSection>
-              <TextSection>
-                La persona trova i professionisti più vicini a lui e ne valuta
-                le competenze e la qualità dei servizi erogati attraverso le
-                recensioni lasciate da altri utenti
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <BoxDescription>
-              <TitleSection>Ricavi</TitleSection>
-              <TextSection>
-                Accordato con il cliente il prezzo, lui potrà pagare nella più
-                completa sicurezza sul sito o in contanti a prestazione ultimata
-              </TextSection>
-            </BoxDescription>
-            <Immagini src={Ricavi} alt={"ricavi"} />
-          </BoxInfo>
-          <BoxInfo>
-            <Immagini src={Servizio} alt={"servizio"} />
-            <BoxDescription>
-              <TitleSection>Un servizio innovativo</TitleSection>
-              <TextSection>
-                Fastcura è un servizio unico nel suo genere. Al centro di tutto
-                vi è la tutela del professionista.
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            <TitleFinal>Provalo gratis!</TitleFinal>
-          </Link>
-          <TextFinal>
-            Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
-            <br />
-            Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
-            allargando la tua rete di clienti
-          </TextFinal>
-          <Link to="/signup-professionista" style={{ textDecoration: "none" }}>
-            <FinalButton>Inizia ora la prova gratuita</FinalButton>
-          </Link>
-        </ContainerOther>
-        <Footer />
-      </>
-    );
-  else
-    return (
-      <>
-        <Header />
-        <ContainerFirstImage>
-          <TitleFirstContainer>
-            Iscriviti a <SpanTitle>Fastcura</SpanTitle>
-          </TitleFirstContainer>
-          <Link
-            to="/signup-professionista"
-            style={{ textDecoration: "none" }}
-          ></Link>
-          <img src={PrimaImmagine} width={"100%"} alt={"prima immagine"} />
-          <ButtonFirstContainer>Inizia la prova gratuita</ButtonFirstContainer>
-        </ContainerFirstImage>
-        <ContainerOther>
-          <BoxInfo>
-            <img width={"236px"} src={Visibilita} alt={"visibilita"} />
-            <BoxDescription>
-              <TitleSection>Visibilità</TitleSection>
-              <TextSection>
-                Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
-                allargando la tua rete di clienti
-              </TextSection>
-              <Link
-                to="/signup-professionista"
-                style={{ textDecoration: "none" }}
-              >
-                <ButtonSection>Scopri di più</ButtonSection>
-              </Link>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img width={"290px"} src={Car} alt={"car driver"} />
-
-            <BoxDescription>
-              <TitleSection>
-                Per Infermieri, Caregiver e Fisioterapisti
-              </TitleSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img width={"248px"} src={DiciTu} alt={"dici tu"} />
-            <BoxDescription>
-              <TitleSection>Decidi tu quando!</TitleSection>
-              <TextSection>
-                Decidi tu quando e come lavorare. Tu ci metti le competenze,
-                Fastcura ti trova i clienti
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img width={"280px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
-
-            <BoxDescription>
-              <TitleSection>Fai tu il prezzo</TitleSection>
-              <TextSection>
-                Potrai recensire e vederele recensioni degli altri.
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img
-              width={"220px"}
-              src={Messaggistica}
-              alt={"messaggistica"}
-              style={{ marginTop: "1.5rem" }}
+        {" "}
+        <div style={{ backgroundColor: "rgb(246, 246, 246)" }}>
+          <Header />
+          <ContainerFirstImage>
+            <TitleFirstContainer>
+              Iscriviti a <SpanTitle>Fastcura</SpanTitle>
+            </TitleFirstContainer>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              <ButtonFirstContainer>
+                Inizia la prova gratuita
+              </ButtonFirstContainer>
+            </Link>
+            <Immagini
+              src={PrimaImmagine}
+              width={"830px"}
+              alt={"prima immagine"}
             />
-            <BoxDescription>
-              <TitleSection>
-                Servizio di messaggistica diretto con il cliente
-              </TitleSection>
-              <TextSection>
-                La persona trova i professionisti più vicini a lui e ne valuta
-                le competenze e la qualità dei servizi erogati attraverso le
-                recensioni lasciate da altri utenti
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img width={"276px"} src={Ricavi} alt={"ricavi"} />
-
-            <BoxDescription>
-              <TitleSection>Ricavi</TitleSection>
-              <TextSection>
-                Accordato con il cliente il prezzo, lui potrà pagare nella più
-                completa sicurezza sul sito o in contanti a prestazione ultimata
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <BoxInfo>
-            <img
-              width={"240px"}
-              src={Servizio}
-              alt={"servizio"}
-              style={{ marginTop: "3rem" }}
-            />
-            <BoxDescription>
-              <TitleSection>Un servizio innovativo</TitleSection>
-              <TextSection>
-                Fastcura è un servizio unico nel suo genere. Al centro di tutto
-                vi è la tutela del professionista.
-              </TextSection>
-            </BoxDescription>
-          </BoxInfo>
-          <div>
+          </ContainerFirstImage>
+          <ContainerOther>
+            <BoxInfo>
+              <Immagini src={Visibilita} alt={"visibilita"} />
+              <BoxDescription>
+                <TitleSection>Visibilità</TitleSection>
+                <TextSection>
+                  Fastcura ha l'obiettivo di darti visibilità sul tuo
+                  territorio, allargando la tua rete di clienti
+                </TextSection>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonSection>Scopri di più</ButtonSection>
+                </Link>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>
+                  Per Infermieri, Caregiver e Fisioterapisti
+                </TitleSection>
+              </BoxDescription>
+              <Immagini src={Car} alt={"car driver"} />
+            </BoxInfo>
+            <BoxInfo>
+              <Immagini src={DiciTu} alt={"dici tu"} />
+              <BoxDescription>
+                <TitleSection>Decidi tu quando!</TitleSection>
+                <TextSection>
+                  Decidi tu quando e come lavorare. Tu ci metti le competenze,
+                  Fastcura ti trova i clienti
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>Fai tu il prezzo</TitleSection>
+                <TextSection>
+                  Potrai recensire e vederele recensioni degli altri.
+                </TextSection>
+              </BoxDescription>
+              <img width={"322px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
+            </BoxInfo>
+            <BoxInfo>
+              <img src={Messaggistica} alt={"messaggistica"} />
+              <BoxDescription>
+                <TitleSection>
+                  Servizio di messaggistica diretto con il cliente
+                </TitleSection>
+                <TextSection>
+                  La persona trova i professionisti più vicini a lui e ne valuta
+                  le competenze e la qualità dei servizi erogati attraverso le
+                  recensioni lasciate da altri utenti
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>Ricavi</TitleSection>
+                <TextSection>
+                  Accordato con il cliente il prezzo, lui potrà pagare nella più
+                  completa sicurezza sul sito o in contanti a prestazione
+                  ultimata
+                </TextSection>
+              </BoxDescription>
+              <Immagini src={Ricavi} alt={"ricavi"} />
+            </BoxInfo>
+            <BoxInfo>
+              <Immagini src={Servizio} alt={"servizio"} />
+              <BoxDescription>
+                <TitleSection>Un servizio innovativo</TitleSection>
+                <TextSection>
+                  Fastcura è un servizio unico nel suo genere. Al centro di
+                  tutto vi è la tutela del professionista.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
@@ -266,8 +150,7 @@ const LandingProfessionista = () => {
             </Link>
             <TextFinal>
               Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
-            </TextFinal>
-            <TextFinal>
+              <br />
               Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
               allargando la tua rete di clienti
             </TextFinal>
@@ -275,12 +158,148 @@ const LandingProfessionista = () => {
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
             >
-              {" "}
               <FinalButton>Inizia ora la prova gratuita</FinalButton>
             </Link>
-          </div>
-        </ContainerOther>
-        <Footer />
+          </ContainerOther>
+          <Footer />
+        </div>
+      </>
+    );
+  else
+    return (
+      <>
+        <div style={{ backgroundColor: "rgb(246, 246, 246)" }}>
+          <Header />
+          <ContainerFirstImage>
+            <TitleFirstContainer>
+              Iscriviti a <SpanTitle>Fastcura</SpanTitle>
+            </TitleFirstContainer>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            ></Link>
+            <img src={PrimaImmagine} width={"100%"} alt={"prima immagine"} />
+            <ButtonFirstContainer>
+              Inizia la prova gratuita
+            </ButtonFirstContainer>
+          </ContainerFirstImage>
+          <ContainerOther>
+            <BoxInfo>
+              <img width={"236px"} src={Visibilita} alt={"visibilita"} />
+              <BoxDescription>
+                <TitleSection>Visibilità</TitleSection>
+                <TextSection>
+                  Fastcura ha l'obiettivo di darti visibilità sul tuo
+                  territorio, allargando la tua rete di clienti
+                </TextSection>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonSection>Scopri di più</ButtonSection>
+                </Link>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img width={"290px"} src={Car} alt={"car driver"} />
+
+              <BoxDescription>
+                <TitleSection>
+                  Per Infermieri, Caregiver e Fisioterapisti
+                </TitleSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img width={"248px"} src={DiciTu} alt={"dici tu"} />
+              <BoxDescription>
+                <TitleSection>Decidi tu quando!</TitleSection>
+                <TextSection>
+                  Decidi tu quando e come lavorare. Tu ci metti le competenze,
+                  Fastcura ti trova i clienti
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img width={"280px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
+
+              <BoxDescription>
+                <TitleSection>Fai tu il prezzo</TitleSection>
+                <TextSection>
+                  Potrai recensire e vederele recensioni degli altri.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img
+                width={"220px"}
+                src={Messaggistica}
+                alt={"messaggistica"}
+                style={{ marginTop: "1.5rem" }}
+              />
+              <BoxDescription>
+                <TitleSection>
+                  Servizio di messaggistica diretto con il cliente
+                </TitleSection>
+                <TextSection>
+                  La persona trova i professionisti più vicini a lui e ne valuta
+                  le competenze e la qualità dei servizi erogati attraverso le
+                  recensioni lasciate da altri utenti
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img width={"276px"} src={Ricavi} alt={"ricavi"} />
+
+              <BoxDescription>
+                <TitleSection>Ricavi</TitleSection>
+                <TextSection>
+                  Accordato con il cliente il prezzo, lui potrà pagare nella più
+                  completa sicurezza sul sito o in contanti a prestazione
+                  ultimata
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <img
+                width={"240px"}
+                src={Servizio}
+                alt={"servizio"}
+                style={{ marginTop: "3rem" }}
+              />
+              <BoxDescription>
+                <TitleSection>Un servizio innovativo</TitleSection>
+                <TextSection>
+                  Fastcura è un servizio unico nel suo genere. Al centro di
+                  tutto vi è la tutela del professionista.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <div>
+              <Link
+                to="/signup-professionista"
+                style={{ textDecoration: "none" }}
+              >
+                <TitleFinal>Provalo gratis!</TitleFinal>
+              </Link>
+              <TextFinal>
+                Inizia la prova gratuita di 30 giorni. Potrai disdire quando
+                vuoi.
+              </TextFinal>
+              <TextFinal>
+                Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
+                allargando la tua rete di clienti
+              </TextFinal>
+              <Link
+                to="/signup-professionista"
+                style={{ textDecoration: "none" }}
+              >
+                {" "}
+                <FinalButton>Inizia ora la prova gratuita</FinalButton>
+              </Link>
+            </div>
+          </ContainerOther>
+          <Footer />
+        </div>
       </>
     );
 };
