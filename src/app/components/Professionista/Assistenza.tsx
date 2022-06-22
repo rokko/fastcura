@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeaderUser from "../Cliente/HeaderUser";
 import Footer from "../General/Footer";
 import { Input, TextField } from "@mui/material";
+import { styled } from "@mui/system";
 
 const Assistenza = () => {
   const [nome, setNome] = useState("");
@@ -12,10 +13,21 @@ const Assistenza = () => {
   const sendRequest = () => {
     console.log("vai");
   };
+
+  const TestoStile = styled("p")`
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #a6a6a6;
+  `;
   return (
     <>
       <HeaderUser></HeaderUser>
-      Per assistenza e/o informazioni compilare il form sottostante
+      <TestoStile>
+        Per assistenza e/o informazioni compilare il form sottostante
+      </TestoStile>
       <div
         style={{
           display: "flex",
