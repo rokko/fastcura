@@ -72,7 +72,7 @@ const TrovaProfessionista = () => {
               <BoxDescription>
                 <TitleSection>Hai bisogno di cure?</TitleSection>
                 <TextSection>
-                  Con Fastcura troverai infermieri, Caregiver, Fisioterapisti,
+                  Con Fastcura troverai infermieri, Caregiver , Fisioterapisti,
                   pronti a darti una mano.
                 </TextSection>
               </BoxDescription>

@@ -17,6 +17,14 @@ import {
 import { useMemo } from "react";
 import { Loader } from "../../../loader";
 
+interface Icurriculum {
+  altro: string | undefined;
+  codiceProfessionista: string | undefined;
+  esperienze: string | undefined;
+  master: string | undefined;
+  numeroiscrizione: string | undefined;
+  titolodistudio: string | undefined;
+}
 const ProfiloProfessionista = () => {
   const location = useLocation();
 
@@ -24,6 +32,7 @@ const ProfiloProfessionista = () => {
   const [avatar, setAvatar] = useState("");
   const [feedback, setFeedback] = useState(0);
   const [voto, setVoto] = useState();
+  const [curriculum, setCurriculum] = useState<Icurriculum>();
   const [voti, setVoti] = useState<IFeedback[]>();
   const [load, setLoad] = useState(false);
   const [token, setToken] = useState<String | null>();
@@ -111,8 +120,10 @@ const ProfiloProfessionista = () => {
     axios
       .post("https://fastcuradev.herokuapp.com/cliente/infocurriculum", valore)
       .then((res) => {
+        console.log(res.data);
         setLoad(false);
         setRisposta(res.data);
+        setCurriculum(res.data.RicercaCurriculum);
       });
   };
   useEffect(() => {
@@ -199,34 +210,43 @@ const ProfiloProfessionista = () => {
                 }}
               >
                 <TextField
+                  InputLabelProps={{ shrink: true }}
                   sx={{ width: "90%", marginTop: "10px" }}
                   id="standard-basic"
                   label="Titolo di studio"
                   variant="standard"
                   disabled={true}
+                  value={curriculum?.titolodistudio}
                 ></TextField>
                 <TextField
+                  InputLabelProps={{ shrink: true }}
                   sx={{ width: "90%", marginTop: "10px" }}
                   id="standard-basic"
                   label="Master/Specializzazioni"
                   variant="standard"
                   disabled={true}
+                  value={curriculum?.master}
                 ></TextField>
                 <TextField
+                  InputLabelProps={{ shrink: true }}
                   sx={{ width: "90%", marginTop: "10px" }}
                   id="standard-basic"
                   label="Numero ordine/albo"
                   variant="standard"
                   disabled={true}
+                  value={curriculum?.numeroiscrizione}
                 ></TextField>
                 <TextField
+                  InputLabelProps={{ shrink: true }}
                   sx={{ width: "90%", marginTop: "10px" }}
                   id="standard-basic"
                   label="Esperienze"
                   variant="standard"
                   disabled={true}
+                  value={curriculum?.esperienze}
                 ></TextField>
                 <TextField
+                  InputLabelProps={{ shrink: true }}
                   multiline
                   rows={5}
                   sx={{ width: "90%" }}
@@ -234,6 +254,7 @@ const ProfiloProfessionista = () => {
                   label="Altro"
                   variant="standard"
                   disabled={true}
+                  value={curriculum?.altro}
                 ></TextField>
               </Box>
             </>

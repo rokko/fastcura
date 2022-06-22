@@ -10,6 +10,7 @@ const BoxRisultato = (props: any) => {
 
   useEffect(() => {
     setLoad(true);
+
     const prof = {
       id_professionista: professionista._id,
     };
