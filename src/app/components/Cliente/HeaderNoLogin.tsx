@@ -7,7 +7,7 @@ import {
   makeStyles,
   Snackbar,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BoxLogin from "../General/Login/BoxLogin";
 import ModalLogin from "../General/ModalLogin";
 import { ProfiloProfessionista } from "../ListaProfessionisti/profiloprofessionista";
@@ -67,6 +67,7 @@ const HeaderNoLogin = () => {
     takeToken();
     requestinfo();
   }, [token]);
+  const location = useLocation();
 
   return (
     <div style={{ position: "relative" }}>
@@ -91,9 +92,6 @@ const HeaderNoLogin = () => {
             marginLeft: "1rem",
           }}
         >
-          <Link to={"/"}>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABvUlEQVRoge3XP2gUQRiG8V3jn8ChhRADVgbEykbS2GojlnbCdfZiJbYp01rbCXYpRQuxtJFUVlpoJZrCwqAgQczPIh6s58xm73Yuc4fzwBXHzXzf893szctVVaFQmBkYYpjbYypwD7+wj43cPp1BjU3/8hDHcvu1gpN4EpAfsYXl3J5BMMDzFvkRL3Emt+9fYBXbAdlPf17jbGM1t3dVVVWFNbwLSL7HRVzA28DnH3Apt/w6dgJyr3Guse4sXgXWfcHVXPLXsRuQeoHTgfUDPA2s/46bRy0/xF5A5jFOtOxbwqPAvp+4c1Tyo4Aap9M97yAnNgL7Zxt44gG1j/tT1Lvb54uYtFksoPZwu0fdW/gRqLuFU6nkB3gWaPINNxLUv4avgfr9A088oD7jSl/5Rp/L+Bjo8wbnpy3aGlCp5Bv90gWeeEDBSmr5Rt+VSM8drHctEgsoMCv5Rv8YhweeeEDNwwC0BZ54QM3TABzkzoPR+rpLweb7uq4P3dOHSfvN91+8DhxPVWjSxyvVSS78CZQBcpPsNzDO+DM+qyt44U+gDJCbMkBuygC5mTgHUt3nqeos/AmUAQqFQuH/5jetfjfBhcC83QAAAABJRU5ErkJggg==" />
-          </Link>
           <Link to="/">
             <svg
               style={{ marginLeft: "20px" }}
@@ -154,6 +152,7 @@ const HeaderNoLogin = () => {
               />
             </svg>
           </Link>
+          <div></div>
         </div>
         <div
           style={{

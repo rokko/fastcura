@@ -103,7 +103,6 @@ const Login = (props: any) => {
         onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
           setEmail(x.target.value)
         }
-        value={email}
       />
       <div
         style={{
@@ -120,7 +119,6 @@ const Login = (props: any) => {
             setPassw(x.target.value)
           }
           type={showPassword ? "text" : "password"}
-          value={passw}
         ></InputStyle>
         <img
           style={{ marginLeft: "-30px", width: "24px", height: "24px" }}
