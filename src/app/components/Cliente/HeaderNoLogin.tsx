@@ -152,7 +152,11 @@ const HeaderNoLogin = () => {
               />
             </svg>
           </Link>
-          <div></div>
+          <div>
+            <div style={{ marginLeft: "20px" }} onClick={() => history.back()}>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
+            </div>
+          </div>
         </div>
         <div
           style={{
