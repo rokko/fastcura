@@ -3,6 +3,7 @@ import HeaderUser from "../Cliente/HeaderUser";
 import Footer from "../General/Footer";
 import { Input, TextField } from "@mui/material";
 import { styled } from "@mui/system";
+import HeaderNoLogin from "../Cliente/HeaderNoLogin";
 
 const Assistenza = () => {
   const [nome, setNome] = useState("");
@@ -10,9 +11,7 @@ const Assistenza = () => {
   const [email, setEmail] = useState("");
   const [richiesta, setRichiesta] = useState("");
 
-  const sendRequest = () => {
-    console.log("vai");
-  };
+  const sendRequest = () => {};
 
   const TestoStile = styled("p")`
     font-style: normal;
@@ -24,7 +23,7 @@ const Assistenza = () => {
   `;
   return (
     <>
-      <HeaderUser></HeaderUser>
+      <HeaderNoLogin></HeaderNoLogin>
       <TestoStile>
         Per assistenza e/o informazioni compilare il form sottostante
       </TestoStile>
@@ -42,22 +41,26 @@ const Assistenza = () => {
           id="outlined-basic"
           placeholder={"Nome"}
           style={{ width: "400px" }}
+          onChange={(e) => setNome(e.target.value)}
         ></TextField>
         <TextField
           id="outlined-basic"
           placeholder={"Cognome"}
           style={{ width: "400px" }}
+          onChange={(e) => setCognome(e.target.value)}
         ></TextField>
         <TextField
           id="outlined-basic"
           placeholder={"Email"}
           style={{ width: "400px" }}
+          onChange={(e) => setEmail(e.target.value)}
         ></TextField>
         <TextField
           multiline
           id="outlined-basic"
           placeholder={"Richiesta"}
           style={{ width: "400px" }}
+          onChange={(e) => setRichiesta(e.target.value)}
         ></TextField>
         <button
           style={{
