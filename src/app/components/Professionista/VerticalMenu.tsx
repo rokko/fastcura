@@ -3,11 +3,37 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useMediaQuery } from "react-responsive";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import axios from "axios";
 
 const VerticalMenu = (props: any) => {
+  const [token, setToken] = useState("");
+  const [ris, setRis] = useState(2);
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const isBig = useMediaQuery({ query: `(max-width: 1300px)` });
   const navigate = useNavigate();
+  useEffect(() => {
+    takeToken();
+  }, [token]);
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    if (!!tokenTest) setToken(tokenTest);
+  };
+
+  useEffect(() => {
+    var ris = 2;
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios
+      .post("https://fastcuradev.herokuapp.com/professionista/pro", "", config)
+      .then((res) => {
+        console.log(res);
+        setRis(res.data.ris);
+      })
+      .catch((e) => console.error(e));
+  }, [token]);
 
   return (
     <div
@@ -26,23 +52,28 @@ const VerticalMenu = (props: any) => {
         zIndex: "10000000",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignContent: "center",
-          alignItems: "center",
-        }}
+      <Link
+        to={ris === 0 ? "/cliente" : "/professionista"}
+        style={{ textDecoration: "none" }}
       >
-        <img
-          width={"30px"}
-          height={"30px"}
-          src="https://img.icons8.com/material-outlined/24/000000/settings--v1.png"
-        />
-        <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
-          Impostazioni
-        </p>
-      </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            width={"30px"}
+            height={"30px"}
+            src="https://img.icons8.com/material-outlined/24/000000/settings--v1.png"
+          />
+          <p style={{ marginLeft: "5px", color: "#999999", fontSize: "14px" }}>
+            Impostazioni
+          </p>
+        </div>
+      </Link>
       <Link to={"/assistenza"} style={{ textDecoration: "none" }}>
         <div
           style={{
