@@ -18,9 +18,11 @@ const CardAbbonamento = () => {
           textAlign: "left",
         }}
       >
-        <p style={{ color: "white", fontSize: "33px" }}>19€/Mese</p>
-        <p style={{ color: "white", fontSize: "13px", marginTop: "-30px" }}>
-          Mese gratuito attivo
+        <p style={{ color: "white", fontSize: "23px", textAlign: "center" }}>
+          Complimenti hai attivato la tua prova!
+        </p>
+        <p style={{ color: "white", fontSize: "13px", marginTop: "-10px" }}>
+          Hai a disposizione 2 mesi gratuiti
           <br />
         </p>
       </Box>

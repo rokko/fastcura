@@ -28,7 +28,7 @@ const AbbonamentoCarousel = () => {
         >
           <Swiper
             slidesPerView={1}
-            spaceBetween={10}
+            spaceBetween={0}
             style={{
               display: "flex",
               alignContent: "center",
@@ -40,12 +40,6 @@ const AbbonamentoCarousel = () => {
             <SwiperSlide>
               <CardAbbonamento />
             </SwiperSlide>
-            <SwiperSlide>
-              <CardAbbonamento />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CardAbbonamento />
-            </SwiperSlide>
           </Swiper>
         </Box>
       </div>
@@ -54,3 +48,12 @@ const AbbonamentoCarousel = () => {
 };
 
 export default AbbonamentoCarousel;
+
+/*
+ <SwiperSlide>
+              <CardAbbonamento />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardAbbonamento />
+            </SwiperSlide>
+ */

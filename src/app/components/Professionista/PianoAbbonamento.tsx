@@ -1,17 +1,22 @@
-import React from 'react'
-import AbbonamentoCarousel from './AbbonamentoCarousel'
+import React from "react";
+import AbbonamentoCarousel from "./AbbonamentoCarousel";
 
 const PianoAbbonamento = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "300px",
+        alignContent: "center",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <p style={{ marginTop: "30px" }}>Abbonamento Attivo</p>
+      <AbbonamentoCarousel />
+    </div>
+  );
+};
 
-    return(
-        <>
-        <p style={{marginTop:'30px'}}>Abbonamento Attivo</p>
-        <AbbonamentoCarousel/>
-        </>
-        
-    )
-
-}
-
-
-export default PianoAbbonamento
+export default PianoAbbonamento;
