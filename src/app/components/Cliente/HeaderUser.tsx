@@ -74,10 +74,6 @@ const HeaderUser = () => {
           }}
         >
           <Link to={"/"}>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABvUlEQVRoge3XP2gUQRiG8V3jn8ChhRADVgbEykbS2GojlnbCdfZiJbYp01rbCXYpRQuxtJFUVlpoJZrCwqAgQczPIh6s58xm73Yuc4fzwBXHzXzf893szctVVaFQmBkYYpjbYypwD7+wj43cPp1BjU3/8hDHcvu1gpN4EpAfsYXl3J5BMMDzFvkRL3Emt+9fYBXbAdlPf17jbGM1t3dVVVWFNbwLSL7HRVzA28DnH3Apt/w6dgJyr3Guse4sXgXWfcHVXPLXsRuQeoHTgfUDPA2s/46bRy0/xF5A5jFOtOxbwqPAvp+4c1Tyo4Aap9M97yAnNgL7Zxt44gG1j/tT1Lvb54uYtFksoPZwu0fdW/gRqLuFU6nkB3gWaPINNxLUv4avgfr9A088oD7jSl/5Rp/L+Bjo8wbnpy3aGlCp5Bv90gWeeEDBSmr5Rt+VSM8drHctEgsoMCv5Rv8YhweeeEDNwwC0BZ54QM3TABzkzoPR+rpLweb7uq4P3dOHSfvN91+8DhxPVWjSxyvVSS78CZQBcpPsNzDO+DM+qyt44U+gDJCbMkBuygC5mTgHUt3nqeos/AmUAQqFQuH/5jetfjfBhcC83QAAAABJRU5ErkJggg==" />
-          </Link>
-
-          <Link to="/cliente">
             <svg
               style={{ marginLeft: "20px" }}
               id="Raggruppa_16"
@@ -137,7 +133,13 @@ const HeaderUser = () => {
               />
             </svg>
           </Link>
+          <div>
+            <div style={{ marginLeft: "20px" }} onClick={() => history.back()}>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIic3VoQ3CUBCA4eYFUQkWgUOAqATDCCh8EwQOHLrdARwzgIENYAUWQFQRSBAEA+FHcOJSRZq7hBvg+5vX9l0U/fMAdWDshcfAnu/MrfEAbAQvgJZ1YCn4BehY47ngD2BgjU8EfwEja3wIPCUwtcb7wF3wzBrvAlfBV9Z4EzgJvgVqlngDOAp+AOIqTjB7oipTOqKd6RGpSBs4u7xkFempzzT3iugfbeYVSYG3y1WhIpnbZaciC4ncgMQjEIC128KRiN/KVBG/pf/rfABRjDDifKboQgAAAABJRU5ErkJggg=="></img>
+            </div>
+          </div>
         </div>
+
         <div
           style={{
             marginRight: "20px",

@@ -119,6 +119,7 @@ const SignUpClient = () => {
 
   const sendRegister = async () => {
     const datinuovoCliente = JSON.stringify(nuovoCliente);
+    console.log(nuovoCliente);
     await controllaMail();
 
     if (!(await controllaMail())) {
@@ -126,8 +127,8 @@ const SignUpClient = () => {
         .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
         .then(function (response) {
           loginUser({
-            email: response.data.email,
-            password: response.data.password,
+            email: email,
+            password: password,
           });
 
           navigate(-1);
