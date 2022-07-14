@@ -336,7 +336,7 @@ const SignUpProfessionista = () => {
               label="Indirizzo email"
             ></TextField>
             {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-            {risult && <p>Attenzione la mail risulta gia registrata</p>}
+            {risult && <p>Attenzione la mail risulta già registrata</p>}
 
             <TextField
               required={true}
@@ -877,7 +877,7 @@ const SignUpProfessionista = () => {
                 label="Indirizzo email"
               ></TextField>
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-              {risult && <p>Attenzione la mail risulta gia registrata</p>}
+              {risult && <p>Attenzione la mail risulta già registrata</p>}
 
               <TextField
                 required={true}
