@@ -211,7 +211,7 @@ const SignUpClient = () => {
               label="Indirizzo email"
             ></TextField>
             {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-            {risult && <p>Attenzione la mail risulta gia registrata</p>}
+            {risult && <p>Attenzione la mail risulta già registrata</p>}
 
             <TextField
               required={true}
@@ -516,7 +516,7 @@ const SignUpClient = () => {
                 label="Indirizzo email"
               ></TextField>
               {!validationEmail && <p>L'indirizzo email non è corretto</p>}
-              {risult && <p>Attenzione la mail risulta gia registrata</p>}
+              {risult && <p>Attenzione la mail risulta già registrata</p>}
               <TextField
                 label="Password"
                 required={true}
