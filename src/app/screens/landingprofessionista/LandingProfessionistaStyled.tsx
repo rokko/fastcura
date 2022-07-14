@@ -180,7 +180,18 @@ const TitleFinal = styled("p")`
 
   color: #273237;
 `;
-
+const BoxDescription2 = styled("div")`
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
 const FinalButton = styled("button")`
   width: 209px;
   height: 50px;
@@ -239,4 +250,5 @@ export {
   TextFinal,
   TitleFinal,
   Immagini,
+  BoxDescription2,
 };

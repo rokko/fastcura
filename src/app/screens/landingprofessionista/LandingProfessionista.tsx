@@ -29,6 +29,7 @@ import {
   TitleFinal,
   TitleFirstContainer,
   TitleSection,
+  BoxDescription2,
 } from "./LandingProfessionistaStyled";
 import {
   BoxDescription,
@@ -141,6 +142,19 @@ const LandingProfessionista = () => {
                   tutto vi è la tutela del professionista.
                 </TextSection>
               </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription2 style={{ width: "100%" }}>
+                <TitleSection>Quanto costa?</TitleSection>
+                <TextSection>
+                  La piattaforma è gratuita per i clienti,per sempre.
+                </TextSection>
+                <TextSection>
+                  Per i professionisti l’abbonamento costa 19,90 al mese ma ti
+                  invitiamo a provare prima il nostro servizio gratuitamente per
+                  30 giorni.
+                </TextSection>
+              </BoxDescription2>
             </BoxInfo>
             <Link
               to="/signup-professionista"
@@ -271,6 +285,17 @@ const LandingProfessionista = () => {
                 <TextSection>
                   Fastcura è un servizio unico nel suo genere. Al centro di
                   tutto vi è la tutela del professionista.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>Quanto costa?</TitleSection>
+                <TextSection>
+                  La piattaforma è gratuita per i clienti,per sempre. Per i
+                  professionisti l’abbonamento costa 19,90 al mese ma ti
+                  invitiamo a provare prima il nostro servizio gratuitamente per
+                  30 giorni.
                 </TextSection>
               </BoxDescription>
             </BoxInfo>
