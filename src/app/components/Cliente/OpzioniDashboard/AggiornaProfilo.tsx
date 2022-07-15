@@ -17,7 +17,7 @@ const AggiornaProfilo = () => {
   const [sesso, setSesso] = useState<any>();
   const [cap, setCap] = useState<any>();
   const [numero, setNumero] = useState<any>();
-  const [profilo, setProfilo] = useState<IUtente>();
+  const [profilo, setProfilo] = useState<any>();
   const [load, setLoad] = useState(false);
   const [ok, setOk] = useState(false);
   const [token, setToken] = useState("");
@@ -57,19 +57,17 @@ const AggiornaProfilo = () => {
         config
       )
       .then((res) => {
-        setProfilo(res.data);
-      })
-      .then(() => {
-        setNome(profilo?.nome);
-        setCognome(profilo?.cognome);
-        setSesso(profilo?.sesso);
-        setCap(profilo?.codicepostale);
-        setNumero(profilo?.number);
-      })
-      .then(() => {
+        console.log(res);
+        setNome(res.data.nome);
+        setCognome(res.data.cognome);
+        setSesso(res.data.sesso);
+        setCap(res.data.codicepostale);
+        setNumero(res.data.number);
         setLoad(false);
       });
   };
+
+  console.log(nome);
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     if (!!tokenTest) setToken(tokenTest);
@@ -88,7 +86,7 @@ const AggiornaProfilo = () => {
           backgroundColor: "#F4F4F4",
           width: "300px",
           padding: "15px",
-          height: "350px",
+          height: "300px",
           borderRadius: "30px",
           display: "flex",
           flexDirection: "column",
@@ -97,6 +95,7 @@ const AggiornaProfilo = () => {
           marginTop: "30px",
         }}
       >
+        {/*
         <TextField
           sx={{ width: "90%", marginTop: "10px" }}
           id="standard-basic"
@@ -104,16 +103,17 @@ const AggiornaProfilo = () => {
           variant="standard"
           inputProps={{ readOnly: true }}
           defaultValue={profilo?.email}
-        ></TextField>
+      ></TextField>*/}
         <TextField
           sx={{ width: "90%", marginTop: "10px" }}
+          InputLabelProps={{ shrink: true }}
           id="standard-basic"
           label="Nome"
           variant="standard"
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setNome(x.target.value)
           }
-          defaultValue={profilo?.nome}
+          value={nome}
         ></TextField>
         <TextField
           sx={{ width: "90%", marginTop: "10px" }}
@@ -123,17 +123,19 @@ const AggiornaProfilo = () => {
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setCognome(x.target.value)
           }
-          defaultValue={profilo?.cognome}
+          InputLabelProps={{ shrink: true }}
+          value={cognome}
         ></TextField>
         <TextField
           sx={{ width: "90%", marginTop: "10px" }}
           id="standard-basic"
           label="CAP"
           variant="standard"
+          InputLabelProps={{ shrink: true }}
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setCap(x.target.value)
           }
-          defaultValue={profilo?.codicepostale}
+          value={cap}
         ></TextField>
         <TextField
           sx={{ width: "90%", marginTop: "10px" }}
@@ -144,7 +146,8 @@ const AggiornaProfilo = () => {
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setNumero(x.target.value)
           }
-          defaultValue={profilo?.number}
+          InputLabelProps={{ shrink: true }}
+          value={numero}
         ></TextField>
       </Box>
       <button
