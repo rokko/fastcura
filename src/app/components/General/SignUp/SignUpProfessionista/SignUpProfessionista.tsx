@@ -47,6 +47,8 @@ const SignUpProfessionista = () => {
   const conoita = ["Ottimo", "Buono", "Sufficiente", "Insufficiente", "Scarso"];
   const tit = ["Laurea", "Scuole Superiori", "Diploma (O.S.S., A.S.A.)"];
   const sess = ["Uomo", "Donna"];
+  const [handleCheck, setHandleCheck] = useState(false);
+  const [handleCheck2, setHandleCheck2] = useState(false);
 
   const [risult, setRisult] = useState(false);
   const getConfN = useMemo(() => {
@@ -272,7 +274,7 @@ const SignUpProfessionista = () => {
 
   const validation = useMemo(() => {
     return (
-      getConfN ||
+      !getConfN ||
       !valName(cognome) ||
       !valName(nome) ||
       !validationEmail ||
@@ -280,9 +282,13 @@ const SignUpProfessionista = () => {
       sesso === "" ||
       citta === "" ||
       !getConfPass ||
-      !validatePassword
+      !validatePassword ||
+      !handleCheck ||
+      !handleCheck2
     );
   }, [
+    handleCheck,
+    handleCheck2,
     citta,
     cognome,
     data,
@@ -571,11 +577,15 @@ const SignUpProfessionista = () => {
 
             <FormGroup>
               <FormControlLabel
-                control={<Checkbox />}
+                control={
+                  <Checkbox onChange={(x) => setHandleCheck(!handleCheck)} />
+                }
                 label="Acconsento all'utilizzo dei dati personali"
               />
               <FormControlLabel
-                control={<Checkbox />}
+                control={
+                  <Checkbox onChange={(x) => setHandleCheck2(!handleCheck2)} />
+                }
                 label="Accetto termini e condizioni"
               />{" "}
             </FormGroup>
@@ -1126,11 +1136,17 @@ const SignUpProfessionista = () => {
 
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox />}
+                  control={
+                    <Checkbox onChange={(x) => setHandleCheck(!handleCheck)} />
+                  }
                   label="Acconsento all'utilizzo dei dati personali"
                 />
                 <FormControlLabel
-                  control={<Checkbox />}
+                  control={
+                    <Checkbox
+                      onChange={(x) => setHandleCheck2(!handleCheck2)}
+                    />
+                  }
                   label="Accetto termini e condizioni"
                 />{" "}
               </FormGroup>
