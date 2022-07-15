@@ -7,14 +7,11 @@ const HeaderChat = (idcliente: any) => {
   const [nomec, setNomec] = useState("");
   const [cognomec, setCognomec] = useState("");
   const cliente = {
-    id_cliente: idcliente,
+    idcliente: idcliente,
   };
   useEffect(() => {
     axios
-      .post(
-        "https://fastcuradev.herokuapp.com/professionista/info-cliente",
-        cliente
-      )
+      .post("http://localhost:8080/professionista/nomecliente", cliente)
       .then((x) => {
         console.log(x);
         setNomec(x.data.nome);
@@ -64,7 +61,6 @@ const HeaderChat = (idcliente: any) => {
           </div>
         </div>
         <p style={{ color: "white" }}>
-          ciaoo
           {nomec} {cognomec}
         </p>
         <Link to="/professionista">
