@@ -4,14 +4,30 @@ import Footer from "../General/Footer";
 import { Input, TextField } from "@mui/material";
 import { styled } from "@mui/system";
 import HeaderNoLogin from "../Cliente/HeaderNoLogin";
+import axios from "axios";
 
 const Assistenza = () => {
   const [nome, setNome] = useState("");
   const [cognome, setCognome] = useState("");
   const [email, setEmail] = useState("");
   const [richiesta, setRichiesta] = useState("");
+  const [messaggio, setMessaggio] = useState("");
 
-  const sendRequest = () => {};
+  const daInviare = {
+    nome: nome,
+    cognome: cognome,
+    email: email,
+    richiesta: richiesta,
+  };
+
+  const sendRequest = () => {
+    axios
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/assistenza",
+        daInviare
+      )
+      .then((x) => setMessaggio(x.data.risposta));
+  };
 
   const TestoStile = styled("p")`
     font-style: normal;
@@ -78,6 +94,7 @@ const Assistenza = () => {
         >
           Invia richiesta
         </button>
+        <p>{messaggio}</p>
       </div>
       <Footer />
     </>
