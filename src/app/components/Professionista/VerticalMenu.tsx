@@ -8,7 +8,7 @@ import axios from "axios";
 
 const VerticalMenu = (props: any) => {
   const [token, setToken] = useState("");
-  const [ris, setRis] = useState(2);
+  const [rispo, setRispo] = useState(2);
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const isBig = useMediaQuery({ query: `(max-width: 1300px)` });
   const navigate = useNavigate();
@@ -20,8 +20,9 @@ const VerticalMenu = (props: any) => {
     if (!!tokenTest) setToken(tokenTest);
   };
 
+  console.log("Questa risposta", rispo);
+
   useEffect(() => {
-    var ris = 2;
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
@@ -30,7 +31,7 @@ const VerticalMenu = (props: any) => {
       .post("https://fastcuradev.herokuapp.com/professionista/pro", "", config)
       .then((res) => {
         console.log(res);
-        setRis(res.data.ris);
+        setRispo(res.data.ris);
       })
       .catch((e) => console.error(e));
   }, [token]);
@@ -53,7 +54,7 @@ const VerticalMenu = (props: any) => {
       }}
     >
       <Link
-        to={ris === 0 ? "/cliente" : "/professionista"}
+        to={rispo === 0 ? "/professionista" : "/cliente"}
         style={{ textDecoration: "none" }}
       >
         <div

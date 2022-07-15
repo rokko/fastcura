@@ -58,12 +58,15 @@ const HeaderNoLogin = () => {
         )
         .then((response) => {
           setUtente(response.data);
-          console.log(response.data);
+          console.log("UTENTE", response.data);
         })
         .catch((e) => console.error(e));
     }
     console.log(utente);
   };
+
+
+  
 
   useEffect(() => {
     takeToken();
