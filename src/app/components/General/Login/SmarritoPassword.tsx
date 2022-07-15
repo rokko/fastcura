@@ -3,13 +3,22 @@ import React, { useState } from "react";
 import Header from "../../../components/TrovaIlTuoProfessionista/Header";
 import { Alert, Snackbar } from "@mui/material";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SmarritoPassword = () => {
   const [email, setEmail] = useState("");
   const [req, setReq] = useState(false);
 
+  const pass = {
+    email: email,
+  };
+
   const requestPassword = () => {
-    setReq(true);
+    axios
+      .post("http://localhost:8080/professionista/password", pass)
+      .then((e) => {
+        console.log("ciao");
+      });
   };
 
   return (
