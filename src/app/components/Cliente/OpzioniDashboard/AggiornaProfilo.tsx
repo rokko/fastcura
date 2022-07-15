@@ -167,7 +167,7 @@ const AggiornaProfilo = () => {
         Salva
       </button>
 
-      <Snackbar open={ok} autoHideDuration={6000} onClose={() => setOk(false)}>
+      <Snackbar open={ok} autoHideDuration={3000} onClose={() => setOk(false)}>
         <Alert
           severity="success"
           sx={{
