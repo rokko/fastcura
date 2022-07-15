@@ -11,9 +11,11 @@ const HeaderChat = (idcliente: any) => {
   };
   useEffect(() => {
     axios
-      .post("http://localhost:8080/professionista/nomecliente", cliente)
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/nomecliente",
+        cliente
+      )
       .then((x) => {
-        console.log(x);
         setNomec(x.data.nome);
         setCognomec(x.data.cognome);
       });
