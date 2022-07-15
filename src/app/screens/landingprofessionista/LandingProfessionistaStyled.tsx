@@ -25,6 +25,14 @@ const Immagini = styled("img")`
     width: 70%;
   }
 `;
+
+const ImmagineMoney = styled("img")`
+  border-radius: 10px;
+  width: 300px;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+`;
 const ButtonFirstContainer = styled("button")`
   display: flex;
   margin-top: 50px;
@@ -237,6 +245,7 @@ const FinalButton = styled("button")`
   }
 `;
 export {
+  ImmagineMoney,
   ContainerFirstImage,
   SpanTitle,
   ButtonFirstContainer,

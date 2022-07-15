@@ -14,6 +14,7 @@ import Visibilita from "../../media/visibilita.png";
 import DiciTu from "../../media/dicitu.png";
 import Ricavi from "../../media/ricavi.png";
 import Servizio from "../../media/servizio.png";
+import Money from "../../media/money.png";
 import Car from "../../media/car.png";
 import {
   BoxInfo,
@@ -30,6 +31,7 @@ import {
   TitleFirstContainer,
   TitleSection,
   BoxDescription2,
+  ImmagineMoney,
 } from "./LandingProfessionistaStyled";
 import {
   BoxDescription,
@@ -144,7 +146,7 @@ const LandingProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
-              <BoxDescription2 style={{ width: "100%" }}>
+              <BoxDescription>
                 <TitleSection>Quanto costa?</TitleSection>
                 <TextSection>
                   La piattaforma è gratuita per i clienti,per sempre.
@@ -154,8 +156,10 @@ const LandingProfessionista = () => {
                   invitiamo a provare prima il nostro servizio gratuitamente per
                   30 giorni.
                 </TextSection>
-              </BoxDescription2>
+              </BoxDescription>
+              <ImmagineMoney src={Money} width={"300px"} alt={"money"} />
             </BoxInfo>
+
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
@@ -289,6 +293,12 @@ const LandingProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
+              <img
+                width={"200px"}
+                src={Money}
+                alt={"servizio"}
+                style={{ marginTop: "3rem", borderRadius: "10px" }}
+              />
               <BoxDescription>
                 <TitleSection>Quanto costa?</TitleSection>
                 <TextSection>
