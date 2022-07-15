@@ -274,7 +274,6 @@ const SignUpProfessionista = () => {
 
   const validation = useMemo(() => {
     return (
-      !getConfN ||
       !valName(cognome) ||
       !valName(nome) ||
       !validationEmail ||
@@ -292,7 +291,6 @@ const SignUpProfessionista = () => {
     citta,
     cognome,
     data,
-    getConfN,
     getConfPass,
     nome,
     sesso,

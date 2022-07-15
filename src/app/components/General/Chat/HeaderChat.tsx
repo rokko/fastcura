@@ -6,8 +6,19 @@ import axios from "axios";
 
 const HeaderChat = ({ id }: any) => {
   const [avatar, setAvatar] = useState("");
+  const [nomep, setNomep] = useState("");
+  const [cognomep, setCognomep] = useState("");
 
   useEffect(() => {
+    const ricerca = {
+      id_cliente: id,
+    };
+    axios
+      .post("https://fastcuradev.herokuapp.com/professionista/info", ricerca)
+      .then((x) => {
+        setNomep(x.data.nome);
+        setCognomep(x.data.cognome);
+      });
     const prof = {
       id_professionista: id,
     };
@@ -23,7 +34,7 @@ const HeaderChat = ({ id }: any) => {
           setAvatar("");
         }
       });
-  });
+  }, []);
   const navigate = useNavigate();
   return (
     <>
@@ -81,6 +92,10 @@ const HeaderChat = ({ id }: any) => {
             )}
           </div>
         </div>
+        <p style={{ color: "white", textAlign: "left" }}>
+          {nomep} {cognomep}
+        </p>
+
         <Link to="/cliente">
           <svg
             style={{ marginRight: "30px" }}

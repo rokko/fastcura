@@ -112,7 +112,7 @@ const PaginaChat = () => {
   return (
     <>
       <div style={{ height: "100%" }}>
-        <HeaderChat />
+        <HeaderChat idcliente = {conversazione.contatto.id_cliente}/>
         <Box
           id="boxchat"
           style={{

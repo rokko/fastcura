@@ -14,6 +14,7 @@ import {
 import Header from "../../../TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
 import { useMemo } from "react";
+import { Loader } from "../../../../loader";
 
 interface IToken {
   accessToken: string;
@@ -35,6 +36,7 @@ const SignUpClient = () => {
   const [handleCheck2, setHandleCheck2] = useState<boolean>(false);
   const [confPassword, setConfPassword] = useState<String>("");
   const [esisteMail, setEsisteMail] = useState(false);
+  const [load, setLoad] = useState(false);
   const sess = ["Uomo", "Donna"];
   const [risult, setRisult] = useState(false);
 
@@ -118,6 +120,7 @@ const SignUpClient = () => {
   };
 
   const sendRegister = async () => {
+    setLoad(true);
     const datinuovoCliente = JSON.stringify(nuovoCliente);
     console.log(nuovoCliente);
     await controllaMail();
@@ -130,7 +133,7 @@ const SignUpClient = () => {
             email: email,
             password: password,
           });
-
+          setLoad(false);
           navigate(-1);
         })
         .catch(function (error) {
@@ -172,6 +175,8 @@ const SignUpClient = () => {
   ]);
   return (
     <>
+      <Loader isLoading={load} />
+
       <Header />
       <p className="registertitle">Compila i dati per iscriverti!</p>
       {!!isMobile && (

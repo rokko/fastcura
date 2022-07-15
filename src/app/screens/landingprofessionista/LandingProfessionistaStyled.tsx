@@ -193,18 +193,18 @@ const BoxDescription2 = styled("div")`
   }
 `;
 const FinalButton = styled("button")`
-  width: 209px;
+  width: 300px;
   height: 50px;
   border: none;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 18px;
   line-height: 21px;
   border-radius: 20px;
   /* identical to box height */
 
   color: #39b1d9;
-
+  background-color: white;
   /* Inside auto layout */
 
   flex: none;

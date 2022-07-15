@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const HeaderChat = (idcliente: any) => {
+  const [nomec, setNomec] = useState("");
+  const [cognomec, setCognomec] = useState("");
+  const cliente = {
+    id_cliente: idcliente,
+  };
+  useEffect(() => {
+    axios
+      .post(
+        "https://fastcuradev.herokuapp.com/professionista/info-cliente",
+        cliente
+      )
+      .then((x) => {
+        console.log(x);
+        setNomec(x.data.nome);
+        setCognomec(x.data.cognome);
+      });
+  }, []);
+
   const navigate = useNavigate();
   return (
     <>
@@ -44,6 +63,10 @@ const HeaderChat = (idcliente: any) => {
             ></Box>
           </div>
         </div>
+        <p style={{ color: "white" }}>
+          ciaoo
+          {nomec} {cognomec}
+        </p>
         <Link to="/professionista">
           <svg
             style={{ marginRight: "30px" }}
