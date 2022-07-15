@@ -8,17 +8,17 @@ import axios from "axios";
 const SmarritoPassword = () => {
   const [email, setEmail] = useState("");
   const [req, setReq] = useState(false);
+  const [risultato, setRisultato] = useState("");
 
   const pass = {
     email: email,
   };
 
   const requestPassword = () => {
+    setReq(true);
     axios
-      .post("http://localhost:8080/professionista/password", pass)
-      .then((e) => {
-        console.log("ciao");
-      });
+      .post("https://fastcuradev.herokuapp.com/professionista/password", pass)
+      .then((e) => {});
   };
 
   return (
