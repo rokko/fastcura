@@ -152,9 +152,10 @@ const LandingProfessionista = () => {
                   La piattaforma è gratuita per i clienti,per sempre.
                 </TextSection>
                 <TextSection>
-                  Per i professionisti l’abbonamento costa 19,90 al mese ma ti
-                  invitiamo a provare prima il nostro servizio gratuitamente per
-                  30 giorni.
+                  Per i professionisti l’abbonamento costa{" "}
+                  <span style={{ fontWeight: "bold" }}>19,90 </span>al mese ma
+                  ti invitiamo a provare prima il nostro servizio gratuitamente
+                  per 30 giorni.
                 </TextSection>
               </BoxDescription>
               <ImmagineMoney src={Money} width={"300px"} alt={"money"} />
@@ -167,7 +168,7 @@ const LandingProfessionista = () => {
               <TitleFinal>Provalo gratis!</TitleFinal>
             </Link>
             <TextFinal>
-              Inizia la prova gratuita di 30 giorni. Potrai disdire quando vuoi.
+              Inizia la prova gratuita di 60 giorni. Potrai disdire quando vuoi.
               <br />
               Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
               allargando la tua rete di clienti
