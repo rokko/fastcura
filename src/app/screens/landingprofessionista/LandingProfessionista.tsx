@@ -168,7 +168,7 @@ const LandingProfessionista = () => {
               <TitleFinal>Provalo gratis!</TitleFinal>
             </Link>
             <TextFinal>
-              Inizia la prova gratuita di 60 giorni. Potrai disdire quando vuoi.
+<span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
               <br />
               Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
               allargando la tua rete di clienti
@@ -318,8 +318,8 @@ const LandingProfessionista = () => {
                 <TitleFinal>Provalo gratis!</TitleFinal>
               </Link>
               <TextFinal>
-                Inizia la prova gratuita di 30 giorni. Potrai disdire quando
-                vuoi.
+                <span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
+
               </TextFinal>
               <TextFinal>
                 Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
