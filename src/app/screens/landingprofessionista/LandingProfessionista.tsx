@@ -153,7 +153,7 @@ const LandingProfessionista = () => {
                 </TextSection>
                 <TextSection>
                   Per i professionisti l’abbonamento costa{" "}
-                  <span style={{ fontWeight: "bold" , color:"black"}}>19,90 </span>al mese ma
+                  <span style={{ fontWeight: "bold" , color:"black"}}>19,90 € </span>al mese ma
                   ti invitiamo a provare prima il nostro servizio gratuitamente
                   per 60 giorni.
                 </TextSection>
@@ -304,7 +304,7 @@ const LandingProfessionista = () => {
                 <TitleSection>Quanto costa?</TitleSection>
                 <TextSection>
                   La piattaforma è gratuita per i clienti,per sempre. Per i
-                  professionisti l’abbonamento costa <span style={{ fontWeight: "bold" , color:"black"}}>19,90 </span> al mese ma ti
+                  professionisti l’abbonamento costa <span style={{ fontWeight: "bold" , color:"black"}}>19,90 €</span> al mese ma ti
                   invitiamo a provare prima il nostro servizio gratuitamente per
                   60 giorni.
                 </TextSection>
