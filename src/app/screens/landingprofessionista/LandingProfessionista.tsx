@@ -153,9 +153,9 @@ const LandingProfessionista = () => {
                 </TextSection>
                 <TextSection>
                   Per i professionisti l’abbonamento costa{" "}
-                  <span style={{ fontWeight: "bold" }}>19,90 </span>al mese ma
+                  <span style={{ fontWeight: "bold" , color:"black"}}>19,90 € </span>al mese ma
                   ti invitiamo a provare prima il nostro servizio gratuitamente
-                  per 30 giorni.
+                  per 60 giorni.
                 </TextSection>
               </BoxDescription>
               <ImmagineMoney src={Money} width={"300px"} alt={"money"} />
@@ -168,7 +168,7 @@ const LandingProfessionista = () => {
               <TitleFinal>Provalo gratis!</TitleFinal>
             </Link>
             <TextFinal>
-              Inizia la prova gratuita di 60 giorni. Potrai disdire quando vuoi.
+<span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
               <br />
               Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
               allargando la tua rete di clienti
@@ -304,9 +304,9 @@ const LandingProfessionista = () => {
                 <TitleSection>Quanto costa?</TitleSection>
                 <TextSection>
                   La piattaforma è gratuita per i clienti,per sempre. Per i
-                  professionisti l’abbonamento costa 19,90 al mese ma ti
+                  professionisti l’abbonamento costa <span style={{ fontWeight: "bold" , color:"black"}}>19,90 €</span> al mese ma ti
                   invitiamo a provare prima il nostro servizio gratuitamente per
-                  30 giorni.
+                  60 giorni.
                 </TextSection>
               </BoxDescription>
             </BoxInfo>
@@ -318,8 +318,8 @@ const LandingProfessionista = () => {
                 <TitleFinal>Provalo gratis!</TitleFinal>
               </Link>
               <TextFinal>
-                Inizia la prova gratuita di 30 giorni. Potrai disdire quando
-                vuoi.
+                <span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
+
               </TextFinal>
               <TextFinal>
                 Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
