@@ -87,7 +87,7 @@ const LandingProfessionista = () => {
             <BoxInfo>
               <BoxDescription>
                 <TitleSection>
-                  Per Infermieri, Caregiver e Fisioterapisti
+                  Infermieri, Fisioterapisti, O.S.S., Badanti
                 </TitleSection>
               </BoxDescription>
               <Immagini src={Car} alt={"car driver"} />
@@ -153,9 +153,11 @@ const LandingProfessionista = () => {
                 </TextSection>
                 <TextSection>
                   Per i professionisti l’abbonamento costa{" "}
-                  <span style={{ fontWeight: "bold" , color:"black"}}>19,90 € </span>al mese ma
-                  ti invitiamo a provare prima il nostro servizio gratuitamente
-                  per 60 giorni.
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    19,90 €{" "}
+                  </span>
+                  al mese ma ti invitiamo a provare prima il nostro servizio
+                  gratuitamente per 60 giorni.
                 </TextSection>
               </BoxDescription>
               <ImmagineMoney src={Money} width={"300px"} alt={"money"} />
@@ -168,7 +170,12 @@ const LandingProfessionista = () => {
               <TitleFinal>Provalo gratis!</TitleFinal>
             </Link>
             <TextFinal>
-<span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
+              <span style={{ fontWeight: "bold" }}>
+                PROMO: solo per questa settimana inizia la prova gratuita di 60
+                giorni
+                <br />
+                Non c'è bisogno di aggiungere nessuna carta
+              </span>
               <br />
               Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
               allargando la tua rete di clienti
@@ -224,7 +231,7 @@ const LandingProfessionista = () => {
 
               <BoxDescription>
                 <TitleSection>
-                  Per Infermieri, Caregiver e Fisioterapisti
+                  Infermieri, Fisioterapisti, O.S.S., Badanti
                 </TitleSection>
               </BoxDescription>
             </BoxInfo>
@@ -304,9 +311,12 @@ const LandingProfessionista = () => {
                 <TitleSection>Quanto costa?</TitleSection>
                 <TextSection>
                   La piattaforma è gratuita per i clienti,per sempre. Per i
-                  professionisti l’abbonamento costa <span style={{ fontWeight: "bold" , color:"black"}}>19,90 €</span> al mese ma ti
-                  invitiamo a provare prima il nostro servizio gratuitamente per
-                  60 giorni.
+                  professionisti l’abbonamento costa{" "}
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    19,90 €
+                  </span>{" "}
+                  al mese ma ti invitiamo a provare prima il nostro servizio
+                  gratuitamente per 60 giorni.
                 </TextSection>
               </BoxDescription>
             </BoxInfo>
@@ -318,8 +328,12 @@ const LandingProfessionista = () => {
                 <TitleFinal>Provalo gratis!</TitleFinal>
               </Link>
               <TextFinal>
-                <span style={{ fontWeight: "bold"}}>PROMO: solo per questa settimana inizia la prova gratuita di 60 giorni</span>
-
+                <span style={{ fontWeight: "bold" }}>
+                  PROMO: solo per questa settimana inizia la prova gratuita di
+                  60 giorni
+                  <br />
+                  Non c'è bisogno di aggiungere nessuna carta
+                </span>
               </TextFinal>
               <TextFinal>
                 Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
