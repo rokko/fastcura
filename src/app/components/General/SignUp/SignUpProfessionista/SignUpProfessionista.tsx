@@ -15,6 +15,8 @@ import { useMemo } from "react";
 import { Loader } from "../../../../loader";
 
 const SignUpProfessionista = () => {
+  const [clicked, setClicked] = useState(false);
+
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [cognome, setCognome] = useState<String | null>("");
@@ -196,7 +198,6 @@ const SignUpProfessionista = () => {
     const emailDaInviare = {
       email: email.toLowerCase(),
     };
-
     return axios
       .post(
         "https://fastcuradev.herokuapp.com/professionista/mail-utente",
@@ -251,6 +252,7 @@ const SignUpProfessionista = () => {
     }
   }, [email]);
   const sendRegister = async () => {
+    setClicked(true);
     await controllaMail();
     if (!(await controllaMail())) {
       setLoad(true);
@@ -267,6 +269,7 @@ const SignUpProfessionista = () => {
           console.log(error);
         });
     } else {
+      setClicked(false);
       console.log("mail gia usata");
     }
   };
@@ -619,7 +622,7 @@ const SignUpProfessionista = () => {
               marginTop: 10,
               marginBottom: 20,
             }}
-            disabled={validation}
+            disabled={validation || !clicked}
             onClick={() => sendRegister()}
           >
             Iscriviti
@@ -1188,7 +1191,7 @@ const SignUpProfessionista = () => {
                     marginTop: 10,
                     marginBottom: 30,
                   }}
-                  disabled={validation}
+                  disabled={validation || !clicked}
                   onClick={() => sendRegister()}
                 >
                   Iscriviti
