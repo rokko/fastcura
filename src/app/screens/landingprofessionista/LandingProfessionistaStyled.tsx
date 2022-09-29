@@ -35,6 +35,7 @@ const ImmagineMoney = styled("img")`
 `;
 const ButtonFirstContainer = styled("button")`
   display: flex;
+  font-size: 22px;
   margin-top: 50px;
   margin-bottom: 41px;
   flex-direction: row;
@@ -48,9 +49,11 @@ const ButtonFirstContainer = styled("button")`
   border: none;
   background: #39b1d9;
   border-radius: 40px;
-  font-weight: 500;
+  font-weight: bold;
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
   }
 `;
 
@@ -86,7 +89,7 @@ const BoxInfo = styled("div")`
   @media (max-width: 768px) {
     flex-direction: column;
     max-width: 270px;
-    height: 367px;
+    height: 500px;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -104,10 +107,10 @@ const ButtonSection = styled("button")`
   height: 50px;
   border: none;
   background: #39b1d9;
+  font-size: 22px;
   border-radius: 40px;
   color: white;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: bold;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -115,6 +118,9 @@ const ButtonSection = styled("button")`
     align-items: center;
     padding: 13px 19px;
     gap: 10px;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
 
     background: #39b1d9;
     border-radius: 40px;

@@ -100,6 +100,9 @@ const LandingProfessionista = () => {
                   Decidi tu quando e come lavorare. Tu ci metti le competenze,
                   Fastcura ti trova i clienti
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -122,6 +125,9 @@ const LandingProfessionista = () => {
                   le competenze e la qualità dei servizi erogati attraverso le
                   recensioni lasciate da altri utenti
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -143,6 +149,9 @@ const LandingProfessionista = () => {
                   Fastcura è un servizio unico nel suo genere. Al centro di
                   tutto vi è la tutela del professionista.
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -253,13 +262,16 @@ const LandingProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
-              <img width={"248px"} src={DiciTu} alt={"dici tu"} />
+              <img width={"228px"} src={DiciTu} alt={"dici tu"} />
               <BoxDescription>
                 <TitleSection>Decidi tu quando!</TitleSection>
                 <TextSection>
                   Decidi tu quando e come lavorare. Tu ci metti le competenze,
                   Fastcura ti trova i clienti
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -288,6 +300,9 @@ const LandingProfessionista = () => {
                   le competenze e la qualità dei servizi erogati attraverso le
                   recensioni lasciate da altri utenti
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -315,6 +330,9 @@ const LandingProfessionista = () => {
                   Fastcura è un servizio unico nel suo genere. Al centro di
                   tutto vi è la tutela del professionista.
                 </TextSection>
+                <ButtonFirstContainer>
+                  Inizia la prova gratuita
+                </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
