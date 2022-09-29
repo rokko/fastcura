@@ -1177,26 +1177,25 @@ const SignUpProfessionista = () => {
                   }
                   label="Accetto termini e condizioni"
                 />{" "}
+                <button
+                  style={{
+                    backgroundColor: !validation ? "#39B1D9" : "grey",
+                    width: "100%",
+                    height: 37,
+                    borderRadius: 20,
+                    border: "none",
+                    color: "white",
+                    marginTop: 10,
+                    marginBottom: 30,
+                  }}
+                  disabled={validation}
+                  onClick={() => sendRegister()}
+                >
+                  Iscriviti
+                </button>
               </FormGroup>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <button
-                style={{
-                  backgroundColor: !validation ? "#39B1D9" : "grey",
-                  width: 220,
-                  height: 37,
-                  borderRadius: 20,
-                  border: "none",
-                  color: "white",
-                  marginTop: 10,
-                  marginBottom: 30,
-                }}
-                disabled={validation}
-                onClick={() => sendRegister()}
-              >
-                Iscriviti
-              </button>
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
