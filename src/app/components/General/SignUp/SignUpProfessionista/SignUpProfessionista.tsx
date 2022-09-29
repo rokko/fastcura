@@ -37,6 +37,7 @@ const SignUpProfessionista = () => {
   const [numeroiscrizione, setNumeroiscrizione] = useState<String | null>("");
   const [assicurazione, setAssicurazione] = useState<String | null>("");
   const [precedente, setPrecedente] = useState<String | null>("");
+  const [comeConosciuto, setComeConosciuto] = useState<String | null>("");
   const prof = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
   const primo = ["SI", "NO"];
   const reference = ["Una", "Due", "Piu di due"];
@@ -59,6 +60,13 @@ const SignUpProfessionista = () => {
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const conosciuto = [
+    "Pubblicità",
+    "Ricerca su google",
+    "Passaparola",
+    "Social Network",
+  ];
 
   const getConfPass = useMemo(() => {
     return password === passwordconf;
@@ -421,6 +429,17 @@ const SignUpProfessionista = () => {
               style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
               renderInput={(params) => <TextField {...params} label="Città" />}
               onChange={(x, value) => setCitta(value)}
+            />
+            <Autocomplete
+              disablePortal
+              id="come-conosciuto"
+              options={conosciuto}
+              sx={{ width: 310, marginTop: 1.5 }}
+              style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+              renderInput={(params) => (
+                <TextField {...params} label="Come ci hai conosciuto?" />
+              )}
+              onChange={(x, value) => setComeConosciuto(value)}
             />
             <TextField
               required={true}
@@ -965,6 +984,17 @@ const SignUpProfessionista = () => {
                   <TextField {...params} label="Città" />
                 )}
                 onChange={(x, value) => setCitta(value)}
+              />
+              <Autocomplete
+                disablePortal
+                id="come-conosciuto"
+                options={conosciuto}
+                sx={{ width: 310, marginTop: 1.5 }}
+                style={{ backgroundColor: "#ffffff", borderRadius: "30px" }}
+                renderInput={(params) => (
+                  <TextField {...params} label="Come ci hai conosciuto?" />
+                )}
+                onChange={(x, value) => setComeConosciuto(value)}
               />
               <TextField
                 required={true}
