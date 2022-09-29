@@ -242,6 +242,9 @@ const ProfiloProfessionista = () => {
                   id="standard-basic"
                   label="Esperienze"
                   variant="standard"
+                  multiline
+                  maxRows={5}
+                  rows={3}
                   disabled={true}
                   value={curriculum?.esperienze}
                 ></TextField>
