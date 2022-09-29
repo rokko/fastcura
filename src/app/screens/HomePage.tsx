@@ -98,6 +98,7 @@ const HomePage = () => {
           </div>
         </>
       )}
+
       <Footer />
     </>
   );
