@@ -67,6 +67,23 @@ const TrovaProfessionista = () => {
             <BoxSearch />
           </CercaContainter>
           <ContainerTrova>
+            <BoxInfo style={{}}>
+              <Immagini
+                src={Professi}
+                alt={"hai bisogno"}
+                style={{ width: "500px" }}
+              />
+              <BoxDescription>
+                <TitleSection>Sei un professionista?</TitleSection>
+
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
+                </Link>
+              </BoxDescription>
+            </BoxInfo>
             <BoxInfo>
               <Immagini src={HaiBisogno} alt={"hai bisogno"} />
               <BoxDescription>
@@ -170,6 +187,23 @@ const TrovaProfessionista = () => {
             <BoxSearch />
           </CercaContainter>
           <ContainerTrova>
+            <BoxInfo style={{}}>
+              <Immagini
+                src={Professi}
+                alt={"hai bisogno"}
+                style={{ width: "300px" }}
+              />
+              <BoxDescription>
+                <TitleSection>Sei un professionista?</TitleSection>
+
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
+                </Link>
+              </BoxDescription>
+            </BoxInfo>
             <BoxInfo>
               <img width={"290px"} src={HaiBisogno} alt={"hai bisogno"} />
               <BoxDescription>
