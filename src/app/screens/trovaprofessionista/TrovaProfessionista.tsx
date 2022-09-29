@@ -137,7 +137,7 @@ const TrovaProfessionista = () => {
                   to="/signup-professionista"
                   style={{ textDecoration: "none" }}
                 >
-                  <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
                 </Link>
               </ContainerTitleProfessionista>
               <img width={"670px"} src={Professi} alt={"professionista"} />
@@ -266,7 +266,7 @@ const TrovaProfessionista = () => {
                 to="/signup-professionista"
                 style={{ textDecoration: "none" }}
               >
-                <ButtonTwo>Inizia ora la prova di 30 giorni</ButtonTwo>
+                <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
               </Link>
             </ContainerProfessionista>
             <BoxInfo2>

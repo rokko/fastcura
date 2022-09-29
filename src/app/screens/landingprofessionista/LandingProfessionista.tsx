@@ -49,7 +49,7 @@ const LandingProfessionista = () => {
         {" "}
         <div style={{ backgroundColor: "rgb(246, 246, 246)" }}>
           <Header />
-          <ContainerFirstImage>
+          <ContainerFirstImage style={{ marginTop: "5rem" }}>
             <TitleFirstContainer>
               Iscriviti a <SpanTitle>Fastcura</SpanTitle>
             </TitleFirstContainer>

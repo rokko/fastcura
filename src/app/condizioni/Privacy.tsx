@@ -100,7 +100,7 @@ const Privacy = () => {
         <br />
         FASTCURA raccoglie i dati dei clienti per fornire i propri servizi e
         conserva tali informazioni per tutta la durata dei contratti, (durata
-        minima di 30 giorni). Inoltre, FASTCURA conserva i dati per un periodo
+        minima di 60 giorni). Inoltre, FASTCURA conserva i dati per un periodo
         dopo la cessazione dei contratti solo e soltanto in relazione a
         requisiti normativi, fiscali, assicurativi e di altro tipo nei luoghi in
         cui opera. Una volta che tali informazioni non sono più necessarie per
