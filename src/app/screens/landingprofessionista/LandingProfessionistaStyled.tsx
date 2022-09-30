@@ -51,7 +51,7 @@ const ButtonFirstContainer = styled("button")`
   border-radius: 40px;
   font-weight: bold;
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 18px;
     width: 308px;
     height: 50px;
   }
@@ -118,7 +118,7 @@ const ButtonSection = styled("button")`
     align-items: center;
     padding: 13px 19px;
     gap: 10px;
-    font-size: 15px;
+    font-size: 18px;
     width: 308px;
     height: 50px;
 
