@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "../../components/TrovaIlTuoProfessionista/Header";
 import PrimaImmagine from "../../media/landingprofessionista.png";
 import EntraNelTeam from "../../components/HomepageComponent/EntraNelTeam";
@@ -41,6 +41,11 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
 const LandingProfessionista = () => {
+  const ref = useRef<any>();
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   if (!isMobile)
@@ -76,12 +81,10 @@ const LandingProfessionista = () => {
                   Fastcura ha l'obiettivo di darti visibilità sul tuo
                   territorio, allargando la tua rete di clienti
                 </TextSection>
-                <Link
-                  to="/signup-professionista"
-                  style={{ textDecoration: "none" }}
-                >
-                  <ButtonSection>Scopri di più</ButtonSection>
-                </Link>
+
+                <ButtonSection onClick={() => handleClick()}>
+                  Scopri di più
+                </ButtonSection>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -147,7 +150,7 @@ const LandingProfessionista = () => {
             </BoxInfo>
             <BoxInfo>
               <Immagini src={Servizio} alt={"servizio"} />
-              <BoxDescription>
+              <BoxDescription ref={ref}>
                 <TitleSection>Un servizio innovativo</TitleSection>
                 <TextSection>
                   Fastcura è un servizio unico nel suo genere. Al centro di
@@ -248,12 +251,10 @@ const LandingProfessionista = () => {
                   Fastcura ha l'obiettivo di darti visibilità sul tuo
                   territorio, allargando la tua rete di clienti
                 </TextSection>
-                <Link
-                  to="/signup-professionista"
-                  style={{ textDecoration: "none" }}
-                >
-                  <ButtonSection>Scopri di più</ButtonSection>
-                </Link>
+
+                <ButtonSection onClick={() => handleClick()}>
+                  Scopri di più
+                </ButtonSection>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -328,7 +329,7 @@ const LandingProfessionista = () => {
                 alt={"servizio"}
                 style={{ marginTop: "3rem" }}
               />
-              <BoxDescription>
+              <BoxDescription ref={ref}>
                 <TitleSection>Un servizio innovativo</TitleSection>
                 <TextSection>
                   Fastcura è un servizio unico nel suo genere. Al centro di
