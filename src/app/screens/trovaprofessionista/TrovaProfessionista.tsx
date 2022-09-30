@@ -15,6 +15,8 @@ import ChattaDirettamente from "../../media/chattadirettam.png";
 import Professi from "../../media/seiunprofessionista.png";
 import Feedback from "../../media/feedback.png";
 import FirstPng from "../../media/first.png";
+import PrimaImmagine from "../../media/landingprofessionista.png";
+
 import {
   BoxDescription,
   BoxInfo,
@@ -69,7 +71,7 @@ const TrovaProfessionista = () => {
           <ContainerTrova>
             <BoxInfo style={{}}>
               <Immagini
-                src={Professi}
+                src={PrimaImmagine}
                 alt={"hai bisogno"}
                 style={{ width: "500px" }}
               />
@@ -80,7 +82,18 @@ const TrovaProfessionista = () => {
                   to="/signup-professionista"
                   style={{ textDecoration: "none" }}
                 >
-                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
+                  <ButtonTwo
+                    style={{
+                      background: "#e2f4fc",
+
+                      textTransform: "none",
+                      color: "rgb(57, 177, 217)",
+                      borderRadius: 10,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Inizia ora la prova di 60 giorni
+                  </ButtonTwo>
                 </Link>
               </BoxDescription>
             </BoxInfo>
@@ -189,7 +202,7 @@ const TrovaProfessionista = () => {
           <ContainerTrova>
             <BoxInfo style={{}}>
               <Immagini
-                src={Professi}
+                src={PrimaImmagine}
                 alt={"hai bisogno"}
                 style={{ width: "300px" }}
               />
@@ -200,7 +213,18 @@ const TrovaProfessionista = () => {
                   to="/signup-professionista"
                   style={{ textDecoration: "none" }}
                 >
-                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
+                  <ButtonTwo
+                    style={{
+                      background: "#e2f4fc",
+
+                      textTransform: "none",
+                      color: "rgb(57, 177, 217)",
+                      borderRadius: 10,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Inizia ora la prova di 60 giorni
+                  </ButtonTwo>
                 </Link>
               </BoxDescription>
             </BoxInfo>
