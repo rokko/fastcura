@@ -17,6 +17,8 @@ const ButtonSeiNuovo = styled("button")`
 const ContainerSeiNuovo = styled("div")`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  align-content: center;
   height: 318px;
 `;
 
