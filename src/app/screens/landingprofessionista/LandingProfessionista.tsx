@@ -105,7 +105,7 @@ const LandingProfessionista = () => {
                   Fastcura ti trova i clienti
                 </TextSection>
                 <ButtonFirstContainer>
-                  Inizia la prova gratuita
+                  Prova il nostro servizio
                 </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
@@ -130,7 +130,7 @@ const LandingProfessionista = () => {
                   recensioni lasciate da altri utenti
                 </TextSection>
                 <ButtonFirstContainer>
-                  Inizia la prova gratuita
+                  Iscriviti Gratuitamente
                 </ButtonFirstContainer>
               </BoxDescription>
             </BoxInfo>
