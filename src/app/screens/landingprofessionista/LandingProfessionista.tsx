@@ -90,7 +90,11 @@ const LandingProfessionista = () => {
                   Infermieri, Fisioterapisti, O.S.S., Badanti
                 </TitleSection>
               </BoxDescription>
-              <Immagini src={Car} alt={"car driver"} />
+              <Immagini
+                src={PrimaImmagine}
+                alt={"car driver"}
+                style={{ width: "600px" }}
+              />
             </BoxInfo>
             <BoxInfo>
               <Immagini src={DiciTu} alt={"dici tu"} />
