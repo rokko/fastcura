@@ -190,7 +190,9 @@ const LandingProfessionista = () => {
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
             >
-              <TitleFinal>Provalo gratis!</TitleFinal>
+              <TitleFinal style={{ fontSize: "45px", marginBottom: "-2rem" }}>
+                Provalo gratis!
+              </TitleFinal>
             </Link>
             <TextFinal>
               <span style={{ fontWeight: "bold" }}>
