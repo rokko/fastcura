@@ -382,7 +382,14 @@ const LandingProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
 
-            <div>
+            <div
+              style={{
+                display: "flex",
+                alignContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
               <Link
                 to="/signup-professionista"
                 style={{ textDecoration: "none" }}
