@@ -58,6 +58,15 @@ const LandingProfessionista = () => {
             <TitleFirstContainer>
               Iscriviti a <SpanTitle>Fastcura</SpanTitle>
             </TitleFirstContainer>
+            <iframe
+              width="800"
+              height="315"
+              src="https://www.youtube.com/embed/QvesamSEZvE"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
@@ -66,11 +75,6 @@ const LandingProfessionista = () => {
                 Inizia la prova gratuita
               </ButtonFirstContainer>
             </Link>
-            <Immagini
-              src={PrimaImmagine}
-              width={"830px"}
-              alt={"prima immagine"}
-            />
           </ContainerFirstImage>
           <ContainerOther>
             <BoxInfo>
@@ -246,7 +250,15 @@ const LandingProfessionista = () => {
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
             ></Link>
-            <img src={PrimaImmagine} width={"100%"} alt={"prima immagine"} />
+            <iframe
+              width="400"
+              height="315"
+              src="https://www.youtube.com/embed/QvesamSEZvE"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>{" "}
             <ButtonFirstContainer>
               Inizia la prova gratuita
             </ButtonFirstContainer>
