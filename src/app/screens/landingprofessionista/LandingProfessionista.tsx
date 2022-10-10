@@ -125,7 +125,7 @@ const LandingProfessionista = () => {
               </BoxDescription>
               <img width={"322px"} src={FaiTuPrezzo} alt={"fai prezzo"} />
             </BoxInfo>
-            <BoxInfo>
+            <BoxInfo ref={ref}>
               <img src={Messaggistica} alt={"messaggistica"} />
               <BoxDescription>
                 <TitleSection>
@@ -154,7 +154,7 @@ const LandingProfessionista = () => {
             </BoxInfo>
             <BoxInfo>
               <Immagini src={Servizio} alt={"servizio"} />
-              <BoxDescription ref={ref}>
+              <BoxDescription>
                 <TitleSection>Un servizio innovativo</TitleSection>
                 <TextSection>
                   Fastcura è un servizio unico nel suo genere. Al centro di
@@ -184,7 +184,7 @@ const LandingProfessionista = () => {
             </BoxInfo>
             <BoxInfo>
               <Immagini src={Servizio} alt={"servizio"} />
-              <BoxDescription ref={ref}>
+              <BoxDescription>
                 <TitleSection>Hai ancora dubbi?</TitleSection>
                 <TextSection>Contattaci su whatsapp</TextSection>
               </BoxDescription>
@@ -317,7 +317,7 @@ const LandingProfessionista = () => {
                 alt={"messaggistica"}
                 style={{ marginTop: "1.5rem" }}
               />
-              <BoxDescription>
+              <BoxDescription ref={ref}>
                 <TitleSection>
                   Servizio di messaggistica diretto con il cliente
                 </TitleSection>
@@ -350,7 +350,7 @@ const LandingProfessionista = () => {
                 alt={"servizio"}
                 style={{ marginTop: "3rem" }}
               />
-              <BoxDescription ref={ref}>
+              <BoxDescription>
                 <TitleSection>Un servizio innovativo</TitleSection>
                 <TextSection>
                   Fastcura è un servizio unico nel suo genere. Al centro di
