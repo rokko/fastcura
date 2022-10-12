@@ -184,7 +184,11 @@ const LandingProfessionista = () => {
               <ImmagineMoney src={Money} width={"300px"} alt={"money"} />
             </BoxInfo>
             <BoxInfo>
-              <Immagini src={Servizio} alt={"servizio"} />
+              <Immagini
+                style={{ width: "300px" }}
+                src={Whatsapp}
+                alt={"servizio"}
+              />
               <BoxDescription>
                 <TitleSection>Hai ancora dubbi?</TitleSection>
                 <TextSection>Contattaci su whatsapp</TextSection>
@@ -391,7 +395,7 @@ const LandingProfessionista = () => {
             <BoxInfo>
               <img
                 width={"240px"}
-                src={Servizio}
+                src={Whatsapp}
                 alt={"servizio"}
                 style={{ marginTop: "3rem" }}
               />
