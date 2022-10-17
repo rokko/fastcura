@@ -131,9 +131,14 @@ const LandingProfessionista = () => {
                   Decidi tu quando e come lavorare. Tu ci metti le competenze,
                   Fastcura ti trova i clienti
                 </TextSection>
-                <ButtonFirstContainer>
-                  Prova il nostro servizio
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Prova il nostro servizio
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -156,9 +161,14 @@ const LandingProfessionista = () => {
                   le competenze e la qualità dei servizi erogati attraverso le
                   recensioni lasciate da altri utenti
                 </TextSection>
-                <ButtonFirstContainer>
-                  Iscriviti Gratuitamente
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Iscriviti Gratuitamente
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -180,9 +190,14 @@ const LandingProfessionista = () => {
                   Fastcura è un servizio unico nel suo genere. Al centro di
                   tutto vi è la tutela del professionista.
                 </TextSection>
-                <ButtonFirstContainer>
-                  Inizia la prova gratuita
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Inizia la prova gratuita
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -210,7 +225,10 @@ const LandingProfessionista = () => {
               />
               <BoxDescription>
                 <TitleSection>Hai ancora dubbi?</TitleSection>
-                <TextSection>Contattaci su whatsapp</TextSection>
+                <TextSection>
+                  Sei ancora indeciso? Puoi contattarci per ogni tipo di
+                  chiarimento o problema su WhatsApp 🙂
+                </TextSection>
               </BoxDescription>
             </BoxInfo>
 
@@ -278,13 +296,13 @@ const LandingProfessionista = () => {
           >
             <a
               style={{ textDecoration: "none" }}
-              href="http://www.instagram.com"
+              href="https://www.instagram.com/fastcura/"
             >
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAFLklEQVRoge2YS2xUVRjHf9+90xkETC2kgy4EGlOKYACtoDOUxMCCR6G1LpAQFujCR3xEdySEhEQMK1iwIiFl5SskAlNLxUQMCVAK0qQ0KdgWA2iCgao8BGzvzD2fi87jzvR1WsuCZH6r8839Hv/v3DPnnnuhSJEiRYoUeYyRiQStaOktT3lmLSIvgc4FyoEoyMxBDy0BpheE3QPx09dvCfQp9AlcVZELrtN//PT6RbcfaQOxQ10zJBzao8IWIDTeYmPgCdLol8i2c+sq79kGWTcQO9Q1g0ioFaiakDx7Ok2Js8K2CetZlHBoj+aLP6zQFHLoUKN9/0wZuNu5evEDm1yLfrg47cn+SKkaJ2ocXSxQDzRkLotndgMfWOmycVrR0lueSpobpBtW0Tfb6uYfsom1JZ7o3qTwddociJjw0ycbKu6MFefYJE95Zi0Z8arfTrZ4gNb6qm+ARNqM9Iu32ibOqgF1tDpriHw3bnXDEGvq3h1LdN+PH+3+PFCpKVeHpTZ5rP4DYmR2ZrE5Ri6O5V/T3FlmUuFVRmQ2ijro72GN/Ji3JJQPgWkqfARsB1DH7RBj0vplzqQ1gBDNDh1zayS3+OErUeP6u3yfrQglMhiLIgyIl4w1/XIwFHJ3nFpX2SfKPhU+FtF92Z48bklWkc6avAYgm8wMTBv2YRNvvvQCvt8i8OwIOUpQeTflmTXLm3prz9RVbic98xn+nf7w9rT+KRkzOiTDMFj9BxDKMkPv9s3UEPGHr0TVd45pULzqWYG9AnsV2gK55hhjjq1o6S0vzOPfDSVzbsy0kWZ3B5SSzLD9j2q/8LJx/V2CzE6bd1TY3FY///ugTzzRU6vol0ApwpxUyv8MeC/o03VpQSr2Yk+6ZK7maNjdgWCjO8UEL9Q0d5YJbM3YKmxuq6vKEw/QWj/vGCJbyDm+9dqRq0/lOeXntprc8TdQgEmFV5GeLYW24cRnOFs3rxnhfNoM9zvJlaPUfER3oBDJ2+7OWOTK+jhoxYRqBrBtYNIQRTNjQ248UWwbGLLz5BTJtexQNT5WIhVqcv5cnVDNAP+7gbBfcgIY3P5EYsuPdq8byTfW1LMeZVna9Dwv9NPIJfURNbBT82JONlTcQfRgxjbCV/FET21hgleP9m5A9YuMLUhj+8bn7uY55eWWJBbYHiWSmdVa/Uy72w55W2ko5O5IeWYNwhygVNHmWKL7HEIrKgK6HEzwcHYt5fs7CsssXHAplJEkmbs6BnZ3QMkeH8Jls4Y0fWpdZZ/jOLUo1wM/v4LyKegnkHeyvGbUqT3/xvN/FeZxS1PZrVMRq/dj2yV0MxsQeVA2nMOZusouz+Vl0P2AN4yLB7rfc1h67vXKS8PleOL+1EBuHfHQGMT2KHErc5xW40SBG8O5tW+o+hN4v/rQr9vC4dRKhbkAiFxPDrgnhqz5AiRMNLA4J68BdfQ30cEOjMsSoGM0/7TQIza5g4jxl+TecuX6qM5prJaQg1zIFlGtG68wWwSnPmsoP9vEWDXghpzj5LbShniie9O41Y1B7GjPZiU7OUm85HGbOPvvQomeRtC3Az8lQJvUcTsEc9OVgYe2X9ZqmjvLfI1MVZxZYvwlglMfEI/Cgbb6qncmtYGa5s4y34+0AvNtYyaEcDnih+M2n1RgHIe50+sX3XbdgTjQiOVDZpwkFQ6MRzxM8OPussOXZzqurBGRagwVCOUC5YqkXxPVAUoLwu7C4AuLoH0KfSh9OFzFyAW85PGzGxf+PRE9RYoUKVKkyGPLf1/l3GkBTGX/AAAAAElFTkSuQmCC" />{" "}
             </a>
             <a
               style={{ textDecoration: "none" }}
-              href="http://www.facebook.com"
+              href="https://www.facebook.com/fastcura"
             >
               <img
                 width={41}
@@ -319,9 +337,14 @@ const LandingProfessionista = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <ButtonFirstContainer>
-              Inizia la prova gratuita
-            </ButtonFirstContainer>
+            <Link
+              to="/signup-professionista"
+              style={{ textDecoration: "none" }}
+            >
+              <ButtonFirstContainer>
+                Inizia la prova gratuita
+              </ButtonFirstContainer>
+            </Link>
           </ContainerFirstImage>
           <ContainerOther>
             <BoxInfo>
@@ -355,9 +378,14 @@ const LandingProfessionista = () => {
                   Decidi tu quando e come lavorare. Tu ci metti le competenze,
                   Fastcura ti trova i clienti
                 </TextSection>
-                <ButtonFirstContainer>
-                  Prova il nostro servizio
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Prova il nostro servizio
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -386,9 +414,14 @@ const LandingProfessionista = () => {
                   le competenze e la qualità dei servizi erogati attraverso le
                   recensioni lasciate da altri utenti
                 </TextSection>
-                <ButtonFirstContainer>
-                  Iscriviti gratuitamente
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Iscriviti gratuitamente
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -416,9 +449,14 @@ const LandingProfessionista = () => {
                   Fastcura è un servizio unico nel suo genere. Al centro di
                   tutto vi è la tutela del professionista.
                 </TextSection>
-                <ButtonFirstContainer>
-                  Inizia la prova gratuita
-                </ButtonFirstContainer>
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonFirstContainer>
+                    Inizia la prova gratuita
+                  </ButtonFirstContainer>
+                </Link>
               </BoxDescription>
             </BoxInfo>
             <BoxInfo>
@@ -450,7 +488,10 @@ const LandingProfessionista = () => {
               />
               <BoxDescription ref={ref}>
                 <TitleSection>Hai ancora dubbi?</TitleSection>
-                <TextSection>Contattaci su whatsapp</TextSection>
+                <TextSection>
+                  Sei ancora indeciso? Puoi contattarci per ogni tipo di
+                  chiarimento o problema su WhatsApp 🙂
+                </TextSection>
               </BoxDescription>
             </BoxInfo>
 
@@ -526,13 +567,13 @@ const LandingProfessionista = () => {
             >
               <a
                 style={{ textDecoration: "none" }}
-                href="http://www.instagram.com"
+                href="https://www.instagram.com/fastcura/"
               >
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAFLklEQVRoge2YS2xUVRjHf9+90xkETC2kgy4EGlOKYACtoDOUxMCCR6G1LpAQFujCR3xEdySEhEQMK1iwIiFl5SskAlNLxUQMCVAK0qQ0KdgWA2iCgao8BGzvzD2fi87jzvR1WsuCZH6r8839Hv/v3DPnnnuhSJEiRYoUeYyRiQStaOktT3lmLSIvgc4FyoEoyMxBDy0BpheE3QPx09dvCfQp9AlcVZELrtN//PT6RbcfaQOxQ10zJBzao8IWIDTeYmPgCdLol8i2c+sq79kGWTcQO9Q1g0ioFaiakDx7Ok2Js8K2CetZlHBoj+aLP6zQFHLoUKN9/0wZuNu5evEDm1yLfrg47cn+SKkaJ2ocXSxQDzRkLotndgMfWOmycVrR0lueSpobpBtW0Tfb6uYfsom1JZ7o3qTwddociJjw0ycbKu6MFefYJE95Zi0Z8arfTrZ4gNb6qm+ARNqM9Iu32ibOqgF1tDpriHw3bnXDEGvq3h1LdN+PH+3+PFCpKVeHpTZ5rP4DYmR2ZrE5Ri6O5V/T3FlmUuFVRmQ2ijro72GN/Ji3JJQPgWkqfARsB1DH7RBj0vplzqQ1gBDNDh1zayS3+OErUeP6u3yfrQglMhiLIgyIl4w1/XIwFHJ3nFpX2SfKPhU+FtF92Z48bklWkc6avAYgm8wMTBv2YRNvvvQCvt8i8OwIOUpQeTflmTXLm3prz9RVbic98xn+nf7w9rT+KRkzOiTDMFj9BxDKMkPv9s3UEPGHr0TVd45pULzqWYG9AnsV2gK55hhjjq1o6S0vzOPfDSVzbsy0kWZ3B5SSzLD9j2q/8LJx/V2CzE6bd1TY3FY///ugTzzRU6vol0ApwpxUyv8MeC/o03VpQSr2Yk+6ZK7maNjdgWCjO8UEL9Q0d5YJbM3YKmxuq6vKEw/QWj/vGCJbyDm+9dqRq0/lOeXntprc8TdQgEmFV5GeLYW24cRnOFs3rxnhfNoM9zvJlaPUfER3oBDJ2+7OWOTK+jhoxYRqBrBtYNIQRTNjQ248UWwbGLLz5BTJtexQNT5WIhVqcv5cnVDNAP+7gbBfcgIY3P5EYsuPdq8byTfW1LMeZVna9Dwv9NPIJfURNbBT82JONlTcQfRgxjbCV/FET21hgleP9m5A9YuMLUhj+8bn7uY55eWWJBbYHiWSmdVa/Uy72w55W2ko5O5IeWYNwhygVNHmWKL7HEIrKgK6HEzwcHYt5fs7CsssXHAplJEkmbs6BnZ3QMkeH8Jls4Y0fWpdZZ/jOLUo1wM/v4LyKegnkHeyvGbUqT3/xvN/FeZxS1PZrVMRq/dj2yV0MxsQeVA2nMOZusouz+Vl0P2AN4yLB7rfc1h67vXKS8PleOL+1EBuHfHQGMT2KHErc5xW40SBG8O5tW+o+hN4v/rQr9vC4dRKhbkAiFxPDrgnhqz5AiRMNLA4J68BdfQ30cEOjMsSoGM0/7TQIza5g4jxl+TecuX6qM5prJaQg1zIFlGtG68wWwSnPmsoP9vEWDXghpzj5LbShniie9O41Y1B7GjPZiU7OUm85HGbOPvvQomeRtC3Az8lQJvUcTsEc9OVgYe2X9ZqmjvLfI1MVZxZYvwlglMfEI/Cgbb6qncmtYGa5s4y34+0AvNtYyaEcDnih+M2n1RgHIe50+sX3XbdgTjQiOVDZpwkFQ6MRzxM8OPussOXZzqurBGRagwVCOUC5YqkXxPVAUoLwu7C4AuLoH0KfSh9OFzFyAW85PGzGxf+PRE9RYoUKVKkyGPLf1/l3GkBTGX/AAAAAElFTkSuQmCC" />{" "}
               </a>
               <a
                 style={{ textDecoration: "none" }}
-                href="http://www.facebook.com"
+                href="https://www.facebook.com/fastcura"
               >
                 <img
                   width={41}
