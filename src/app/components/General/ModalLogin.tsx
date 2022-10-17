@@ -54,6 +54,7 @@ const ModalLogin = (props: any) => {
         open={props.open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        style={{ zIndex: "10000000000" }}
       >
         <Box
           style={{
