@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../../components/TrovaIlTuoProfessionista/Header";
 import PrimaImmagine from "../../media/landingprofessionista.png";
 import EntraNelTeam from "../../components/HomepageComponent/EntraNelTeam";
@@ -43,6 +43,25 @@ import { Link } from "react-router-dom";
 
 const LandingProfessionista = () => {
   const ref = useRef<any>();
+
+  const [what, setWhat] = useState(false);
+
+  const [attivo, setAttivo] = useState(false);
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      setAttivo(true);
+    } else {
+      setAttivo(false);
+    }
+  }
 
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -224,16 +243,27 @@ const LandingProfessionista = () => {
           <div
             style={{
               position: "fixed",
+              backgroundColor: "white",
               bottom: "5rem",
-              right: "2rem",
-              width: "200px",
-              height: "150px",
+              right: "5rem",
+              borderRadius: "50%",
+              width: "70px",
+              height: "70px",
               zIndex: "1000000",
-              borderRadius: "30px",
+              display: attivo ? "flex" : "none",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <a href={`whatsapp://3533973981`}>
-              <img src={Whatsapp} style={{ width: "100px" }} />
+            <a href="https://wa.me/393533973981">
+              <img
+                onClick={() => {
+                  setWhat(!what);
+                }}
+                style={{ width: "32px" }}
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
+              />{" "}
             </a>
           </div>
           <div
@@ -281,14 +311,14 @@ const LandingProfessionista = () => {
               style={{ textDecoration: "none" }}
             ></Link>
             <iframe
-              width="400"
+              width="100%"
               height="315"
-              src="https://www.youtube.com/embed/QvesamSEZvE"
+              src="https://www.youtube.com/embed/HUqA3w0WY0w"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>{" "}
+            ></iframe>
             <ButtonFirstContainer>
               Inizia la prova gratuita
             </ButtonFirstContainer>
@@ -460,22 +490,28 @@ const LandingProfessionista = () => {
             </div>
             <div
               style={{
-                padding: "1rem",
                 position: "fixed",
-                bottom: "10rem",
-                right: "2rem",
-                width: "150px",
-                height: "80px",
                 backgroundColor: "white",
+                bottom: "5rem",
+                right: "1rem",
+                borderRadius: "50%",
+                width: "70px",
+                height: "70px",
                 zIndex: "1000000",
-                borderRadius: "30px",
+                display: attivo ? "flex" : "none",
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              <p style={{ fontSize: "12px" }}>
-                Hai bisogno di aiuto? Contattaci su whatsapp{" "}
-              </p>
-              <a href={`whatsapp://3533973981`}>
-                <img src={Whatsapp} style={{ width: "100px" }} />
+              <a href="https://wa.me/393476035814">
+                <img
+                  onClick={() => {
+                    setWhat(!what);
+                  }}
+                  style={{ width: "32px" }}
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
+                />{" "}
               </a>
             </div>
             <div
