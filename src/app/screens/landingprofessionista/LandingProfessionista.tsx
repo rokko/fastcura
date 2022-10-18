@@ -258,23 +258,24 @@ const LandingProfessionista = () => {
               <FinalButton>Inizia ora la prova gratuita</FinalButton>
             </Link>
           </ContainerOther>
-          <div
-            style={{
-              position: "fixed",
-              backgroundColor: "white",
-              bottom: "5rem",
-              right: "5rem",
-              borderRadius: "50%",
-              width: "70px",
-              height: "70px",
-              zIndex: "1000000",
-              display: attivo ? "flex" : "none",
-              alignContent: "center",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <a href="https://wa.me/393533973981">
+
+          {!what && (
+            <div
+              style={{
+                position: "fixed",
+                backgroundColor: "white",
+                bottom: "5rem",
+                right: "5rem",
+                borderRadius: "50%",
+                width: "70px",
+                height: "70px",
+                zIndex: "1000000",
+                display: attivo ? "flex" : "none",
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <img
                 onClick={() => {
                   setWhat(!what);
@@ -282,8 +283,85 @@ const LandingProfessionista = () => {
                 style={{ width: "32px" }}
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
               />{" "}
-            </a>
-          </div>
+            </div>
+          )}
+          {what && (
+            <div
+              style={{
+                position: "fixed",
+                backgroundColor: "white",
+                bottom: "5rem",
+                right: "5rem",
+
+                width: "200px",
+                height: "120px",
+                zIndex: "1000000",
+                borderRadius: "20px",
+                display: attivo ? "flex" : "none",
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <div
+                style={{
+                  maxWidth: "200px",
+                  width: "100%",
+                  backgroundColor: "#39b1d9",
+                  display: "flex",
+                  flexDirection: "row",
+                  borderRadius: "20px",
+                  gap: "0.50rem",
+                  alignContent: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onClick={() => {
+                  setWhat(!what);
+                }}
+              >
+                <img
+                  style={{ width: "30px", height: "30px" }}
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAFQElEQVRoge2aa4hVVRiGvx3NmOM4ERSko0Q0lmg2OpR3Cwr6GXQVNYmEQohCiYLoX2BBkZdJs8uPsqCQwX6ooWYkRU0UFuUFCwyyaYZoHHG8zE1nnn6sd3NWu33O2bcTEn1wWGft/b7ft9699lrrW+ucwHIYcLmZtZnZYjNrNbMWM7vOzBrMrMnMAjPrN7NhM+sysxNmdtTMvjWzziAITueJn9uAecAbQB/ZbRjYC6wE6v9tAYuBA5EGHQE2A48CC8OLHie024HVwBbgS2DUu9cDPKkerqmAJuBtYEyB/wReAKbFYGOFxOAmA2uA7yIPpbVWIqYDPynQOeB5oKECPpEQ734ALAV+FXQQWFm0iFZK4+BgXA/EcFIJ8XDjgbcEHwOeyNv+0HGLXiGAz4CJCXmZhHj4ZzV+RoH7s7TddzYBOKQ2fAxckYKbS4g4a0U7C9yQhht1tNEbfI0pubmFiPeeqJ8DQVq+AW3ARWAEmJWBX5SQK4E/RH8wLd+AXSK/nJpsxQkR92nRD6XqFeBmzRhngaszBi9SSIPXK3dWwl4Wqa8ylx9tC4LgZJbgRVoQBANmtlXVBxKRcAtTt9TfmjV4kT0i/iy56AGiDz6W0CrCb1mDyk+hQuTjuNwsKIfxFS5RuT9P0BrZHpXzygF8IW0qD9asOdntR5WzywF8IWEe9XPWaMBM7/sgMOjVZ2T1a2aHVVbPjClln7ekjQKMw+1J/D1G1EaBdmBcBv+N4o9QLXEFzijglAwiPhV3EJfezMXlaxNwu8lNwJAw+8iwIwTeF39nNeAFAcenDLA5nO2okNJoVuwStj1NDPEn4xZqgLsrAc8LVHbTFMOZpS4fDEUAU4AO9fAZYEf4OkjMEC6Xm1nZe2y859TGo5TbFgMnBJqawnHYGxs8EXEHEn1AszDtOXplHKU15alyoO8FKDvFxXCOiXOb6h2q7wKa9dmta9uFmRc+1bRCxL9H/FPE5YPARwIsT+F0QJxG1cMJo9nDTNW106pPVP18FiHysVc+Xg+v+etIp8pFKXxejMZQmSTlzpO2rDWzC2b2ONEJBpgvlYdjqXEtcYMOYK7qO1TfrfEyBbdVBuiIxDmSQ4gB6+Xng+iNOuCkbiY6WwI2CL9J9Rs9H771AS3CvOZzcgi5SX5+ibv5qm5uSehsJm4qHQrF4wb4dqBfnw5PxGzcUekoOVIWYAZuYQXYFweYjtsh9gPXJHQaTqddlXpSIn4XdlsOAR9SSoV6gTnlwDsFejOh8zpgvzhDEjYflx81Agv0Og17r9oQ7vyq+kapFMcXMIBLha6tRJhGafVtKwv8O6deAi5GB4dnYxL0itegL4DrE8YIbSMwKan6l0T6ihSnF7gxsx44jMuLzuHOxjbhjQngDkrZdj+wKqmQpG0JSY2U9u8PpyInj9EEvOs96a9xM163HmR9BJ9eiIgrxO0C6gpT8M849wGnY17FFyO4zEIC4AfxHyqs5fGxwvR+IbBI37sjmIpCys4aQRBgpTOl1cU0uayF7fDHo38SE94fy+RdY+UMbsZprs7IZt7k4ts67/4kXevJEyRcV5YV0ur4GPUS041bNNf5gx24V204kCfIM3KytTq6NgbsURvW5HGyRE46q6OLN2CZ4vcCV+Vx1CJHxwtsX9LYy3HnAQCPVMIm+V27V2WiJDKNAUvN/TPilD4DZtZoZnPM7DEzu0vQdUEQZEo0owGzLUYJ/Vawk8CKJL5q+0+D5PaNuR6vM7MRMztmZp+Y2TtBEJwrLEqte6QIX4n3A5e6/S/kUrP/jJC/AACEd6xSRPTDAAAAAElFTkSuQmCC"
+                ></img>
+                <p style={{ color: "white" }}>Assistenza Fastcura</p>
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignContent: "center",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <a
+                  href="https://wa.me/393533973981"
+                  style={{
+                    textDecoration: "none",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignContent: "center",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "0.25rem",
+                  }}
+                >
+                  <img
+                    style={{ width: "20px", height: "20px" }}
+                    src="data:image/png;base64,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"
+                  ></img>
+                  <p>
+                    Hai bisogno di aiuto? <br />
+                    Scrivici su Whatsapp
+                  </p>
+                </a>
+              </div>
+            </div>
+          )}
+
           <div
             style={{
               gap: "1rem",
@@ -529,23 +607,23 @@ const LandingProfessionista = () => {
                 <FinalButton>Inizia ora la prova gratuita</FinalButton>
               </Link>
             </div>
-            <div
-              style={{
-                position: "fixed",
-                backgroundColor: "white",
-                bottom: "5rem",
-                right: "1rem",
-                borderRadius: "50%",
-                width: "70px",
-                height: "70px",
-                zIndex: "1000000",
-                display: attivo ? "flex" : "none",
-                alignContent: "center",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <a href="https://wa.me/393476035814">
+            {!what && (
+              <div
+                style={{
+                  position: "fixed",
+                  backgroundColor: "white",
+                  bottom: "5rem",
+                  right: "5rem",
+                  borderRadius: "50%",
+                  width: "70px",
+                  height: "70px",
+                  zIndex: "1000000",
+                  display: attivo ? "flex" : "none",
+                  alignContent: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   onClick={() => {
                     setWhat(!what);
@@ -553,8 +631,84 @@ const LandingProfessionista = () => {
                   style={{ width: "32px" }}
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
                 />{" "}
-              </a>
-            </div>
+              </div>
+            )}
+            {what && (
+              <div
+                style={{
+                  position: "fixed",
+                  backgroundColor: "white",
+                  bottom: "5rem",
+                  right: "5rem",
+
+                  width: "200px",
+                  height: "120px",
+                  zIndex: "1000000",
+                  borderRadius: "20px",
+                  display: attivo ? "flex" : "none",
+                  alignContent: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <div
+                  style={{
+                    maxWidth: "200px",
+                    width: "100%",
+                    backgroundColor: "#39b1d9",
+                    display: "flex",
+                    flexDirection: "row",
+                    borderRadius: "20px",
+                    gap: "0.50rem",
+                    alignContent: "center",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onClick={() => {
+                    setWhat(!what);
+                  }}
+                >
+                  <img
+                    style={{ width: "30px", height: "30px" }}
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAFQElEQVRoge2aa4hVVRiGvx3NmOM4ERSko0Q0lmg2OpR3Cwr6GXQVNYmEQohCiYLoX2BBkZdJs8uPsqCQwX6ooWYkRU0UFuUFCwyyaYZoHHG8zE1nnn6sd3NWu33O2bcTEn1wWGft/b7ft9699lrrW+ucwHIYcLmZtZnZYjNrNbMWM7vOzBrMrMnMAjPrN7NhM+sysxNmdtTMvjWzziAITueJn9uAecAbQB/ZbRjYC6wE6v9tAYuBA5EGHQE2A48CC8OLHie024HVwBbgS2DUu9cDPKkerqmAJuBtYEyB/wReAKbFYGOFxOAmA2uA7yIPpbVWIqYDPynQOeB5oKECPpEQ734ALAV+FXQQWFm0iFZK4+BgXA/EcFIJ8XDjgbcEHwOeyNv+0HGLXiGAz4CJCXmZhHj4ZzV+RoH7s7TddzYBOKQ2fAxckYKbS4g4a0U7C9yQhht1tNEbfI0pubmFiPeeqJ8DQVq+AW3ARWAEmJWBX5SQK4E/RH8wLd+AXSK/nJpsxQkR92nRD6XqFeBmzRhngaszBi9SSIPXK3dWwl4Wqa8ylx9tC4LgZJbgRVoQBANmtlXVBxKRcAtTt9TfmjV4kT0i/iy56AGiDz6W0CrCb1mDyk+hQuTjuNwsKIfxFS5RuT9P0BrZHpXzygF8IW0qD9asOdntR5WzywF8IWEe9XPWaMBM7/sgMOjVZ2T1a2aHVVbPjClln7ekjQKMw+1J/D1G1EaBdmBcBv+N4o9QLXEFzijglAwiPhV3EJfezMXlaxNwu8lNwJAw+8iwIwTeF39nNeAFAcenDLA5nO2okNJoVuwStj1NDPEn4xZqgLsrAc8LVHbTFMOZpS4fDEUAU4AO9fAZYEf4OkjMEC6Xm1nZe2y859TGo5TbFgMnBJqawnHYGxs8EXEHEn1AszDtOXplHKU15alyoO8FKDvFxXCOiXOb6h2q7wKa9dmta9uFmRc+1bRCxL9H/FPE5YPARwIsT+F0QJxG1cMJo9nDTNW106pPVP18FiHysVc+Xg+v+etIp8pFKXxejMZQmSTlzpO2rDWzC2b2ONEJBpgvlYdjqXEtcYMOYK7qO1TfrfEyBbdVBuiIxDmSQ4gB6+Xng+iNOuCkbiY6WwI2CL9J9Rs9H771AS3CvOZzcgi5SX5+ibv5qm5uSehsJm4qHQrF4wb4dqBfnw5PxGzcUekoOVIWYAZuYQXYFweYjtsh9gPXJHQaTqddlXpSIn4XdlsOAR9SSoV6gTnlwDsFejOh8zpgvzhDEjYflx81Agv0Og17r9oQ7vyq+kapFMcXMIBLha6tRJhGafVtKwv8O6deAi5GB4dnYxL0itegL4DrE8YIbSMwKan6l0T6ihSnF7gxsx44jMuLzuHOxjbhjQngDkrZdj+wKqmQpG0JSY2U9u8PpyInj9EEvOs96a9xM163HmR9BJ9eiIgrxO0C6gpT8M849wGnY17FFyO4zEIC4AfxHyqs5fGxwvR+IbBI37sjmIpCys4aQRBgpTOl1cU0uayF7fDHo38SE94fy+RdY+UMbsZprs7IZt7k4ts67/4kXevJEyRcV5YV0ur4GPUS041bNNf5gx24V204kCfIM3KytTq6NgbsURvW5HGyRE46q6OLN2CZ4vcCV+Vx1CJHxwtsX9LYy3HnAQCPVMIm+V27V2WiJDKNAUvN/TPilD4DZtZoZnPM7DEzu0vQdUEQZEo0owGzLUYJ/Vawk8CKJL5q+0+D5PaNuR6vM7MRMztmZp+Y2TtBEJwrLEqte6QIX4n3A5e6/S/kUrP/jJC/AACEd6xSRPTDAAAAAElFTkSuQmCC"
+                  ></img>
+                  <p style={{ color: "white" }}>Assistenza Fastcura</p>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignContent: "center",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <a
+                    href="https://wa.me/393533973981"
+                    style={{
+                      textDecoration: "none",
+                      display: "flex",
+                      flexDirection: "row",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.25rem",
+                    }}
+                  >
+                    <img
+                      style={{ width: "20px", height: "20px" }}
+                      src="data:image/png;base64,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"
+                    ></img>
+                    <p>
+                      Hai bisogno di aiuto? <br />
+                      Scrivici su Whatsapp
+                    </p>
+                  </a>
+                </div>
+              </div>
+            )}
             <div
               style={{
                 gap: "1rem",
