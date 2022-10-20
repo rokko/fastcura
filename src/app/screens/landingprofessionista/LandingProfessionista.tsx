@@ -54,8 +54,10 @@ const LandingProfessionista = () => {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 400 ||
-      document.documentElement.scrollTop > 400
+      (document.body.scrollTop > 400 &&
+        document.documentElement.scrollTop < 5800) ||
+      (document.documentElement.scrollTop > 400 &&
+        document.documentElement.scrollTop < 5800)
     ) {
       setAttivo(true);
     } else {
@@ -265,7 +267,7 @@ const LandingProfessionista = () => {
                 position: "fixed",
                 backgroundColor: "white",
                 bottom: "5rem",
-                right: "5rem",
+                right: "2rem",
                 borderRadius: "50%",
                 width: "70px",
                 height: "70px",
@@ -291,9 +293,9 @@ const LandingProfessionista = () => {
                 position: "fixed",
                 backgroundColor: "white",
                 bottom: "5rem",
-                right: "5rem",
+                right: "2rem",
 
-                width: "200px",
+                width: "250px",
                 height: "120px",
                 zIndex: "1000000",
                 borderRadius: "20px",
@@ -306,7 +308,7 @@ const LandingProfessionista = () => {
             >
               <div
                 style={{
-                  maxWidth: "200px",
+                  maxWidth: "250px",
                   width: "100%",
                   backgroundColor: "#39b1d9",
                   display: "flex",
@@ -329,6 +331,7 @@ const LandingProfessionista = () => {
               </div>
               <div
                 style={{
+                  maxWidth: "250px",
                   width: "100%",
                   display: "flex",
                   flexDirection: "row",
@@ -613,7 +616,7 @@ const LandingProfessionista = () => {
                   position: "fixed",
                   backgroundColor: "white",
                   bottom: "5rem",
-                  right: "5rem",
+                  right: "1rem",
                   borderRadius: "50%",
                   width: "70px",
                   height: "70px",
@@ -639,9 +642,9 @@ const LandingProfessionista = () => {
                   position: "fixed",
                   backgroundColor: "white",
                   bottom: "5rem",
-                  right: "5rem",
+                  right: "1rem",
 
-                  width: "200px",
+                  width: "250px",
                   height: "120px",
                   zIndex: "1000000",
                   borderRadius: "20px",
@@ -654,7 +657,7 @@ const LandingProfessionista = () => {
               >
                 <div
                   style={{
-                    maxWidth: "200px",
+                    maxWidth: "250px",
                     width: "100%",
                     backgroundColor: "#39b1d9",
                     display: "flex",
@@ -677,6 +680,7 @@ const LandingProfessionista = () => {
                 </div>
                 <div
                   style={{
+                    maxWidth: "250px",
                     width: "100%",
                     display: "flex",
                     flexDirection: "row",
