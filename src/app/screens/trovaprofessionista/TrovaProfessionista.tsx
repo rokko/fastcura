@@ -16,6 +16,7 @@ import Professi from "../../media/seiunprofessionista.png";
 import Feedback from "../../media/feedback.png";
 import FirstPng from "../../media/first.png";
 import PrimaImmagine from "../../media/landingprofessionista.png";
+import { ReactComponent as Chat } from "../../media/chat.svg";
 
 import {
   BoxDescription,
@@ -180,7 +181,7 @@ const TrovaProfessionista = () => {
               <SeiNuovo />
             </BoxInfo2>
             {!what && (
-              <div
+              <Chat
                 style={{
                   position: "fixed",
                   backgroundColor: "white",
@@ -195,15 +196,10 @@ const TrovaProfessionista = () => {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-              >
-                <img
-                  onClick={() => {
-                    setWhat(!what);
-                  }}
-                  style={{ width: "32px" }}
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
-                />{" "}
-              </div>
+                onClick={() => {
+                  setWhat(!what);
+                }}
+              />
             )}
             {what && (
               <div
@@ -432,7 +428,7 @@ const TrovaProfessionista = () => {
             </BoxInfo2>
           </ContainerTrova>
           {!what && (
-            <div
+            <Chat
               style={{
                 position: "fixed",
                 backgroundColor: "white",
@@ -447,15 +443,10 @@ const TrovaProfessionista = () => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-            >
-              <img
-                onClick={() => {
-                  setWhat(!what);
-                }}
-                style={{ width: "32px" }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO2bTUhUURTH/+fNG4fUBIswKsEKP0paaJk+aVFgixZ+IDkF0TZCgig3QYtsEdGitQRCEAWlUfNyWWRu/MpAKHGmCWthixZh2OfovHta5GIctfEy8+4V3vttBu69h/ebP3POvAczgI+Pj5chy4491y2hExNAk24JnRi6BXTj+QDM9AUiPBKCPumQcRvD4DJmnEpdWxGAENQ72lbxQp2WOhoi75uIeFkAnm8BPwDdArrxA9AtoBs/AN0CuvED0C2gmxV3gpmwBmJVEPzADZmsMejMSHNlVKZEOgCRFAWGYdTK1qlAJEWBbI3nW8DzAUi3AIzQLNHCFRdcsscIzcqWSAcw1rrnC4BbsnUbFc+3gB+AbgHdeD4A6SFY3TeVV5wf3OWGTLbM/VqcnQpXL8jUSAdQGDQOOA5PyNapoDBoHALwRqbG8y3gB6BbQDfSM+DHonhbnB/Y64ZMtswnhPu3wktTdka2bqPi+RbwA9AtoBs/AN0CuvED0C2gG88HsPJGiER5/dPpuVxfiBmfxtv3fV3P2cNPprcSoSzXDiBRDtDyJcuOcc4vtDqv5xPJI5me1w/emQjmlRQOgchSIaWyBeqK8gI3Mh0Kbt98U9WbB1TPAKKuBjvastZ2w7PYCQIuq1RSPQSJQL3WQGxn+ka9PVNCjLtIb1KXMQOBxBY3L5B0QlcJ6EpZ2gam+x193NQfJgcAOvo4MEvxh2CUpNYycNsMJDK2TTa4nvbRwUEzMb9jCEBj6joD3aOtldcBoNGOdTNwLa10XUMzW5R83OoiH0pNw5kEI/XTJoj4ONhIMvglgEDK3jeHuHa8peqj227K+q0xEj3JRP1py5+XXpfNBGLuGG6reqzCS+nAsexoD0Dn/3eGQD3DrRWdqpyUfguEikKXAEyueYDpHSc2da257wJKA3h1bPcfYThhAN9X2f7JAuGRcOlvlU7KH4bGmvfHieli+joTXRhtr5hW7aN0BqRiRWL3QDgL/PuTxnBL5WkdHvI/kckRoYVkZyJk1gEwHdM4p8tDK5Ydr7HseI1uDx8fH+/yF2Tnywdli5JKAAAAAElFTkSuQmCC"
-              />{" "}
-            </div>
+              onClick={() => {
+                setWhat(!what);
+              }}
+            />
           )}
           {what && (
             <div
