@@ -20,7 +20,6 @@ import { ReactComponent as Chat } from "../../media/chat.svg";
 import { ReactComponent as Primo } from "../../media/primomessaggio.svg";
 import { ReactComponent as Icona } from "../../media/iconaswhat.svg";
 import Fade from "react-reveal/Fade";
-
 import {
   BoxDescription,
   BoxInfo,
@@ -41,10 +40,14 @@ import {
 } from "./TrovaProfessionistaStyled";
 import { Title } from "react-head";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+const xml2js = require("xml2js");
 
 const TrovaProfessionista = () => {
   const [what, setWhat] = useState(false);
   const [token, setToken] = useState("");
+  const [blog, setBlog] = useState([]);
   useEffect(() => {
     takeToken();
   }, []);
@@ -66,6 +69,22 @@ const TrovaProfessionista = () => {
       setAttivo(false);
     }
   }
+
+  useEffect(() => {
+    axios.get("https://fastcura-blog.it/feed/").then((response) =>
+      xml2js.parseString(response.data, (err: any, result: any) => {
+        if (err) {
+          throw err;
+        }
+
+        // `result` is a JavaScript object
+        // convert it to a JSON string
+
+        // log JSON string
+        setBlog(result.rss.channel[0].item);
+      })
+    );
+  });
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -167,18 +186,59 @@ const TrovaProfessionista = () => {
               </BoxDescription>
               <Immagini src={Feedback} alt={"feedback"} />
             </BoxInfo>
-            <ContainerProfessionista>
-              <ContainerTitleProfessionista>
+            <TitleSection>Gli ultimi articoli</TitleSection>
+
+            <ContainerProfessionista
+              style={{ display: "flex", gap: "0.50rem", flexDirection: "row" }}
+            >
+              {blog?.map((articolo: any, index) => {
+                if (index <= 3) {
+                  return (
+                    <BoxInfo
+                      style={{
+                        height: "400px",
+                        width: "25%",
+                        alignItems: "flex-start",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href={`${articolo.link}`}
+                      >
+                        <p style={{ color: "#39b1d9", fontSize: "29px" }}>
+                          {articolo.title}
+                        </p>
+                      </a>
+                    </BoxInfo>
+                  );
+                }
+              })}
+            </ContainerProfessionista>
+            <BoxInfo>
+              <img width={"670px"} src={Professi} alt={"professionista"} />
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <TitleOne>Sei un professionista?</TitleOne>
                 <Link
                   to="/signup-professionista"
                   style={{ textDecoration: "none" }}
                 >
-                  <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
+                  <ButtonTwo
+                    style={{
+                      background: "#e2f4fc",
+
+                      textTransform: "none",
+                      color: "rgb(57, 177, 217)",
+                      borderRadius: 10,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Inizia ora la prova di 60 giorni
+                  </ButtonTwo>
                 </Link>
-              </ContainerTitleProfessionista>
-              <img width={"670px"} src={Professi} alt={"professionista"} />
-            </ContainerProfessionista>
+              </div>
+            </BoxInfo>
+
             <BoxInfo2>
               <Login />
               <SeiNuovo />

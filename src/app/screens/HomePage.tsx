@@ -10,7 +10,6 @@ import ServizioInnovativo from "../components/HomepageComponent/ServizioInnovati
 import ProvaloGratis from "../components/HomepageComponent/ProvaloGratis";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
 import { useMediaQuery } from "react-responsive";
-import { Fade } from "react-awesome-reveal";
 import Footer from "../components/General/Footer";
 
 const HomePage = () => {
