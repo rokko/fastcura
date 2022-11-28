@@ -231,7 +231,6 @@ const TrovaProfessionista = () => {
               })}
             </ContainerProfessionista>
             <BoxInfo>
-              ààà
               <img width={"670px"} src={Professi} alt={"professionista"} />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <TitleOne>Sei un professionista?</TitleOne>
@@ -504,17 +503,66 @@ const TrovaProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
             <ContainerProfessionista>
-              <ContainerTitleProfessionista>
-                <TitleOne>Sei un professionista?</TitleOne>
-              </ContainerTitleProfessionista>
-              <img src={Professi} alt={"professionista"} width={"390px"} />
-
-              <Link
-                to="/signup-professionista"
-                style={{ textDecoration: "none" }}
+              <ContainerProfessionista
+                style={{
+                  display: "flex",
+                  gap: "0.50rem",
+                  flexDirection: "row",
+                }}
               >
-                <ButtonTwo>Inizia ora la prova di 60 giorni</ButtonTwo>
-              </Link>
+                {blog?.map((articolo: any, index) => {
+                  if (index <= 3) {
+                    return (
+                      <BoxInfo
+                        style={{
+                          height: "400px",
+                          width: "25%",
+                          alignItems: "flex-start",
+                          flexDirection: "column",
+                        }}
+                      >
+                        <a
+                          style={{ textDecoration: "none" }}
+                          href={`${articolo.link}`}
+                        >
+                          <p style={{ color: "#39b1d9", fontSize: "29px" }}>
+                            {articolo.title}
+                          </p>
+                          <img
+                            src={immagini[index]}
+                            style={{ width: "200px", height: "200px" }}
+                          />
+                        </a>
+                      </BoxInfo>
+                    );
+                  }
+                })}
+              </ContainerProfessionista>
+              <BoxInfo>
+                <img width={"300px"} src={Professi} alt={"professionista"} />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <TitleOne style={{ textAlign: "center" }}>
+                    Sei un professionista?
+                  </TitleOne>
+                  <Link
+                    to="/signup-professionista"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <ButtonTwo
+                      style={{
+                        background: "#e2f4fc",
+
+                        textTransform: "none",
+                        color: "rgb(57, 177, 217)",
+                        borderRadius: 10,
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Inizia ora la prova di 60 giorni
+                    </ButtonTwo>
+                  </Link>
+                </div>
+              </BoxInfo>
             </ContainerProfessionista>
             <BoxInfo2>
               <Login />
