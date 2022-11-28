@@ -70,8 +70,16 @@ const TrovaProfessionista = () => {
     }
   }
 
+  const immagini = [
+    "https://fastcura-blog.it/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-18-at-11.04.34-654x1024.jpeg",
+    "https://fastcura-blog.it/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-11-at-16.46.50-1024x576.jpeg",
+    "https://fastcura-blog.it/wp-content/uploads/2022/10/burnout.png",
+    "https://fastcura-blog.it/wp-content/uploads/2022/10/photo_5897770360277940833_y-1024x1004.jpg",
+  ];
+
   useEffect(() => {
-    axios.get("https://fastcura-blog.it/feed/").then((response) =>
+    axios.get("https://fastcura-blog.it/feed/").then((response) => {
+      console.log(response);
       xml2js.parseString(response.data, (err: any, result: any) => {
         if (err) {
           throw err;
@@ -79,12 +87,15 @@ const TrovaProfessionista = () => {
 
         // `result` is a JavaScript object
         // convert it to a JSON string
-
+        const test = JSON.stringify(result);
+        const test2 = JSON.parse(test);
+        console.log(test2);
         // log JSON string
         setBlog(result.rss.channel[0].item);
-      })
-    );
-  });
+        console.log(result.rss.channel[0].item);
+      });
+    });
+  }, []);
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -209,6 +220,10 @@ const TrovaProfessionista = () => {
                         <p style={{ color: "#39b1d9", fontSize: "29px" }}>
                           {articolo.title}
                         </p>
+                        <img
+                          src={immagini[index]}
+                          style={{ width: "200px", height: "200px" }}
+                        />
                       </a>
                     </BoxInfo>
                   );
@@ -216,6 +231,7 @@ const TrovaProfessionista = () => {
               })}
             </ContainerProfessionista>
             <BoxInfo>
+              ààà
               <img width={"670px"} src={Professi} alt={"professionista"} />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <TitleOne>Sei un professionista?</TitleOne>

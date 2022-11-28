@@ -23,6 +23,7 @@ import {
   ConsensoPrivacy,
 } from "../condizioni";
 import Assistenza from "../components/Professionista/Assistenza";
+import { Dashboard } from "../dashboard/index";
 
 const ProviderRouter = () => {
   return (
@@ -61,6 +62,7 @@ const ProviderRouter = () => {
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/consenso-privacy" element={<ConsensoPrivacy />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </>
