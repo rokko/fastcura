@@ -41,6 +41,8 @@ import {
 import { Title } from "react-head";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
 
 const xml2js = require("xml2js");
 
@@ -503,6 +505,7 @@ const TrovaProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
             <ContainerProfessionista>
+              <p>Gli Ultimi Articoli</p>
               <ContainerProfessionista
                 style={{
                   display: "flex",
@@ -510,33 +513,48 @@ const TrovaProfessionista = () => {
                   flexDirection: "row",
                 }}
               >
-                {blog?.map((articolo: any, index) => {
-                  if (index <= 3) {
-                    return (
-                      <BoxInfo
-                        style={{
-                          height: "400px",
-                          width: "25%",
-                          alignItems: "flex-start",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <a
-                          style={{ textDecoration: "none" }}
-                          href={`${articolo.link}`}
-                        >
-                          <p style={{ color: "#39b1d9", fontSize: "29px" }}>
-                            {articolo.title}
-                          </p>
-                          <img
-                            src={immagini[index]}
-                            style={{ width: "200px", height: "200px" }}
-                          />
-                        </a>
-                      </BoxInfo>
-                    );
-                  }
-                })}
+                <Swiper
+                  slidesPerView={1}
+                  spaceBetween={0}
+                  style={{
+                    display: "flex",
+                    alignContent: "center",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    marginBottom: "5rem",
+                  }}
+                >
+                  {blog?.map((articolo: any, index) => {
+                    if (index <= 3) {
+                      return (
+                        <SwiperSlide>
+                          <BoxInfo
+                            style={{
+                              height: "400px",
+                              width: "100%",
+                              alignItems: "flex-start",
+                              flexDirection: "column",
+                            }}
+                          >
+                            <a
+                              style={{ textDecoration: "none" }}
+                              href={`${articolo.link}`}
+                            >
+                              <p style={{ color: "#39b1d9", fontSize: "29px" }}>
+                                {articolo.title}
+                              </p>
+                              <img
+                                src={immagini[index]}
+                                style={{ width: "200px", height: "200px" }}
+                              />
+                            </a>
+                          </BoxInfo>
+                        </SwiperSlide>
+                      );
+                    }
+                  })}
+                </Swiper>
               </ContainerProfessionista>
               <BoxInfo>
                 <img width={"300px"} src={Professi} alt={"professionista"} />
