@@ -41,8 +41,14 @@ import {
 import { Title } from "react-head";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import uno from "../../media/1.png";
+import due from "../../media/2.png";
+import tre from "../../media/3.png";
+import qua from "../../media/4.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
+import { relative } from "path";
 
 const xml2js = require("xml2js");
 
@@ -72,12 +78,7 @@ const TrovaProfessionista = () => {
     }
   }
 
-  const immagini = [
-    "https://fastcura-blog.it/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-18-at-11.04.34-654x1024.jpeg",
-    "https://fastcura-blog.it/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-11-at-16.46.50-1024x576.jpeg",
-    "https://fastcura-blog.it/wp-content/uploads/2022/10/burnout.png",
-    "https://fastcura-blog.it/wp-content/uploads/2022/10/photo_5897770360277940833_y-1024x1004.jpg",
-  ];
+  const immagini = [uno, due, tre, qua];
 
   useEffect(() => {
     axios.get("https://fastcura-blog.it/feed/").then((response) => {
@@ -213,6 +214,7 @@ const TrovaProfessionista = () => {
                         width: "25%",
                         alignItems: "flex-start",
                         flexDirection: "column",
+                        position: "relative",
                       }}
                     >
                       <a
@@ -224,7 +226,14 @@ const TrovaProfessionista = () => {
                         </p>
                         <img
                           src={immagini[index]}
-                          style={{ width: "200px", height: "200px" }}
+                          style={{
+                            width: "200px",
+                            height: "200px",
+                            position: "absolute",
+                            bottom: "1rem",
+                            left: "5vw",
+                            borderRadius: "10px",
+                          }}
                         />
                       </a>
                     </BoxInfo>
@@ -535,18 +544,35 @@ const TrovaProfessionista = () => {
                               width: "100%",
                               alignItems: "flex-start",
                               flexDirection: "column",
+                              position: "relative",
                             }}
                           >
                             <a
-                              style={{ textDecoration: "none" }}
+                              style={{
+                                textDecoration: "none",
+                              }}
                               href={`${articolo.link}`}
                             >
-                              <p style={{ color: "#39b1d9", fontSize: "29px" }}>
+                              <p
+                                style={{
+                                  color: "#39b1d9",
+                                  fontSize: "29px",
+                                  position: "absolute",
+                                  top: "2rem",
+                                }}
+                              >
                                 {articolo.title}
                               </p>
                               <img
                                 src={immagini[index]}
-                                style={{ width: "200px", height: "200px" }}
+                                style={{
+                                  position: "absolute",
+                                  width: "200px",
+                                  height: "200px",
+                                  bottom: "1rem",
+                                  left: "18vw",
+                                  borderRadius: "10px",
+                                }}
                               />
                             </a>
                           </BoxInfo>
