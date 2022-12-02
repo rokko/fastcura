@@ -78,7 +78,7 @@ const TrovaProfessionista = () => {
     }
   }
 
-  const immagini = [uno, due, tre, qua];
+  const immagini = [tre, due, uno, qua];
 
   useEffect(() => {
     axios.get("https://fastcura-blog.it/feed/").then((response) => {
@@ -221,7 +221,7 @@ const TrovaProfessionista = () => {
                         style={{ textDecoration: "none" }}
                         href={`${articolo.link}`}
                       >
-                        <p style={{ color: "#39b1d9", fontSize: "29px" }}>
+                        <p style={{ color: "#000000", fontSize: "29px" }}>
                           {articolo.title}
                         </p>
                         <img
@@ -555,7 +555,7 @@ const TrovaProfessionista = () => {
                             >
                               <p
                                 style={{
-                                  color: "#39b1d9",
+                                  color: "#000000",
                                   fontSize: "29px",
                                   position: "absolute",
                                   top: "2rem",
