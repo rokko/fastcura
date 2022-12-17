@@ -18,12 +18,14 @@
     "@types/reveal": "^4.2.0",
     "axios": "^0.25.0",
     "firebase": "^9.6.11",
+    "formik": "^2.2.9",
     "moment": "^2.29.1",
     "prettier": "^2.6.2",
     "react": "^17.0.2",
     "react-awesome-reveal": "^4.1.0",
     "react-dom": "^17.0.2",
     "react-head": "^3.4.0",
+    "react-phone-input-2": "^2.15.1",
     "react-redux": "^7.2.0",
     "react-responsive": "^9.0.0-beta.6",
     "react-responsive-carousel": "^3.2.22",
@@ -34,7 +36,8 @@
     "styled-components": "^5.3.3",
     "swiper": "6.8.4",
     "typescript": "~4.1.5",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "DISABLE_ESLINT_PLUGIN=true  react-scripts start",

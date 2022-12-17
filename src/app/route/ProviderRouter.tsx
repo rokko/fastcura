@@ -24,6 +24,8 @@ import {
 } from "../condizioni";
 import Assistenza from "../components/Professionista/Assistenza";
 import { Dashboard } from "../dashboard/index";
+import { RegistrazioneCliente } from "../registrazioneCliente";
+import { RegistrazioneProfessionista } from "../registrazioneProfessionista";
 
 const ProviderRouter = () => {
   return (
@@ -37,11 +39,7 @@ const ProviderRouter = () => {
           />
           <Route path="/cliente" element={<DashBoardUtenti />} />
           <Route path="/chatcliente" element={<ListaChat />} />
-          <Route
-            path="/signup-professionista"
-            element={<SignUpProfessionista />}
-          />
-          <Route path="/signup-cliente" element={<SignUpClient />} />
+
           <Route path="/professionista" element={<Professionista />} />
           <Route path="/risultati" element={<RisultatiRicerca />} />
           <Route path="/incostruzione" element={<InCostruzione />} />
@@ -63,6 +61,11 @@ const ProviderRouter = () => {
           <Route path="/consenso-privacy" element={<ConsensoPrivacy />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup-cliente" element={<RegistrazioneCliente />} />
+          <Route
+            path="/signup-professionista"
+            element={<RegistrazioneProfessionista />}
+          />
         </Routes>
       </Router>
     </>
