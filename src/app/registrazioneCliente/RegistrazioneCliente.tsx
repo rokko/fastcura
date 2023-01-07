@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Field, Form, Formik, yupToFormErrors } from "formik";
 import ReactPhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { ReactComponent as Indietro } from "../media/back.svg";
 import {
   ButtonContinuaReg,
   ContainerGenerale,
@@ -16,8 +17,10 @@ import {
   TitleRegistrazione,
 } from "./RegistrazioneClienteStyled";
 import Header from "../components/TrovaIlTuoProfessionista/Header";
-
-import immagineRegistrazione from "../media/imgregistrazione.png";
+import prim from "../media/prim.png";
+import second from "../media/sec.png";
+import terz from "../media/ult.png";
+import immagineRegistrazione from "../media/28.png";
 import Autocomplete from "@mui/material/Autocomplete";
 import { TextField } from "@mui/material";
 import { object, ref, string } from "yup";
@@ -48,7 +51,7 @@ const RegistrazioneCliente = () => {
     <ContainerGenerale>
       <Header />
 
-      <ContainerMeta style={{ backgroundColor: "#39b1d9" }}>
+      <ContainerMeta style={{ backgroundColor: "#aecfff" }}>
         <img
           src={immagineRegistrazione}
           style={{
@@ -74,6 +77,12 @@ const RegistrazioneCliente = () => {
           <TestoSotto>
             Ci sei quasi! compila i dati per confermare la registrazione
           </TestoSotto>
+          <img
+            src={prim}
+            alt="prim"
+            width={"200px"}
+            style={{ margin: "0.5rem" }}
+          />
           <Formik
             initialValues={initialValues}
             onSubmit={(values, formikHelper) => {
@@ -166,11 +175,18 @@ const RegistrazioneCliente = () => {
             background: " #F9F9F9",
           }}
         >
+          <Indietro onClick={() => setRoute("iniziale")} />
           <TitleRegistrazione>
             Bene, ora imposta <br />
             la tua password
           </TitleRegistrazione>
-          <TestoSotto style={{ fontSize: "14px" }}>
+          <img
+            src={second}
+            alt="prim"
+            width={"200px"}
+            style={{ margin: "0.5rem" }}
+          />
+          <TestoSotto style={{ fontSize: "14px", marginTop: "0.5rem" }}>
             La password deve essere lunga 8 caratteri, contenere almeno una
             lettera maiuscola un numero e un carattere speciale ( es. ; . ! ?)
           </TestoSotto>
@@ -242,10 +258,17 @@ const RegistrazioneCliente = () => {
             background: " #F9F9F9",
           }}
         >
+          <Indietro onClick={() => setRoute("secondo")} />
           <TitleRegistrazione>
             Infine, dicci di più
             <br /> su di te
           </TitleRegistrazione>
+          <img
+            src={terz}
+            alt="prim"
+            width={"200px"}
+            style={{ margin: "0.5rem" }}
+          />
 
           <Formik
             initialValues={initialValues3}
