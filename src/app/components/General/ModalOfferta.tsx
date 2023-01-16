@@ -24,7 +24,11 @@ const ModalOfferta = (props: any) => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/send-message", mess, config)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
+        mess,
+        config
+      )
       .then((x) => {});
   };
   const invioOfferta = () => {
@@ -41,7 +45,7 @@ const ModalOfferta = (props: any) => {
 
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/crea-appuntamento",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/crea-appuntamento",
         invi
       )
       .then((x) => {});

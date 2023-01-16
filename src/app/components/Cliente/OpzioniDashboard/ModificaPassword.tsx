@@ -29,7 +29,7 @@ const ModificaPassword = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/aggiorna-password",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/aggiorna-password",
         nuovaPassword,
         config
       )

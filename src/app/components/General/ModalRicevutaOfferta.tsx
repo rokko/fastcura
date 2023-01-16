@@ -9,7 +9,10 @@ const ModalRicevutaOfferta = (props: any) => {
       idappuntamento: props.offerta._id,
     };
     axios
-      .post("https://fastcuradev.herokuapp.com/cliente/accettaofferta", ris)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/accettaofferta",
+        ris
+      )
       .then((response) => {});
     props.accetta();
     props.nuovo(true);
@@ -20,7 +23,10 @@ const ModalRicevutaOfferta = (props: any) => {
       idappuntamento: props.offerta._id,
     };
     axios
-      .post("https://fastcuradev.herokuapp.com/cliente/rifiutaofferta", ris)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/rifiutaofferta",
+        ris
+      )
       .then((response) => {});
     props.rifiuta();
     props.chiudi(false);

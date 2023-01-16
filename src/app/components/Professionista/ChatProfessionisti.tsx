@@ -48,7 +48,7 @@ const ChatProfessionisti = () => {
       };
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/ottieni-contatti",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/ottieni-contatti",
           {},
           config
         )
@@ -66,7 +66,10 @@ const ChatProfessionisti = () => {
       };
 
       axios
-        .get("https://fastcuradev.herokuapp.com/professionista/info", config)
+        .get(
+          "https://careful-pear-cockatoo.cyclic.app/professionista/info",
+          config
+        )
         .then((response: any) => {
           setUtente(response.data);
         })

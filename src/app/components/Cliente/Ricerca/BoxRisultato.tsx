@@ -16,7 +16,7 @@ const BoxRisultato = (props: any) => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/recupera-avatar",
         prof
       )
       .then((response: any) => {

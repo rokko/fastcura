@@ -57,7 +57,7 @@ const ProfiloProfessionista = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/inserisci-feedback",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/inserisci-feedback",
         prof
       )
       .then((response: any) => {
@@ -73,7 +73,10 @@ const ProfiloProfessionista = () => {
       id_professionista: ValoriParametri._id,
     };
     axios
-      .post("https://fastcuradev.herokuapp.com/cliente/ottieni-feedback", prof)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/ottieni-feedback",
+        prof
+      )
       .then((response: any) => {
         setVoti(response.data);
       });
@@ -97,7 +100,7 @@ const ProfiloProfessionista = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/recupera-avatar",
         prof
       )
       .then((response: any) => {
@@ -118,7 +121,10 @@ const ProfiloProfessionista = () => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/cliente/infocurriculum", valore)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/infocurriculum",
+        valore
+      )
       .then((res) => {
         console.log(res.data);
         setLoad(false);

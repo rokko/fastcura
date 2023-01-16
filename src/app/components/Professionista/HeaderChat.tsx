@@ -12,7 +12,7 @@ const HeaderChat = (idcliente: any) => {
   useEffect(() => {
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/nomecliente",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/nomecliente",
         cliente
       )
       .then((x) => {

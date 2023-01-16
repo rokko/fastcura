@@ -17,7 +17,7 @@ const BoxLogin = (props: any) => {
 
   const loginUser = () => {
     axios
-      .post("https://fastcuradev.herokuapp.com/login", userlogin)
+      .post("https://careful-pear-cockatoo.cyclic.app/login", userlogin)
       .then(function (response) {
         const token: IToken = response.data;
         if (!!token.accessToken) {

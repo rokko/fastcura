@@ -14,7 +14,10 @@ const HeaderChat = ({ id }: any) => {
       id_cliente: id,
     };
     axios
-      .post("https://fastcuradev.herokuapp.com/professionista/info", ricerca)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/professionista/info",
+        ricerca
+      )
       .then((x) => {
         setNomep(x.data.nome);
         setCognomep(x.data.cognome);
@@ -24,7 +27,7 @@ const HeaderChat = ({ id }: any) => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/recupera-avatar",
         prof
       )
       .then((response: any) => {

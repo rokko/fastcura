@@ -50,7 +50,7 @@ const ListaChat = () => {
       };
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/cliente/ottieni-chat",
+          "https://careful-pear-cockatoo.cyclic.app/cliente/ottieni-chat",
           {},
           config
         )
@@ -69,7 +69,7 @@ const ListaChat = () => {
       };
 
       axios
-        .get("https://fastcuradev.herokuapp.com/cliente/info", config)
+        .get("https://careful-pear-cockatoo.cyclic.app/cliente/info", config)
         .then((response: any) => {
           setLoad(false);
           setUtente(response.data);

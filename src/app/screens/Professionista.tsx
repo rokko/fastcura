@@ -42,7 +42,7 @@ const Professionista = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/inserisci-avatar",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/inserisci-avatar",
           newAvatar,
           config
         )
@@ -113,7 +113,7 @@ const Professionista = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/info2",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/info2",
           {},
           config
         )
@@ -125,7 +125,7 @@ const Professionista = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/avatar",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/avatar",
           "",
           config
         )

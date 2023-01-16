@@ -98,7 +98,7 @@ const Header = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/info2",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/info2",
           {},
           config
         )
@@ -114,7 +114,7 @@ const Header = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/cliente/infocliente",
+          "https://careful-pear-cockatoo.cyclic.app/cliente/infocliente",
           "",
           config
         )

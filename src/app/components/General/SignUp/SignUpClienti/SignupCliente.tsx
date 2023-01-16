@@ -85,7 +85,7 @@ const SignUpClient = () => {
 
       return axios
         .post(
-          "https://fastcuradev.herokuapp.com/cliente/mail-utente",
+          "https://careful-pear-cockatoo.cyclic.app/cliente/mail-utente",
           emailDaInviare,
           {}
         )
@@ -97,7 +97,7 @@ const SignUpClient = () => {
   };
   const loginUser = (userlogin: any) => {
     axios
-      .post("https://fastcuradev.herokuapp.com/login", userlogin)
+      .post("https://careful-pear-cockatoo.cyclic.app/login", userlogin)
       .then(function (response) {
         const token: IToken = response.data;
         if (!!token.accessToken) {
@@ -127,7 +127,10 @@ const SignUpClient = () => {
 
     if (!(await controllaMail())) {
       axios
-        .post("https://fastcuradev.herokuapp.com/cliente/signup", nuovoCliente)
+        .post(
+          "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
+          nuovoCliente
+        )
         .then(function (response) {
           loginUser({
             email: email,

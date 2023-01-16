@@ -33,7 +33,7 @@ const ListaAppuntamenti = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/lista-appuntamenti",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/lista-appuntamenti",
         "",
         config
       )

@@ -46,7 +46,11 @@ const PaginaChat = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont, config)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/chat/get-message",
+        cont,
+        config
+      )
 
       .then((x) => setChat(x.data));
   };
@@ -72,7 +76,7 @@ const PaginaChat = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );
@@ -112,7 +116,7 @@ const PaginaChat = () => {
   return (
     <>
       <div style={{ height: "100%" }}>
-        <HeaderChat idcliente = {conversazione.contatto.id_cliente}/>
+        <HeaderChat idcliente={conversazione.contatto.id_cliente} />
         <Box
           id="boxchat"
           style={{

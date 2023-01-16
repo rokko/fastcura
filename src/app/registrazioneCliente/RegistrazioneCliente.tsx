@@ -213,6 +213,7 @@ const RegistrazioneCliente = () => {
                 <ContenitoreSezione>
                   <TestoLabel>Password</TestoLabel>
                   <InputVariabile
+                    type="password"
                     name="password"
                     style={{
                       border:
@@ -230,6 +231,7 @@ const RegistrazioneCliente = () => {
                   <InputVariabile
                     name="ripetipassword"
                     placeholder="Ripeti Password"
+                    type="password"
                     style={{
                       border:
                         errors.ripetipassword && touched.ripetipassword

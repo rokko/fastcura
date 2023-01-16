@@ -52,7 +52,7 @@ const HeaderNoLogin = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/cliente/infocliente",
+          "https://careful-pear-cockatoo.cyclic.app/cliente/infocliente",
           "",
           config
         )
@@ -64,9 +64,6 @@ const HeaderNoLogin = () => {
     }
     console.log(utente);
   };
-
-
-  
 
   useEffect(() => {
     takeToken();

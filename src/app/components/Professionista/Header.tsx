@@ -39,7 +39,7 @@ const Header = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/info2",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/info2",
           {},
           config
         )

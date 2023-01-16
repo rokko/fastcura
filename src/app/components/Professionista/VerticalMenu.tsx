@@ -28,7 +28,11 @@ const VerticalMenu = (props: any) => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/professionista/pro", "", config)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/professionista/pro",
+        "",
+        config
+      )
       .then((res) => {
         console.log(res);
         setRispo(res.data.ris);

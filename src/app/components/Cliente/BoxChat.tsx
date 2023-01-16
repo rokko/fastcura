@@ -36,7 +36,10 @@ const BoxChat = (props: any) => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/chat/ottieni-ultimo",
+        cont
+      )
       .then((x) => {
         setChat(x.data);
         setLoad(false);
@@ -60,7 +63,7 @@ const BoxChat = (props: any) => {
 
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/info",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/info",
         clienteinfo
       )
       .then((x) => setInfocliente(x.data));
@@ -72,7 +75,7 @@ const BoxChat = (props: any) => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/recupera-avatar",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/recupera-avatar",
         prof
       )
       .then((response: any) => {

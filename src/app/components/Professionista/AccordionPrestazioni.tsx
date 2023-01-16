@@ -26,7 +26,7 @@ const AccordionPrestazioni = (prestazione: any) => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/nomecliente",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/nomecliente",
         ricerca
       )
       .then((response: any) => {

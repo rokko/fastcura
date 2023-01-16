@@ -30,7 +30,10 @@ const BoxChat = (props: any) => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/ottieni-ultimo", cont)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/chat/ottieni-ultimo",
+        cont
+      )
       .then((x) => {
         setLoad(false);
         setChat(x.data);
@@ -53,7 +56,7 @@ const BoxChat = (props: any) => {
 
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/info-cliente",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/info-cliente",
         clienteinfo
       )
       .then((x) => setInfocliente(x.data));

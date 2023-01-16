@@ -32,7 +32,7 @@ const CronologiaPrestazioni = () => {
     };
     axios
       .get(
-        "https://fastcuradev.herokuapp.com/professionista/lista-appuntamenti",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/lista-appuntamenti",
         config
       )
       .then(function (response) {

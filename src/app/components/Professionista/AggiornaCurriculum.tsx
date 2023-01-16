@@ -30,7 +30,7 @@ const AggiornaCurriculum = () => {
     };
     axios
       .get(
-        "https://fastcuradev.herokuapp.com/professionista/ottieni-curriculum",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/ottieni-curriculum",
         config
       )
       .then((res) => {
@@ -72,7 +72,7 @@ const AggiornaCurriculum = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/modificacurriculum",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/modificacurriculum",
         curriculumaggiornato,
         config
       )

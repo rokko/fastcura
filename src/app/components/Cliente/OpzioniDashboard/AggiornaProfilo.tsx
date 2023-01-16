@@ -36,7 +36,7 @@ const AggiornaProfilo = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/aggiorna-profilo",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/aggiorna-profilo",
         profiloaggiornato,
         config
       )
@@ -52,7 +52,7 @@ const AggiornaProfilo = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/ottieni-profilo",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/ottieni-profilo",
         "",
         config
       )

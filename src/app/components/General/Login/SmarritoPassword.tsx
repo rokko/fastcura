@@ -17,7 +17,10 @@ const SmarritoPassword = () => {
   const requestPassword = () => {
     setReq(true);
     axios
-      .post("https://fastcuradev.herokuapp.com/professionista/password", pass)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/professionista/password",
+        pass
+      )
       .then((e) => {});
   };
 

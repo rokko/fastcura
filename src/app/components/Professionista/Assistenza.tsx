@@ -23,7 +23,7 @@ const Assistenza = () => {
   const sendRequest = () => {
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/assistenza",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/assistenza",
         daInviare
       )
       .then((x) => setMessaggio(x.data.risposta));

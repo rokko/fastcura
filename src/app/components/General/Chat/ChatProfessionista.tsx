@@ -77,7 +77,7 @@ const ChatProfessionista = () => {
     };
     axios
       .post(
-        "https://fastcuradev.herokuapp.com/cliente/nuovo-contatto",
+        "https://careful-pear-cockatoo.cyclic.app/cliente/nuovo-contatto",
         nuovo,
         config
       )
@@ -101,7 +101,7 @@ const ChatProfessionista = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );
@@ -121,7 +121,7 @@ const ChatProfessionista = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );
@@ -141,7 +141,10 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/cliente/info-appuntamento", inf)
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/info-appuntamento",
+        inf
+      )
 
       .then((x) => {
         if (x.data != null && x.data.conferma == 0) {
@@ -158,7 +161,7 @@ const ChatProfessionista = () => {
     };
 
     axios
-      .post("https://fastcuradev.herokuapp.com/chat/get-message", cont)
+      .post("https://careful-pear-cockatoo.cyclic.app/chat/get-message", cont)
       .then((x) => setChat(x.data));
   };
 
@@ -173,7 +176,7 @@ const ChatProfessionista = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );
@@ -191,7 +194,7 @@ const ChatProfessionista = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );
@@ -208,7 +211,7 @@ const ChatProfessionista = () => {
     };
 
     axios.post(
-      "https://fastcuradev.herokuapp.com/chat/send-message",
+      "https://careful-pear-cockatoo.cyclic.app/chat/send-message",
       mess,
       config
     );

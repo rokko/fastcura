@@ -198,7 +198,7 @@ const SignUpProfessionista = () => {
     };
     return axios
       .post(
-        "https://fastcuradev.herokuapp.com/professionista/mail-utente",
+        "https://careful-pear-cockatoo.cyclic.app/professionista/mail-utente",
         emailDaInviare,
         {}
       )
@@ -255,7 +255,7 @@ const SignUpProfessionista = () => {
       setLoad(true);
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/signup",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/signup",
           nuovoProfessionista
         )
         .then(function (response) {

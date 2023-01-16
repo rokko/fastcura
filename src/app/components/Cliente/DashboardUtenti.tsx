@@ -210,7 +210,7 @@ const DashBoardUtenti = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/inserisci-avatar",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/inserisci-avatar",
           newAvatar,
           config
         )
@@ -267,7 +267,7 @@ const DashBoardUtenti = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/cliente/infocliente",
+          "https://careful-pear-cockatoo.cyclic.app/cliente/infocliente",
           "",
           config
         )
@@ -279,7 +279,7 @@ const DashBoardUtenti = () => {
 
       axios
         .post(
-          "https://fastcuradev.herokuapp.com/professionista/avatar",
+          "https://careful-pear-cockatoo.cyclic.app/professionista/avatar",
           "",
           config
         )
