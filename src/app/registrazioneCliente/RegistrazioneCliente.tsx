@@ -26,9 +26,22 @@ import { TextField } from "@mui/material";
 import { object, ref, string } from "yup";
 import * as yup from "yup";
 import { useMediaQuery } from "react-responsive";
+import axios from "axios";
 
 const RegistrazioneCliente = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  const [valori, setValori] = useState({
+    nome: "",
+    cognome: "",
+    sesso: "",
+    mail: "",
+    password: "",
+    data: "",
+    citta: "",
+    conosciuto: "",
+    privacy1: false,
+    privacy2: false,
+  });
 
   enum Risultato {
     ok,
@@ -36,6 +49,7 @@ const RegistrazioneCliente = () => {
   const initialValues = {
     nome: "",
     cognome: "",
+    sesso: "",
     mail: "",
   };
   const initialValues2 = {
@@ -44,7 +58,10 @@ const RegistrazioneCliente = () => {
   };
 
   const initialValues3 = {
-    privacy: false,
+    data: "",
+    citta: "",
+    conosciuto: "",
+    privacy1: false,
     privacy2: false,
   };
   const sess = ["Uomo", "Donna"];
@@ -90,6 +107,14 @@ const RegistrazioneCliente = () => {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, formikHelper) => {
+                setValori({
+                  ...valori,
+                  nome: values.nome,
+                  cognome: values.cognome,
+                  sesso: values.sesso,
+                  mail: values.mail,
+                });
+                console.log(valori);
                 setRoute("secondo");
                 formikHelper.resetForm();
               }}
@@ -198,6 +223,8 @@ const RegistrazioneCliente = () => {
             <Formik
               initialValues={initialValues2}
               onSubmit={(values, formikHelper) => {
+                console.log(valori);
+                setValori({ ...valori, password: values.password });
                 setRoute("terzo");
                 formikHelper.resetForm();
               }}
@@ -281,7 +308,37 @@ const RegistrazioneCliente = () => {
             <Formik
               initialValues={initialValues3}
               onSubmit={(values, formikHelper) => {
-                setRoute("secondo");
+                setValori({
+                  ...valori,
+                  data: values.data,
+                  citta: values.citta,
+                  conosciuto: values.conosciuto,
+                  privacy1: values.privacy1,
+                  privacy2: values.privacy2,
+                });
+
+                const nuovoCliente = {
+                  cognome: valori.cognome,
+                  nome: valori.nome,
+                  email: valori.mail,
+                  password: valori.password,
+                  data: valori.data,
+                  sesso: valori.sesso,
+                  cap: "00000",
+                  cellulare: "33333333333",
+                };
+
+                axios
+                  .post(
+                    "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
+                    nuovoCliente
+                  )
+                  .then(function (response) {
+                    setRoute("quattro");
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
                 formikHelper.resetForm();
               }}
               validationSchema={object({
@@ -310,10 +367,10 @@ const RegistrazioneCliente = () => {
                     <TestoLabel>
                       Come ci hai conosciuto? (opzionale){" "}
                     </TestoLabel>
-                    <InputSelect name="sesso" id="sesso">
-                      <option value="uomo">Social</option>
-                      <option value="donna">Passaparola</option>
-                      <option value="donna">Google</option>
+                    <InputSelect name="conosciuto" id="conosciuto">
+                      <option value="social">Social</option>
+                      <option value="passaparola">Passaparola</option>
+                      <option value="google">Google</option>
                     </InputSelect>
                   </ContenitoreSezione>
                   <ContenitoreSezione>
@@ -326,7 +383,6 @@ const RegistrazioneCliente = () => {
                           border: "1px solid #E93323",
                         }}
                       ></InputVariabile>
-                      {console.log(values)}
                       <LabelCheck>
                         Ho letto l'informativa privacy e acconsento alla
                         memorizzazione dei miei dati nel vostro archivio secondo
@@ -341,7 +397,7 @@ const RegistrazioneCliente = () => {
                         style={{
                           height: "30px",
                           border:
-                            errors.privacy && touched.privacy
+                            errors.privacy2 && touched.privacy2
                               ? "2px solid #E93323"
                               : "none",
                         }}
@@ -357,6 +413,30 @@ const RegistrazioneCliente = () => {
                 </Form>
               )}
             </Formik>
+          </ContainerMeta>
+        )}
+        {route === "quattro" && (
+          <ContainerMeta
+            style={{
+              paddingLeft: "3rem",
+              paddingRight: "3rem",
+              background: " #F9F9F9",
+              width: isMobile ? "100%" : "",
+            }}
+          >
+            <TitleRegistrazione>
+              Grazie per esserti registrato
+            </TitleRegistrazione>
+            <img
+              src={terz}
+              alt="prim"
+              width={"200px"}
+              style={{ margin: "0.5rem" }}
+            />
+            <TestoSotto style={{ fontSize: "14px", marginTop: "0.5rem" }}>
+              Benvenuto in Fastcura, effettua una ricerca per trovare il
+              professionista più adatto alle tue esigenze
+            </TestoSotto>
           </ContainerMeta>
         )}
       </div>
