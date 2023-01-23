@@ -438,7 +438,7 @@ const RegistrazioneProfessionista = () => {
                   privacy2: values.privacy2,
                 });
 
-                const nuovoCliente = {
+                const nuovoProfessionista = {
                   cognome: valori.cognome,
                   nome: valori.nome,
                   email: valori.mail,
@@ -447,12 +447,26 @@ const RegistrazioneProfessionista = () => {
                   sesso: valori.sesso,
                   cap: "00000",
                   cellulare: "33333333333",
+                  citta: valori.citta,
+
+                  professione: null,
+                  greenpass: null,
+                  referenze: null,
+                  anni: null,
+                  anniEsperienza: null,
+                  terminelavoro: null,
+                  livelloItaliano: null,
+                  titoloStudio: null,
+                  dichiarazione: null,
+                  numeroiscrizione: null,
+                  assicurazione: null,
+                  precedente: null,
                 };
 
                 axios
                   .post(
-                    "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
-                    nuovoCliente
+                    "https://careful-pear-cockatoo.cyclic.app/professionista/signup",
+                    nuovoProfessionista
                   )
                   .then(function (response) {
                     setRoute("quattro");
