@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Field, Form, Formik, yupToFormErrors } from "formik";
 import ReactPhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -30,6 +30,14 @@ import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 
 const RegistrazioneProfessionista = () => {
+  useEffect(() => {
+    top();
+  }, []);
+  const top = () => {
+    console.log("top");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [valori, setValori] = useState({
     nome: "",
@@ -199,15 +207,19 @@ const RegistrazioneProfessionista = () => {
         }}
       >
         <ContainerMeta
-          style={{ backgroundColor: "#aecfff", width: isMobile ? "100vw" : "" }}
+          style={{
+            backgroundColor: "#aecfff",
+            width: isMobile ? "100vw" : "",
+            height: isMobile ? "20%" : "",
+          }}
         >
-          <img src={immagineRegistrazione} />
+          <img src={immagineRegistrazione} style={{ width: "100%" }} />
         </ContainerMeta>
         {route === "iniziale" && (
           <ContainerMeta
             style={{
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
               width: isMobile ? "100%" : "",
             }}
@@ -252,7 +264,12 @@ const RegistrazioneProfessionista = () => {
               })}
             >
               {({ errors, isValid, touched, dirty }) => (
-                <Form style={{ display: "flex", flexDirection: "column" }}>
+                <Form
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <ContenitoreSezione>
                     <TestoLabel>Cognome</TestoLabel>
                     <InputVariabile
@@ -320,8 +337,8 @@ const RegistrazioneProfessionista = () => {
         {route === "secondo" && (
           <ContainerMeta
             style={{
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
               width: isMobile ? "100%" : "",
             }}
@@ -409,8 +426,8 @@ const RegistrazioneProfessionista = () => {
           <ContainerMeta
             style={{
               width: isMobile ? "100%" : "",
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
             }}
           >

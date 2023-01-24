@@ -5,6 +5,9 @@ const ContainerGenerale = styled("div")`
   width: 100%;
   position: relative;
   height: auto;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 `;
 
 const ButtonContinuaReg = styled("button")`
@@ -46,6 +49,12 @@ const ContainerMeta = styled("div")`
   width: 50%;
   overflow: hidden;
   display: flex;
+  @media (max-width: 768px) {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const InputSelect = styled("select")`
@@ -119,6 +128,10 @@ const ContenitoreSezione = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 768px) {
+    align-items: center;
+    align-content: center;
+  }
 `;
 
 const TestoSotto = styled("p")`

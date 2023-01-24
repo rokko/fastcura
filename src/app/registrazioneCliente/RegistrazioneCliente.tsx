@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Field, Form, Formik, yupToFormErrors } from "formik";
 import ReactPhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -148,7 +148,15 @@ const citt = [
   "Viterbo",
 ];
 const RegistrazioneCliente = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  useEffect(() => {
+    top();
+  }, []);
+  const top = () => {
+    console.log("top");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+  const isMobile = useMediaQuery({ query: `(max-width: 710px)` });
   const [valori, setValori] = useState({
     nome: "",
     cognome: "",
@@ -197,15 +205,19 @@ const RegistrazioneCliente = () => {
         }}
       >
         <ContainerMeta
-          style={{ backgroundColor: "#aecfff", width: isMobile ? "100vw" : "" }}
+          style={{
+            backgroundColor: "#aecfff",
+            width: isMobile ? "100vw" : "",
+            height: isMobile ? "20%" : "",
+          }}
         >
-          <img src={immagineRegistrazione} />
+          <img src={immagineRegistrazione} style={{ width: "100%" }} />
         </ContainerMeta>
         {route === "iniziale" && (
           <ContainerMeta
             style={{
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
               width: isMobile ? "100%" : "",
             }}
@@ -214,7 +226,7 @@ const RegistrazioneCliente = () => {
               Ci prenderemo <br />
               cura di te.
             </TitleRegistrazione>
-            <TestoSotto>
+            <TestoSotto style={{ marginLeft: "10vw" }}>
               Ci sei quasi! compila i dati per confermare la registrazione
             </TestoSotto>
             <img
@@ -318,12 +330,14 @@ const RegistrazioneCliente = () => {
         {route === "secondo" && (
           <ContainerMeta
             style={{
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
               width: isMobile ? "100%" : "",
             }}
           >
+            {top()}
+
             <Indietro onClick={() => setRoute("iniziale")} />
             <TitleRegistrazione>
               Bene, ora imposta <br />
@@ -360,7 +374,15 @@ const RegistrazioneCliente = () => {
               })}
             >
               {({ errors, isValid, touched, dirty, values }) => (
-                <Form style={{ display: "flex", flexDirection: "column" }}>
+                <Form
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignContent: "center",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <ContenitoreSezione>
                     <TestoLabel>Password</TestoLabel>
                     <InputVariabile
@@ -407,8 +429,8 @@ const RegistrazioneCliente = () => {
           <ContainerMeta
             style={{
               width: isMobile ? "100%" : "",
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
             }}
           >
@@ -541,8 +563,8 @@ const RegistrazioneCliente = () => {
         {route === "quattro" && (
           <ContainerMeta
             style={{
-              paddingLeft: "3rem",
-              paddingRight: "3rem",
+              paddingLeft: isMobile ? "0rem" : "3rem",
+              paddingRight: isMobile ? "0rem" : "3rem",
               background: " #F9F9F9",
               width: isMobile ? "100%" : "",
             }}
