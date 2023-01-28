@@ -44,7 +44,7 @@ import axios from "axios";
 import uno from "../../media/1.png";
 import due from "../../media/2.png";
 import tre from "../../media/3.png";
-import qua from "../../media/4.png";
+import qua from "../../media/complicanze.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -78,7 +78,7 @@ const TrovaProfessionista = () => {
     }
   }
 
-  const immagini = [tre, due, uno, qua];
+  const immagini = [qua, tre, due, uno];
 
   useEffect(() => {
     axios.get("https://fastcura-blog.it/feed/").then((response) => {
