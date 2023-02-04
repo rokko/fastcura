@@ -164,6 +164,7 @@ const RegistrazioneCliente = () => {
     sesso: "",
     mail: "",
     password: "",
+    cellulare: "",
     data: "",
     citta: "",
     conosciuto: "",
@@ -179,6 +180,7 @@ const RegistrazioneCliente = () => {
     cognome: "",
     sesso: "",
     mail: "",
+    cellulare: "",
   };
   const initialValues2 = {
     password: "",
@@ -246,6 +248,7 @@ const RegistrazioneCliente = () => {
                     cognome: values.cognome,
                     sesso: values.sesso,
                     mail: values.mail,
+                    cellulare: values.cellulare,
                   });
                   console.log(valori);
                   setRoute("secondo");
@@ -261,6 +264,9 @@ const RegistrazioneCliente = () => {
                   mail: string()
                     .required("Inserisci la tua mail")
                     .email("Email non valida"),
+                  cellulare: yup
+                    .number()
+                    .required("Inserisci il tuo numero di telefono"),
                 })}
               >
                 {({ errors, isValid, touched, dirty }) => (
@@ -319,6 +325,22 @@ const RegistrazioneCliente = () => {
                       />
                       {errors.mail && touched.mail && (
                         <TestoErrore>{errors.mail}</TestoErrore>
+                      )}
+                    </ContenitoreSezione>
+                    <ContenitoreSezione>
+                      <TestoLabel>Cellulare:</TestoLabel>
+                      <InputVariabile
+                        name="cellulare"
+                        placeholder="347654321"
+                        style={{
+                          border:
+                            errors.cellulare && touched.cellulare
+                              ? "2px solid #E93323"
+                              : "none",
+                        }}
+                      />
+                      {errors.cellulare && touched.cellulare && (
+                        <TestoErrore>{errors.cellulare}</TestoErrore>
                       )}
                     </ContenitoreSezione>
                     <ButtonContinuaReg disabled={!dirty && !isValid}>
@@ -469,7 +491,7 @@ const RegistrazioneCliente = () => {
                     data: valori.data,
                     sesso: valori.sesso,
                     cap: "00000",
-                    cellulare: "33333333333",
+                    cellulare: valori.cellulare,
                   };
 
                   axios
@@ -495,9 +517,17 @@ const RegistrazioneCliente = () => {
                     .bool()
                     .required("Must Accept Terms and Conditions")
                     .oneOf([true], "E' necessario accettare per proseguire"),
+                  citta: yup.string().required("Inserisci la città "),
                 })}
               >
-                {({ errors, isValid, touched, dirty, values }) => (
+                {({
+                  errors,
+                  isValid,
+                  touched,
+                  dirty,
+                  values,
+                  handleChange,
+                }) => (
                   <Form style={{ display: "flex", flexDirection: "column" }}>
                     <ContenitoreSezione>
                       <TestoLabel>Data di nascita (opzionale)</TestoLabel>
@@ -508,7 +538,11 @@ const RegistrazioneCliente = () => {
                       <InputSelect name="citta" id="citta">
                         {citt.map((x) => {
                           return (
-                            <option defaultValue={"Napoli"} value={x}>
+                            <option
+                              defaultValue={"Napoli"}
+                              value={x}
+                              onChange={handleChange}
+                            >
                               {x}
                             </option>
                           );

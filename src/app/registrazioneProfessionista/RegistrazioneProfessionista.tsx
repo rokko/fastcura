@@ -335,7 +335,7 @@ const RegistrazioneProfessionista = () => {
                         }}
                       />
                       {errors.mail && touched.mail && (
-                        <TestoErrore>{errors.mail}</TestoErrore>
+                        <TestoErrore>{errors.cellulare}</TestoErrore>
                       )}
                     </ContenitoreSezione>
                     <ContenitoreSezione>
