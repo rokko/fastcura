@@ -39,12 +39,16 @@ const RegistrazioneProfessionista = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   };
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [valori, setValori] = useState({
     nome: "",
     cognome: "",
     sesso: "",
     mail: "",
+    cellulare: "",
     password: "",
     data: "",
     citta: "",
@@ -61,6 +65,7 @@ const RegistrazioneProfessionista = () => {
     cognome: "",
     sesso: "",
     mail: "",
+    cellulare: "",
   };
   const initialValues2 = {
     password: "",
@@ -248,6 +253,7 @@ const RegistrazioneProfessionista = () => {
                     cognome: values.cognome,
                     sesso: values.sesso,
                     mail: values.mail,
+                    cellulare: values.cellulare,
                   });
                   console.log(valori);
                   setRoute("secondo");
@@ -263,6 +269,11 @@ const RegistrazioneProfessionista = () => {
                   mail: string()
                     .required("Inserisci la tua mail")
                     .email("Email non valida"),
+                  cellulare: yup
+                    .number()
+                    .required("Inserisci il tuo numero di telefono")
+                    .min(9, "Numero non corretto")
+                    .max(10, "Numero non corretto"),
                 })}
               >
                 {({ errors, isValid, touched, dirty }) => (
@@ -320,6 +331,24 @@ const RegistrazioneProfessionista = () => {
                         style={{
                           border:
                             errors.mail && touched.mail
+                              ? "2px solid #E93323"
+                              : "none",
+                        }}
+                      />
+                      {errors.mail && touched.mail && (
+                        <TestoErrore>{errors.mail}</TestoErrore>
+                      )}
+                    </ContenitoreSezione>
+                    <ContenitoreSezione>
+                      <TestoLabel>Cellulare:</TestoLabel>
+                      <InputVariabile
+                        type={"mobile"}
+                        name="cellulare"
+                        placeholder="3400000000"
+                        autoComplete="on"
+                        style={{
+                          border:
+                            errors.cellulare && touched.cellulare
                               ? "2px solid #E93323"
                               : "none",
                         }}
@@ -466,7 +495,7 @@ const RegistrazioneProfessionista = () => {
                     data: valori.data,
                     sesso: valori.sesso,
                     cap: "00000",
-                    cellulare: "33333333333",
+                    cellulare: valori.cellulare,
                     citta: valori.citta,
 
                     professione: null,
@@ -506,6 +535,8 @@ const RegistrazioneProfessionista = () => {
                     .bool()
                     .required("Must Accept Terms and Conditions")
                     .oneOf([true], "E' necessario accettare per proseguire"),
+
+                  citta: yup.string().required("Inserisci la città "),
                 })}
               >
                 {({ errors, isValid, touched, dirty, values }) => (
