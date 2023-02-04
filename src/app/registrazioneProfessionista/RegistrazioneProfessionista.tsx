@@ -194,8 +194,9 @@ const RegistrazioneProfessionista = () => {
   ];
   const initialValues3 = {
     data: "",
-    citta: "",
+    citta: "Agrigento",
     conosciuto: "",
+    datadinascita: "",
     privacy1: false,
     privacy2: false,
   };
@@ -535,7 +536,14 @@ const RegistrazioneProfessionista = () => {
                   citta: yup.string().required("Inserisci la città "),
                 })}
               >
-                {({ errors, isValid, touched, dirty, values }) => (
+                {({
+                  errors,
+                  isValid,
+                  touched,
+                  dirty,
+                  values,
+                  handleChange,
+                }) => (
                   <Form style={{ display: "flex", flexDirection: "column" }}>
                     <ContenitoreSezione>
                       <TestoLabel>Data di nascita (opzionale)</TestoLabel>
@@ -544,7 +552,11 @@ const RegistrazioneProfessionista = () => {
                     <ContenitoreSezione>
                       <TestoLabel>Citta</TestoLabel>
                       {console.log(values)}
-                      <InputSelect name="citta" id="citta">
+                      <InputSelect
+                        name="citta"
+                        id="citta"
+                        onChange={handleChange}
+                      >
                         {citt.map((x) => {
                           return (
                             <option defaultValue={"Bari"} value={x}>
@@ -558,7 +570,11 @@ const RegistrazioneProfessionista = () => {
                       <TestoLabel>
                         Come ci hai conosciuto? (opzionale){" "}
                       </TestoLabel>
-                      <InputSelect name="conosciuto" id="conosciuto">
+                      <InputSelect
+                        name="conosciuto"
+                        id="conosciuto"
+                        onChange={handleChange}
+                      >
                         <option value="social">Social</option>
                         <option value="passaparola">Passaparola</option>
                         <option value="google">Google</option>
