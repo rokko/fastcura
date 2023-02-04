@@ -272,7 +272,6 @@ const RegistrazioneProfessionista = () => {
                   cellulare: yup
                     .number()
                     .required("Inserisci il tuo numero di telefono")
-                    .min(9, "Numero non corretto")
                     .max(10, "Numero non corretto"),
                 })}
               >
