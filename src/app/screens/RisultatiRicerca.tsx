@@ -6,6 +6,7 @@ import BoxRisultato from "../components/Cliente/Ricerca/BoxRisultato";
 import axios from "axios";
 import Footer from "../components/General/Footer";
 import { Loader } from "../loader";
+import { TitleTop } from "./trovaprofessionista/TrovaProfessionistaStyled";
 
 interface IPropsRicerca {
   citta: string;
@@ -40,9 +41,9 @@ const RisultatiRicerca = () => {
     <>
       <Loader isLoading={load} />
       <HeaderNoLogin />
-      <h1>
+      <TitleTop>
         {parametri.professione}, {parametri.citta}
-      </h1>
+      </TitleTop>
       {listaProfessionisti.length < 1 && (
         <p style={{ fontSize: "28px", fontWeight: "bold" }}>
           Al momento non sono disponibili professionisti nella tua zona
