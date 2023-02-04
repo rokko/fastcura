@@ -507,7 +507,11 @@ const RegistrazioneCliente = () => {
                       <TestoLabel>Citta</TestoLabel>
                       <InputSelect name="citta" id="citta">
                         {citt.map((x) => {
-                          return <option value={x}>{x}</option>;
+                          return (
+                            <option defaultValue={"Napoli"} value={x}>
+                              {x}
+                            </option>
+                          );
                         })}
                       </InputSelect>
                     </ContenitoreSezione>{" "}

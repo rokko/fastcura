@@ -543,9 +543,14 @@ const RegistrazioneProfessionista = () => {
                     </ContenitoreSezione>
                     <ContenitoreSezione>
                       <TestoLabel>Citta</TestoLabel>
+                      {console.log(values)}
                       <InputSelect name="citta" id="citta">
                         {citt.map((x) => {
-                          return <option value={x}>{x}</option>;
+                          return (
+                            <option defaultValue={"Bari"} value={x}>
+                              {x}
+                            </option>
+                          );
                         })}
                       </InputSelect>
                     </ContenitoreSezione>{" "}
