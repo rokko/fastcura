@@ -271,8 +271,7 @@ const RegistrazioneProfessionista = () => {
                     .email("Email non valida"),
                   cellulare: yup
                     .number()
-                    .required("Inserisci il tuo numero di telefono")
-                    .max(10, "Numero non corretto"),
+                    .required("Inserisci il tuo numero di telefono"),
                 })}
               >
                 {({ errors, isValid, touched, dirty }) => (
@@ -341,10 +340,8 @@ const RegistrazioneProfessionista = () => {
                     <ContenitoreSezione>
                       <TestoLabel>Cellulare:</TestoLabel>
                       <InputVariabile
-                        type={"mobile"}
                         name="cellulare"
-                        placeholder="3400000000"
-                        autoComplete="on"
+                        placeholder="347654321"
                         style={{
                           border:
                             errors.cellulare && touched.cellulare
