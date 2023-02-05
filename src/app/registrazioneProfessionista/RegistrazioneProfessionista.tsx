@@ -509,6 +509,7 @@ const RegistrazioneProfessionista = () => {
                     precedente: null,
                   };
 
+                  console.log(nuovoProfessionista);
                   axios
                     .post(
                       "https://careful-pear-cockatoo.cyclic.app/professionista/signup",
