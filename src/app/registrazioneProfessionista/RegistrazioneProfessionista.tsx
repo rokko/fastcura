@@ -53,6 +53,7 @@ const RegistrazioneProfessionista = () => {
     data: "",
     citta: "",
     conosciuto: "",
+    professione: "",
     privacy1: false,
     privacy2: false,
   });
@@ -71,6 +72,8 @@ const RegistrazioneProfessionista = () => {
     password: "",
     ripetipassword: "",
   };
+
+  const professione = ["Infermiere", "Badante", "Fisioterapista", "Oss"];
 
   const citt = [
     "Agrigento",
@@ -197,6 +200,7 @@ const RegistrazioneProfessionista = () => {
     citta: "Agrigento",
     conosciuto: "",
     datadinascita: "",
+    professione: "Infermiere",
     privacy1: false,
     privacy2: false,
   };
@@ -480,6 +484,7 @@ const RegistrazioneProfessionista = () => {
                     data: values.data,
                     citta: values.citta,
                     conosciuto: values.conosciuto,
+                    professione: values.professione,
                     privacy1: values.privacy1,
                     privacy2: values.privacy2,
                   });
@@ -495,7 +500,7 @@ const RegistrazioneProfessionista = () => {
                     cellulare: valori.cellulare,
                     citta: values.citta,
 
-                    professione: null,
+                    professione: values.professione,
                     greenpass: null,
                     referenze: null,
                     anni: null,
@@ -533,6 +538,9 @@ const RegistrazioneProfessionista = () => {
                     .oneOf([true], "E' necessario accettare per proseguire"),
 
                   citta: yup.string().required("Inserisci la città "),
+                  professione: yup
+                    .string()
+                    .required("Inserisci la professione"),
                 })}
               >
                 {({
@@ -562,6 +570,18 @@ const RegistrazioneProfessionista = () => {
                               {x}
                             </option>
                           );
+                        })}
+                      </InputSelect>
+                    </ContenitoreSezione>{" "}
+                    <ContenitoreSezione>
+                      <TestoLabel>Professione</TestoLabel>
+                      <InputSelect
+                        name="professione"
+                        id="professione"
+                        onChange={handleChange}
+                      >
+                        {professione.map((x) => {
+                          return <option value={x}>{x}</option>;
                         })}
                       </InputSelect>
                     </ContenitoreSezione>{" "}
