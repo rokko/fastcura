@@ -493,7 +493,7 @@ const RegistrazioneProfessionista = () => {
                     sesso: valori.sesso,
                     cap: "00000",
                     cellulare: valori.cellulare,
-                    citta: valori.citta,
+                    citta: values.citta,
 
                     professione: null,
                     greenpass: null,
@@ -508,8 +508,6 @@ const RegistrazioneProfessionista = () => {
                     assicurazione: null,
                     precedente: null,
                   };
-
-                  console.log(nuovoProfessionista);
                   axios
                     .post(
                       "https://careful-pear-cockatoo.cyclic.app/professionista/signup",
