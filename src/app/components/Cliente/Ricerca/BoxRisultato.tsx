@@ -52,6 +52,7 @@ const BoxRisultato = (props: any) => {
             alignItems: "center",
             alignContent: "center",
             justifyContent: "center",
+            fontFamily: "Roboto,sans-serif",
           }}
         >
           {avatar !== "" ? (
