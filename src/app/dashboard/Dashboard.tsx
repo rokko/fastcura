@@ -15,7 +15,7 @@ const Dashboard = () => {
   }, []);
 
   const checkPass = () => {
-    if (password === "fastcura2022") {
+    if (password === "fastcura2022!!!@") {
       setEntra(true);
     }
   };
