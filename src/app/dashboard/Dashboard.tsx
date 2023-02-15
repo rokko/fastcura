@@ -37,26 +37,35 @@ const Dashboard = () => {
         <p style={{ fontSize: "40px", fontWeight: "bold" }}>
           Lista professionisti iscritti
         </p>
-        <table style={{ alignContent: "center" }}>
-          <tr>
-            <th>Numero</th>
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Email</th>
-            <th>Citta</th>
-          </tr>
-          {list.map((val: any, key: any) => {
-            return (
-              <tr key={key}>
-                <td>{key}</td>
-                <td>{val.nome}</td>
-                <td>{val.cognome}</td>
-                <td>{val.email}</td>
-                <td>{val.citta}</td>
-              </tr>
-            );
-          })}
-        </table>
+        <div
+          style={{
+            display: "flex",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <table style={{ alignContent: "center" }}>
+            <tr>
+              <th>Numero</th>
+              <th>Nome</th>
+              <th>Cognome</th>
+              <th>Email</th>
+              <th>Citta</th>
+            </tr>
+            {list.map((val: any, key: any) => {
+              return (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{val.nome}</td>
+                  <td>{val.cognome}</td>
+                  <td>{val.email}</td>
+                  <td>{val.citta}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </>
     );
 };
