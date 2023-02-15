@@ -9,7 +9,7 @@ const Dashboard = () => {
     axios
       .get("https://careful-pear-cockatoo.cyclic.app/professionista/getAll")
       .then((x) => {
-        setLista(x);
+        setLista(x.data);
         console.log(x);
       });
   }, []);
