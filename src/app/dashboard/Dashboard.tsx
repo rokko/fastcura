@@ -10,6 +10,7 @@ const Dashboard = () => {
       .get("https://careful-pear-cockatoo.cyclic.app/professionista/getAll")
       .then((x) => {
         setLista(x);
+        console.log(x);
       });
   }, []);
 
