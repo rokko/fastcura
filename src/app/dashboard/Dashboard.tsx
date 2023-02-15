@@ -56,7 +56,7 @@ const Dashboard = () => {
             {list.map((val: any, key: any) => {
               return (
                 <tr key={key}>
-                  <td>{key}</td>
+                  <td>{key + 1}</td>
                   <td>{val.nome}</td>
                   <td>{val.cognome}</td>
                   <td>{val.email}</td>
