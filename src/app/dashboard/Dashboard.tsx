@@ -33,8 +33,9 @@ const Dashboard = () => {
     );
   else
     return (
-      <table>
+      <table style={{ alignContent: "center" }}>
         <tr>
+          <th>Numero</th>
           <th>Nome</th>
           <th>Cognome</th>
           <th>Email</th>
@@ -43,6 +44,7 @@ const Dashboard = () => {
         {list.map((val: any, key: any) => {
           return (
             <tr key={key}>
+              <td>{key}</td>
               <td>{val.nome}</td>
               <td>{val.cognome}</td>
               <td>{val.email}</td>
