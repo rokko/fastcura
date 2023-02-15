@@ -25,6 +25,7 @@ const Footer = () => {
         flexDirection: "column",
         height: "50px",
         width: "100%",
+        zIndex: "100000000",
       }}
     >
       <div
