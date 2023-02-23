@@ -197,7 +197,7 @@ const RegistrazioneProfessionista = () => {
   ];
   const initialValues3 = {
     data: "",
-    citta: "Agrigento",
+    citta: "",
     conosciuto: "",
     datadinascita: "",
     professione: "Infermiere",
