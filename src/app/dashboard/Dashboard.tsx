@@ -52,6 +52,7 @@ const Dashboard = () => {
               <th>Cognome</th>
               <th>Email</th>
               <th>Citta</th>
+              <th>DataIscrizione</th>
             </tr>
             {list.map((val: any, key: any) => {
               return (
@@ -61,6 +62,7 @@ const Dashboard = () => {
                   <td>{val.cognome}</td>
                   <td>{val.email}</td>
                   <td>{val.citta}</td>
+                  <td>{val?.dataIscrizione}</td>
                 </tr>
               );
             })}

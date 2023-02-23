@@ -541,6 +541,7 @@ const RegistrazioneProfessionista = () => {
                   professione: yup
                     .string()
                     .required("Inserisci la professione"),
+                    
                 })}
               >
                 {({
