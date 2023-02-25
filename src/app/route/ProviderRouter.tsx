@@ -26,6 +26,7 @@ import Assistenza from "../components/Professionista/Assistenza";
 import { Dashboard } from "../dashboard/index";
 import { RegistrazioneCliente } from "../registrazioneCliente";
 import { RegistrazioneProfessionista } from "../registrazioneProfessionista";
+import Blog from "../blog";
 
 const ProviderRouter = () => {
   return (
@@ -66,6 +67,7 @@ const ProviderRouter = () => {
             path="/signup-professionista"
             element={<RegistrazioneProfessionista />}
           />
+          <Route path="/blog" element={<Blog />}></Route>
         </Routes>
       </Router>
     </>
