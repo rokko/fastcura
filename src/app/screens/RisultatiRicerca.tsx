@@ -41,9 +41,7 @@ const RisultatiRicerca = () => {
     <>
       <Loader isLoading={load} />
       <HeaderNoLogin />
-      <TitleTop
-        style={{ color: "black", textAlign: "center", marginBottom: "200px" }}
-      >
+      <TitleTop style={{ color: "black", textAlign: "center" }}>
         <span style={{ fontWeight: "bold" }}>
           {" "}
           {parametri.professione}, {parametri.citta}
@@ -58,6 +56,7 @@ const RisultatiRicerca = () => {
         listaProfessionisti.map((prof) => {
           return <BoxRisultato professionista={prof} />;
         })}
+      <div style={{ marginBottom: "200px" }} />
       <Footer />
     </>
   );
