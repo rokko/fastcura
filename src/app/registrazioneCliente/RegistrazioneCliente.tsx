@@ -149,6 +149,40 @@ const citt = [
   "Viterbo",
 ];
 const RegistrazioneCliente = () => {
+  const onSubmitReg = (values: any) => {
+    console.log("ciao");
+    setValori({
+      ...valori,
+      data: values.data,
+      citta: values.citta,
+      conosciuto: values.conosciuto,
+      privacy1: values.privacy1,
+      privacy2: values.privacy2,
+    });
+
+    const nuovoCliente = {
+      cognome: valori.cognome,
+      nome: valori.nome,
+      email: valori.mail,
+      password: valori.password,
+      data: valori.data,
+      sesso: valori.sesso,
+      cap: "00000",
+      cellulare: valori.cellulare,
+    };
+
+    axios
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
+        nuovoCliente
+      )
+      .then(function (response) {
+        setRoute("quattro");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   useEffect(() => {
     top();
   }, []);
@@ -404,7 +438,7 @@ const RegistrazioneCliente = () => {
                       display: "flex",
                       flexDirection: "column",
                       alignContent: "center",
-                      alignItems: "center",
+
                       justifyContent: "center",
                     }}
                   >
@@ -474,6 +508,7 @@ const RegistrazioneCliente = () => {
               <Formik
                 initialValues={initialValues3}
                 onSubmit={(values, formikHelper) => {
+                  console.log("ciao");
                   setValori({
                     ...valori,
                     data: values.data,
@@ -508,15 +543,6 @@ const RegistrazioneCliente = () => {
                   formikHelper.resetForm();
                 }}
                 validationSchema={object({
-                  privacy: yup
-                    .bool()
-                    .required("Must Accept Terms and Conditions")
-                    .oneOf([true], "E' necessario accettare per proseguire"),
-
-                  privacy2: yup
-                    .bool()
-                    .required("Must Accept Terms and Conditions")
-                    .oneOf([true], "E' necessario accettare per proseguire"),
                   citta: yup.string().required("Inserisci la città "),
                 })}
               >
@@ -593,7 +619,11 @@ const RegistrazioneCliente = () => {
                         <LabelCheck>Accetto termini e condizioni</LabelCheck>
                       </div>
                     </ContenitoreSezione>
-                    <ButtonContinuaReg disabled={!dirty && !isValid}>
+                    <ButtonContinuaReg
+                      type={"submit"}
+                      onClick={() => onSubmitReg(values)}
+                      disabled={!dirty && !isValid}
+                    >
                       Termina
                     </ButtonContinuaReg>
                   </Form>
