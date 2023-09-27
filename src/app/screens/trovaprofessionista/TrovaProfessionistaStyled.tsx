@@ -20,6 +20,20 @@ const BoxInfo = styled("div")`
   }
 `;
 
+const NewBox = styled("div")`
+  height: 367px;
+  width: 337px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 3px 34px 0px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  padding: 37px 15px 19px 15px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+`;
+
 const BoxInfo2 = styled("div")`
   width: 965px;
   height: 367px;
@@ -48,6 +62,7 @@ const CercaContainter = styled("div")`
   position: relative;
   padding: 3rem;
   display: flex;
+  justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
     align-content: center;
@@ -189,7 +204,19 @@ const ContainerTitleProfessionista = styled("div")`
     padding: 0.5rem;
   }
 `;
+const NewTesto = styled("p")`
+  font-family: Roboto;
+  font-size: 23px;
+  color: black;
+  font-weight: 900;
+`;
 
+const NewTestoUnder = styled("p")`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #a6a6a6;
+  font-weight: 400;
+`;
 const TitleOne = styled("p")`
   max-width: 300px;
   font-style: normal;
@@ -250,4 +277,7 @@ export {
   TitleOne,
   ButtonTwo,
   BoxInfo2,
+  NewBox,
+  NewTesto,
+  NewTestoUnder,
 };

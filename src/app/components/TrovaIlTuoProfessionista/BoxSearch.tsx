@@ -23,7 +23,7 @@ const BoxS = styled("div")`
   align-content: center;
   align-items: center;
   position: absolute;
-  right: 50px;
+  right: 40%;
   top: 20rem;
   width: 348px;
   background: #ffffff;

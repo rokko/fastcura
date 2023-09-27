@@ -31,6 +31,9 @@ import {
   ContainerTrova,
   Immagini,
   Left,
+  NewBox,
+  NewTesto,
+  NewTestoUnder,
   Right,
   SpanTop,
   TextSection,
@@ -113,25 +116,59 @@ const TrovaProfessionista = () => {
           <Header />
           <CercaContainter>
             <Immagini
-              style={{ position: "absolute", bottom: "0px" }}
+              style={{ position: "absolute", bottom: "0px", left: "0px" }}
               src={FirstPng}
               alt={"first"}
             />
-            <Left>
-              <TitleTop>
-                L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
-              </TitleTop>
-            </Left>
+
+            <TitleTop style={{ textAlign: "center" }}>
+              L'<SpanTop>assistenza domiciliare</SpanTop> a portata di click!
+            </TitleTop>
 
             <BoxSearch />
           </CercaContainter>
           <ContainerTrova>
+            <TitleSection>Come funziona</TitleSection>
+            <div style={{ display: "flex", flexDirection: "row", gap: "2rem" }}>
+              <NewBox>
+                <img src={ProblemaRisolto} width={"212px"} height={"206px"} />
+                <NewTesto>
+                  Trova il professionista<br></br>più vicino a te
+                </NewTesto>
+                <NewTestoUnder>
+                  L’assistenza domiciliare non è <br></br>mai stata così veloce!
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img
+                  src={ChattaDirettamente}
+                  width={"146px"}
+                  height={"193px"}
+                />
+                <NewTesto>
+                  Chatta direttamente con <br /> il professionista{" "}
+                </NewTesto>
+                <NewTestoUnder>
+                  In pochi passaggi potrai contattare l’infermiere, il
+                  <br /> fisioterapista, il caregiver.{" "}
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img src={Feedback} width={"292px"} height={"179px"} />
+                <NewTesto>Invia Feedback </NewTesto>
+                <NewTestoUnder>
+                  Potrai recensire e vedere <br /> le recensioni degli altri.
+                </NewTestoUnder>
+              </NewBox>
+            </div>
+
             <BoxInfo style={{}}>
               <Immagini
                 src={PrimaImmagine}
                 alt={"hai bisogno"}
                 style={{ width: "500px" }}
               />
+
               <BoxDescription>
                 <TitleSection>Sei un professionista?</TitleSection>
 
