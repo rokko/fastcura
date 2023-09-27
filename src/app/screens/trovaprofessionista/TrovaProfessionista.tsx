@@ -32,6 +32,9 @@ import {
   Immagini,
   Left,
   NewBox,
+  NewBoxInside,
+  NewButtonCercaProfessionista,
+  NewSectionBlu,
   NewTesto,
   NewTestoUnder,
   Right,
@@ -161,6 +164,15 @@ const TrovaProfessionista = () => {
                 </NewTestoUnder>
               </NewBox>
             </div>
+
+            <NewButtonCercaProfessionista>
+              Cerca professionista
+            </NewButtonCercaProfessionista>
+
+            <NewSectionBlu>
+              <NewBoxInside></NewBoxInside>
+              <NewBoxInside></NewBoxInside>
+            </NewSectionBlu>
 
             <TitleSection>Gli ultimi articoli</TitleSection>
 

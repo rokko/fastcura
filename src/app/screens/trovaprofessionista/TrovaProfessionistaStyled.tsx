@@ -211,6 +211,18 @@ const NewTesto = styled("p")`
   font-weight: 900;
 `;
 
+const NewButtonCercaProfessionista = styled("button")`
+  width: 308px;
+  height: 47px;
+  background-color: #39b1d9;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 18px;
+  border: none;
+  border-radius: 40px;
+  padding: 13px, 19px, 13px, 19px;
+  gap: 10px;
+`;
 const NewTestoUnder = styled("p")`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -232,6 +244,17 @@ const TitleOne = styled("p")`
   }
 `;
 
+const NewSectionBlu = styled("div")`
+  height: 236px;
+  width: 100vw;
+  background-color: #39b1d9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 4rem;
+`;
 const ButtonTwo = styled("button")`
   width: 310px;
   height: 50px;
@@ -260,6 +283,12 @@ const ButtonTwo = styled("button")`
   }
 `;
 
+const NewBoxInside = styled("div")`
+  width: 279px;
+  height: 166px;
+  border-radius: 20px;
+  background-color: white;
+`;
 export {
   Immagini,
   BoxInfo,
@@ -280,4 +309,7 @@ export {
   NewBox,
   NewTesto,
   NewTestoUnder,
+  NewButtonCercaProfessionista,
+  NewSectionBlu,
+  NewBoxInside,
 };
