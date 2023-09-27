@@ -162,81 +162,6 @@ const TrovaProfessionista = () => {
               </NewBox>
             </div>
 
-            <BoxInfo style={{}}>
-              <Immagini
-                src={PrimaImmagine}
-                alt={"hai bisogno"}
-                style={{ width: "500px" }}
-              />
-
-              <BoxDescription>
-                <TitleSection>Sei un professionista?</TitleSection>
-
-                <Link
-                  to="/signup-professionista"
-                  style={{ textDecoration: "none" }}
-                >
-                  <ButtonTwo
-                    style={{
-                      background: "#e2f4fc",
-
-                      textTransform: "none",
-                      color: "rgb(57, 177, 217)",
-                      borderRadius: 10,
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Inizia ora la prova di 60 giorni
-                  </ButtonTwo>
-                </Link>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <Immagini src={HaiBisogno} alt={"hai bisogno"} />
-              <BoxDescription>
-                <TitleSection>Hai bisogno di cure?</TitleSection>
-                <TextSection>
-                  Con Fastcura troverai infermieri, Caregiver , Fisioterapisti,
-                  pronti a darti una mano.
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <BoxDescription>
-                <TitleSection>
-                  Il tuo problema risolto con un click!
-                </TitleSection>
-                <TextSection>
-                  L’assistenza domiciliare non è mai stata così veloce!
-                </TextSection>
-              </BoxDescription>
-              <Immagini src={ProblemaRisolto} alt={"problema risolto"} />
-            </BoxInfo>
-            <BoxInfo>
-              <img
-                width={"250px"}
-                src={ChattaDirettamente}
-                alt={"chatta direttamente"}
-              />
-              <BoxDescription>
-                <TitleSection>
-                  Chatta direttamente con il professionista
-                </TitleSection>
-                <TextSection>
-                  In pochi passaggi potrai contattare l’infermiere, il
-                  fisioterapista, il caregiver ed esporre il tuo problema.
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <BoxDescription>
-                <TitleSection>FeedBack</TitleSection>
-                <TextSection>
-                  Potrai recensire e vedere le recensioni degli altri.
-                </TextSection>
-              </BoxDescription>
-              <Immagini src={Feedback} alt={"feedback"} />
-            </BoxInfo>
             <TitleSection>Gli ultimi articoli</TitleSection>
 
             <ContainerProfessionista
@@ -891,4 +816,79 @@ export default TrovaProfessionista;
             <SeiNuovo />
           </div>
           <Footer />
+           <BoxInfo style={{}}>
+              <Immagini
+                src={PrimaImmagine}
+                alt={"hai bisogno"}
+                style={{ width: "500px" }}
+              />
+
+              <BoxDescription>
+                <TitleSection>Sei un professionista?</TitleSection>
+
+                <Link
+                  to="/signup-professionista"
+                  style={{ textDecoration: "none" }}
+                >
+                  <ButtonTwo
+                    style={{
+                      background: "#e2f4fc",
+
+                      textTransform: "none",
+                      color: "rgb(57, 177, 217)",
+                      borderRadius: 10,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Inizia ora la prova di 60 giorni
+                  </ButtonTwo>
+                </Link>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <Immagini src={HaiBisogno} alt={"hai bisogno"} />
+              <BoxDescription>
+                <TitleSection>Hai bisogno di cure?</TitleSection>
+                <TextSection>
+                  Con Fastcura troverai infermieri, Caregiver , Fisioterapisti,
+                  pronti a darti una mano.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>
+                  Il tuo problema risolto con un click!
+                </TitleSection>
+                <TextSection>
+                  L’assistenza domiciliare non è mai stata così veloce!
+                </TextSection>
+              </BoxDescription>
+              <Immagini src={ProblemaRisolto} alt={"problema risolto"} />
+            </BoxInfo>
+            <BoxInfo>
+              <img
+                width={"250px"}
+                src={ChattaDirettamente}
+                alt={"chatta direttamente"}
+              />
+              <BoxDescription>
+                <TitleSection>
+                  Chatta direttamente con il professionista
+                </TitleSection>
+                <TextSection>
+                  In pochi passaggi potrai contattare l’infermiere, il
+                  fisioterapista, il caregiver ed esporre il tuo problema.
+                </TextSection>
+              </BoxDescription>
+            </BoxInfo>
+            <BoxInfo>
+              <BoxDescription>
+                <TitleSection>FeedBack</TitleSection>
+                <TextSection>
+                  Potrai recensire e vedere le recensioni degli altri.
+                </TextSection>
+              </BoxDescription>
+              <Immagini src={Feedback} alt={"feedback"} />
+            </BoxInfo>
         </div>*/
