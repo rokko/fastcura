@@ -66,6 +66,7 @@ const Login = (props: any) => {
     flex-direction: column;
     gap: 1rem;
     height: 318px;
+    align-items: center;
   `;
 
   const ButtonLogin = styled("button")`
@@ -98,6 +99,7 @@ const Login = (props: any) => {
   return (
     <ContainerLogin>
       <Title>Accedi</Title>
+      <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
       <InputStyle
         placeholder="Indirizzo email"
         onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
@@ -126,7 +128,8 @@ const Login = (props: any) => {
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
         />
       </div>
-      <ButtonLogin onClick={() => loginUser()}>Entra</ButtonLogin>
+      </div>
+      <ButtonLogin style={{width:'289px', height:'47px'}} onClick={() => loginUser()}>Entra</ButtonLogin>
       <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
         <p style={{ color: "#39B1D9" }}>Hai dimenticato la password?</p>
       </Link>

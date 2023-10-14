@@ -170,10 +170,23 @@ const TrovaProfessionista = () => {
             </NewButtonCercaProfessionista>
 
             <NewSectionBlu>
-              <NewBoxInside></NewBoxInside>
-              <NewBoxInside></NewBoxInside>
-            </NewSectionBlu>
+              <NewBoxInside>
+                <p style={{fontSize:'36px', fontWeight:'900', color:'#39B1D9'}}>+ 300</p>
+                <p style={{fontSize:'23px', fontWeight:'400', color:'#39B1D9'}}>di professionisti iscritti</p>
+              </NewBoxInside>
+              <NewBoxInside>
+              <p style={{fontSize:'36px', fontWeight:'900', color:'#39B1D9'}}>+ 1000</p>
+              <p style={{fontSize:'23px', fontWeight:'400', color:'#39B1D9'}}>di clienti soddisfatti</p>
 
+
+              </NewBoxInside>
+            </NewSectionBlu>
+            <TitleSection>Sei un professionista <br/>e cerchi clienti?</TitleSection>
+            <NewButtonCercaProfessionista>
+              Inizia ora la prova di 30 giorni
+            </NewButtonCercaProfessionista>
+            <img width={"670px"} src={Professi} alt={"professionista"} />
+        
             <TitleSection>Gli ultimi articoli</TitleSection>
 
             <ContainerProfessionista
@@ -215,6 +228,7 @@ const TrovaProfessionista = () => {
                 }
               })}
             </ContainerProfessionista>
+            {/*
             <BoxInfo>
               <img width={"670px"} src={Professi} alt={"professionista"} />
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -238,10 +252,10 @@ const TrovaProfessionista = () => {
                 </Link>
               </div>
             </BoxInfo>
-
+                  */}
+<div style={{ display: "flex", flexDirection: "column"  , backgroundColor : '#39b1d9', width:'100vw', alignContent:'center', alignItems:'center',justifyContent:'center',height:'375px'}}>
             <BoxInfo2>
               <Login />
-              <SeiNuovo />
             </BoxInfo2>
             {!what && (
               <Chat
@@ -357,6 +371,7 @@ const TrovaProfessionista = () => {
                 </div>
               </>
             )}
+            </div>
           </ContainerTrova>
           <div
             style={{

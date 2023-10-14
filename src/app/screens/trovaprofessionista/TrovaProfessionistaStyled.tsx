@@ -36,7 +36,7 @@ const NewBox = styled("div")`
 
 const BoxInfo2 = styled("div")`
   width: 965px;
-  height: 367px;
+  height: 315px;
   display: flex;
   background-color: white;
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.08);
