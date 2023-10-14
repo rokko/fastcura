@@ -42,6 +42,9 @@ import {
 import {
   BoxDescription,
   ButtonTwo,
+  NewBox,
+  NewTesto,
+  NewTestoUnder,
 } from "../trovaprofessionista/TrovaProfessionistaStyled";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
@@ -81,10 +84,11 @@ const LandingProfessionista = () => {
         {" "}
         <div style={{ backgroundColor: "rgb(246, 246, 246)" }}>
           <Header />
-          <ContainerFirstImage style={{ marginTop: "5rem" }}>
+          <ContainerFirstImage style={{ marginTop: "1rem" , backgroundColor:'white'}}>
             <TitleFirstContainer>
               Iscriviti a <SpanTitle>Fastcura</SpanTitle>
             </TitleFirstContainer>
+            {/*
             <iframe
               width="560"
               height="315"
@@ -94,16 +98,70 @@ const LandingProfessionista = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            */}
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
             >
+              
+    
               <ButtonFirstContainer>
                 Inizia la prova gratuita
               </ButtonFirstContainer>
             </Link>
+            <img src={PrimaImmagine} alt='prima' />
           </ContainerFirstImage>
           <ContainerOther>
+          <TitleSection>Come funziona</TitleSection>
+          <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
+          <NewBox>
+                <img src={Visibilita} width={"276px"} height={"138px"} />
+                <NewTesto>
+                Migliora la tua visibilità
+                </NewTesto>
+                <NewTestoUnder>
+                Fastcura ha l'obiettivo di darti visibilità sul tuo <br/> territorio, allargando la tua rete di clienti
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img src={DiciTu} width={"348px"} height={"221px"} />
+                <NewTesto>
+                Decidi tu quando!                </NewTesto>
+                <NewTestoUnder>
+                Decidi tu quando e come lavorare. Tu ci metti le <br/>competenze, Fastcura ti trova i clienti
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img src={FaiTuPrezzo} width={"280px"} height={"178px"} />
+                <NewTesto>
+                Fai tu il prezzo</NewTesto>
+                <NewTestoUnder>
+                Potrai recensire e vedere le <br/>recensioni degli altri.
+
+                </NewTestoUnder>
+              </NewBox>
+              </div>
+              <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
+              <NewBox>
+                <img src={Messaggistica} width={"218px"} height={"218px"} />
+                <NewTesto>
+                Messaggia direttamente<br/> con il cliente</NewTesto>
+                <NewTestoUnder>
+                La persona trova i professionisti più vicini a <br/>lui e ne valuta le competenze e la qualità <br/>dei servizi erogati attraverso le recensioni <br/>lasciate da altri utenti
+
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img src={Ricavi} width={"276px"} height={"193px"} />
+                <NewTesto>
+               Gestisci i tuoi ricavi</NewTesto>
+                <NewTestoUnder>
+                Accordato con il cliente il prezzo, lui potrà<br/> pagare nella più completa sicurezza sul sito o in contanti a prestazione ultimata
+                </NewTestoUnder>
+              </NewBox>
+              </div>
+              
+              {/*
             <BoxInfo>
               <Immagini src={Visibilita} alt={"visibilita"} />
               <BoxDescription>
@@ -239,6 +297,8 @@ const LandingProfessionista = () => {
               </BoxDescription>
             </BoxInfo>
 
+          */}
+
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
@@ -246,18 +306,20 @@ const LandingProfessionista = () => {
               <TitleFinal style={{ fontSize: "45px", marginBottom: "-2rem" }}>
                 Provalo gratis!
               </TitleFinal>
+              <p style={{fontFamily:'Helvetica', fontWeight:'400', fontSize:'32px', color:'black'}}>Un Nuovo Modo di Far Crescere la Tua Carriera nella Sanità</p>
+              <p style={{fontFamily:'Helvetica', fontWeight:'400', fontSize:'22px', color:'black'}}>Sei un infermiere, fisioterapista o caregiver?<br/>
+Prova Fastcura gratuitamente per 60 giorni! <br/>
+<br/>
+<br/>
+
+🚀 Fai crescere tua carriera.<br/>
+ 💼 Senza obblighi contrattuali.<br/>
+ 💳 Nessuna carta richiesta.<br/>
+ <br/>
+ <br/>
+ Superati i 60 giorni ti costa meno di un caffè al giorno,solo 19,90 al mese</p>
             </Link>
-            <TextFinal>
-              <span style={{ fontWeight: "bold" }}>
-                PROMO: solo per questa settimana inizia la prova gratuita di 60
-                giorni
-                <br />
-                Non c'è bisogno di aggiungere nessuna carta
-              </span>
-              <br />
-              Fastcura ha l'obiettivo di darti visibilità sul tuo territorio,
-              allargando la tua rete di clienti
-            </TextFinal>
+          
             <Link
               to="/signup-professionista"
               style={{ textDecoration: "none" }}
