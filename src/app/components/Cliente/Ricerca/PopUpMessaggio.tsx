@@ -61,14 +61,26 @@ border:none;
 border-radius:40px;
 `
 
-const PopUpMessaggio = ({open, setOpen}) => {
+const PopUpMessaggio = ({number,open, setOpen}) => {
     const [nomecogn, setNomeCogn]=React.useState("")
     const [mail, setMail]=React.useState("")
     const [numero, setNumero]=React.useState("")
     const [messaggio, setMessaggio]=React.useState("")
 const [handleCheck, setHandleCheck]=React.useState(false)
 const [handleCheck2, setHandleCheck2]=React.useState(false)
+const inviaMessaggioWhatsApp = () => {
+    let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+    // Appending the phone number to the URL
+    let url = `https://web.whatsapp.com/send?phone=${numberProf}`;
 
+// Appending the message to the URL by encoding it
+url += `&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
+)}&app_absent=0`;
+
+// Open our newly created URL in a new tab to send the message
+window.open(url)
+setOpen(false)
+}
     console.log('ciao')
     
 

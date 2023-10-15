@@ -219,13 +219,24 @@ const BoxRisultato = (props: any) => {
                   alignItems:'center',
                   gap:'5px'
                 }}
-                onClick={()=>setOpen(true)}
+                onClick={()=>{if (!!log){
+                //  let number = mobileNumber.replace(/[^\w\s]/gi, "").replace(/ /g, "");
+                let number = professionista.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+                 // Appending the phone number to the URL
+                 let url = `https://web.whatsapp.com/send?phone=${number}`;
+
+    // Appending the message to the URL by encoding it
+    url += `&text=${encodeURI('Ciao, ti contatto da Fastcure. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
+      )}&app_absent=0`;
+
+    // Open our newly created URL in a new tab to send the message
+    window.open(url);} else {setOpen(true)}}}
               >
                 <img src={what} width={'22px'} height={'22px'}/>
                 Contatta
               </button>
           
-            <PopUpMessaggio open={open} setOpen={setOpen} />
+            <PopUpMessaggio open={open} setOpen={setOpen} number={professionista.number}/>
           </div>
         </div>
       </div>
