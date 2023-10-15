@@ -29,6 +29,9 @@ const ButtonAiutaciAMigliorare = styled('button')`
   
 
 const RisultatiRicerca = () => {
+  const [token, setToken] = useState("");
+  const [log, setLog] = useState(false);
+ 
   const location = useLocation();
 
   const [listaProfessionisti, setListaProfessionisti] = useState([]);
@@ -38,6 +41,7 @@ const RisultatiRicerca = () => {
   const parametri = location.state as IPropsRicerca;
 
   useEffect(() => {
+  
     setLoad(true);
     console.log(parametri)
 

@@ -5,13 +5,20 @@ import { Loader } from "../../../loader";
 import avatarNew from '../../../media/avatarNew.png'
 import what from '../../../media/what.png'
 import segnapunto from '../../../media/segnapunto.png'
+import PopUpMessaggio from "./PopUpMessaggio";
 const BoxRisultato = (props: any) => {
   const [avatar, setAvatar] = useState("");
   const [load, setLoad] = useState(false);
+  const [log, setLog] = useState(false);
+  const [open,setOpen] = useState(false)
   const professionista = props.professionista;
 
-
+  const takeToken = async () => {
+    const tokenTest = await localStorage.getItem("tokenaccess");
+    !!tokenTest ? setLog(true) : setLog(false);
+  };
   useEffect(() => {
+    takeToken();
     setLoad(true);
 
     const prof = {
@@ -192,7 +199,8 @@ const BoxRisultato = (props: any) => {
                 Profilo
               </button>
             </Link>
-            <Link to="/chat" state={{ professionista: professionista }}>
+
+           
               <button
                 style={{
                   marginLeft: "10px",
@@ -211,11 +219,13 @@ const BoxRisultato = (props: any) => {
                   alignItems:'center',
                   gap:'5px'
                 }}
+                onClick={()=>setOpen(true)}
               >
                 <img src={what} width={'22px'} height={'22px'}/>
                 Contatta
               </button>
-            </Link>
+          
+            <PopUpMessaggio open={open} setOpen={setOpen} />
           </div>
         </div>
       </div>

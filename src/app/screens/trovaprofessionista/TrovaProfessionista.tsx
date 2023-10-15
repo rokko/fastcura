@@ -87,8 +87,8 @@ const TrovaProfessionista = () => {
   const immagini = [qua, tre, due, uno];
 
   useEffect(() => {
-    axios.get("https://blog.fastcura.it/feed/").then((response) => {
-      console.log(response);
+    axios.get("http://blog.fastcura.it/feed/").then((response:any) => {
+      console.log('ARTICOLI',response);
       xml2js.parseString(response.data, (err: any, result: any) => {
         if (err) {
           throw err;
