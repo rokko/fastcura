@@ -41,7 +41,7 @@ const RisultatiRicerca = () => {
     <>
       <Loader isLoading={load} />
       <HeaderNoLogin />
-      <TitleTop style={{ color: "black", textAlign: "center" }}>
+      <TitleTop style={{ color: "black", textAlign: "center", fontWeight:'400', fontSize:'43px' }}>
         <span style={{ fontWeight: "bold" }}>
           {" "}
           {parametri.professione}, {parametri.citta}

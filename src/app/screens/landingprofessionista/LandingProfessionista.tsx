@@ -143,7 +143,7 @@ const LandingProfessionista = () => {
               </div>
               <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
               <NewBox>
-                <img src={Messaggistica} width={"218px"} height={"218px"} />
+                <img src={Messaggistica} width={"198px"} height={"198px"} />
                 <NewTesto>
                 Messaggia direttamente<br/> con il cliente</NewTesto>
                 <NewTestoUnder>
