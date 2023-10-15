@@ -6,10 +6,14 @@ const ContainerModalePopUpMessaggio = styled('div')`
     flex-direction: column;
     padding:2rem;
     width:350px;
-    height:847px;
+    height:700px;
     border-radius:30px;
     background-color:white;
     color:black!important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `
 const TestoModalePopUpMessaggio=styled('p')`
     font-style: 'Roboto';
@@ -44,7 +48,8 @@ const InputTesto = styled('textarea')`
    border-radius:10px;
    border:none;
    background-color:#E5E5E5;
-   padding-left:20px
+   padding:20px
+   font-style:'Roboto';
 
 `
 
@@ -96,7 +101,7 @@ setOpen(false)
                     <TitoliInput>Numero di telefono</TitoliInput>
                     <InputCampi placeholder="Numero di telefono" onChange={(e)=>setNumero(e.target.value)}></InputCampi>
                     <TitoliInput>Messaggio</TitoliInput>
-                    <InputTesto placeholder="Messaggio" onChange={(e)=>setMessaggio(e.target.value)}></InputTesto>
+                    <InputTesto placeholder="'Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'" onChange={(e)=>setMessaggio(e.target.value)}></InputTesto>
                     {/* <FormGroup>
              <FormControlLabel
                style={{color:'#273237', fontSize:'12px', fontFamily:'Helvetica'}}
