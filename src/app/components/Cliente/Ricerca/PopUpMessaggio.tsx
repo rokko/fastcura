@@ -1,4 +1,5 @@
 import { Checkbox, FormControlLabel, FormGroup, Modal, styled } from '@mui/material'
+import axios from 'axios'
 import React from 'react'
 
 const ContainerModalePopUpMessaggio = styled('div')`
@@ -74,17 +75,28 @@ const PopUpMessaggio = ({number,open, setOpen}) => {
 const [handleCheck, setHandleCheck]=React.useState(false)
 const [handleCheck2, setHandleCheck2]=React.useState(false)
 const inviaMessaggioWhatsApp = () => {
-    let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
-    // Appending the phone number to the URL
-    let url = `https://web.whatsapp.com/send?phone=${numberProf}`;
+    axios
+      .post(
+        "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
+        {nomecognome:nomecogn, email:mail, cellulare:numero}
+      )
+      .then(function (response) {
+        let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+        // Appending the phone number to the URL
+        let url = `https://web.whatsapp.com/send?phone=${numberProf}`;
+    
+    // Appending the message to the URL by encoding it
+    url += `&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
+    )}&app_absent=0`;
+    
+    // Open our newly created URL in a new tab to send the message
+    window.open(url)
+    setOpen(false)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
-// Appending the message to the URL by encoding it
-url += `&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
-)}&app_absent=0`;
-
-// Open our newly created URL in a new tab to send the message
-window.open(url)
-setOpen(false)
 }
     console.log('ciao')
     
