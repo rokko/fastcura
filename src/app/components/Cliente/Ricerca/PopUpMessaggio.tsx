@@ -97,8 +97,8 @@ setOpen(false)
                     <InputCampi placeholder="Numero di telefono" onChange={(e)=>setNumero(e.target.value)}></InputCampi>
                     <TitoliInput>Messaggio</TitoliInput>
                     <InputTesto placeholder="Messaggio" onChange={(e)=>setMessaggio(e.target.value)}></InputTesto>
-                    <FormGroup>
-              <FormControlLabel
+                    {/* <FormGroup>
+             <FormControlLabel
                style={{color:'#273237', fontSize:'12px', fontFamily:'Helvetica'}}
                 control={
                   <Checkbox onChange={(x) => setHandleCheck2(!handleCheck2)} />
@@ -111,8 +111,8 @@ setOpen(false)
                 }
                 label="Accetto termini e condizioni"
               />{" "}
-            </FormGroup>
-                    <ButtonInvia onClick={() => setOpen(false)}>Invia</ButtonInvia>
+            </FormGroup>*/}
+                    <ButtonInvia onClick={() => inviaMessaggioWhatsApp()}>Invia</ButtonInvia>
                     <p style={{fontSize:'10px', fontWeight:'400', fontFamily:'Helvetica', color:'black'}}>Cliccando invia verrai indirizzato direttamente su WhatsApp </p>
                 </ContainerModalePopUpMessaggio>
         </Modal>
