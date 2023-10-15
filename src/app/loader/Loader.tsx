@@ -1,5 +1,6 @@
 import React from "react";
 import loaderImage from "./fastcuraLogo.gif";
+import loader from '../media/loaderNew.png'
 
 interface ILoader {
   isLoading?: boolean;
@@ -23,7 +24,7 @@ const Loader = ({ isLoading }: ILoader) => {
             justifyContent: "center",
           }}
         >
-          <img src={loaderImage} alt={"loader"} width={"300px"} />
+          <img src={loader} alt={"loader"} width={"300px"} />
         </div>
       </>
     );
