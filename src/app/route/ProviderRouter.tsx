@@ -27,6 +27,8 @@ import { Dashboard } from "../dashboard/index";
 import { RegistrazioneCliente } from "../registrazioneCliente";
 import { RegistrazioneProfessionista } from "../registrazioneProfessionista";
 import Blog from "../blog";
+import ListaRecensioni from "../screens/recensioni/listaRecensioni/ListaRecensioni";
+import LasciaRecensioni from "../screens/recensioni/lasciaRecensioni/LasciaRecensioni";
 
 const ProviderRouter = () => {
   return (
@@ -68,6 +70,8 @@ const ProviderRouter = () => {
             element={<RegistrazioneProfessionista />}
           />
           <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/lista-recensioni" element={<ListaRecensioni/>}></Route>
+          <Route path="/lascia-recensione" element={<LasciaRecensioni/>}></Route>
         </Routes>
       </Router>
     </>
