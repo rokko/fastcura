@@ -488,86 +488,55 @@ const TrovaProfessionista = () => {
             <BoxSearch />
           </CercaContainter>
           <ContainerTrova>
-            <BoxInfo style={{}}>
-              <Immagini
-                src={PrimaImmagine}
-                alt={"hai bisogno"}
-                style={{ width: "300px" }}
-              />
-              <BoxDescription>
-                <TitleSection>Sei un professionista?</TitleSection>
-
-                <Link
-                  to="/signup-professionista"
-                  style={{ textDecoration: "none" }}
-                >
-                  <ButtonTwo
-                    style={{
-                      background: "#e2f4fc",
-
-                      textTransform: "none",
-                      color: "rgb(57, 177, 217)",
-                      borderRadius: 10,
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Inizia ora la prova di 60 giorni
-                  </ButtonTwo>
-                </Link>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <img width={"290px"} src={HaiBisogno} alt={"hai bisogno"} />
-              <BoxDescription>
-                <TitleSection>Hai bisogno di cure?</TitleSection>
-                <TextSection>
-                  Con Fastcura troverai infermieri, Caregiver, Fisioterapisti,
-                  pronti a darti una mano.
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <img
-                width={"230px"}
-                src={ProblemaRisolto}
-                alt={"problema risolto"}
-              />
-
-              <BoxDescription>
-                <TitleSection>
-                  Il tuo problema risolto con un click!
-                </TitleSection>
-                <TextSection>
-                  L’assistenza domiciliare non è mai stata così veloce!
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <img
-                width={"146px"}
-                src={ChattaDirettamente}
-                alt={"chatta direttamente"}
-              />
-              <BoxDescription>
-                <TitleSection>
-                  Chatta direttamente con il professionista
-                </TitleSection>
-                <TextSection>
+        
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+              <NewBox>
+                <img src={ProblemaRisolto} width={"212px"} height={"206px"} />
+                <NewTesto>
+                  Trova il professionista<br></br>più vicino a te
+                </NewTesto>
+                <NewTestoUnder>
+                  L’assistenza domiciliare non è <br></br>mai stata così veloce!
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img
+                  src={ChattaDirettamente}
+                  width={"146px"}
+                  height={"193px"}
+                />
+                <NewTesto>
+                  Chatta direttamente con <br /> il professionista{" "}
+                </NewTesto>
+                <NewTestoUnder>
                   In pochi passaggi potrai contattare l’infermiere, il
-                  fisioterapista, il caregiver ed esporre il tuo problema.
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
-            <BoxInfo>
-              <img width={"292px"} src={Feedback} alt={"feedback"} />
+                  <br /> fisioterapista, il caregiver.{" "}
+                </NewTestoUnder>
+              </NewBox>
+              <NewBox>
+                <img src={Feedback} width={"292px"} height={"179px"} />
+                <NewTesto>Invia Feedback </NewTesto>
+                <NewTestoUnder>
+                  Potrai recensire e vedere <br /> le recensioni degli altri.
+                </NewTestoUnder>
+              </NewBox>
+            </div>
+            <NewButtonCercaProfessionista>
+              Cerca professionista
+            </NewButtonCercaProfessionista>
+            <NewSectionBlu>
+              <NewBoxInside>
+                <p style={{fontSize:'36px', fontWeight:'900', color:'#39B1D9'}}>+ 300</p>
+                <p style={{fontSize:'23px', fontWeight:'400', color:'#39B1D9'}}>di professionisti iscritti</p>
+              </NewBoxInside>
+              <NewBoxInside>
+              <p style={{fontSize:'36px', fontWeight:'900', color:'#39B1D9'}}>+ 1000</p>
+              <p style={{fontSize:'23px', fontWeight:'400', color:'#39B1D9'}}>di clienti soddisfatti</p>
 
-              <BoxDescription>
-                <TitleSection>FeedBack</TitleSection>
-                <TextSection>
-                  Potrai recensire e vedere le recensioni degli altri.
-                </TextSection>
-              </BoxDescription>
-            </BoxInfo>
+
+              </NewBoxInside>
+          </NewSectionBlu>
+           
             <ContainerProfessionista>
               <p>Gli Ultimi Articoli</p>
               <ContainerProfessionista
@@ -637,38 +606,12 @@ const TrovaProfessionista = () => {
                   })}
                 </Swiper>
               </ContainerProfessionista>
-              <BoxInfo>
-                <img width={"300px"} src={Professi} alt={"professionista"} />
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <TitleOne style={{ textAlign: "center" }}>
-                    Sei un professionista?
-                  </TitleOne>
-                  <Link
-                    to="/signup-professionista"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <ButtonTwo
-                      style={{
-                        background: "#e2f4fc",
-
-                        textTransform: "none",
-                        color: "rgb(57, 177, 217)",
-                        borderRadius: 10,
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Inizia ora la prova di 60 giorni
-                    </ButtonTwo>
-                  </Link>
-                </div>
-              </BoxInfo>
+           
             </ContainerProfessionista>
             <BoxInfo2>
               <Login />
             </BoxInfo2>
-            <BoxInfo2>
-              <SeiNuovo />
-            </BoxInfo2>
+           
           </ContainerTrova>
           {!what && (
             <Chat

@@ -254,6 +254,10 @@ const NewSectionBlu = styled("div")`
   align-content: center;
   justify-content: center;
   gap: 4rem;
+    @media (max-width: 768px) {
+    flex-direction: column;
+    height:477px;
+  }
 `;
 const ButtonTwo = styled("button")`
   width: 310px;

@@ -95,11 +95,12 @@ const Login = (props: any) => {
 
     color: #273237;
   `;
+  
 
   return (
     <ContainerLogin>
       <Title>Accedi</Title>
-      <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
+      <div style={{display:'flex', flexDirection:isMobile?'column':'row', gap:'3rem'}}>
       <InputStyle
         placeholder="Indirizzo email"
         onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
