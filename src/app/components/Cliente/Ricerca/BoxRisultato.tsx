@@ -6,12 +6,14 @@ import avatarNew from '../../../media/avatarNew.png'
 import what from '../../../media/what.png'
 import segnapunto from '../../../media/segnapunto.png'
 import PopUpMessaggio from "./PopUpMessaggio";
+import { useMediaQuery } from "react-responsive";
 const BoxRisultato = (props: any) => {
   const [avatar, setAvatar] = useState("");
   const [load, setLoad] = useState(false);
   const [log, setLog] = useState(false);
   const [open,setOpen] = useState(false)
   const professionista = props.professionista;
+  const isMobile=useMediaQuery({ query: `(max-width: 760px)` });
 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
@@ -53,9 +55,10 @@ const BoxRisultato = (props: any) => {
       >
         <div
           style={{
-            marginRight: "50px",
-            width: "50px",
-            height: "50px",
+            marginRight:isMobile?"10px" :"50px",
+            marginLeft:isMobile?"10px" :"0px",
+            width: "100px",
+            height: "100px",
             backgroundColor: "grey",
             borderRadius: "50%",
             display: "flex",
@@ -172,6 +175,7 @@ const BoxRisultato = (props: any) => {
           <div
             style={{
               marginTop: "10px",
+              marginLeft:isMobile?'-20px':'0px',
               display: "flex",
               flexDirection: "row",
               alignContent: "center",

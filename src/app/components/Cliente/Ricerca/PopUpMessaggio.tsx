@@ -15,12 +15,19 @@ const ContainerModalePopUpMessaggio = styled('div')`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media (max-width: 768px) {
+      width:300px;
+      height:600px
+    }
 `
 const TestoModalePopUpMessaggio=styled('p')`
     font-style: 'Roboto';
     font-weight: 400; 
     font-size: 16px; 
-    color:#000000;`
+    color:#000000;
+    @media (max-width: 768px) {
+      margin-top:-20px;
+    }`
 
 const Titolo = styled('p')`
     font-style: 'Roboto';

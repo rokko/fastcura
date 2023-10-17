@@ -75,7 +75,7 @@ const RisultatiRicerca = () => {
         </p>
         <ButtonAiutaciAMigliorare onClick={()=>setApri(true)}>Aiutaci a migliorare</ButtonAiutaciAMigliorare>
 
-        <p style={{fontSize:'16px',fontWeight:'400',fontFamily:'Helvetica', color:'black'}}>Siamo una realtà giovane che ha bisogno del tuo aiuto per cresce.<br/>
+        <p style={{fontSize:'16px',fontWeight:'400',fontFamily:'Helvetica', color:'black' ,padding:'1rem'}}>Siamo una realtà giovane che ha bisogno del tuo aiuto per cresce.<br/>
 Avvisaci quando non trovi il professionista desiderato, ci attiveremo per migliorare la tua ricerca.</p>
 <SegnalazioneMancanzaProfessionista cittaprofessione={parametri} apri={apri} chiudi={setApri}/>
         </div>
