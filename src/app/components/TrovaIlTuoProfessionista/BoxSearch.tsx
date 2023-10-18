@@ -237,7 +237,7 @@ const BoxSearch = () => {
   }, [citta, professione]);
 
   return (
-    <BoxS>
+    <BoxS id="ricerca">
       <TitleBoxS>Cosa cerchi?</TitleBoxS>
       <Autocomplete
         disablePortal

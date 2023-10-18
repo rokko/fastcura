@@ -231,8 +231,10 @@ const TrovaProfessionista = () => {
               </NewBox>
             </div>
 
-            <NewButtonCercaProfessionista>
+            <NewButtonCercaProfessionista onClick={()=>  window.location.hash = "#ricerca"}>
+             
               Cerca professionista
+              
             </NewButtonCercaProfessionista>
 
             <NewSectionBlu>
@@ -249,7 +251,9 @@ const TrovaProfessionista = () => {
             </NewSectionBlu>
             <TitleSection>Sei un professionista <br/>e cerchi clienti?</TitleSection>
             <NewButtonCercaProfessionista>
-              Inizia ora la prova di 30 giorni
+            <Link style={{textDecoration:'none', color:'white'}} to="/landing-professionista">
+              Inizia ora la prova gratuita
+              </Link>
             </NewButtonCercaProfessionista>
             <img width={"670px"} src={Professi} alt={"professionista"} />
         
@@ -521,7 +525,7 @@ const TrovaProfessionista = () => {
                 </NewTestoUnder>
               </NewBox>
             </div>
-            <NewButtonCercaProfessionista>
+            <NewButtonCercaProfessionista onClick={()=>  window.location.hash = "#ricerca"}>
               Cerca professionista
             </NewButtonCercaProfessionista>
             <NewSectionBlu>
@@ -538,8 +542,12 @@ const TrovaProfessionista = () => {
           </NewSectionBlu>
           <TitleSection style={{fontFamily:'Roboto', fontSize:'33px', fontWeight:'700',lineHeight:'38.67px'}}>Sei un <br/>professionista <br/>e cerchi clienti?</TitleSection>
             <NewButtonCercaProfessionista style={{marginTop:'2rem'}}>
-              Inizia ora la prova di 30 giorni
+            <Link style={{textDecoration:'none', color:'white'}} to="/landing-professionista">
+
+              Inizia ora la prova gratuita
+              </Link>
             </NewButtonCercaProfessionista>
+         
             <img width={"370px"} src={Professi} alt={"professionista"} />
         
            
