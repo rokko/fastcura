@@ -13,7 +13,7 @@ const ContainerModalePopUpMessaggio = styled('div')`
     border-radius:30px;
     background-color:white;
     color:black!important;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -115,7 +115,28 @@ const inviaMessaggioWhatsApp = () => {
 
     return(
         <Modal open={open}>
+         
                 <ContainerModalePopUpMessaggio>
+                <div
+            onClick={() => {
+              setOpen(false);
+            }}
+            style={{
+              position: "absolute",
+              right: "0%",
+              top: "-20px",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50px",
+              display: "flex",
+              backgroundColor: "#39B1D9",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVRIie3UsQ6CQAzGceLqJo+jBNCHcPH9E51QcP472OE8Fe56PVjoREL6/VqiLYq1lixgO3sWUAFX4GiAHiTrNDkdcONdA1AnoLVkIJnjm8uUD2l4ajaXjN7JaGMaVbgaTcGTUQ1uho4EfuHmaAgeMpg5nh118Mb5bw7ec5MFdXB3S/WmmxzDmRefZ3CeT73Ij+vHIWm9d/Y4sP+HZsNDUHM8BjXDNWgy7qFDDKrGgRLopKEHqljUyXLP6x0opxrOgicfBNm8Ay6hDbtUNEfWWqp6Ae770o+mwnJ+AAAAAElFTkSuQmCC" />
+          </div>
                     <Titolo>Ci prendiamo <br/>cura di te.</Titolo>
                     <TestoModalePopUpMessaggio>Compila i dati per registrarti ed inviare <br/>direttamente il messaggio al<br/> professionista</TestoModalePopUpMessaggio>
                     <TitoliInput >Nome e Cognome</TitoliInput>

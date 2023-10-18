@@ -13,7 +13,7 @@ const ContainerSegnalazione = styled("div")`
     border:none;
     gap:2rem;
     padding:1rem;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -67,6 +67,26 @@ const SegnalazioneMancanzaProfessionista = ({cittaprofessione, apri, chiudi}) =>
             <Modal
                 open={apri}>
              <ContainerSegnalazione>
+             <div
+            onClick={() => {
+              chiudi(false);
+            }}
+            style={{
+              position: "absolute",
+              right: "0%",
+              top: "-20px",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50px",
+              display: "flex",
+              backgroundColor: "#39B1D9",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVRIie3UsQ6CQAzGceLqJo+jBNCHcPH9E51QcP472OE8Fe56PVjoREL6/VqiLYq1lixgO3sWUAFX4GiAHiTrNDkdcONdA1AnoLVkIJnjm8uUD2l4ajaXjN7JaGMaVbgaTcGTUQ1uho4EfuHmaAgeMpg5nh118Mb5bw7ec5MFdXB3S/WmmxzDmRefZ3CeT73Ij+vHIWm9d/Y4sP+HZsNDUHM8BjXDNWgy7qFDDKrGgRLopKEHqljUyXLP6x0opxrOgicfBNm8Ay6hDbtUNEfWWqp6Ae770o+mwnJ+AAAAAElFTkSuQmCC" />
+          </div>
                 <p style={{fontSize:'18px', fontWeight:'400', fontFamily:'Helvetica', color:'black'}}>Inserisci la tua email se vuoi essere<br/> contattato quando verrà inserito<br/>
 il professionista che stavi cercando</p>
                      <InputSegnalazione placeholder="      Indirizzo email" onChange={(e) => setEmail(e.target.value)}/>
