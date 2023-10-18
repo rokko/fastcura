@@ -1,4 +1,6 @@
 import { Checkbox, FormControlLabel, FormGroup, Modal, styled } from '@mui/material'
+import { useMediaQuery } from "react-responsive";
+
 import axios from 'axios'
 import React from 'react'
 
@@ -75,10 +77,13 @@ border-radius:40px;
 `
 
 const PopUpMessaggio = ({number,open, setOpen}) => {
-    const [nomecogn, setNomeCogn]=React.useState("")
-    const [mail, setMail]=React.useState("")
-    const [numero, setNumero]=React.useState("")
-    const [messaggio, setMessaggio]=React.useState("")
+const [nomecogn, setNomeCogn]=React.useState("")
+const [mail, setMail]=React.useState("")
+const [numero, setNumero]=React.useState("")
+const [messaggio, setMessaggio]=React.useState("")
+
+const isMobile=useMediaQuery({ query: `(max-width: 760px)` });
+
 const [handleCheck, setHandleCheck]=React.useState(false)
 const [handleCheck2, setHandleCheck2]=React.useState(false)
 const inviaMessaggioWhatsApp = () => {
