@@ -88,8 +88,10 @@ const BoxRisultato = (props: any) => {
              <p style={{fontSize:'22px',fontWeight:'400', color:'black'}}>{professionista.citta}</p> 
             </div>
             <div style={{display:'flex', flexDirection:'column', alignContent:'flex-start'}}>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <svg
+          
+            {(!!professionista.stelle)?(
+              <div style={{ display: "flex", flexDirection: "row" }}>
+               <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24.001"
               height="22.358"
@@ -169,7 +171,12 @@ const BoxRisultato = (props: any) => {
                 stroke-width="1"
               />
             </svg>
-          </div>
+            </div>):(
+              <>
+              <p style={{fontWeight:'400', fontSize:'12px', textAlign:isMobile?'center':'left'}}>Nuovo iscritto, prova a contattarlo e lascia<br/> una recensione</p>
+              </>
+            )}
+          
           <p style={{textAlign:'left', fontSize:'12px', fontWeight:'700'}}>Leggi le recensioni</p>
           </div>
           <div
