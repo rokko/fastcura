@@ -227,7 +227,7 @@ const BoxRisultato = (props: any) => {
                 //  let number = mobileNumber.replace(/[^\w\s]/gi, "").replace(/ /g, "");
                 let number = professionista.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
                  // Appending the phone number to the URL
-                 let url = isMobile ?`https://wa.me/${number}` : `https://wa.me/send?phone=${number}`;
+                 let url = isMobile ?`https://wa.me/send?phone=39${number}` : `https://wa.me/send?phone=39${number}`;
 
     // Appending the message to the URL by encoding it
     url += `&text=${encodeURI('Ciao, ti contatto da Fastcure. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
