@@ -89,12 +89,13 @@ const [handleCheck, setHandleCheck]=React.useState(false)
 const [handleCheck2, setHandleCheck2]=React.useState(false)
 let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
 const messaggioDainviare  = encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?')
-const urlWhatsapp = 'https://wa.me/send?phone=39'+numberProf+'&text='+messaggioDainviare+'&app_absent=0' 
+const urlWhatsapp = 'https://api.whatsapp.com/send/?phone=39'+numberProf+'&text='+messaggioDainviare+'&app_absent=0' 
 
 
 const handleChange =()=>{
   const controlloCheck =  nomecogn!='' && mail!='' && numero!=''  
   setControllo(controlloCheck)
+  console.log(urlWhatsapp)
 }
 
 const inviaMessaggioWhatsApp = () => {
