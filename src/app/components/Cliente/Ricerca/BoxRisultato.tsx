@@ -15,8 +15,10 @@ const BoxRisultato = (props: any) => {
   const professionista = props.professionista;
   const isMobile=useMediaQuery({ query: `(max-width: 760px)` });
   let numberProf = professionista.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
-  const urlWhatsapp = `https://wa.me/send?phone=39${numberProf}&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
-    )}&app_absent=0` 
+  const messaggioDainviare =encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?')
+  const urlWhatsapp = 'https://api.whatsapp.com/send/?phone=39'+numberProf+'&text='+messaggioDainviare+'&app_absent=0' 
+
+
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     !!tokenTest ? setLog(true) : setLog(false);
