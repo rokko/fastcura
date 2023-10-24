@@ -8,6 +8,8 @@ import Footer from "../components/General/Footer";
 import { Loader } from "../loader";
 import { Immagini, TitleTop } from "./trovaprofessionista/TrovaProfessionistaStyled";
 import { styled } from "@mui/material";
+import { Link } from "react-router-dom";
+
 import SegnalazioneMancanzaProfessionista from "./segnalazioneMancanzaProfessionista/SegnalazioneMancanzaProfessionista";
 import FirstPng from "../media/first.png";
 import { useMediaQuery } from "react-responsive";
@@ -60,7 +62,7 @@ const RisultatiRicercaPers = ({parametri}) => {
       });
   }, [parametri]);
   return (
-    <>
+    <div>
       <Loader isLoading={load} />
       <HeaderNoLogin />
       <TitleTop style={{ color: "black", textAlign: "center", fontWeight:'400', fontSize:'43px' }}>
@@ -162,8 +164,44 @@ Avvisaci quando non trovi il professionista desiderato, ci attiveremo per miglio
           return <BoxRisultato professionista={prof} />;
         })}
       <div style={{ marginBottom: "200px" }} />
-      <Footer />
-    </>
+
+        <div
+      style={{
+        display: "flex",
+      position:'fixed',
+        bottom: "0",
+        marginTop: "50px",
+        flexDirection: "column",
+        height: "50px",
+        width: "100%",
+        zIndex: "100000000",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "space-evenly",
+          backgroundColor: "rgb(57, 177, 217)",
+          color: "#ffffff",
+        }}
+      >
+        <p style={{ color: "#ffffff" }}>FastCura Copyright 2022</p>
+        <Link style={{ textDecoration: "none" }} to={"/termini-condizioni"}>
+          <p style={{ color: "#ffffff" }}>Termini e Condizioni</p>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/cookies">
+          <p style={{ color: "#ffffff" }}>Cookies</p>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/privacy">
+          <p style={{ color: "#ffffff" }}>Privacy</p>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/consenso-privacy">
+          <p style={{ color: "#ffffff" }}>Consenso Privacy</p>
+        </Link>
+      </div>
+    </div>
+    </div>
   );
 };
 
