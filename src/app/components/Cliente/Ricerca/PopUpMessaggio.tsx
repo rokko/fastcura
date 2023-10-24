@@ -81,11 +81,21 @@ const [nomecogn, setNomeCogn]=React.useState("")
 const [mail, setMail]=React.useState("")
 const [numero, setNumero]=React.useState("")
 const [messaggio, setMessaggio]=React.useState("")
+const [controllo, setControllo]=React.useState(false)
 
 const isMobile=useMediaQuery({ query: `(max-width: 760px)` });
 
 const [handleCheck, setHandleCheck]=React.useState(false)
 const [handleCheck2, setHandleCheck2]=React.useState(false)
+let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+const urlWhatsapp = `https://wa.me/send?phone=${numberProf}&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
+  )}&app_absent=0` 
+
+const handleChange =()=>{
+  const controlloCheck =  nomecogn!='' && mail!='' && numero!=''  
+  setControllo(controlloCheck)
+}
+
 const inviaMessaggioWhatsApp = () => {
     axios
       .post(
@@ -93,16 +103,10 @@ const inviaMessaggioWhatsApp = () => {
         {nomecognome:nomecogn, email:mail, cellulare:numero}
       )
       .then(function (response) {
-        let numberProf = number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+       
         // Appending the phone number to the URL
-        let url = isMobile ?`https://wa.me/send?phone=39${number}` : `https://wa.me/send?phone=39${number}`;
-    
-    // Appending the message to the URL by encoding it
-    url += `&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
-    )}&app_absent=0`;
     
     // Open our newly created URL in a new tab to send the message
-    window.open(url)
     setOpen(false)
       })
       .catch(function (error) {
@@ -140,13 +144,16 @@ const inviaMessaggioWhatsApp = () => {
                     <Titolo>Ci prendiamo <br/>cura di te.</Titolo>
                     <TestoModalePopUpMessaggio>Compila i dati per registrarti ed inviare <br/>direttamente il messaggio al<br/> professionista</TestoModalePopUpMessaggio>
                     <TitoliInput >Nome e Cognome</TitoliInput>
-                    <InputCampi placeholder="Nome e Cognome" onChange={(e)=>setNomeCogn(e.target.value)}></InputCampi>
+                    <InputCampi placeholder="Nome e Cognome" onChange={(e)=>{ 
+                      setNomeCogn(e.target.value) ;handleChange()}}  ></InputCampi>
                     <TitoliInput >Mail</TitoliInput>
-                    <InputCampi placeholder="Mail" onChange={(e)=>setMail(e.target.value)}></InputCampi>
+                    <InputCampi placeholder="Mail" type='email' value={mail}onChange={(e)=>{
+        let x = e.target.value.replace(/\s/g, '');
+      setMail(x); handleChange()} }></InputCampi>
                     <TitoliInput>Numero di telefono</TitoliInput>
-                    <InputCampi placeholder="Numero di telefono" onChange={(e)=>setNumero(e.target.value)}></InputCampi>
+                    <InputCampi placeholder="Numero di telefono" onKeyPress="return event.charCode != 32" min={9} type='number' onChange={(e)=>{setNumero(e.target.value); handleChange()}}></InputCampi>
                     <TitoliInput>Messaggio</TitoliInput>
-                    <InputTesto placeholder="'Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'" onChange={(e)=>setMessaggio(e.target.value)}></InputTesto>
+                    <InputTesto placeholder="Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?" onChange={(e)=>setMessaggio(e.target.value)}></InputTesto>
                     {/* <FormGroup>
              <FormControlLabel
                style={{color:'#273237', fontSize:'12px', fontFamily:'Helvetica'}}
@@ -162,8 +169,14 @@ const inviaMessaggioWhatsApp = () => {
                 label="Accetto termini e condizioni"
               />{" "}
             </FormGroup>*/}
+            {!controllo ? <p style={{fontSize:'14px',color:'red'}}>Attenzione non hai compilato tutti i campi</p> :(
+              <div>
+             <a role="link" target='_blank' href={urlWhatsapp}>
                     <ButtonInvia onClick={() => inviaMessaggioWhatsApp()}>Invia</ButtonInvia>
+                  </a>
                     <p style={{fontSize:'10px', fontWeight:'400', fontFamily:'Helvetica', color:'black'}}>Cliccando invia verrai indirizzato direttamente su WhatsApp </p>
+                    </div>
+            )}
                 </ContainerModalePopUpMessaggio>
         </Modal>
 
