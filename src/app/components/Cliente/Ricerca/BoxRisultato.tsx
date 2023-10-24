@@ -14,7 +14,9 @@ const BoxRisultato = (props: any) => {
   const [open,setOpen] = useState(false)
   const professionista = props.professionista;
   const isMobile=useMediaQuery({ query: `(max-width: 760px)` });
-
+  let numberProf = professionista.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+  const urlWhatsapp = `https://wa.me/send?phone=${numberProf}&text=${encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
+    )}&app_absent=0` 
   const takeToken = async () => {
     const tokenTest = await localStorage.getItem("tokenaccess");
     !!tokenTest ? setLog(true) : setLog(false);
@@ -212,6 +214,8 @@ const BoxRisultato = (props: any) => {
             </Link>
 
            
+           {!!log? 
+           <a href={urlWhatsapp} style={{textDecoration:'none'}} target="_blank">
               <button
                 style={{
                   marginLeft: "10px",
@@ -230,22 +234,35 @@ const BoxRisultato = (props: any) => {
                   alignItems:'center',
                   gap:'5px'
                 }}
-                onClick={()=>{if (!!log){
-                //  let number = mobileNumber.replace(/[^\w\s]/gi, "").replace(/ /g, "");
-                let number = professionista.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
-                 // Appending the phone number to the URL
-                 let url = isMobile ?`https://wa.me/send?phone=39${number}` : `https://wa.me/send?phone=39${number}`;
-
-    // Appending the message to the URL by encoding it
-    url += `&text=${encodeURI('Ciao, ti contatto da Fastcure. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?'
-      )}&app_absent=0`;
-
-    // Open our newly created URL in a new tab to send the message
-    window.open(url);} else {setOpen(true)}}}
+                
               >
                 <img src={what} width={'22px'} height={'22px'}/>
                 Contatta
               </button>
+              </a>:  (<button
+                style={{
+                  marginLeft: "10px",
+                  width: "125px",
+                  height: "35px",
+                  backgroundColor: "#39B1D9",
+                  border: "none",
+                  borderRadius: "30px",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  color: "white",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignContent:'center',
+                  alignItems:'center',
+                  gap:'5px'
+                }}
+                onClick={()=>setOpen(true)}
+              >
+                <img src={what} width={'22px'} height={'22px'}/>
+                Contatta
+              </button>
+              )}
           
             <PopUpMessaggio open={open} setOpen={setOpen} number={professionista.number}/>
           </div>
