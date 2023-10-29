@@ -18,8 +18,8 @@ const ContainerModalePopUpMessaggio = styled('div')`
     left: 50%;
     transform: translate(-50%, -50%);
     @media (max-width: 768px) {
-      width:300px;
-      height:600px
+      width:240px;
+      height:600px;
     }
 `
 const TestoModalePopUpMessaggio=styled('p')`
@@ -29,6 +29,7 @@ const TestoModalePopUpMessaggio=styled('p')`
     color:#000000;
     @media (max-width: 768px) {
       margin-top:-20px;
+      font-size: 16px; 
     }`
 
 const Titolo = styled('p')`
@@ -36,12 +37,18 @@ const Titolo = styled('p')`
     font-weight: 900;
     font-size: 30px;
     color:#000000;
+    @media (max-width: 768px) {
+      font-size: 30px; 
+    }
    `
 const TitoliInput = styled('p')`
 font-family:'Roboto';
 font-weight:700;
 font-size:14px;
 color:#39B1D9;
+@media (max-width: 768px) {
+  font-size: 14px; 
+}
 `
 
 const InputCampi = styled('input')`
@@ -50,7 +57,13 @@ const InputCampi = styled('input')`
    border-radius:10px;
    border:none;
    background-color:#E5E5E5;
-   padding-left:20px
+   padding-left:20px;
+   @media (max-width: 768px) {
+    width:220px;
+    padding-left:10px;
+    height:27px;
+   border-radius:20px;
+  }
 `
 const InputTesto = styled('textarea')`
    width:308px;
@@ -60,6 +73,12 @@ const InputTesto = styled('textarea')`
    background-color:#E5E5E5;
    padding:20px
    font-style:'Roboto';
+   @media (max-width: 768px) {
+    width:220px;
+    padding:10px;
+    height:70px;
+   border-radius:0.52vw;
+  }
 
 `
 
@@ -74,6 +93,12 @@ font-size:18px;
 color:#FFFFFF;
 border:none;
 border-radius:40px;
+@media (max-width: 768px) {
+  margin-top:1.04vw;
+  width:16.04vw;
+  height:2.44vw;
+ border-radius:2.08vw;
+}
 `
 
 const PopUpMessaggio = ({number,open, setOpen}) => {
