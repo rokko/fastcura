@@ -207,7 +207,8 @@ const ProviderRouter = () => {
           <Route path="/lista-recensioni" element={<ListaRecensioni/>}></Route>
           <Route path="/lascia-recensione" element={<LasciaRecensioni/>}></Route>
           {city.map((citta)=> {
-          console.log(citta)
+        
+
           return (
             <>
           <Route path={`/badante/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Badante'}}/>}></Route>

@@ -16,7 +16,8 @@ import {
 } from "./styled";
 import { useMemo } from "react";
 import { Loader } from "../../../loader";
-
+import PopUpMessaggio from "../../Cliente/Ricerca/PopUpMessaggio";
+import avatarNew from "../../../media/avatarNew.png";
 interface Icurriculum {
   altro: string | undefined;
   codiceProfessionista: string | undefined;
@@ -26,8 +27,11 @@ interface Icurriculum {
   titolodistudio: string | undefined;
 }
 const ProfiloProfessionista = () => {
-  const location = useLocation();
 
+  
+
+  const location = useLocation();
+  const [aperto , setAperto] = useState(false)
   const [risposta, setRisposta] = useState<IRisposta>();
   const [avatar, setAvatar] = useState("");
   const [feedback, setFeedback] = useState(0);
@@ -49,6 +53,11 @@ const ProfiloProfessionista = () => {
     professione: ValoriParametri.professione,
     eta: ValoriParametri.eta,
   };
+
+
+  let numberProf = ValoriParametri.number.replace(/[^\w\s]/gi, "").replace(/ /g, "")
+  const messaggioDainviare =encodeURI('Ciao, ti contatto da Fastcura. Avrei bisogno del tuo aiuto professionale, quando saresti disponibile?')
+  const urlWhatsapp = 'https://api.whatsapp.com/send/?phone=39'+numberProf+'&text='+messaggioDainviare+'&app_absent=0' 
 
   const sendFeedback = (value: any) => {
     const prof = {
@@ -142,7 +151,7 @@ const ProfiloProfessionista = () => {
       <HeaderNoLogin />
       <TotalContainer>
         <SecondContainer>
-          {avatar === "" && <DivCentraleStyle></DivCentraleStyle>}
+          {avatar === "" && <img src={avatarNew} alt='avatar new' style={{width:'80px', height:'80px', marginRight:'30px'}}/>}
           {avatar !== "" && <AvatarStyle src={avatar} alt="avatar" />}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <TextNomeStyle>{professio.nome}</TextNomeStyle>
@@ -153,17 +162,23 @@ const ProfiloProfessionista = () => {
                 readOnly
               />
             </div>
-            <Link
-              to="/chat"
-              state={{ professionista: ValoriParametri }}
-              style={{ textDecoration: "none" }}
-            >
+            {token ? (
+           <a href={urlWhatsapp} target="_blank" rel="noreferrer">
               <ButtonContattaStyle>
                 <TextContatta>Contatta</TextContatta>
               </ButtonContattaStyle>
-            </Link>
+            </a>
+            )
+            : ( 
+              <ButtonContattaStyle onClick={()=> setAperto(true)}>
+              <TextContatta>Contatta</TextContatta>
+            </ButtonContattaStyle>
+              
+            )
+}
           </div>
         </SecondContainer>
+        <PopUpMessaggio open={aperto} setOpen={setAperto} number={ValoriParametri.number}/>
         <Box
           style={{
             display: "flex",
