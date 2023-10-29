@@ -84,10 +84,8 @@ const TrovaProfessionista = () => {
     }
   }
 
-  const immagini = [qua, tre, due, uno];
-
-  useEffect(() => {
-    axios.get("http://blog.fastcura.it/feed/").then((response:any) => {
+  const ricercaBlog = async () => {
+   await axios.get("https://blog.fastcura.it/feed/").then((response:any) => {
       console.log('ARTICOLI',response);
       xml2js.parseString(response.data, (err: any, result: any) => {
         if (err) {
@@ -103,7 +101,17 @@ const TrovaProfessionista = () => {
         setBlog(result.rss.channel[0].item);
         console.log(result.rss.channel[0].item);
       });
+    }).catch((error: any) => {
+      console.log('ERRORE')
+      console.error(error); // log(error)
     });
+
+  }
+
+  const immagini = [qua, tre, due, uno];
+
+  useEffect(() => {
+    ricercaBlog();
   }, []);
 
   const takeToken = async () => {
