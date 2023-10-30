@@ -46,7 +46,6 @@ const BoxRisultato = (props: any) => {
   }, []);
   return (
     <>
-      <Loader isLoading={load} />
       <div
         style={{
           marginTop: "30px",
