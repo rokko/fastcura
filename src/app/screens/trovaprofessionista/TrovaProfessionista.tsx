@@ -298,7 +298,7 @@ const TrovaProfessionista = () => {
                         style={{ textDecoration: "none", position:'absolute' , bottom:'1rem', display:'flex', justifyContent:'center', alignContent:'center'}}
                         href={`${articolo.link}`}
                       >
-                        <p style={{ color: "#000000", fontSize: "23px" }}>
+                        <p style={{ color: "#000000", fontSize: "23px", fontFamily:'Roboto' }}>
                           {articolo.title}
                         </p>
                        
