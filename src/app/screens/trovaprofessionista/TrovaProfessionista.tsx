@@ -258,7 +258,7 @@ const TrovaProfessionista = () => {
               </NewBoxInside>
             </NewSectionBlu>
             <TitleSection>Sei un professionista <br/>e cerchi clienti?</TitleSection>
-            <NewButtonCercaProfessionista>
+            <NewButtonCercaProfessionista style={{marginTop:'-60px'}}>
             <Link style={{textDecoration:'none', color:'white'}} to="/landing-professionista">
               Inizia ora la prova gratuita
               </Link>

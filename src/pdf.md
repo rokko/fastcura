@@ -19,8 +19,9 @@ chat ,va nascosta?
 -Il login presente alla fine della home ( per intenderci poco prima del footer) non è
 compilabile. per accedere è funzionabile solo quello in alto a destra.
 MODIFICHE GRAFICHE
-dal figma noto che nei quadrati sotto il ‘’COME FUNZIONA ‘’ c’è uno spazio in piu tra i titoli
+[x] dal figma noto che nei quadrati sotto il ‘’COME FUNZIONA ‘’ c’è uno spazio in piu tra i titoli
 sotto le foto e le didascalie.
+
 lo stesso spazio in piu lo vedo anche tra” sei un professionista e cerchi clienti?”
 ed il tasto “inizia la prova gratuita”
 la sezione “ultimi articoli” ha font,colore,grandezza ,caratteri diversi dal figma attuale ,sarà
