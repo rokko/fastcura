@@ -19,7 +19,7 @@ const ContainerModalePopUpMessaggio = styled('div')`
     transform: translate(-50%, -50%);
     @media (max-width: 768px) {
       width:240px;
-      height:600px;
+      height:550px;
     }
 `
 const TestoModalePopUpMessaggio=styled('p')`
@@ -35,7 +35,7 @@ const TestoModalePopUpMessaggio=styled('p')`
 const Titolo = styled('p')`
     font-style: 'Roboto';
     font-weight: 900;
-    font-size: 30px;
+    font-size: 22px;
     color:#000000;
     @media (max-width: 768px) {
       font-size: 30px; 
