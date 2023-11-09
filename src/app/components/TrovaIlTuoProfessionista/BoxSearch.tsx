@@ -46,7 +46,7 @@ const BoxS = styled("div")`
 
     background: #ffffff;
     backdrop-filter: blur(33px);
-    z-index: 100000000;
+    z-index: 100;
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 20px;
