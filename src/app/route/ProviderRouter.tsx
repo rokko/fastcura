@@ -169,52 +169,52 @@ const ProviderRouter = () => {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<TrovaProfessionista />} />
+          <Route exact path="/" element={<TrovaProfessionista />} />
           <Route
-            path="/landing-professionista"
+           exact path="/landing-professionista"
             element={<LandingProfessionista />}
           />
-          <Route path="/cliente" element={<DashBoardUtenti />} />
-          <Route path="/chatcliente" element={<ListaChat />} />
+          <Route exact path="/cliente" element={<DashBoardUtenti />} />
+          <Route exact path="/chatcliente" element={<ListaChat />} />
 
-          <Route path="/professionista" element={<Professionista />} />
-          <Route path="/risultati" element={<RisultatiRicerca />} />
-          <Route path="/incostruzione" element={<InCostruzione />} />
-          <Route path="/chat" element={<ChatProfessionista />} />
+          <Route exact path="/professionista" element={<Professionista />} />
+          <Route exact path="/risultati" element={<RisultatiRicerca />} />
+          <Route exact path="/incostruzione" element={<InCostruzione />} />
+          <Route exact path="/chat" element={<ChatProfessionista />} />
           <Route
-            path="/profilo-professionista"
+            exact path="/profilo-professionista"
             element={<ProfiloProfessionista />}
           />
-          <Route path="/assistenza" element={<Assistenza />} />
-          <Route path="/chatprofessionista" element={<ChatProfessionisti />} />
-          <Route path="/chatmessage" element={<PaginaChat />} />
+          <Route exact path="/assistenza" element={<Assistenza />} />
+          <Route exact path="/chatprofessionista" element={<ChatProfessionisti />} />
+          <Route exact path="/chatmessage" element={<PaginaChat />} />
           <Route
-            path="/registrazione"
+            exact path="/registrazione"
             element={<SignupCompletatoProfessionista />}
           />
-          <Route path="/smarrito-password" element={<SmarritoPassword />} />
-          <Route path="/termini-condizioni" element={<TerminiECondizioni />} />
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/consenso-privacy" element={<ConsensoPrivacy />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup-cliente" element={<RegistrazioneCliente />} />
+          <Route exact path="/smarrito-password" element={<SmarritoPassword />} />
+          <Route exact path="/termini-condizioni" element={<TerminiECondizioni />} />
+          <Route exact path="/cookies" element={<Cookies />} />
+          <Route exact path="/consenso-privacy" element={<ConsensoPrivacy />} />
+          <Route exact path="/privacy" element={<Privacy />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/signup-cliente" element={<RegistrazioneCliente />} />
           <Route
-            path="/signup-professionista"
+            exact path="/signup-professionista"
             element={<RegistrazioneProfessionista />}
           />
-          <Route path="/blog" element={<Blog />}></Route>
-          <Route path="/lista-recensioni" element={<ListaRecensioni/>}></Route>
-          <Route path="/lascia-recensione" element={<LasciaRecensioni/>}></Route>
+          <Route exact path="/blog" element={<Blog />}></Route>
+          <Route exact path="/lista-recensioni" element={<ListaRecensioni/>}></Route>
+          <Route exact path="/lascia-recensione" element={<LasciaRecensioni/>}></Route>
           {city.map((citta)=> {
         
 
           return (
             <>
-          <Route path={`/badante/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Badante'}}/>}></Route>
-          <Route path={`/infermiere/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Infermiere'}}/>}></Route>
-          <Route path={`/OSS/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'OSS'}}/>}></Route>
-          <Route path={`/fisioterapista/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Fisioterapista'}}/>}></Route>
+          <Route exact path={`/badante/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Badante'}}/>}></Route>
+          <Route exact path={`/infermiere/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Infermiere'}}/>}></Route>
+          <Route exact path={`/OSS/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'OSS'}}/>}></Route>
+          <Route exact path={`/fisioterapista/${citta}`} element={<RisultatiRicercaPers parametri={{citta:citta,professione:'Fisioterapista'}}/>}></Route>
 
 
 
