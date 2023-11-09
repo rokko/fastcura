@@ -31,9 +31,11 @@ ed il tasto “inizia la prova gratuita”
 []la sezione “ultimi articoli” ha font,colore,grandezza ,caratteri diversi dal figma attuale ,sarà
 quello vecchio ancora?
 
-[] sezione ultimi articoli da aggiornare graficamente
+[x] sezione ultimi articoli da aggiornare graficamente
+
 -pop up accesso. E’ presente in alto a destra l’icona di accesso. Cliccandola compare
 ancora la vecchia grafica. Cosa ne pensi se la adattuamo alla grafica attuale?
+
 -Pop up clienti pre whatsapp da rimpicciolire.
 lo spazio quasi vicino al footer dove c’è il quadrato di accesso (non funzionante ) dal figma
 dovrebbe esserci il colore azzurro sotto quindi va modificato.Ora siccome si andrebbe a

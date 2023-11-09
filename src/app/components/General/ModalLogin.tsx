@@ -65,7 +65,7 @@ const ModalLogin = (props: any) => {
             marginTop: "100px",
             width: "320px",
             height: "470px",
-            backgroundColor: "#39B1D9",
+            backgroundColor: "#ffffff",
             borderRadius: "20px",
             display: "flex",
             flexDirection: "column",
@@ -88,7 +88,7 @@ const ModalLogin = (props: any) => {
               height: "50px",
               borderRadius: "50px",
               display: "flex",
-              backgroundColor: "rgb(233, 51, 35)",
+              backgroundColor: "#39b1d9",
               justifyContent: "center",
               alignContent: "center",
               alignItems: "center",
@@ -96,7 +96,7 @@ const ModalLogin = (props: any) => {
           >
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVRIie3UsQ6CQAzGceLqJo+jBNCHcPH9E51QcP472OE8Fe56PVjoREL6/VqiLYq1lixgO3sWUAFX4GiAHiTrNDkdcONdA1AnoLVkIJnjm8uUD2l4ajaXjN7JaGMaVbgaTcGTUQ1uho4EfuHmaAgeMpg5nh118Mb5bw7ec5MFdXB3S/WmmxzDmRefZ3CeT73Ij+vHIWm9d/Y4sP+HZsNDUHM8BjXDNWgy7qFDDKrGgRLopKEHqljUyXLP6x0opxrOgicfBNm8Ay6hDbtUNEfWWqp6Ae770o+mwnJ+AAAAAElFTkSuQmCC" />
           </div>
-          <p className="topsearch-text">Accedi</p>
+          <p className="topsearch-text" style={{color:'#39b1d9!important'}}>Accedi</p>
           <TextField
             size={"small"}
             hiddenLabel
@@ -147,12 +147,12 @@ const ModalLogin = (props: any) => {
           <button
             style={{
               marginTop: "40px",
-              backgroundColor: "#E93323",
+              backgroundColor: "#39b1d9",
               width: 220,
               height: 37,
               borderRadius: 20,
               border: "none",
-              color: "white",
+              color: "#ffffff",
               fontWeight: "bold",
             }}
             onClick={() => loginUser()}
@@ -160,12 +160,12 @@ const ModalLogin = (props: any) => {
             Entra
           </button>
           <Link to="/signup-cliente" style={{ textDecoration: "none" }}>
-            <p style={{ color: "#ffffff", textDecoration: "none" }}>
+            <p style={{ color: "#39b1d9", textDecoration: "none" }}>
               oppure registrati
             </p>
           </Link>
           <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
-            <p style={{ color: "white" }}>Hai dimenticato la password?</p>
+            <p style={{ color: "#39b1d9" }}>Hai dimenticato la password?</p>
           </Link>
         </Box>
       </Modal>
