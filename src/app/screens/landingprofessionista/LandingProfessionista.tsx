@@ -113,7 +113,7 @@ const LandingProfessionista = () => {
           </ContainerFirstImage>
           <ContainerOther>
           <TitleSection>Come funziona</TitleSection>
-          <div style={{display:'flex', flexDirection:'row', gap:'3rem'}}>
+          <div style={{display:'flex', flexDirection:'row', gap:'3rem', marginTop:'-50px'}}>
           <NewBox>
                 <img src={Visibilita} width={"276px"} height={"138px"} />
                 <NewTesto>
