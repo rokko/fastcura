@@ -51,9 +51,6 @@ const Login = (props: any) => {
     password: passw,
   };
   const InputStyle = styled("input")`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     padding: 13px 19px;
     gap: 10px;
     width: 250px;
@@ -103,6 +100,7 @@ const Login = (props: any) => {
       <div style={{display:'flex', flexDirection:isMobile?'column':'row', gap:'3rem'}}>
       <InputStyle
         placeholder="Indirizzo email"
+        value={email}
         onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
           setEmail(x.target.value)
         }
@@ -121,6 +119,7 @@ const Login = (props: any) => {
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
             setPassw(x.target.value)
           }
+          value={passw}
           type={showPassword ? "text" : "password"}
         ></InputStyle>
         <img

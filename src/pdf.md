@@ -15,18 +15,23 @@ ci dicemmo di farla azzurra
 
 -Va uplodata la nuova versione della dashboard professionista. E’ ancora inoltre presente la
 chat ,va nascosta?
+
 -rendere obbligatoria l’immagine all’icrizione professionista
+
 -Il login presente alla fine della home ( per intenderci poco prima del footer) non è
 compilabile. per accedere è funzionabile solo quello in alto a destra.
+
+
 MODIFICHE GRAFICHE
 [x] dal figma noto che nei quadrati sotto il ‘’COME FUNZIONA ‘’ c’è uno spazio in piu tra i titoli
 sotto le foto e le didascalie.
 
-lo stesso spazio in piu lo vedo anche tra” sei un professionista e cerchi clienti?”
+[x]lo stesso spazio in piu lo vedo anche tra” sei un professionista e cerchi clienti?”
 ed il tasto “inizia la prova gratuita”
-la sezione “ultimi articoli” ha font,colore,grandezza ,caratteri diversi dal figma attuale ,sarà
+[]la sezione “ultimi articoli” ha font,colore,grandezza ,caratteri diversi dal figma attuale ,sarà
 quello vecchio ancora?
-sezione ultimi articoli da aggiornare graficamente
+
+[] sezione ultimi articoli da aggiornare graficamente
 -pop up accesso. E’ presente in alto a destra l’icona di accesso. Cliccandola compare
 ancora la vecchia grafica. Cosa ne pensi se la adattuamo alla grafica attuale?
 -Pop up clienti pre whatsapp da rimpicciolire.

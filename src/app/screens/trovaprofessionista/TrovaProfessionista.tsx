@@ -268,38 +268,40 @@ const TrovaProfessionista = () => {
             <TitleSection>Gli ultimi articoli</TitleSection>
 
             <ContainerProfessionista
-              style={{ display: "flex", gap: "0.50rem", flexDirection: "row" }}
+              style={{ display: "flex", gap: "4rem", flexDirection: "row", justifyContent: "center" }}
             >
               {blog?.map((articolo: any, index) => {
-                if (index <= 3) {
+                if (index <= 2) {
                   return (
                     <BoxInfo
                       style={{
-                        height: "400px",
-                        width: "25%",
-                        alignItems: "flex-start",
+                        height: "367px",
+                        width: "337px",
                         flexDirection: "column",
                         position: "relative",
+                        paddingLeft: "1rem",
+                        paddingRight:"1rem",
                       }}
                     >
-                      <a
-                        style={{ textDecoration: "none" }}
-                        href={`${articolo.link}`}
-                      >
-                        <p style={{ color: "#000000", fontSize: "29px" }}>
-                          {articolo.title}
-                        </p>
-                        <img
+                       <img
                           src={immagini[index]}
                           style={{
-                            width: "200px",
-                            height: "200px",
+                            width: "279px",
+                            height: "206px",
                             position: "absolute",
-                            bottom: "1rem",
-                            left: "5vw",
+                            top: "1rem",
+                            left: "3.5vw",
                             borderRadius: "10px",
                           }}
                         />
+                      <a
+                        style={{ textDecoration: "none", position:'absolute' , bottom:'1rem', display:'flex', justifyContent:'center', alignContent:'center'}}
+                        href={`${articolo.link}`}
+                      >
+                        <p style={{ color: "#000000", fontSize: "23px" }}>
+                          {articolo.title}
+                        </p>
+                       
                       </a>
                     </BoxInfo>
                   );
