@@ -33,7 +33,7 @@ quello vecchio ancora?
 
 [x] sezione ultimi articoli da aggiornare graficamente
 
--pop up accesso. E’ presente in alto a destra l’icona di accesso. Cliccandola compare
+[x] pop up accesso. E’ presente in alto a destra l’icona di accesso. Cliccandola compare
 ancora la vecchia grafica. Cosa ne pensi se la adattuamo alla grafica attuale?
 
 -Pop up clienti pre whatsapp da rimpicciolire.
