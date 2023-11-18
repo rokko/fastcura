@@ -8,7 +8,7 @@ const ContainerModalePopUpMessaggio = styled('div')`
     display:flex;
     flex-direction: column;
     padding:2rem;
-    width:350px;
+    width:360px;
     height:700px;
     border-radius:30px;
     background-color:white;
@@ -95,8 +95,8 @@ border:none;
 border-radius:40px;
 @media (max-width: 768px) {
   margin-top:1.04vw;
-  width:16.04vw;
-  height:2.44vw;
+  width:20.04vw;
+  height:6.44vw;
  border-radius:2.08vw;
 }
 `
@@ -197,12 +197,13 @@ const inviaMessaggioWhatsApp = () => {
               />{" "}
             </FormGroup>*/}
             {!controllo ? <p style={{fontSize:'14px',color:'red'}}>Attenzione non hai compilato tutti i campi</p> :(
-              <div>
-             <a role="link" target='_blank' href={urlWhatsapp}>
+              <div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
+                 <a role="link" target='_blank' href={urlWhatsapp}>
                     <ButtonInvia onClick={() => inviaMessaggioWhatsApp()}>Invia</ButtonInvia>
                   </a>
+                
                     <p style={{fontSize:'10px', fontWeight:'400', fontFamily:'Helvetica', color:'black'}}>Cliccando invia verrai indirizzato direttamente su WhatsApp </p>
-                    </div>
+              </div>
             )}
                 </ContainerModalePopUpMessaggio>
         </Modal>
