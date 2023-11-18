@@ -228,6 +228,7 @@ const NewTestoUnder = styled("p")`
   font-size: 14px;
   color: #a6a6a6;
   font-weight: 400;
+  margin-top:-10px;
 `;
 const TitleOne = styled("p")`
   max-width: 300px;

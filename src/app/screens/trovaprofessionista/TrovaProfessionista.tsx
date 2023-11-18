@@ -563,39 +563,43 @@ const TrovaProfessionista = () => {
         
            
             <ContainerProfessionista>
-              <p>Gli Ultimi Articoli</p>
+              <p style={{fontFamily:'Roboto', fontSize:'33px', fontWeight:'900', color:'black'}}>Gli Ultimi Articoli</p>
               <ContainerProfessionista
                 style={{
                   display: "flex",
-                  gap: "0.50rem",
-                  flexDirection: "row",
+                  gap: "3rem",
+                  flexDirection: "column",
                 }}
               >
-                <Swiper
-                  slidesPerView={1}
-                  spaceBetween={0}
-                  style={{
-                    display: "flex",
-                    alignContent: "center",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                    marginBottom: "5rem",
-                  }}
-                >
+              
                   {blog?.map((articolo: any, index) => {
                     if (index <= 3) {
                       return (
-                        <SwiperSlide>
-                          <BoxInfo
+                       
+                          <NewBox
                             style={{
-                              height: "400px",
-                              width: "100%",
-                              alignItems: "flex-start",
+                             
+                             
+                              alignItems: "center",
+                              display: "flex",
                               flexDirection: "column",
                               position: "relative",
+                              justifyContent:'center',
+                              textAlign:'center',
+                              padding:'1rem'
                             }}
                           >
+                            <img
+                                src={immagini[index]}
+                                style={{
+                                 
+                                  width: "200px",
+                                  height: "200px",
+                                  bottom: "1rem",
+                                  
+                                  borderRadius: "10px",
+                                }}
+                              />
                             <a
                               style={{
                                 textDecoration: "none",
@@ -605,31 +609,21 @@ const TrovaProfessionista = () => {
                               <p
                                 style={{
                                   color: "#000000",
-                                  fontSize: "29px",
-                                  position: "absolute",
-                                  top: "2rem",
+                                  fontSize: "23px",
+                                  fontFamily:'Roboto',
+                                  fontWeight:'900'
+                                 
                                 }}
                               >
                                 {articolo.title}
                               </p>
-                              <img
-                                src={immagini[index]}
-                                style={{
-                                  position: "absolute",
-                                  width: "200px",
-                                  height: "200px",
-                                  bottom: "1rem",
-                                  left: "18vw",
-                                  borderRadius: "10px",
-                                }}
-                              />
+                              
                             </a>
-                          </BoxInfo>
-                        </SwiperSlide>
+                          </NewBox>
+                     
                       );
                     }
                   })}
-                </Swiper>
               </ContainerProfessionista>
            
             </ContainerProfessionista>
