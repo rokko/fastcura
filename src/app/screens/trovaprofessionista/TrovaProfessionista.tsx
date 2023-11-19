@@ -503,7 +503,8 @@ const TrovaProfessionista = () => {
             <BoxSearch />
           </CercaContainter>
           <ContainerTrova>
-        
+          <TitleSection style={{marginBottom:'-10px', fontFamily:'Roboto', fontSize:'33px', fontWeight:'900'}}>Come funziona</TitleSection>
+
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
               <NewBox>
                 <img src={ProblemaRisolto} width={"212px"} height={"206px"} />
