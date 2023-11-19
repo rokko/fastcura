@@ -44,6 +44,7 @@ const Login = (props: any) => {
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
+  const [password3, setPassw3] = useState('');
   const [oklog, setOklog] = useState(false);
   const [kolog, setKolog] = useState(false);
   const userlogin = {
@@ -52,7 +53,7 @@ const Login = (props: any) => {
   };
   const InputStyle = styled("input")`
     padding: 13px 19px;
-    gap: 10px;
+   
     width: 250px;
     border: none;
     background: #e2f4fc;
@@ -95,9 +96,69 @@ const Login = (props: any) => {
   
 
   return (
-    <ContainerLogin>
+  <div style={{display:'flex', flexDirection:'column', alignContent:'center', alignItems:'center', justifyContent:'center', gap:'2rem'}}>
       <Title>Accedi</Title>
       <div style={{display:'flex', flexDirection:isMobile?'column':'row', gap:'3rem'}}>
+      <input
+  style={{
+
+    padding: "13px 19px",
+    width: "250px",
+    border: "none",
+    background: "#e2f4fc",
+    borderRadius: "10px",
+  }}
+  placeholder="Indirizzo email"
+  value={email}
+  onChange={(e) => {
+   setEmail(e.target.value);
+    // Do something with the password value
+  }}
+/>
+<div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "relative",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <input
+          placeholder="Password"
+          style={{
+            padding: "13px 19px",
+            width: "250px",
+            border: "none",
+            background: "#e2f4fc",
+            borderRadius: "10px",
+          }}
+          value={passw}
+          onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
+            setPassw((prevPassw) => x.target.value)          }
+          type={showPassword ? "text" : "password"}
+        ></input>
+        <img
+          style={{ marginLeft: "-30px", width: "24px", height: "24px" }}
+          onClick={handleClickShowPassword}
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
+        />
+
+
+      </div>
+      </div>
+      <div>
+      <ButtonLogin style={{width:'289px', height:'47px'}} onClick={() => loginUser()}>Entra</ButtonLogin>
+      <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
+        <p style={{ color: "#39B1D9" }}>Hai dimenticato la password?</p>
+      </Link>
+      </div>
+
+
+
+</div>
+/*
+
       <InputStyle
         placeholder="Indirizzo email"
         value={email}
@@ -117,9 +178,7 @@ const Login = (props: any) => {
         <InputStyle
           placeholder="Password"
           onChange={(x: React.ChangeEvent<HTMLInputElement>) =>
-            setPassw(x.target.value)
-          }
-          value={passw}
+            setPassw((prevPassw) => x.target.value)          }
           type={showPassword ? "text" : "password"}
         ></InputStyle>
         <img
@@ -127,13 +186,15 @@ const Login = (props: any) => {
           onClick={handleClickShowPassword}
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABXElEQVRIie2UQUtCQRSFP8JdUta2HkFCj/6ERH+lWvkLWtR/cWkIbsRACCTbuMhFCzcmLdxWoFItX4s5L+fNG/W1MFp44MJwz7mHmXtnBtb479gFykADGAFfipFyZWl+jRxwCUyBaElMpc1lNd8HupZBCzgDQmBTESrXsnRd1S7EATBUwTNQyrChEjBQzVAeXuSBvoT3QMHiAqAGTBR1nSLGNtBWbV9eKVQk6DmCAHgj3ft3cfYGe+IqrvmJiE+g6HA1cQ1gD9PnpnI3jrYoj0ieP+goee052UScPcBAubFHfyWuA7DhkJGnYBF8etcTmLXoAzh0uLq4JuYUAXCrXNXRHmEeYqpFMBvyI+auxwgxA3WH/EqybVvAE3OGDMlr2sZcvRgBZqBjRdUx3wEeWHJNIfnQBmR7aKfACxkeWgzfV3EOHGtnea0vgDtLl+mriLHSz87Gyr7rNf4O31JZhMjSyXpfAAAAAElFTkSuQmCC"
         />
+
+
       </div>
       </div>
       <ButtonLogin style={{width:'289px', height:'47px'}} onClick={() => loginUser()}>Entra</ButtonLogin>
       <Link to="/smarrito-password" style={{ textDecoration: "none" }}>
         <p style={{ color: "#39B1D9" }}>Hai dimenticato la password?</p>
       </Link>
-    </ContainerLogin>
+    </ContainerLogin>*/
   );
 };
 
