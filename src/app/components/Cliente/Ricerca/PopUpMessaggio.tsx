@@ -127,7 +127,7 @@ const inviaMessaggioWhatsApp = () => {
     axios
       .post(
         "https://careful-pear-cockatoo.cyclic.app/cliente/crea-contatto",
-        {nomecognome:nomecogn, email:mail, cellulare:numero, numero_professionista:numberProf}
+        {nomecognome:nomecogn, email:mail, cellulare:numero, numero_professionista:number}
       )
       .then(function (response) {
        
