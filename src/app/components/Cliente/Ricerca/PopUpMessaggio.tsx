@@ -126,8 +126,8 @@ const handleChange =()=>{
 const inviaMessaggioWhatsApp = () => {
     axios
       .post(
-        "https://careful-pear-cockatoo.cyclic.app/cliente/signup",
-        {nomecognome:nomecogn, email:mail, cellulare:numero}
+        "https://careful-pear-cockatoo.cyclic.app/cliente/crea-contatto",
+        {nomecognome:nomecogn, email:mail, cellulare:numero, numero_professionista:numberProf}
       )
       .then(function (response) {
        
