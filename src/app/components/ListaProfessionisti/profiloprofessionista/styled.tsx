@@ -46,8 +46,9 @@ const DivCentraleStyle = styled("div")({
 });
 
 const TextNomeStyle = styled("p")({
-  fontSize: "14px",
-  alignSelf: "flex-start",
+  fontSize: "22px", 
+  alignSelf: "flex-start", fontWeight:'700', fontFamily:'Helvetica', color:'black',marginBottom:'-15px' 
+
 });
 
 const RatingDivStyle = styled("div")({

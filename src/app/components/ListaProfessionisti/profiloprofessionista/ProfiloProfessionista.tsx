@@ -155,6 +155,7 @@ const ProfiloProfessionista = () => {
           {avatar !== "" && <AvatarStyle src={avatar} alt="avatar" />}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <TextNomeStyle>{professio.nome}</TextNomeStyle>
+            <br/>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <Rating
                 value={!!totaleFeedback ? totaleFeedback : 0}
@@ -187,12 +188,15 @@ const ProfiloProfessionista = () => {
             padding: "30px",
           }}
         >
-          <p>
-            Professione : {professio.professione}
+          <p style={{ fontStyle: 'Roboto',
+    fontWeight: 400,
+  
+    fontSize: '18px', color:'black'}} >
+             <span style={{fontWeight:'900'}}>Professione</span>: {professio.professione}
             <br />
-            Luogo: {professio.citta}
+            <span style={{fontWeight:'900'}}>Luogo:</span> {professio.citta}
             <br />
-            Curriculum
+           
           </p>
           {risposta?.ris === 2 && (
             <>
@@ -208,6 +212,9 @@ const ProfiloProfessionista = () => {
                   flexDirection: "column",
                   alignContent: "center",
                   alignItems: "center",
+                  fontStyle: 'Roboto',
+    fontWeight: 400,
+  
                 }}
               >
                 <p>L'utente non ha ancora caricato un curriculum</p>
@@ -228,6 +235,9 @@ const ProfiloProfessionista = () => {
                   flexDirection: "column",
                   alignContent: "center",
                   alignItems: "center",
+                  fontStyle: 'Roboto',
+                  fontWeight: 400,
+                
                 }}
               >
                 <TextField
