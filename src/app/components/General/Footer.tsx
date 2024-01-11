@@ -17,7 +17,8 @@ const Footer = () => {
           location.pathname == "/cookies" ||
           location.pathname == "/privacy" ||
           location.pathname == "/registrazione" ||
-          location.pathname == "/assistenza"
+          location.pathname == "/assistenza" ||
+          location.pathname == "/lascia-recensione"
             ? "fixed"
             : "relative",
         bottom: "0",

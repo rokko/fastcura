@@ -45,7 +45,7 @@ import {
   TitleTop,
 } from "./TrovaProfessionistaStyled";
 import { Title } from "react-head";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import uno from "../../media/1.png";
 import due from "../../media/2.png";
@@ -59,6 +59,9 @@ import secondaImmagine from '../../media/secondaImmagine.png'
 const xml2js = require("xml2js");
 
 const TrovaProfessionista = () => {
+  
+  console.log(userId)
+  console.log(userName)
   const [what, setWhat] = useState(false);
   const [token, setToken] = useState("");
   const [blog, setBlog] = useState([]);

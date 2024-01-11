@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderNoLogin from '../../../components/Cliente/HeaderNoLogin'
 import Footer from '../../../components/General/Footer'
 import { Rating, styled } from '@mui/material'
 import Textarea from '@mui/joy/Textarea';
+import { useLocation } from 'react-router-dom';
 
 const ContainerRecensioneStile = styled('div')`
     display:flex;
@@ -47,13 +48,23 @@ const TestiVotazione = styled('p')`
 
 
 const LasciaRecensioni = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const idProfessionista = queryParams.get('id');
+
+  useEffect(() => {
+    console.log(idProfessionista)
+
+  },[idProfessionista])
+
     const [pagina,setPagina]=useState(1)
 
     const inviaRecensione = () => {
-        console.log('recensione')
+        
     }
     return(
-        <>
+      <>
+        <div style={{position:'relative'}}>
               <HeaderNoLogin />
               {pagina===1 && <ContainerRecensioneStile >
               <TitoloRecensioneStile>Dedicaci due minuti per valutare<br/> la tua esperienza
@@ -106,8 +117,13 @@ const LasciaRecensioni = () => {
             </ContainerRecensioneStile>}
           
           
-
-            <Footer />
+            
+            
+            
+        </div>
+        <div style={{position:'fixed', bottom:0, zIndex:1}}>
+        <Footer />
+        </div>
         </>
         
     )
