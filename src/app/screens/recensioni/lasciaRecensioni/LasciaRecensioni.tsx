@@ -113,7 +113,7 @@ const LasciaRecensioni = () => {
            
             <Textarea minRows={10} size="lg" sx={{width:'600px'}}placeholder="Scrivi qui.." />
 
-            <ButtonVotazione onClick={()=>inviaRecensione()}>Fine</ButtonVotazione>
+           <a href='/'> <ButtonVotazione onClick={()=>inviaRecensione()}>Fine</ButtonVotazione></a>
             </ContainerRecensioneStile>}
           
           

@@ -60,8 +60,7 @@ const xml2js = require("xml2js");
 
 const TrovaProfessionista = () => {
   
-  console.log(userId)
-  console.log(userName)
+ 
   const [what, setWhat] = useState(false);
   const [token, setToken] = useState("");
   const [blog, setBlog] = useState([]);
